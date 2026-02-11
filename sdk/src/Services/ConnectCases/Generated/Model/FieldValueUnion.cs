@@ -107,7 +107,7 @@ namespace Amazon.ConnectCases.Model
         /// String value type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3000)]
+        [AWSProperty(Min=0, Max=4100)]
         public string StringValue
         {
             get { return this._stringValue; }

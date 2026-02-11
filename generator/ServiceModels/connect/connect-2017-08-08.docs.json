@@ -62,7 +62,7 @@
     "CreateTestCase": "<p>Creates a test case with its content and metadata for the specified Amazon Connect instance.</p>",
     "CreateTrafficDistributionGroup": "<p>Creates a traffic distribution group given an Amazon Connect instance that has been replicated.</p> <note> <p>The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href=\"https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html\">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p> </note> <p>For more information about creating traffic distribution groups, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html\">Set up traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>. </p>",
     "CreateUseCase": "<p>Creates a use case for an integration association.</p>",
-    "CreateUser": "<p>Creates a user account for the specified Amazon Connect instance.</p> <important> <p>Certain <a href=\"https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html\">UserIdentityInfo</a> parameters are required in some situations. For example, <code>Email</code>, <code>FirstName</code> and <code>LastName</code> are required if you are using Amazon Connect or SAML for identity management.</p> </important> <p>For information about how to create users using the Amazon Connect admin website, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html\">Add Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p>",
+    "CreateUser": "<p>Creates a user account for the specified Amazon Connect instance.</p> <important> <p>Certain <a href=\"https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html\">UserIdentityInfo</a> parameters are required in some situations. For example, <code>Email</code>, <code>FirstName</code> and <code>LastName</code> are required if you are using Amazon Connect or SAML for identity management.</p> </important> <note> <p>Fields in <code>PhoneConfig</code> cannot be set simultaneously with their corresponding channel-specific configuration parameters. Specifically:</p> <ul> <li> <p> <code>PhoneConfig.AutoAccept</code> conflicts with <code>AutoAcceptConfigs</code> </p> </li> <li> <p> <code>PhoneConfig.AfterContactWorkTimeLimit</code> conflicts with <code>AfterContactWorkConfigs</code> </p> </li> <li> <p> <code>PhoneConfig.PhoneType</code> and <code>PhoneConfig.PhoneNumber</code> conflict with <code>PhoneNumberConfigs</code> </p> </li> <li> <p> <code>PhoneConfig.PersistentConnection</code> conflicts with <code>PersistentConnectionConfigs</code> </p> </li> </ul> <p>We recommend using channel-specific parameters such as <code>AutoAcceptConfigs</code>, <code>AfterContactWorkConfigs</code>, <code>PhoneNumberConfigs</code>, <code>PersistentConnectionConfigs</code>, and <code>VoiceEnhancementConfigs</code> for per-channel configuration.</p> </note> <p>For information about how to create users using the Amazon Connect admin website, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html\">Add Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p>",
     "CreateUserHierarchyGroup": "<p>Creates a new user hierarchy group.</p>",
     "CreateView": "<p>Creates a new view with the possible status of <code>SAVED</code> or <code>PUBLISHED</code>.</p> <p>The views will have a unique name for each connect instance.</p> <p>It performs basic content validation if the status is <code>SAVED</code> or full content validation if the status is set to <code>PUBLISHED</code>. An error is returned if validation fails. It associates either the <code>$SAVED</code> qualifier or both of the <code>$SAVED</code> and <code>$LATEST</code> qualifiers with the provided view content based on the status. The view is idempotent if ClientToken is provided.</p>",
     "CreateViewVersion": "<p>Publishes a new version of the view identifier.</p> <p>Versions are immutable and monotonically increasing.</p> <p>It returns the highest version if there is no change in content compared to that version. An error is displayed if the supplied ViewContentSha256 is different from the ViewContentSha256 of the <code>$LATEST</code> alias.</p>",
@@ -158,7 +158,7 @@
     "EvaluateDataTableValues": "<p>Evaluates values at the time of the request and returns them. It considers the request's timezone or the table's timezone, in that order, when accessing time based tables. When a value is accessed, the accessor's identity and the time of access are saved alongside the value to help identify values that are actively in use. The term \"Batch\" is not included in the operation name since it does not meet all the criteria for a batch operation as specified in Batch Operations: Amazon Web Services API Standards.</p>",
     "GetAttachedFile": "<p>Provides a pre-signed URL for download of an approved attached file. This API also returns metadata about the attached file. It will only return a downloadURL if the status of the attached file is <code>APPROVED</code>.</p>",
     "GetContactAttributes": "<p>Retrieves the contact attributes for the specified contact.</p>",
-    "GetContactMetrics": "<p>Retrieves the position of the contact in the queue.</p> <p> <b>Use cases</b> </p> <p>Following are common uses cases for position in queue:</p> <ul> <li> <p>Understand the expected wait experience of a contact.</p> </li> <li> <p>Inform customers of their position in queue and potentially offer a callback.</p> </li> <li> <p>Make data-driven routing decisions between primary and alternative queues.</p> </li> <li> <p>Enhance queue visibility and leverage agent proficiencies to streamline contact routing.</p> </li> </ul> <p> <b>Important things to know</b> </p> <ul> <li> <p>The only way to retrieve the position of the contact in queue is by using this API. You can't retrieve the position by using flows and attributes.</p> </li> <li> <p>For more information, see the <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html\">Position in queue</a> metric in the <i>Amazon Connect Administrator Guide</i>. </p> </li> </ul> <p> <b>Endpoints</b>: See <a href=\"https://docs.aws.amazon.com/general/latest/gr/connect_region.html\">Amazon Connect endpoints and quotas</a>.</p>",
+    "GetContactMetrics": "<p>Retrieves contact metric data for a specified contact.</p> <p> <b>Use cases</b> </p> <p>Following are common use cases for position in queue and estimated wait time:</p> <ul> <li> <p>Customer-Facing Wait Time Announcements - Display or announce the estimated wait time and position in queue to customers before or during their queue experience. </p> </li> <li> <p>Callback Offerings - Offer customers a callback option when the estimated wait time or position in queue exceeds a defined threshold. </p> </li> <li> <p>Queue Routing Decisions - Route incoming contacts to less congested queues by comparing estimated wait time and position in queue across multiple queues. </p> </li> <li> <p>Self-Service Deflection - Redirect customers to self-service options like chatbots or FAQs when estimated wait time is high or position in queue is unfavorable. </p> </li> </ul> <p> <b>Important things to know</b> </p> <ul> <li> <p>Metrics are only available while the contact is actively in queue.</p> </li> <li> <p>For more information, see the <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html\">Position in queue</a> metric in the <i>Amazon Connect Administrator Guide</i>. </p> </li> </ul> <p> <b>Endpoints</b>: See <a href=\"https://docs.aws.amazon.com/general/latest/gr/connect_region.html\">Amazon Connect endpoints and quotas</a>.</p>",
     "GetCurrentMetricData": "<p>Gets the real-time metric data from the specified Amazon Connect instance.</p> <p>For a description of each metric, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html\">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note> <p>When you make a successful API request, you can expect the following metric values in the response:</p> <ol> <li> <p> <b>Metric value is null</b>: The calculation cannot be performed due to divide by zero or insufficient data</p> </li> <li> <p> <b>Metric value is a number (including 0) of defined type</b>: The number provided is the calculation result</p> </li> <li> <p> <b>MetricResult list is empty</b>: The request cannot find any data in the system</p> </li> </ol> <p>The following guidelines can help you work with the API:</p> <ul> <li> <p>Each dimension in the metric response must contain a value</p> </li> <li> <p>Each item in MetricResult must include all requested metrics</p> </li> <li> <p>If the response is slow due to large result sets, try these approaches:</p> <ul> <li> <p>Add filters to reduce the amount of data returned</p> </li> </ul> </li> </ul> </note>",
     "GetCurrentUserData": "<p>Gets the real-time active user data from the specified Amazon Connect instance. </p>",
     "GetEffectiveHoursOfOperations": "<p>Get the hours of operations with the effective override applied.</p>",
@@ -343,11 +343,12 @@
     "UpdateTaskTemplate": "<p>Updates details about a specific task template in the specified Amazon Connect instance. This operation does not support partial updates. Instead it does a full update of template content.</p>",
     "UpdateTestCase": "<p>Updates any of the metadata for a test case, such as the name, description, and status or content of an existing test case. This API doesn't allow customers to update the tags of the test case resource for the specified Amazon Connect instance.</p>",
     "UpdateTrafficDistribution": "<p>Updates the traffic distribution for a given traffic distribution group. </p> <important> <p>When you shift telephony traffic, also shift agents and/or agent sign-ins to ensure they can handle the calls in the other Region. If you don't shift the agents, voice calls will go to the shifted Region but there won't be any agents available to receive the calls.</p> </important> <note> <p>The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code> parameter in the <a href=\"https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html\">TrafficDistributionGroup</a> data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code> and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code> is returned.</p> </note> <p>For more information about updating a traffic distribution group, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html\">Update telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon Connect Administrator Guide</i>. </p>",
+    "UpdateUserConfig": "<p>Updates the configuration settings for the specified user, including per-channel auto-accept and after contact work (ACW) timeout settings.</p> <note> <p>This operation replaces the UpdateUserPhoneConfig API. While UpdateUserPhoneConfig applies the same ACW timeout to all channels, UpdateUserConfig allows you to set different auto-accept and ACW timeout values for each channel type.</p> </note>",
     "UpdateUserHierarchy": "<p>Assigns the specified hierarchy group to the specified user.</p>",
     "UpdateUserHierarchyGroupName": "<p>Updates the name of the user hierarchy group. </p>",
     "UpdateUserHierarchyStructure": "<p>Updates the user hierarchy structure: add, remove, and rename user hierarchy levels.</p>",
     "UpdateUserIdentityInfo": "<p>Updates the identity information for the specified user.</p> <important> <p>We strongly recommend limiting who has the ability to invoke <code>UpdateUserIdentityInfo</code>. Someone with that ability can change the login credentials of other users by changing their email address. This poses a security risk to your organization. They can change the email address of a user to the attacker's email address, and then reset the password through email. For more information, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html\">Best Practices for Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p> </important>",
-    "UpdateUserPhoneConfig": "<p>Updates the phone configuration settings for the specified user.</p>",
+    "UpdateUserPhoneConfig": "<p>Updates the phone configuration settings for the specified user.</p> <note> <p>We recommend using the <a href=\"https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserConfig.html\">UpdateUserConfig</a> API, which supports additional functionality that is not available in the UpdateUserPhoneConfig API, such as voice enhancement settings and per-channel configuration for auto-accept and After Contact Work (ACW) timeouts. In comparison, the UpdateUserPhoneConfig API will always set the same ACW timeouts to all channels the user handles.</p> </note>",
     "UpdateUserProficiencies": "<p>Updates the properties associated with the proficiencies of a user.</p>",
     "UpdateUserRoutingProfile": "<p>Assigns the specified routing profile to the specified user.</p>",
     "UpdateUserSecurityProfiles": "<p>Assigns the specified security profiles to the specified user.</p>",
@@ -635,9 +636,32 @@
         "Contact$AdditionalEmailRecipients": "<p>List of additional email addresses for an email contact.</p>"
       }
     },
+    "AfterContactWorkConfig": {
+      "base": "<p>Configuration settings for after contact work (ACW) timeout.</p>",
+      "refs": {
+        "AfterContactWorkConfigPerChannel$AfterContactWorkConfig": "<p>The ACW timeout settings for this channel.</p>",
+        "AfterContactWorkConfigPerChannel$AgentFirstCallbackAfterContactWorkConfig": "<p>The ACW timeout settings for agent-first callbacks. This setting only applies to the VOICE channel.</p>"
+      }
+    },
+    "AfterContactWorkConfigPerChannel": {
+      "base": "<p>Configuration settings for after contact work (ACW) timeout for a specific channel.</p>",
+      "refs": {
+        "AfterContactWorkConfigs$member": null
+      }
+    },
+    "AfterContactWorkConfigs": {
+      "base": "<p>A list of after contact work (ACW) timeout configuration settings for each channel.</p>",
+      "refs": {
+        "CreateUserRequest$AfterContactWorkConfigs": "<p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>",
+        "UpdateUserConfigRequest$AfterContactWorkConfigs": "<p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). Enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>",
+        "User$AfterContactWorkConfigs": "<p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>",
+        "UserSearchSummary$AfterContactWorkConfigs": "<p>The list of after contact work (ACW) timeout configuration settings for each channel.</p>"
+      }
+    },
     "AfterContactWorkTimeLimit": {
       "base": null,
       "refs": {
+        "AfterContactWorkConfig$AfterContactWorkTimeLimit": "<p>The ACW timeout duration in seconds. Minimum: 1 second. Maximum: 2,000,000 seconds (24 days). Enter 0 for indefinite ACW time.</p>",
         "UserPhoneConfig$AfterContactWorkTimeLimit": "<p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose Close contact to end ACW. </p> <note> <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> </note>"
       }
     },
@@ -672,6 +696,12 @@
       "base": "<p>Information about agent-first outbound strategy configuration.</p>",
       "refs": {
         "OutboundStrategyConfig$AgentFirst": "<p>The config of agent first outbound strategy.</p>"
+      }
+    },
+    "AgentFirstCallbackAutoAccept": {
+      "base": null,
+      "refs": {
+        "AutoAcceptConfig$AgentFirstCallbackAutoAccept": "<p>Indicates whether auto-accept is enabled for agent-first callbacks. This setting only applies to the VOICE channel.</p>"
       }
     },
     "AgentFirstName": {
@@ -1466,7 +1496,23 @@
     "AutoAccept": {
       "base": null,
       "refs": {
+        "AutoAcceptConfig$AutoAccept": "<p>Indicates whether auto-accept is enabled for this channel. When enabled, available agents are automatically connected to contacts from this channel.</p>",
         "UserPhoneConfig$AutoAccept": "<p>The Auto accept setting.</p>"
+      }
+    },
+    "AutoAcceptConfig": {
+      "base": "<p>Configuration settings for auto-accept for a specific channel.</p>",
+      "refs": {
+        "AutoAcceptConfigs$member": null
+      }
+    },
+    "AutoAcceptConfigs": {
+      "base": "<p>A list of auto-accept configuration settings for each channel.</p>",
+      "refs": {
+        "CreateUserRequest$AutoAcceptConfigs": "<p>The list of auto-accept configuration settings for each channel.</p>",
+        "UpdateUserConfigRequest$AutoAcceptConfigs": "<p>The list of auto-accept configuration settings for each channel. When auto-accept is enabled for a channel, available agents are automatically connected to contacts from that channel without needing to manually accept. Auto-accept connects agents to contacts in less than one second.</p>",
+        "User$AutoAcceptConfigs": "<p>The list of auto-accept configuration settings for each channel.</p>",
+        "UserSearchSummary$AutoAcceptConfigs": "<p>The list of auto-accept configuration settings for each channel.</p>"
       }
     },
     "AutoEvaluationConfiguration": {
@@ -1800,8 +1846,10 @@
     "Channel": {
       "base": null,
       "refs": {
+        "AfterContactWorkConfigPerChannel$Channel": "<p>The channel for this ACW timeout configuration. Valid values: VOICE, CHAT, TASK, EMAIL.</p>",
         "AgentContactReference$Channel": "<p>The channel of the contact.</p>",
         "AssociatedContactSummary$Channel": "<p>How the contact reached your contact center.</p>",
+        "AutoAcceptConfig$Channel": "<p>The channel for this auto-accept configuration. Valid values: VOICE, CHAT, TASK, EMAIL.</p>",
         "ChannelList$member": null,
         "ChannelToCountMap$key": null,
         "Channels$member": null,
@@ -1810,9 +1858,12 @@
         "CreateContactRequest$Channel": "<p>The channel for the contact.</p> <important> <p>The CHAT channel is not supported. The following information is incorrect. We're working to correct it.</p> </important>",
         "Dimensions$Channel": "<p>The channel used for grouping and filters.</p>",
         "MediaConcurrency$Channel": "<p>The channels that agents can handle in the Contact Control Panel (CCP).</p>",
+        "PersistentConnectionConfig$Channel": "<p>Configuration settings for persistent connection. <b>Only <code>VOICE</code> is supported for this data type.</b> </p>",
+        "PhoneNumberConfig$Channel": "<p>The channel for this phone number configuration. <b>Only <code>VOICE</code> is supported for this data type.</b> </p>",
         "RoutingProfileManualAssignmentQueueConfigSummary$Channel": "<p>The channels this queue supports. Valid Values: CHAT | TASK | EMAIL </p> <important> <p>VOICE is not supported. The information shown below is incorrect. We're working to correct it. </p> </important>",
         "RoutingProfileQueueConfigSummary$Channel": "<p>The channels this queue supports.</p>",
-        "RoutingProfileQueueReference$Channel": "<p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>"
+        "RoutingProfileQueueReference$Channel": "<p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>",
+        "VoiceEnhancementConfig$Channel": "<p>The channel for this voice enhancement configuration. <b>Only <code>VOICE</code> is supported for this data type.</b> </p>"
       }
     },
     "ChannelList": {
@@ -2518,7 +2569,7 @@
         "EvaluationMetadata$ContactId": "<p>The identifier of the contact in this instance of Amazon Connect. </p>",
         "EvaluationSearchMetadata$ContactId": "<p>The identifier of the contact in this instance of Amazon Connect. </p>",
         "GetContactAttributesRequest$InitialContactId": "<p>The identifier of the initial contact.</p>",
-        "GetContactMetricsResponse$Id": "<p>The unique identifier of the contact for which metrics were retrieved.</p>",
+        "GetContactMetricsResponse$Id": "<p>The unique identifier of the contact for which metrics were retrieved. This matches the ContactId provided in the request.</p>",
         "ListAssociatedContactsRequest$ContactId": "<p>The identifier of the contact in this instance of Amazon Connect. </p>",
         "ListContactEvaluationsRequest$ContactId": "<p>The identifier of the contact in this instance of Amazon Connect. </p>",
         "ListContactReferencesRequest$ContactId": "<p>The identifier of the initial contact.</p>",
@@ -2598,7 +2649,7 @@
       }
     },
     "ContactMetricInfo": {
-      "base": "<p>The object that contains information about metric being requested.</p>",
+      "base": "<p>Contains the details of a metric to be retrieved for a contact. Use this object to specify which contact level metrics you want to include in your GetContactMetrics request.</p>",
       "refs": {
         "ContactMetrics$member": null
       }
@@ -2606,12 +2657,12 @@
     "ContactMetricName": {
       "base": null,
       "refs": {
-        "ContactMetricInfo$Name": "<p>The name of the metric being retrieved in type String.</p>",
-        "ContactMetricResult$Name": "<p>The name of the metric being retrieved in type String.</p>"
+        "ContactMetricInfo$Name": "<p>The name of the metric to retrieve. Supported values are POSITION_IN_QUEUE (returns the contact's current position in the queue) and ESTIMATED_WAIT_TIME (returns the predicted wait time in seconds).</p>",
+        "ContactMetricResult$Name": "<p>The name of the metric that was retrieved. This corresponds to the metric name specified in the request, such as POSITION_IN_QUEUE or ESTIMATED_WAIT_TIME.</p>"
       }
     },
     "ContactMetricResult": {
-      "base": "<p>Object containing information about metric requested for the contact.</p>",
+      "base": "<p>Contains the result of a requested metric for the contact. This object is returned as part of the GetContactMetrics response and includes both the metric name and its calculated value.</p>",
       "refs": {
         "ContactMetricResults$member": null
       }
@@ -2619,19 +2670,19 @@
     "ContactMetricResults": {
       "base": null,
       "refs": {
-        "GetContactMetricsResponse$MetricResults": "<p>A list of metric results containing the calculated values for each requested metric. Each result includes the metric name and its corresponding calculated value.</p>"
+        "GetContactMetricsResponse$MetricResults": "<p>A list of metric results containing the calculated values for each requested metric. Each result includes the metric name and its corresponding value. For example, POSITION_IN_QUEUE returns a numeric value representing the contact's position in queue, and ESTIMATED_WAIT_TIME returns the predicted wait time in seconds.</p>"
       }
     },
     "ContactMetricValue": {
-      "base": "<p>Object which contains the number.</p>",
+      "base": "<p>Contains the numeric value of a contact metric result.</p>",
       "refs": {
-        "ContactMetricResult$Value": "<p>Object result associated with the metric received.</p>"
+        "ContactMetricResult$Value": "<p>The calculated value for the requested metric. This object contains the numeric result based on the contact's current state in the queue.</p>"
       }
     },
     "ContactMetrics": {
       "base": null,
       "refs": {
-        "GetContactMetricsRequest$Metrics": "<p>A list of contact-level metrics to retrieve.</p>"
+        "GetContactMetricsRequest$Metrics": "<p>A list of contact level metrics to retrieve.Supported metrics include POSITION_IN_QUEUE (the contact's current position in the queue) and ESTIMATED_WAIT_TIME (the predicted time in seconds until the contact is connected to an agent)</p>"
       }
     },
     "ContactNotFoundException": {
@@ -3180,7 +3231,7 @@
     "CurrentMetrics": {
       "base": null,
       "refs": {
-        "GetCurrentMetricDataRequest$CurrentMetrics": "<p>The metrics to retrieve. Specify the name or metricId, and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html\">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note> <p> MetricId should be used to reference custom metrics or out of the box metrics as Arn. If using MetricId, the limit is 10 MetricId per request.</p> </note> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#aftercallwork-real-time\">ACW</a> </p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#available-real-time\">Available</a> </p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#error-real-time\">Error</a> </p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#non-productive-time-real-time\">NPT (Non-Productive Time)</a> </p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#on-call-real-time\">On contact</a> </p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#on-call-real-time\">On contact</a> </p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#online-real-time\">Online</a> </p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#staffed-real-time\">Staffed</a> </p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#in-queue-real-time\">In queue</a> </p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#scheduled-real-time\">Scheduled</a> </p> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{ \"Metric\": { \"Name\": \"OLDEST_CONTACT_AGE\", \"Unit\": \"SECONDS\" }, \"Value\": 24113.0 </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>When the filter <code>RoutingStepExpression</code> is used, this metric is still calculated from enqueue time. For example, if a contact that has been queued under <code>&lt;Expression 1&gt;</code> for 10 seconds has expired and <code>&lt;Expression 2&gt;</code> becomes active, then <code>OLDEST_CONTACT_AGE</code> for this queue will be counted starting from 10, not 0.</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#oldest-real-time\">Oldest</a> </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#active-real-time\">Active</a> </p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#availability-real-time\">Availability</a> </p> </dd> </dl>"
+        "GetCurrentMetricDataRequest$CurrentMetrics": "<p>The metrics to retrieve. Specify the name or metricId, and unit for each metric. The following metrics are available. For a description of all the metrics, see <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html\">Metrics definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <note> <p> MetricId should be used to reference custom metrics or out of the box metrics as Arn. If using MetricId, the limit is 10 MetricId per request.</p> </note> <dl> <dt>AGENTS_AFTER_CONTACT_WORK</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#aftercallwork-real-time\">ACW</a> </p> </dd> <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#available-real-time\">Available</a> </p> </dd> <dt>AGENTS_ERROR</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#error-real-time\">Error</a> </p> </dd> <dt>AGENTS_NON_PRODUCTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#non-productive-time-real-time\">NPT (Non-Productive Time)</a> </p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#on-call-real-time\">On contact</a> </p> </dd> <dt>AGENTS_ON_CONTACT</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#on-call-real-time\">On contact</a> </p> </dd> <dt>AGENTS_ONLINE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#online-real-time\">Online</a> </p> </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#staffed-real-time\">Staffed</a> </p> </dd> <dt>CONTACTS_IN_QUEUE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#in-queue-real-time\">In queue</a> </p> </dd> <dt>CONTACTS_SCHEDULED</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#scheduled-real-time\">Scheduled</a> </p> </dd> <dt>ESTIMATED_WAIT_TIME</dt> <dd> <p>Unit: SECONDS</p> <p>This metric supports filter and grouping combination only used for core routing purpose. Valid filter and grouping use cases: </p> <ul> <li> <p>Filter by a list of [Queues] and a list of [Channels], group by [“QUEUE”, “CHANNEL”]</p> </li> <li> <p>Filter by a singleton list of [Queue], a singleton list of [Channel], a list of [RoutingStepExpression], group by [“ROUTING_STEP_EXPRESSION”].</p> </li> </ul> </dd> <dt>OLDEST_CONTACT_AGE</dt> <dd> <p>Unit: SECONDS</p> <p>When you use groupings, Unit says SECONDS and the Value is returned in SECONDS. </p> <p>When you do not use groupings, Unit says SECONDS but the Value is returned in MILLISECONDS. For example, if you get a response like this:</p> <p> <code>{ \"Metric\": { \"Name\": \"OLDEST_CONTACT_AGE\", \"Unit\": \"SECONDS\" }, \"Value\": 24113.0 </code>}</p> <p>The actual OLDEST_CONTACT_AGE is 24 seconds.</p> <p>When the filter <code>RoutingStepExpression</code> is used, this metric is still calculated from enqueue time. For example, if a contact that has been queued under <code>&lt;Expression 1&gt;</code> for 10 seconds has expired and <code>&lt;Expression 2&gt;</code> becomes active, then <code>OLDEST_CONTACT_AGE</code> for this queue will be counted starting from 10, not 0.</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#oldest-real-time\">Oldest</a> </p> </dd> <dt>SLOTS_ACTIVE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#active-real-time\">Active</a> </p> </dd> <dt>SLOTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> <p>Name in real-time metrics report: <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#availability-real-time\">Availability</a> </p> </dd> </dl>"
       }
     },
     "Customer": {
@@ -4317,7 +4368,7 @@
     "Double": {
       "base": null,
       "refs": {
-        "ContactMetricValue$Number": "<p>The number of type Double. This number is the contact's position in queue.</p>",
+        "ContactMetricValue$Number": "<p>The numeric value of the metric result. For POSITION_IN_QUEUE, this represents the contact's current position in the queue (e.g., 3.00 means third in line). For ESTIMATED_WAIT_TIME, this represents the predicted wait time in seconds (e.g., 120.00 means approximately 2 minutes).</p>",
         "EvaluationScore$AppliedWeight": "<p>Weight applied to this evaluation score.</p>",
         "FieldValueUnion$DoubleValue": "<p>A Double number value type.</p>"
       }
@@ -6896,6 +6947,7 @@
         "UpdateSecurityProfileRequest$InstanceId": "<p>The identifier of the Amazon Connect instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
         "UpdateTaskTemplateRequest$InstanceId": "<p>The identifier of the Amazon Connect instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
         "UpdateTaskTemplateResponse$InstanceId": "<p>The identifier of the Amazon Connect instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
+        "UpdateUserConfigRequest$InstanceId": "<p>The identifier of the Amazon Connect instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
         "UpdateUserHierarchyGroupNameRequest$InstanceId": "<p>The identifier of the Amazon Connect instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
         "UpdateUserHierarchyRequest$InstanceId": "<p>The identifier of the Amazon Connect instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
         "UpdateUserHierarchyStructureRequest$InstanceId": "<p>The identifier of the Amazon Connect instance. You can <a href=\"https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html\">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>",
@@ -8950,7 +9002,23 @@
     "PersistentConnection": {
       "base": null,
       "refs": {
+        "PersistentConnectionConfig$PersistentConnection": "<p>Indicates whether persistent connection is enabled. When enabled, the agent's connection is maintained after a call ends, enabling subsequent calls to connect faster.</p>",
         "UserPhoneConfig$PersistentConnection": "<p>The persistent connection setting for the user.</p>"
+      }
+    },
+    "PersistentConnectionConfig": {
+      "base": "<p>Configuration settings for persistent connection for a specific channel.</p>",
+      "refs": {
+        "PersistentConnectionConfigs$member": null
+      }
+    },
+    "PersistentConnectionConfigs": {
+      "base": "<p>The list of persistent connection configuration settings for each channel.</p>",
+      "refs": {
+        "CreateUserRequest$PersistentConnectionConfigs": "<p>The list of persistent connection configuration settings for each channel.</p>",
+        "UpdateUserConfigRequest$PersistentConnectionConfigs": "<p>The list of persistent connection configuration settings for each channel.</p>",
+        "User$PersistentConnectionConfigs": "<p>The list of persistent connection configuration settings for each channel.</p>",
+        "UserSearchSummary$PersistentConnectionConfigs": "<p>The list of persistent connection configuration settings for each channel.</p>"
       }
     },
     "PhoneNumber": {
@@ -8965,9 +9033,23 @@
         "StartOutboundVoiceContactRequest$DestinationPhoneNumber": "<p>The phone number of the customer, in E.164 format.</p>",
         "StartOutboundVoiceContactRequest$SourcePhoneNumber": "<p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.</p>",
         "UserIdentityInfo$Mobile": "<p>The user's mobile number.</p>",
-        "UserPhoneConfig$DeskPhoneNumber": "<p>The phone number for the user's desk phone.</p>",
         "VoiceCallEntryPointParameters$SourcePhoneNumber": "<p>The source phone number for the test.</p>",
         "VoiceCallEntryPointParameters$DestinationPhoneNumber": "<p>The destination phone number for the test.</p>"
+      }
+    },
+    "PhoneNumberConfig": {
+      "base": "<p>Configuration settings for phone type and phone number.</p>",
+      "refs": {
+        "PhoneNumberConfigs$member": null
+      }
+    },
+    "PhoneNumberConfigs": {
+      "base": "<p>The list of phone number configuration settings for each channel.</p>",
+      "refs": {
+        "CreateUserRequest$PhoneNumberConfigs": "<p>The list of phone number configuration settings for each channel.</p>",
+        "UpdateUserConfigRequest$PhoneNumberConfigs": "<p>The list of phone number configuration settings for each channel.</p>",
+        "User$PhoneNumberConfigs": "<p>The list of phone number configuration settings for each channel.</p>",
+        "UserSearchSummary$PhoneNumberConfigs": "<p>The list of phone number configuration settings for each channel.</p>"
       }
     },
     "PhoneNumberCountryCode": {
@@ -9080,6 +9162,7 @@
     "PhoneType": {
       "base": null,
       "refs": {
+        "PhoneNumberConfig$PhoneType": "<p>The phone type. Valid values: SOFT_PHONE, DESK_PHONE.</p>",
         "UserPhoneConfig$PhoneType": "<p>The phone type.</p>"
       }
     },
@@ -11422,6 +11505,13 @@
       "base": null,
       "refs": {}
     },
+    "SensitivePhoneNumber": {
+      "base": null,
+      "refs": {
+        "PhoneNumberConfig$PhoneNumber": "<p>The phone number for the user's desk phone.</p>",
+        "UserPhoneConfig$DeskPhoneNumber": "<p>The phone number for the user's desk phone.</p>"
+      }
+    },
     "ServiceQuotaExceededException": {
       "base": "<p>The service quota has been exceeded.</p>",
       "refs": {}
@@ -13144,6 +13234,10 @@
       "base": null,
       "refs": {}
     },
+    "UpdateUserConfigRequest": {
+      "base": null,
+      "refs": {}
+    },
     "UpdateUserHierarchyGroupNameRequest": {
       "base": null,
       "refs": {}
@@ -13360,6 +13454,7 @@
         "ListUserProficienciesRequest$UserId": "<p>The identifier of the user account.</p>",
         "PutUserStatusRequest$UserId": "<p>The identifier of the user.</p>",
         "TrafficDistributionGroupUserSummary$UserId": "<p>The identifier for the user. This can be the ID or the ARN of the user.</p>",
+        "UpdateUserConfigRequest$UserId": "<p>The identifier of the user account.</p>",
         "UpdateUserHierarchyRequest$UserId": "<p>The identifier of the user account.</p>",
         "UpdateUserIdentityInfoRequest$UserId": "<p>The identifier of the user account.</p>",
         "UpdateUserPhoneConfigRequest$UserId": "<p>The identifier of the user account.</p>",
@@ -13408,7 +13503,7 @@
     "UserPhoneConfig": {
       "base": "<p>Contains information about the phone configuration settings for a user.</p>",
       "refs": {
-        "CreateUserRequest$PhoneConfig": "<p>The phone settings for the user.</p>",
+        "CreateUserRequest$PhoneConfig": "<p>The phone settings for the user. This parameter is optional. If not provided, the user can be configured using channel-specific parameters such as <code>AutoAcceptConfigs</code>, <code>AfterContactWorkConfigs</code>, <code>PhoneNumberConfigs</code>, <code>PersistentConnectionConfigs</code>, and <code>VoiceEnhancementConfigs</code>.</p>",
         "UpdateUserPhoneConfigRequest$PhoneConfig": "<p>Information about phone configuration settings for the user.</p>",
         "User$PhoneConfig": "<p>Information about the phone configuration for the user.</p>",
         "UserSearchSummary$PhoneConfig": null
@@ -13889,6 +13984,27 @@
       "base": "<p>Parameters for initiating a voice call test.</p>",
       "refs": {
         "TestCaseEntryPoint$VoiceCallEntryPointParameters": "<p>Parameters for voice call entry point.</p>"
+      }
+    },
+    "VoiceEnhancementConfig": {
+      "base": "<p>Configuration settings for voice enhancement.</p>",
+      "refs": {
+        "VoiceEnhancementConfigs$member": null
+      }
+    },
+    "VoiceEnhancementConfigs": {
+      "base": "<p>The list of voice enhancement configuration settings for each channel.</p>",
+      "refs": {
+        "CreateUserRequest$VoiceEnhancementConfigs": "<p>The list of voice enhancement configuration settings for each channel.</p>",
+        "UpdateUserConfigRequest$VoiceEnhancementConfigs": "<p>The list of voice enhancement configuration settings for each channel.</p>",
+        "User$VoiceEnhancementConfigs": "<p>The list of voice enhancement configuration settings for each channel.</p>",
+        "UserSearchSummary$VoiceEnhancementConfigs": "<p>The list of voice enhancement configuration settings for each channel.</p>"
+      }
+    },
+    "VoiceEnhancementMode": {
+      "base": null,
+      "refs": {
+        "VoiceEnhancementConfig$VoiceEnhancementMode": "<p>The voice enhancement mode.</p>"
       }
     },
     "VoiceRecordingConfiguration": {

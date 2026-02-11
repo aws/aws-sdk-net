@@ -80,6 +80,7 @@ namespace Amazon.EC2.Model
         private string _ramdiskId;
         private string _rootDeviceName;
         private DeviceType _rootDeviceType;
+        private List<InstanceSecondaryInterface> _secondaryInterfaces = AWSConfigs.InitializeCollections ? new List<InstanceSecondaryInterface>() : null;
         private List<GroupIdentifier> _securityGroups = AWSConfigs.InitializeCollections ? new List<GroupIdentifier>() : null;
         private bool? _sourceDestCheck;
         private string _spotInstanceRequestId;
@@ -1006,6 +1007,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetRootDeviceType()
         {
             return this._rootDeviceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryInterfaces. 
+        /// <para>
+        /// The secondary interfaces for the instance.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<InstanceSecondaryInterface> SecondaryInterfaces
+        {
+            get { return this._secondaryInterfaces; }
+            set { this._secondaryInterfaces = value; }
+        }
+
+        // Check to see if SecondaryInterfaces property is set
+        internal bool IsSetSecondaryInterfaces()
+        {
+            return this._secondaryInterfaces != null && (this._secondaryInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

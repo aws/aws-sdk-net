@@ -31,9 +31,9 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeCodeInterpreter operation.
-    /// Executes code within an active code interpreter session in Amazon Bedrock. This operation
-    /// processes the provided code, runs it in a secure environment, and returns the execution
-    /// results including output, errors, and generated visualizations.
+    /// Executes code within an active code interpreter session in Amazon Bedrock AgentCore.
+    /// This operation processes the provided code, runs it in a secure environment, and returns
+    /// the execution results including output, errors, and generated visualizations.
     /// 
     ///  
     /// <para>

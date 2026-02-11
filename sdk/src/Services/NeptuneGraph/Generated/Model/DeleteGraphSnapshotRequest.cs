@@ -31,7 +31,7 @@ namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGraphSnapshot operation.
-    /// Deletes the specifed graph snapshot.
+    /// Deletes the specified graph snapshot.
     /// </summary>
     public partial class DeleteGraphSnapshotRequest : AmazonNeptuneGraphRequest
     {

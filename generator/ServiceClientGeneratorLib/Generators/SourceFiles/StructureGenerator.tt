@@ -177,7 +177,9 @@ namespace <#=this.Config.Namespace#>.Model
             {
                 foreach(var member in this.Structure.Members)
                 {
-                    if (member.IsExcluded || (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream))
+                    this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier);
+                    if (member.IsExcluded || (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream)
+                    ||  (injectModifier != null && injectModifier.SkipPrivateMember))
                         continue;
 
                     if (this.Config.ServiceModel.Customizations.FlattenShapes(this.Structure.Name).Contains(member.ModeledName))
@@ -196,7 +198,13 @@ namespace <#=this.Config.Namespace#>.Model
                         if (excludeMembersList.Contains(member.ModeledName))
                             continue;
                     }
-                    if (this.Config.ServiceModel.Customizations.TryGetPropertyModifier(member.OwningShape.Name, member.ModeledName, out var injectModifier) && injectModifier.InjectXmlPrivateMemberAssignment.Count > 0)
+                    // for s3 streaming response payload members, we don't generate a member on the response structure since all the response classes
+                    // inherit StreamResponse which already contains its own streaming member.
+                    if (this.Config.ServiceId == "S3" && this.Operation != null && this.Operation.ResponseStructure != null && this.Operation.ResponseStructure.Name == this.Structure.Name && member.IsStreaming)
+                    {
+                        continue;   
+                    }
+                    if (injectModifier != null && injectModifier.InjectXmlPrivateMemberAssignment.Count > 0)
                     {
 
 #>
@@ -263,6 +271,12 @@ namespace <#=this.Config.Namespace#>.Model
                     if (this.StructureType == StructureType.Request && member.ModelShape.IsEventStream)
                     {
                         eventPublisherDocumentation = GenerateEventPublisherDocumentation(member);
+                    }
+                    // for s3 streaming response payload members, we don't generate a member on the response structure since all the response classes
+                    // inherit StreamResponse which already contains its own streaming member.
+                    if (this.Config.ServiceId == "S3" && this.Operation != null && this.Operation.ResponseStructure != null && this.Operation.ResponseStructure.Name == this.Structure.Name && member.IsStreaming)
+                    {
+                        continue;   
                     }
 #>
 <# this.FormatPropertyDocumentation(member, null, eventPublisherDocumentation, member.IsCollection); #>

@@ -56,10 +56,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AfterContactWorkConfigs", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AfterContactWorkConfigPerChannel, AfterContactWorkConfigPerChannelUnmarshaller>(AfterContactWorkConfigPerChannelUnmarshaller.Instance);
+                    unmarshalledObject.AfterContactWorkConfigs = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("AutoAcceptConfigs", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AutoAcceptConfig, AutoAcceptConfigUnmarshaller>(AutoAcceptConfigUnmarshaller.Instance);
+                    unmarshalledObject.AutoAcceptConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DirectoryUserId", targetDepth))
@@ -98,10 +110,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PersistentConnectionConfigs", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PersistentConnectionConfig, PersistentConnectionConfigUnmarshaller>(PersistentConnectionConfigUnmarshaller.Instance);
+                    unmarshalledObject.PersistentConnectionConfigs = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PhoneConfig", targetDepth))
                 {
                     var unmarshaller = UserPhoneConfigUnmarshaller.Instance;
                     unmarshalledObject.PhoneConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("PhoneNumberConfigs", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PhoneNumberConfig, PhoneNumberConfigUnmarshaller>(PhoneNumberConfigUnmarshaller.Instance);
+                    unmarshalledObject.PhoneNumberConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoutingProfileId", targetDepth))
@@ -126,6 +150,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Username = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("VoiceEnhancementConfigs", targetDepth))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<VoiceEnhancementConfig, VoiceEnhancementConfigUnmarshaller>(VoiceEnhancementConfigUnmarshaller.Instance);
+                    unmarshalledObject.VoiceEnhancementConfigs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

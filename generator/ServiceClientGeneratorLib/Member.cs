@@ -477,6 +477,20 @@ namespace ServiceClientGenerator
             }
         }
 
+        public string GetCustomDocumentationForMember()
+        {
+            var sb = new StringBuilder();
+            if (this.model.Customizations.TryGetPropertyModifier(this.OwningShape.Name, this.ModeledName, out var modifier) && modifier.AdditionalDocumentation.Count > 0)
+            {
+
+                foreach (var doc in modifier.AdditionalDocumentation)
+                {
+                    sb.Append(doc);   
+                }
+            }
+            return sb.ToString();
+        }
+
         /// <summary>
         /// Used to get the proper type of the member so that it can be used in the generator for proper code
         /// </summary>

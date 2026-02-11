@@ -110,7 +110,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// The name of the device as defined by the connector or third-party system.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string ConnectorDeviceName
         {
             get { return this._connectorDeviceName; }

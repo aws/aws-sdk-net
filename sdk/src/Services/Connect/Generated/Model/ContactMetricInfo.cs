@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The object that contains information about metric being requested.
+    /// Contains the details of a metric to be retrieved for a contact. Use this object to
+    /// specify which contact level metrics you want to include in your GetContactMetrics
+    /// request.
     /// </summary>
     public partial class ContactMetricInfo
     {
@@ -39,7 +41,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the metric being retrieved in type String.
+        /// The name of the metric to retrieve. Supported values are POSITION_IN_QUEUE (returns
+        /// the contact's current position in the queue) and ESTIMATED_WAIT_TIME (returns the
+        /// predicted wait time in seconds).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

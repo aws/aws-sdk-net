@@ -181,6 +181,14 @@ namespace Amazon.SSOAdmin.Model
         }
 
         /// <summary>
+        /// Paginator for ListRegions operation
+        ///</summary>
+        public IListRegionsPaginator ListRegions(ListRegionsRequest request) 
+        {
+            return new ListRegionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
         public IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request) 

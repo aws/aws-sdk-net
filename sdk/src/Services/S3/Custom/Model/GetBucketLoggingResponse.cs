@@ -21,9 +21,6 @@ using Amazon.Runtime;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>
-    /// Returns information about the  GetBucketLogging response and response metadata.
-    /// </summary>
     public partial class GetBucketLoggingResponse : AmazonWebServiceResponse
     {
         S3BucketLoggingConfig BucketLoggingConfigCustomGetter()

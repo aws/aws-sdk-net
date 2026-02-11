@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// Source-separated spend insights that provide independent analysis for AWS predictions
-    /// and partner estimates
+    /// Source-separated spend insights that provide independent analysis for AWS recommendations
+    /// and partner estimates.
     /// </summary>
     public partial class AwsProductsSpendInsightsBySource
     {
@@ -41,7 +41,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property AWS. 
         /// <para>
-        /// AI-generated insights including recommended products from AWS
+        /// AI-generated insights including recommended products from AWS.
         /// </para>
         /// </summary>
         public AwsProductInsights AWS
@@ -59,8 +59,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Partner. 
         /// <para>
-        /// Partner-sourced insights derived from Pricing Calculator URLs including detailed service
-        /// costs and optimizations
+        /// Partner-sourced insights derived from Pricing Calculator URLs.
         /// </para>
         /// </summary>
         public AwsProductInsights Partner

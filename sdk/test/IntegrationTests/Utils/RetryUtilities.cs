@@ -5,11 +5,9 @@ using Amazon.Runtime.Internal.Transform;
 using AWSSDK_DotNet.CommonTest.Utils;
 using AWSSDK_DotNet.IntegrationTests.Tests;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
@@ -23,10 +21,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         public static void ConfigureClient(AmazonServiceClient client)
         {
             if (FailOriginalRequests)
+            {
                 ForceConfigureClient(client);
+            }
 
             // Attach events to client
-
             client.BeforeRequestEvent += (s, e) =>
             {
                 if (TestClockSkewCorrection)
@@ -100,8 +99,16 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 offset = General.IncorrectPositiveClockSkewOffset;
             else
                 offset = General.IncorrectNegativeClockSkewOffset;
-            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-new object[] {AWSConfigs.RegionEndpoint.ToString(), offset });
+
+            ReflectionHelpers.Invoke(
+                typeof(CorrectClockSkew), 
+                "SetClockCorrectionForEndpoint",
+                new object[] 
+                {
+                    AWSConfigs.RegionEndpoint.ToString(),
+                    offset 
+                }
+            );
         }
 
         #endregion
@@ -110,9 +117,12 @@ new object[] {AWSConfigs.RegionEndpoint.ToString(), offset });
 
         public static void ForceConfigureClient(AmazonServiceClient client)
         {
+#if NETFRAMEWORK
             RetryHttpRequestFactory.AddToClient(client);
+#endif
         }
 
+#if NETFRAMEWORK
         private class RetryHttpRequestFactory : IHttpRequestFactory<Stream>
         {
             public IHttpRequest<Stream> CreateHttpRequest(Uri requestUri)
@@ -159,9 +169,8 @@ new object[] {AWSConfigs.RegionEndpoint.ToString(), offset });
                     throw new WebException("Newp!", null, WebExceptionStatus.ConnectionClosed, null);
                 }
             }
-
-#if BCL
-            public override System.Threading.Tasks.Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
+            
+            public override Task<IWebResponseData> GetResponseAsync(System.Threading.CancellationToken cancellationToken)
             {
                 if (IsRetry || !IsRewindable)
                     return base.GetResponseAsync(cancellationToken);
@@ -171,7 +180,6 @@ new object[] {AWSConfigs.RegionEndpoint.ToString(), offset });
                     throw new WebException("Newp!", null, WebExceptionStatus.ConnectionClosed, null);
                 }
             }
-#endif
 
             public override void ConfigureRequest(IRequestContext requestContext)
             {
@@ -181,7 +189,7 @@ new object[] {AWSConfigs.RegionEndpoint.ToString(), offset });
                 IsRewindable = requestContext.Request.IsRequestStreamRewindable();
             }
         }
-
+#endif
         #endregion
     }
 }

@@ -46,6 +46,22 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGeneralAuthorization())
+            {
+                context.Writer.WritePropertyName("GeneralAuthorization");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectGeneralAuthorizationListValue in requestObject.GeneralAuthorization)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AuthMaterialMarshaller.Instance;
+                    marshaller.Marshall(requestObjectGeneralAuthorizationListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetOAuth())
             {
                 context.Writer.WritePropertyName("oAuth");

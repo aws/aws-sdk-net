@@ -41,8 +41,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property AwsPartition. 
         /// <para>
-        /// AWS partition where the opportunity will be deployed. Possible values: 'aws-eusc'
-        /// for AWS European Sovereign Cloud, <c>null</c> for all other partitions
+        /// AWS partition where the opportunity will be deployed. Possible values: <c>aws-eusc</c>
+        /// for AWS European Sovereign Cloud, <c>null</c> for all other partitions.
         /// </para>
         /// </summary>
         public AwsPartition AwsPartition

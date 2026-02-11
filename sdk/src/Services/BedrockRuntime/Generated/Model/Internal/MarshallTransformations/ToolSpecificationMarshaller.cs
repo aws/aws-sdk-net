@@ -69,6 +69,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Name);
             }
 
+            if(requestObject.IsSetStrict())
+            {
+                context.Writer.WritePropertyName("strict");
+                context.Writer.WriteBooleanValue(requestObject.Strict.Value);
+            }
+
         }
 
         /// <summary>

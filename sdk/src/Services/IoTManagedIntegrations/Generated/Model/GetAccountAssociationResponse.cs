@@ -40,6 +40,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         private string _connectorDestinationId;
         private string _description;
         private string _errorMessage;
+        private GeneralAuthorizationName _generalAuthorization;
         private string _name;
         private string _oAuthAuthorizationUrl;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -159,6 +160,24 @@ namespace Amazon.IoTManagedIntegrations.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GeneralAuthorization. 
+        /// <para>
+        /// The General Authorization reference by authorization material name.
+        /// </para>
+        /// </summary>
+        public GeneralAuthorizationName GeneralAuthorization
+        {
+            get { return this._generalAuthorization; }
+            set { this._generalAuthorization = value; }
+        }
+
+        // Check to see if GeneralAuthorization property is set
+        internal bool IsSetGeneralAuthorization()
+        {
+            return this._generalAuthorization != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the account association.
@@ -181,10 +200,11 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// Gets and sets the property OAuthAuthorizationUrl. 
         /// <para>
         /// Third party IoT platform OAuth authorization server URL backed with all the required
-        /// parameters to perform end-user authentication.
+        /// parameters to perform end-user authentication. This field will be empty when using
+        /// General Authorization flows that do not require OAuth.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1024)]
         public string OAuthAuthorizationUrl
         {
             get { return this._oAuthAuthorizationUrl; }

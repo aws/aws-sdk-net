@@ -41,6 +41,7 @@ namespace Amazon.GeoMaps.Model
     /// </summary>
     public partial class GetStyleDescriptorRequest : AmazonGeoMapsRequest
     {
+        private Buildings _buildings;
         private ColorScheme _colorScheme;
         private ContourDensity _contourDensity;
         private string _key;
@@ -49,6 +50,37 @@ namespace Amazon.GeoMaps.Model
         private Terrain _terrain;
         private Traffic _traffic;
         private List<string> _travelModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Buildings. 
+        /// <para>
+        /// Adjusts how building details are rendered on the map.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following building styles are currently supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Buildings3D</c>: Displays buildings as three-dimensional extrusions on the map.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>Buildings3D</c> is valid only for the <c>Standard</c> and <c>Monochrome</c> map
+        /// styles.
+        /// </para>
+        /// </summary>
+        public Buildings Buildings
+        {
+            get { return this._buildings; }
+            set { this._buildings = value; }
+        }
+
+        // Check to see if Buildings property is set
+        internal bool IsSetBuildings()
+        {
+            return this._buildings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ColorScheme. 
@@ -91,7 +123,8 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only for the <c>Standard</c> map style.
+        /// This parameter is valid only for the <c>Standard</c>, <c>Monochrome</c>, and <c>Hybrid</c>
+        /// map styles.
         /// </para>
         /// </summary>
         public ContourDensity ContourDensity
@@ -240,9 +273,15 @@ namespace Amazon.GeoMaps.Model
         ///  <c>Hillshade</c>: Displays the physical terrain details through shading and highlighting
         /// of elevation change and geographic features.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Terrain3D</c>: Displays physical terrain details and elevations as a three-dimensional
+        /// model.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This parameter is valid only for the <c>Standard</c> map style.
+        ///  <c>Hillshade</c> is valid only for the <c>Standard</c> and <c>Monochrome</c> map
+        /// styles.
         /// </para>
         /// </summary>
         public Terrain Terrain

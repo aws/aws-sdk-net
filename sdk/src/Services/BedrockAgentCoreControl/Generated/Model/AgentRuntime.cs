@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Contains information about an agent runtime. An agent runtime is the execution environment
-    /// for a Amazon Bedrock Agent.
+    /// for a Amazon Bedrock AgentCore Agent.
     /// </summary>
     public partial class AgentRuntime
     {

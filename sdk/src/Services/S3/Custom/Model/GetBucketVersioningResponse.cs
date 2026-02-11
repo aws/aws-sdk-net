@@ -21,10 +21,7 @@ using Amazon.Runtime;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>
-    /// Returns information about the  GetBucketVersioning response and response metadata.
-    /// </summary>
-    public class GetBucketVersioningResponse : AmazonWebServiceResponse
+    public partial class GetBucketVersioningResponse : AmazonWebServiceResponse
     {
         private S3BucketVersioningConfig config;
 

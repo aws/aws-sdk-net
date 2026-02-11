@@ -108,6 +108,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AvailabilityZone", StringUtils.FromString(publicRequest.AvailabilityZone));
                 }
+                if(publicRequest.IsSetBackupRetentionPeriod())
+                {
+                    request.Parameters.Add("BackupRetentionPeriod", StringUtils.FromInt(publicRequest.BackupRetentionPeriod));
+                }
                 if(publicRequest.IsSetBackupTarget())
                 {
                     request.Parameters.Add("BackupTarget", StringUtils.FromString(publicRequest.BackupTarget));
@@ -255,6 +259,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPort())
                 {
                     request.Parameters.Add("Port", StringUtils.FromInt(publicRequest.Port));
+                }
+                if(publicRequest.IsSetPreferredBackupWindow())
+                {
+                    request.Parameters.Add("PreferredBackupWindow", StringUtils.FromString(publicRequest.PreferredBackupWindow));
                 }
                 if(publicRequest.IsSetProcessorFeatures())
                 {

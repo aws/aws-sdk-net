@@ -24,6 +24,7 @@ using System.Collections.Generic;
 
 namespace Amazon.Runtime
 {
+    [AWSIsBackwardsCompatible]
     public interface IRequestContext
     {
         AmazonWebServiceRequest OriginalRequest { get; set; }

@@ -134,6 +134,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     unmarshalledObject.PortalArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("portalCustomDomain", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PortalCustomDomain = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("portalEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

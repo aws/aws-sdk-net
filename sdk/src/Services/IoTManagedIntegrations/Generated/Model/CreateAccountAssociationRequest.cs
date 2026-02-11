@@ -38,6 +38,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         private string _clientToken;
         private string _connectorDestinationId;
         private string _description;
+        private GeneralAuthorizationName _generalAuthorization;
         private string _name;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -98,6 +99,24 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GeneralAuthorization. 
+        /// <para>
+        /// The General Authorization reference by authorization material name.
+        /// </para>
+        /// </summary>
+        public GeneralAuthorizationName GeneralAuthorization
+        {
+            get { return this._generalAuthorization; }
+            set { this._generalAuthorization = value; }
+        }
+
+        // Check to see if GeneralAuthorization property is set
+        internal bool IsSetGeneralAuthorization()
+        {
+            return this._generalAuthorization != null;
         }
 
         /// <summary>

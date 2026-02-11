@@ -65,7 +65,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// If you submit a request with the same client token but a change in other parameters
-        /// within the 8-hour idempotency window, DynamoDB returns an <c>ImportConflictException</c>.
+        /// within the 8-hour idempotency window, DynamoDB returns an <c>ExportConflictException</c>.
         /// </para>
         /// </summary>
         public string ClientToken

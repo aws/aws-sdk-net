@@ -370,6 +370,12 @@
     <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.GlobalAuroraConfiguration.GlobalClusterIdentifier</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z][0-9A-Za-z-:._]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.GlobalAuroraConfiguration.TimeoutMinutes</property>
     <min>1</min>
   </property-value-rule>

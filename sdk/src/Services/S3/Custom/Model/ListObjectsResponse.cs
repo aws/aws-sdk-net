@@ -21,9 +21,6 @@ using Amazon.Runtime;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>
-    /// Returns information about the  ListObjects response and response metadata.
-    /// </summary>
     public partial class ListObjectsResponse : AmazonWebServiceResponse
     {
         private string NextMarkerCustomGetter()

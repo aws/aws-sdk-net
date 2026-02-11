@@ -42,7 +42,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// The proxy settings to use when calling AssumeRole.
         /// </summary>
-#if BCL
+#if NETFRAMEWORK
         public WebProxy ProxySettings { get; set; }
 #elif NETSTANDARD
         public IWebProxy ProxySettings { get; set; }
@@ -82,7 +82,7 @@ namespace Amazon.Runtime
         public Func<string> MfaTokenCodeCallback { get; set; }
 
         /// <summary>
-        /// The source identity specified by the principal that is calling the <code>AssumeRole</code>
+        /// The source identity specified by the principal that is calling the <c>AssumeRole</c>
         /// operation.
         /// </summary>
         public string SourceIdentity { get; set; }

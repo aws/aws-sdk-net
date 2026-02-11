@@ -433,6 +433,7 @@ namespace ServiceClientGenerator
         public const string FlattenShapeKey = "flattenShapes";
         public const string ExcludeShapesKey = "excludeShapes";
         public const string AlternateLocationNameKey = "alternateLocationName";
+        public const string MergedEnumsKey = "mergedEnums";
 
         JsonData _documentRoot;
 
@@ -711,16 +712,19 @@ namespace ServiceClientGenerator
         }
 
         /// <summary>
-        /// Overrides the base class that structures inherit from.
-        /// Here is an example of the usage
+        /// Gets the alternate base class that a shape should inherit from instead of the default base class.
+        /// This customization allows generated shapes to inherit from custom base classes that provide
+        /// shared functionality or properties across multiple shapes.
+        /// Example usage:
         ///     "inheritAlternateBaseClass":{
         ///        "CreateBucketRequest": {
         ///          "alternateBaseClass" : "PutWithAclRequest"
         ///        }
         ///    }
+        /// This makes CreateBucketRequest inherit from PutWithAclRequest instead of AmazonWebServiceRequest.
         /// </summary>
-        /// <param name="shapeName"></param>
-        /// <returns></returns>
+        /// <param name="shapeName">The name of the shape to check for alternate base class customization</param>
+        /// <returns>The alternate base class name if configured, null if using default inheritance</returns>
         public string InheritAlternateBaseClass(string shapeName)
         {
             var data = _documentRoot[InheritAlternateBaseClassKey];
@@ -1009,6 +1013,51 @@ namespace ServiceClientGenerator
                 .Select(entry => entry.ToString());
 
             return new HashSet<string>(excludeShapes ?? new string[0]);
+        }
+
+        /// <summary>
+        /// Gets the configuration for enums that should be merged into existing custom enums instead of being generated separately.
+        /// This is used primarily for S3 where certain service model enums need to be merged into existing custom enum types
+        /// to maintain backward compatibility.
+        /// 
+        /// Example usage:
+        /// "mergedEnums": {
+        ///   "BucketLogsPermission": {
+        ///     "mergeInto": "Permission"
+        ///   }
+        /// }
+        /// </summary>
+        /// <returns>Dictionary mapping source enum name to target enum name</returns>
+        public Dictionary<string, string> MergedEnums
+        {
+            get
+            {
+                var mergedEnums = new Dictionary<string, string>();
+                
+                var data = _documentRoot[MergedEnumsKey];
+                if (data == null) return mergedEnums;
+
+                foreach (var enumName in data.PropertyNames)
+                {
+                    var enumData = data[enumName];
+                    if (enumData != null && enumData["mergeInto"] != null)
+                    {
+                        mergedEnums[enumName] = enumData["mergeInto"].ToString();
+                    }
+                }
+
+                return mergedEnums;
+            }
+        }
+
+        /// <summary>
+        /// Determines if the specified enum should be merged into another existing enum.
+        /// </summary>
+        /// <param name="enumName">The name of the enum to check</param>
+        /// <returns>True if the enum should be merged, false otherwise</returns>
+        public bool IsEnumMerged(string enumName)
+        {
+            return MergedEnums.ContainsKey(enumName);
         }
 
         #region ShapeModifier
@@ -1464,6 +1513,8 @@ namespace ServiceClientGenerator
             public const string SkipSetterKey = "skipSetter";
             public const string InjectXmlMarshallCodeKey = "injectXmlMarshallCode";
             public const string SkipXmlIsSetKey = "skipXmlIsSet";
+            public const string SkipPrivateMemberKey = "skipPrivateMember";
+            public const string AdditionalDocumentationKey = "additionalDocumentation";
 
             private readonly string _modelPropertyName;
             private readonly JsonData _modifierData;
@@ -1474,7 +1525,9 @@ namespace ServiceClientGenerator
             private readonly HashSet<string> _injectedXmlPropertySetter;
             private readonly HashSet<string> _injectXmlMarshallCode;
             private readonly bool _skipSetter;
+            private readonly bool _skipPrivateMember;
             private readonly bool _skipXmlIsSet;
+            private readonly HashSet<string> _additionalDocumentation;
 
             internal PropertyModifier(string modelPropertyName, JsonData modifierData)
             {
@@ -1487,8 +1540,20 @@ namespace ServiceClientGenerator
                 _injectedXmlPropertySetter = ParseInjectXmlPropertySetter();
                 _skipSetter = ParseXmlSkipSetter();
                 _skipXmlIsSet = ParseSkipXmlIsSet();
+                _skipPrivateMember = ParseSkipPrivateMember();
                 _injectXmlMarshallCode = ParseInjectXmlMarshallCode();
+                _additionalDocumentation = ParseAdditionalDocumentation();
             }
+
+            private HashSet<string> ParseAdditionalDocumentation()
+            {
+                var data = _modifierData[AdditionalDocumentationKey]?.Cast<object>()
+                    .Select(x => x.ToString());
+
+                return new HashSet<string>(data ?? new string[0]);
+            }
+
+            public HashSet<string> AdditionalDocumentation { get { return _additionalDocumentation; } }
 
             private bool ParseSkipXmlIsSet()
             {
@@ -1509,10 +1574,32 @@ namespace ServiceClientGenerator
             ///   </FilterRule>
             /// Use this customization when you want to skip the IsSet() checks for rest-xml marshalling
             ///        "Name": {
-            ///            "skipXmlIsSet" : true
+            ///            "skipPrivateMember" : true
             ///        }
             /// </summary>
             public bool SkipXmlIsSet { get { return _skipXmlIsSet; } }
+
+            private bool ParseSkipPrivateMember()
+            {
+                var data = _modifierData[SkipPrivateMemberKey];
+                return data != null && data.IsBoolean ? (bool)data : false;
+            }
+
+            /// <summary>
+            /// Use this customization when you want to skip generating the private backing field for a property.
+            /// This is useful when the property gets its value from another property or custom logic rather than
+            /// storing its own value in a private field.
+            /// 
+            /// Example: ContentType property that gets its value from Headers.ContentType
+            /// "ContentType":{
+            ///    "skipPrivateMember": true,
+            ///    "injectXmlPropertyGetter": ["get { return this.Headers.ContentType; }"],
+            ///    "injectXmlPropertySetter": ["set { this.Headers.ContentType = value; }"]
+            /// }
+            /// 
+            /// This prevents generating: private string _contentType;
+            /// </summary>
+            public bool SkipPrivateMember { get { return _skipPrivateMember; } }
 
             private HashSet<string> ParseInjectXmlMarshallCode()
             {
@@ -1825,6 +1912,8 @@ namespace ServiceClientGenerator
                 modifiers.DeprecatedMessage = (string)operation[OperationModifiers.DeprecatedMessageKey];
             if (operation[OperationModifiers.StopPaginationOnSameTokenKey] != null && operation[OperationModifiers.StopPaginationOnSameTokenKey].IsBoolean)
                 modifiers.StopPaginationOnSameToken = (bool)operation[OperationModifiers.StopPaginationOnSameTokenKey];
+            if (operation[OperationModifiers.SkipChecksumDuringMarshallingKey] != null && operation[OperationModifiers.SkipChecksumDuringMarshallingKey].IsBoolean)
+                modifiers.SkipChecksumDuringMarshalling = (bool)operation[OperationModifiers.SkipChecksumDuringMarshallingKey];
             if (operation[OperationModifiers.MarshallNameOverrides] != null &&
                 operation[OperationModifiers.MarshallNameOverrides].IsArray)
             {
@@ -1893,6 +1982,7 @@ namespace ServiceClientGenerator
         public class OperationModifiers
         {
             public const string OperationModifiersKey = "operationModifiers";
+            public const string SkipChecksumDuringMarshallingKey = "skipChecksumDuringMarshalling";
             public const string NameKey = "name";
             public const string ExcludeKey = "exclude";
             public const string InternalKey = "internal";
@@ -2012,6 +2102,12 @@ namespace ServiceClientGenerator
                 set;
             }
 
+            public bool SkipChecksumDuringMarshalling
+            {
+                get;
+                set;
+            }
+
             public void AddMarshallNameOverride(string shapeName, JsonData overrides)
             {
                 if (_marshallNameOverrides == null)
@@ -2080,6 +2176,14 @@ namespace ServiceClientGenerator
             {
             }
 
+            /// <summary>
+            /// Creates an override class that specifies overrides for a member
+            /// </summary>
+            /// <param name="dataType">The new custom type for a member</param>
+            /// <param name="marshaller">The custom marshaller for a member</param>
+            /// <param name="unmarshaller">The custom unmarshaller for a member</param>
+            /// <param name="isFlattened">Whether the data type should be treated as flattened</param>
+            /// <param name="alternateLocationName">Alternate location name for marshalling</param>
             public DataTypeOverride(string dataType, string marshaller ,string unmarshaller, bool isFlattened, string alternateLocationName)
             {
                 this.DataType = dataType;
@@ -2090,7 +2194,12 @@ namespace ServiceClientGenerator
             }
 
             /// <summary>
-            /// The new datatype for the property
+            /// Gets the custom .NET data type to use instead of the generated type.
+            /// This replaces the type that would be automatically generated from the service model.
+            /// Example usage:
+            ///     "CannedACL":{
+            ///        "Type" : "S3CannedACL"
+            ///    }
             /// </summary>
             public string DataType
             {
@@ -2099,7 +2208,12 @@ namespace ServiceClientGenerator
             }
 
             /// <summary>
-            /// The new marshaller for the property
+            /// Gets the custom marshaller method to use for serializing this property.
+            /// This specifies how to convert the .NET object to the wire format when sending requests.
+            /// Example usage:
+            ///     "CannedACL":{
+            ///        "Marshaller" : "StringUtils.FromString"
+            ///    }
             /// </summary>
             public string Marshaller
             {
@@ -2108,7 +2222,12 @@ namespace ServiceClientGenerator
             }
 
             /// <summary>
-            /// The new unmarshaller for the property
+            /// Gets the custom unmarshaller class to use for deserializing this property.
+            /// This specifies how to convert the wire format back to the .NET object when processing responses.
+            /// Example usage:
+            ///     "ListPartsOutput":{
+            ///        "Unmarshaller" : "StringUnmarshaller"
+            ///    }
             /// </summary>
             public string Unmarshaller
             {
@@ -2117,7 +2236,13 @@ namespace ServiceClientGenerator
             }
 
             /// <summary>
-            /// Indicates whether the new data type is flattened (only matters for lists and maps)
+            /// Gets whether the data type should be treated as flattened. This only applies to lists and maps.
+            /// - true: Items are placed directly in the parent element without wrapper elements
+            /// - false: Items are wrapped in container elements (default behavior)
+            /// Example usage:
+            ///     "Events":{
+            ///        "isFlattened" : true
+            ///    }
             /// </summary>
             public bool IsFlattened
             {
@@ -2126,7 +2251,12 @@ namespace ServiceClientGenerator
             }
 
             /// <summary>
-            /// Specifies an alternate location name for the data type override.
+            /// Gets an alternate location name to use during marshalling instead of the property name.
+            /// This allows the property to be marshalled using a different name than its .NET property name.
+            /// Example usage:
+            ///     "ErrorDocument":{
+            ///        "alternateLocationName" : "ErrorDocument/Key"
+            ///    }
             /// </summary>
             public string AlternateLocationName
             {

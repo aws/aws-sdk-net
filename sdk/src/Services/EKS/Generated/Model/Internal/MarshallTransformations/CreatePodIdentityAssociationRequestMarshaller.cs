@@ -99,6 +99,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Namespace);
             }
 
+            if(publicRequest.IsSetPolicy())
+            {
+                context.Writer.WritePropertyName("policy");
+                context.Writer.WriteStringValue(publicRequest.Policy);
+            }
+
             if(publicRequest.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");

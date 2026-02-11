@@ -34,6 +34,7 @@ namespace Amazon.Runtime
     /// This interface is the read only access to the ClientConfig object used when setting up service clients. Once service clients
     /// are initiated the config object should not be changed to avoid issues with using a service client in a multi threaded environment.
     /// </summary>
+    [AWSIsBackwardsCompatible]
     public partial interface IClientConfig
     {
         /// <summary>

@@ -31,9 +31,9 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBrowserSession operation.
-    /// Retrieves detailed information about a specific browser session in Amazon Bedrock.
-    /// This operation returns the session's configuration, current status, associated streams,
-    /// and metadata.
+    /// Retrieves detailed information about a specific browser session in Amazon Bedrock
+    /// AgentCore. This operation returns the session's configuration, current status, associated
+    /// streams, and metadata.
     /// 
     ///  
     /// <para>

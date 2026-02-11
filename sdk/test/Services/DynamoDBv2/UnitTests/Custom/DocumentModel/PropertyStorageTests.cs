@@ -54,6 +54,19 @@ namespace AWSSDK_DotNet.UnitTests
             public object FromEntry(DynamoDBEntry entry) => null;
             public DynamoDBEntry ToEntry(object value) => null;
         }
+        private class ValidPropertyConverter : IPropertyConverter
+        {
+            public DynamoDBEntry ToEntry(object value) => null;
+            public object FromEntry(DynamoDBEntry entry) => null;
+        }
+
+        private class NotInstantiableConverter : IPropertyConverter
+        {
+            private readonly int _value;
+            public NotInstantiableConverter(int value) { _value = value; }
+            public DynamoDBEntry ToEntry(object value) => null;
+            public object FromEntry(DynamoDBEntry entry) => null;
+        }
 
 
         [TestMethod]
@@ -241,7 +254,6 @@ namespace AWSSDK_DotNet.UnitTests
             storage.IndexNames = new List<string>();
             storage.FlattenProperties = new List<PropertyStorage>();
 
-            // Should throw for int property
             storage.Validate(_context);
         }
 
@@ -273,6 +285,95 @@ namespace AWSSDK_DotNet.UnitTests
             CollectionAssert.Contains(storage.IndexNames, "IndexA");
             CollectionAssert.Contains(storage.IndexNames, "IndexB");
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Validate_ThrowsIfUpdateBehaviorIfNotExists_OnHashKey()
+        {
+            var storage = CreatePropertyStorage("Id");
+            storage.IsHashKey = true;
+            storage.UpdateBehaviorMode = UpdateBehavior.IfNotExists;
+            storage.Validate(null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Validate_ThrowsIfUpdateBehaviorIfNotExists_OnRangeKey()
+        {
+            var storage = CreatePropertyStorage("Name");
+            storage.IsRangeKey = true;
+            storage.UpdateBehaviorMode = UpdateBehavior.IfNotExists;
+            storage.Validate(null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Validate_ThrowsIfUpdateBehaviorIfNotExists_OnVersion()
+        {
+            var storage = CreatePropertyStorage("Version");
+            storage.IsVersion = true;
+            storage.UpdateBehaviorMode = UpdateBehavior.IfNotExists;
+            storage.Validate(_context);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Validate_ThrowsIfUpdateBehaviorIfNotExists_OnCounter()
+        {
+            var storage = CreatePropertyStorage("Counter");
+            storage.IsCounter = true;
+            storage.UpdateBehaviorMode = UpdateBehavior.IfNotExists;
+            storage.Validate(_context);
+        }
+
+        [TestMethod]
+        public void Validate_AllowsUpdateBehaviorIfNotExists_OnRegularProperty()
+        {
+            var storage = CreatePropertyStorage("Name");
+            storage.UpdateBehaviorMode = UpdateBehavior.IfNotExists;
+
+            storage.Validate(_context);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Validate_ThrowsIfConverterTypeWithoutParameterlessConstructor()
+        {
+            var storage = CreatePropertyStorage("Name");
+            storage.ConverterType = typeof(NotInstantiableConverter);
+            storage.IndexNames = new List<string>();
+            storage.FlattenProperties = new List<PropertyStorage>();
+
+            storage.Validate(_context);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Validate_ThrowsIfConverterTypeDoesNotImplementIPropertyConverter()
+        {
+            var storage = CreatePropertyStorage("Name");
+
+            storage.ConverterType = typeof(object);
+            storage.IndexNames = new List<string>();
+            storage.FlattenProperties = new List<PropertyStorage>();
+
+            storage.Validate(_context);
+        }
+
+        [TestMethod]
+        public void Validate_AllowsValidConverterType()
+        {
+            var storage = CreatePropertyStorage("Name");
+            storage.ConverterType = typeof(ValidPropertyConverter);
+            storage.IndexNames = new List<string>();
+            storage.FlattenProperties = new List<PropertyStorage>();
+
+            storage.Validate(_context);
+
+            Assert.IsNotNull(storage.Converter);
+            Assert.IsInstanceOfType(storage.Converter, typeof(ValidPropertyConverter));
+        }
+
 
         [TestMethod]
         public void Validate_InstantiatesConverterType_WhenConverterTypeIsValid()

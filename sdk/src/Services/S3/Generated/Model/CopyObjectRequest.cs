@@ -261,7 +261,6 @@ namespace Amazon.S3.Model
         private string _contentDisposition;
         private string _contentEncoding;
         private string _contentLanguage;
-        
         private ServerSideEncryptionCustomerMethod _copySourceServerSideEncryptionCustomerMethod;
         private string _copySourceServerSideEncryptionCustomerProvidedKey;
         private string _copySourceServerSideEncryptionCustomerProvidedKeyMD5;

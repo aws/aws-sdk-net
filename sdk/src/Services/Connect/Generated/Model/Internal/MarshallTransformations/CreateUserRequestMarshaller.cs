@@ -76,6 +76,38 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAfterContactWorkConfigs())
+            {
+                context.Writer.WritePropertyName("AfterContactWorkConfigs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAfterContactWorkConfigsListValue in publicRequest.AfterContactWorkConfigs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AfterContactWorkConfigPerChannelMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAfterContactWorkConfigsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetAutoAcceptConfigs())
+            {
+                context.Writer.WritePropertyName("AutoAcceptConfigs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAutoAcceptConfigsListValue in publicRequest.AutoAcceptConfigs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AutoAcceptConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAutoAcceptConfigsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetDirectoryUserId())
             {
                 context.Writer.WritePropertyName("DirectoryUserId");
@@ -105,6 +137,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Password);
             }
 
+            if(publicRequest.IsSetPersistentConnectionConfigs())
+            {
+                context.Writer.WritePropertyName("PersistentConnectionConfigs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPersistentConnectionConfigsListValue in publicRequest.PersistentConnectionConfigs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PersistentConnectionConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPersistentConnectionConfigsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetPhoneConfig())
             {
                 context.Writer.WritePropertyName("PhoneConfig");
@@ -114,6 +162,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.PhoneConfig, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPhoneNumberConfigs())
+            {
+                context.Writer.WritePropertyName("PhoneNumberConfigs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPhoneNumberConfigsListValue in publicRequest.PhoneNumberConfigs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PhoneNumberConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPhoneNumberConfigsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(publicRequest.IsSetRoutingProfileId())
@@ -151,6 +215,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Username");
                 context.Writer.WriteStringValue(publicRequest.Username);
+            }
+
+            if(publicRequest.IsSetVoiceEnhancementConfigs())
+            {
+                context.Writer.WritePropertyName("VoiceEnhancementConfigs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestVoiceEnhancementConfigsListValue in publicRequest.VoiceEnhancementConfigs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = VoiceEnhancementConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestVoiceEnhancementConfigsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();

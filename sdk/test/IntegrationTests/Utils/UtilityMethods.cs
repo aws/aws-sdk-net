@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Amazon.Runtime;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -7,13 +9,8 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Amazon.SimpleNotificationService;
-using Amazon.SimpleNotificationService.Model;
-using Amazon.Runtime;
-using ThirdParty.MD5;
 using System.Threading.Tasks;
+using ThirdParty.MD5;
 
 namespace AWSSDK_DotNet.IntegrationTests.Utils
 {
@@ -21,43 +18,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
     {
         public const string SDK_TEST_PREFIX = "aws-net-sdk";
 
-        static string _accountId;
-
-        /// <summary>
-        /// There is not a good way to get account id. This hack creates
-        /// a topic gets the account id out of the ARN and then deletes the topic.
-        /// </summary>
-        public static string AccountId
-        {
-            get
-            {
-                if(_accountId == null)
-                {
-                    var createRequest = new CreateTopicRequest
-                    {
-                        Name = "sdk-accountid-lookup" + DateTime.UtcNow.Ticks
-                    };
-                    using(var snsClient = new AmazonSimpleNotificationServiceClient())
-                    {
-                        var response = snsClient.CreateTopic(createRequest);
-                        var tokens = response.TopicArn.Split(':');
-
-                        _accountId = tokens[4];
-
-                        snsClient.DeleteTopic(new DeleteTopicRequest { TopicArn = response.TopicArn });
-                    }
-                }
-
-                return _accountId;
-            }
-        }
-
         public static AWSCredentials CreateTemporaryCredentials()
         {
             using (var sts = new Amazon.SecurityToken.AmazonSecurityTokenServiceClient())
             {
-                var creds = sts.GetSessionToken().Credentials;
+                // This helper method is used in another sync method, so we need to block for non .NET Framework targets.
+#if NETFRAMEWORK
+                return sts.GetSessionToken().Credentials;
+#else
+                var creds = sts.GetSessionTokenAsync().GetAwaiter().GetResult().Credentials;
                 return creds;
+#endif
             }
         }
 
@@ -127,7 +98,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         public static byte[] ComputeSHA256(byte[] data)
         {
-            return new SHA256CryptoServiceProvider().ComputeHash(data);
+            return SHA256.Create().ComputeHash(data);
         }
 
         public static void  CompareFiles(string file1, string file2)

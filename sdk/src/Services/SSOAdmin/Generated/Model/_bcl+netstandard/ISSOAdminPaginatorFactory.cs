@@ -208,6 +208,16 @@ namespace Amazon.SSOAdmin.Model
         IListPermissionSetsProvisionedToAccountPaginator ListPermissionSetsProvisionedToAccount(ListPermissionSetsProvisionedToAccountRequest request);
 
         /// <summary>
+        /// Paginator for ListRegions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRegionsPaginator ListRegions(ListRegionsRequest request);
+
+        /// <summary>
         /// Paginator for ListTagsForResource operation
         ///</summary>
         [AWSPaginator(

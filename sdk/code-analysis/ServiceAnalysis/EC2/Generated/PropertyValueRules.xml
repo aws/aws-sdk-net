@@ -529,6 +529,21 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeSecondaryInterfacesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeSecondaryNetworksRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeSecondarySubnetsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeSecurityGroupRulesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -751,7 +766,6 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.GetCapacityManagerMetricDataRequest.Period</property>
     <min>3600</min>
-    <max>86400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetCapacityReservationUsageRequest.MaxResults</property>

@@ -71,7 +71,6 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// and access are managed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AuthType AuthType
         {
             get { return this._authType; }
@@ -169,7 +168,6 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// information for the connector destination.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public SecretsManager SecretsManager
         {
             get { return this._secretsManager; }

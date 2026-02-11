@@ -85,6 +85,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["x-amz-expected-bucket-owner"] = publicRequest.ExpectedBucketOwner;
             }
         
+            if (publicRequest.IsSetExpires()) 
+            {
+                request.Headers["Expires"] = publicRequest.Expires;
+            }
+        
             if (publicRequest.IsSetObjectLockLegalHoldStatus()) 
             {
                 request.Headers["x-amz-object-lock-legal-hold"] = publicRequest.ObjectLockLegalHoldStatus;

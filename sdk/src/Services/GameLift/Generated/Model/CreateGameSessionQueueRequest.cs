@@ -353,6 +353,11 @@ namespace Amazon.GameLift.Model
         /// a <c>TIMED_OUT</c> status. If you don't specify a request timeout, the queue uses
         /// a default value.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The minimum value is 10 and the maximum value is 600.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0)]
         public int? TimeoutInSeconds

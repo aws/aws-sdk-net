@@ -81,7 +81,20 @@ namespace Amazon.Athena.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineConfiguration.
+        /// Gets and sets the property EngineConfiguration. 
+        /// <para>
+        /// The engine configuration for the workgroup, which includes the minimum/maximum number
+        /// of Data Processing Units (DPU) that queries should use when running in provisioned
+        /// capacity. If not specified, Athena uses default values (Default value for min is 4
+        /// and for max is Minimum of 124 and allocated DPUs).
+        /// </para>
+        ///  
+        /// <para>
+        /// To specify minimum and maximum DPU values for Capacity Reservations queries, the workgroup
+        /// containing <c>EngineConfiguration</c> should have the following values: The name of
+        /// the <c>Classifications</c> should be <c>athena-query-engine-properties</c>, with the
+        /// only allowed properties as <c>max-dpu-count</c> and <c>min-dpu-count</c>.
+        /// </para>
         /// </summary>
         public EngineConfiguration EngineConfiguration
         {

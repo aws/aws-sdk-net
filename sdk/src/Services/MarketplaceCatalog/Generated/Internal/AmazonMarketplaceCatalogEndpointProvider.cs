@@ -47,10 +47,10 @@ namespace Amazon.MarketplaceCatalog.Internal
 
             var refs = new Dictionary<string, object>()
             {
-                ["Region"] = parameters["Region"],
                 ["UseDualStack"] = parameters["UseDualStack"],
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
+                ["Region"] = parameters["Region"],
             };
             if (IsSet(refs["Endpoint"]))
             {
@@ -68,6 +68,10 @@ namespace Amazon.MarketplaceCatalog.Internal
             {
                 if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
                 {
+                    if (Equals(refs["Region"], "us-east-1") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                    {
+                        return new Endpoint(Interpolate(@"https://catalog-marketplace.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
@@ -76,7 +80,7 @@ namespace Amazon.MarketplaceCatalog.Internal
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
                     }
-                    if (Equals(refs["UseFIPS"], true))
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
@@ -84,7 +88,7 @@ namespace Amazon.MarketplaceCatalog.Internal
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
                     }
-                    if (Equals(refs["UseDualStack"], true))
+                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {

@@ -84,7 +84,7 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property WorkflowTargetAction. 
         /// <para>
-        /// The action that the workflow performs. Valid values include ACTIVATE and DEACTIVATE.
+        /// The action that the workflow performs. Valid values include <c>activate</c> and <c>deactivate</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

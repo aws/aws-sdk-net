@@ -699,6 +699,60 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("RamdiskId", StringUtils.FromString(publicRequest.RamdiskId));
                 }
+                if(publicRequest.IsSetSecondaryInterfaces())
+                {
+                    if (publicRequest.SecondaryInterfaces.Count == 0)
+                        request.Parameters.Add("SecondaryInterface", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SecondaryInterfaces)
+                         {
+                            if(publicRequestlistValue.IsSetDeleteOnTermination())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.DeleteOnTermination));
+                            }
+                            if(publicRequestlistValue.IsSetDeviceIndex())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestlistValue.DeviceIndex));
+                            }
+                            if(publicRequestlistValue.IsSetInterfaceType())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "InterfaceType", StringUtils.FromString(publicRequestlistValue.InterfaceType));
+                            }
+                            if(publicRequestlistValue.IsSetNetworkCardIndex())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestlistValue.NetworkCardIndex));
+                            }
+                            if(publicRequestlistValue.IsSetPrivateIpAddressCount())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddressCount", StringUtils.FromInt(publicRequestlistValue.PrivateIpAddressCount));
+                            }
+                            if(publicRequestlistValue.IsSetPrivateIpAddresses())
+                            {
+                                if (publicRequestlistValue.PrivateIpAddresses.Count == 0)
+                                    request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddress", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PrivateIpAddresses)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetPrivateIpAddress())
+                                        {
+                                            request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddress" + "." + publicRequestlistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValuelistValue.PrivateIpAddress));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetSecondarySubnetId())
+                            {
+                                request.Parameters.Add("SecondaryInterface" + "." + publicRequestlistValueIndex + "." + "SecondarySubnetId", StringUtils.FromString(publicRequestlistValue.SecondarySubnetId));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
                     if (publicRequest.SecurityGroupIds.Count == 0)

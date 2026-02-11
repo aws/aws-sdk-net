@@ -207,6 +207,44 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
                 
+        #region  CreateBrowserProfile
+
+
+
+        /// <summary>
+        /// Creates a browser profile in Amazon Bedrock AgentCore. A browser profile stores persistent
+        /// browser data such as cookies, local storage, session storage, and browsing history
+        /// that can be saved from browser sessions and reused in subsequent sessions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBrowserProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBrowserProfile service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateBrowserProfile">REST API Reference for CreateBrowserProfile Operation</seealso>
+        Task<CreateBrowserProfileResponse> CreateBrowserProfileAsync(CreateBrowserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateCodeInterpreter
 
 
@@ -761,6 +799,42 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
                 
+        #region  DeleteBrowserProfile
+
+
+
+        /// <summary>
+        /// Deletes a browser profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBrowserProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBrowserProfile service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteBrowserProfile">REST API Reference for DeleteBrowserProfile Operation</seealso>
+        Task<DeleteBrowserProfileResponse> DeleteBrowserProfileAsync(DeleteBrowserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteCodeInterpreter
 
 
@@ -1310,6 +1384,39 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetBrowser">REST API Reference for GetBrowser Operation</seealso>
         Task<GetBrowserResponse> GetBrowserAsync(GetBrowserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetBrowserProfile
+
+
+
+        /// <summary>
+        /// Gets information about a browser profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBrowserProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBrowserProfile service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetBrowserProfile">REST API Reference for GetBrowserProfile Operation</seealso>
+        Task<GetBrowserProfileResponse> GetBrowserProfileAsync(GetBrowserProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1901,6 +2008,36 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
                 
+        #region  ListBrowserProfiles
+
+
+
+        /// <summary>
+        /// Lists all browser profiles in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBrowserProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBrowserProfiles service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListBrowserProfiles">REST API Reference for ListBrowserProfiles Operation</seealso>
+        Task<ListBrowserProfilesResponse> ListBrowserProfilesAsync(ListBrowserProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListBrowsers
 
 
@@ -2301,8 +2438,8 @@ namespace Amazon.BedrockAgentCoreControl
         /// 
         ///  <note> 
         /// <para>
-        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
-        /// tool, and Gateway.
+        /// This feature is currently available only for AgentCore Runtime, Browser, Browser Profile,
+        /// Code Interpreter tool, and Gateway.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2548,8 +2685,8 @@ namespace Amazon.BedrockAgentCoreControl
         /// 
         ///  <note> 
         /// <para>
-        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
-        /// tool, and Gateway.
+        /// This feature is currently available only for AgentCore Runtime, Browser, Browser Profile,
+        /// Code Interpreter tool, and Gateway.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2591,8 +2728,8 @@ namespace Amazon.BedrockAgentCoreControl
         /// 
         ///  <note> 
         /// <para>
-        /// This feature is currently available only for AgentCore Runtime, Browser, Code Interpreter
-        /// tool, and Gateway.
+        /// This feature is currently available only for AgentCore Runtime, Browser, Browser Profile,
+        /// Code Interpreter tool, and Gateway.
         /// </para>
         ///  </note>
         /// </summary>

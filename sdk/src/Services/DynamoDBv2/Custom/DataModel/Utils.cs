@@ -1,17 +1,17 @@
 ﻿/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
+* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* 
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+* 
+*  http://aws.amazon.com/apache2.0
+* 
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
 
 using System;
 using System.Collections.Generic;
@@ -155,14 +155,14 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 return;
             }
-            throw new InvalidOperationException("Version property must be of primitive, numeric, integer, nullable type (e.g. int?, long?, byte?)");
+            throw new InvalidOperationException("Version or counter property must be of primitive, numeric, integer, nullable type (e.g. int?, long?, byte?)");
         }
 
         internal static void ValidateTimestampType(Type memberType)
         {
             if (memberType.IsGenericType && memberType.GetGenericTypeDefinition() == typeof(Nullable<>) &&
                 (memberType.IsAssignableFrom(typeof(DateTime)) ||
-                 memberType.IsAssignableFrom(typeof(DateTimeOffset))))
+                memberType.IsAssignableFrom(typeof(DateTimeOffset))))
             {
                 return;
             }
@@ -210,7 +210,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal static bool ItemsToCollection([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)] Type targetType, IEnumerable<object> items, out object result)
         {
             return targetType.IsArray ?
-                ItemsToArray(targetType, items, out result):  //targetType is Array
+                ItemsToArray(targetType, items, out result) :  //targetType is Array
                 ItemsToIList(targetType, items, out result);  //targetType is IList or has Add method.
         }
 
@@ -341,7 +341,7 @@ namespace Amazon.DynamoDBv2.DataModel
         private static Type[][] validArrayConstructorInputs = new Type[][]
         {
             //supports one dimension Array only
-            new Type[] { typeof(int) } 
+            new Type[] { typeof(int) }
         };
         private static Type[][] validConverterConstructorInputs = new Type[][]
         {
@@ -447,7 +447,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-        
+
         internal static Type GetType(MemberInfo member)
         {
             var pi = member as PropertyInfo;
@@ -495,7 +495,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             return false;
         }
-        
+
         /// <summary>
         /// Apply a set of filters to a determine whether a member should be returned.
         /// In terms of DynamoDb, we want to return members that are fields or properties
@@ -526,10 +526,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
         {
             Dictionary<string, MemberInfo> members = new Dictionary<string, MemberInfo>();
-        
+
             Type currentType = type;
             while (
-                currentType != null && 
+                currentType != null &&
                 currentType != typeof(object))
             {
                 // Previous implementation used GetMembers to return the valid members for a type, but in certain class configurations
@@ -540,7 +540,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     .GetMembers(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.DeclaredOnly)
                     .Where(IsValidMemberInfo)
                     .ToList();
-        
+
                 foreach (var member in currentMembers)
                 {
                     if (!members.ContainsKey(member.Name))
@@ -548,10 +548,10 @@ namespace Amazon.DynamoDBv2.DataModel
                         members[member.Name] = member;
                     }
                 }
-        
+
                 currentType = currentType.BaseType;
             }
-        
+
             return members.Values.ToList();
         }
 

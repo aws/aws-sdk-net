@@ -11187,6 +11187,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType G6Xlarge = new InstanceType("g6.xlarge");
         /// <summary>
+        /// Constant G7e12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e12xlarge = new InstanceType("g7e.12xlarge");
+        /// <summary>
+        /// Constant G7e24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e24xlarge = new InstanceType("g7e.24xlarge");
+        /// <summary>
+        /// Constant G7e2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e2xlarge = new InstanceType("g7e.2xlarge");
+        /// <summary>
+        /// Constant G7e48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e48xlarge = new InstanceType("g7e.48xlarge");
+        /// <summary>
+        /// Constant G7e4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e4xlarge = new InstanceType("g7e.4xlarge");
+        /// <summary>
+        /// Constant G7e8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G7e8xlarge = new InstanceType("g7e.8xlarge");
+        /// <summary>
         /// Constant Gr64xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Gr64xlarge = new InstanceType("gr6.4xlarge");
@@ -22345,6 +22369,18 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType RouteTable = new ResourceType("route-table");
         /// <summary>
+        /// Constant SecondaryInterface for ResourceType
+        /// </summary>
+        public static readonly ResourceType SecondaryInterface = new ResourceType("secondary-interface");
+        /// <summary>
+        /// Constant SecondaryNetwork for ResourceType
+        /// </summary>
+        public static readonly ResourceType SecondaryNetwork = new ResourceType("secondary-network");
+        /// <summary>
+        /// Constant SecondarySubnet for ResourceType
+        /// </summary>
+        public static readonly ResourceType SecondarySubnet = new ResourceType("secondary-subnet");
+        /// <summary>
         /// Constant SecurityGroup for ResourceType
         /// </summary>
         public static readonly ResourceType SecurityGroup = new ResourceType("security-group");
@@ -23642,6 +23678,412 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Scope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecondaryInterfaceStatus.
+    /// </summary>
+    public class SecondaryInterfaceStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for SecondaryInterfaceStatus
+        /// </summary>
+        public static readonly SecondaryInterfaceStatus Available = new SecondaryInterfaceStatus("available");
+        /// <summary>
+        /// Constant InUse for SecondaryInterfaceStatus
+        /// </summary>
+        public static readonly SecondaryInterfaceStatus InUse = new SecondaryInterfaceStatus("in-use");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecondaryInterfaceStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecondaryInterfaceStatus FindValue(string value)
+        {
+            return FindValue<SecondaryInterfaceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecondaryInterfaceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecondaryInterfaceType.
+    /// </summary>
+    public class SecondaryInterfaceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Secondary for SecondaryInterfaceType
+        /// </summary>
+        public static readonly SecondaryInterfaceType Secondary = new SecondaryInterfaceType("secondary");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecondaryInterfaceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecondaryInterfaceType FindValue(string value)
+        {
+            return FindValue<SecondaryInterfaceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecondaryInterfaceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecondaryNetworkCidrBlockAssociationState.
+    /// </summary>
+    public class SecondaryNetworkCidrBlockAssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Associated for SecondaryNetworkCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondaryNetworkCidrBlockAssociationState Associated = new SecondaryNetworkCidrBlockAssociationState("associated");
+        /// <summary>
+        /// Constant Associating for SecondaryNetworkCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondaryNetworkCidrBlockAssociationState Associating = new SecondaryNetworkCidrBlockAssociationState("associating");
+        /// <summary>
+        /// Constant AssociationFailed for SecondaryNetworkCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondaryNetworkCidrBlockAssociationState AssociationFailed = new SecondaryNetworkCidrBlockAssociationState("association-failed");
+        /// <summary>
+        /// Constant Disassociated for SecondaryNetworkCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondaryNetworkCidrBlockAssociationState Disassociated = new SecondaryNetworkCidrBlockAssociationState("disassociated");
+        /// <summary>
+        /// Constant Disassociating for SecondaryNetworkCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondaryNetworkCidrBlockAssociationState Disassociating = new SecondaryNetworkCidrBlockAssociationState("disassociating");
+        /// <summary>
+        /// Constant DisassociationFailed for SecondaryNetworkCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondaryNetworkCidrBlockAssociationState DisassociationFailed = new SecondaryNetworkCidrBlockAssociationState("disassociation-failed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecondaryNetworkCidrBlockAssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecondaryNetworkCidrBlockAssociationState FindValue(string value)
+        {
+            return FindValue<SecondaryNetworkCidrBlockAssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecondaryNetworkCidrBlockAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecondaryNetworkState.
+    /// </summary>
+    public class SecondaryNetworkState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateComplete for SecondaryNetworkState
+        /// </summary>
+        public static readonly SecondaryNetworkState CreateComplete = new SecondaryNetworkState("create-complete");
+        /// <summary>
+        /// Constant CreateFailed for SecondaryNetworkState
+        /// </summary>
+        public static readonly SecondaryNetworkState CreateFailed = new SecondaryNetworkState("create-failed");
+        /// <summary>
+        /// Constant CreateInProgress for SecondaryNetworkState
+        /// </summary>
+        public static readonly SecondaryNetworkState CreateInProgress = new SecondaryNetworkState("create-in-progress");
+        /// <summary>
+        /// Constant DeleteComplete for SecondaryNetworkState
+        /// </summary>
+        public static readonly SecondaryNetworkState DeleteComplete = new SecondaryNetworkState("delete-complete");
+        /// <summary>
+        /// Constant DeleteFailed for SecondaryNetworkState
+        /// </summary>
+        public static readonly SecondaryNetworkState DeleteFailed = new SecondaryNetworkState("delete-failed");
+        /// <summary>
+        /// Constant DeleteInProgress for SecondaryNetworkState
+        /// </summary>
+        public static readonly SecondaryNetworkState DeleteInProgress = new SecondaryNetworkState("delete-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecondaryNetworkState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecondaryNetworkState FindValue(string value)
+        {
+            return FindValue<SecondaryNetworkState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecondaryNetworkState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecondaryNetworkType.
+    /// </summary>
+    public class SecondaryNetworkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Rdma for SecondaryNetworkType
+        /// </summary>
+        public static readonly SecondaryNetworkType Rdma = new SecondaryNetworkType("rdma");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecondaryNetworkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecondaryNetworkType FindValue(string value)
+        {
+            return FindValue<SecondaryNetworkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecondaryNetworkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecondarySubnetCidrBlockAssociationState.
+    /// </summary>
+    public class SecondarySubnetCidrBlockAssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Associated for SecondarySubnetCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondarySubnetCidrBlockAssociationState Associated = new SecondarySubnetCidrBlockAssociationState("associated");
+        /// <summary>
+        /// Constant Associating for SecondarySubnetCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondarySubnetCidrBlockAssociationState Associating = new SecondarySubnetCidrBlockAssociationState("associating");
+        /// <summary>
+        /// Constant AssociationFailed for SecondarySubnetCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondarySubnetCidrBlockAssociationState AssociationFailed = new SecondarySubnetCidrBlockAssociationState("association-failed");
+        /// <summary>
+        /// Constant Disassociated for SecondarySubnetCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondarySubnetCidrBlockAssociationState Disassociated = new SecondarySubnetCidrBlockAssociationState("disassociated");
+        /// <summary>
+        /// Constant Disassociating for SecondarySubnetCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondarySubnetCidrBlockAssociationState Disassociating = new SecondarySubnetCidrBlockAssociationState("disassociating");
+        /// <summary>
+        /// Constant DisassociationFailed for SecondarySubnetCidrBlockAssociationState
+        /// </summary>
+        public static readonly SecondarySubnetCidrBlockAssociationState DisassociationFailed = new SecondarySubnetCidrBlockAssociationState("disassociation-failed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecondarySubnetCidrBlockAssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecondarySubnetCidrBlockAssociationState FindValue(string value)
+        {
+            return FindValue<SecondarySubnetCidrBlockAssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecondarySubnetCidrBlockAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecondarySubnetState.
+    /// </summary>
+    public class SecondarySubnetState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateComplete for SecondarySubnetState
+        /// </summary>
+        public static readonly SecondarySubnetState CreateComplete = new SecondarySubnetState("create-complete");
+        /// <summary>
+        /// Constant CreateFailed for SecondarySubnetState
+        /// </summary>
+        public static readonly SecondarySubnetState CreateFailed = new SecondarySubnetState("create-failed");
+        /// <summary>
+        /// Constant CreateInProgress for SecondarySubnetState
+        /// </summary>
+        public static readonly SecondarySubnetState CreateInProgress = new SecondarySubnetState("create-in-progress");
+        /// <summary>
+        /// Constant DeleteComplete for SecondarySubnetState
+        /// </summary>
+        public static readonly SecondarySubnetState DeleteComplete = new SecondarySubnetState("delete-complete");
+        /// <summary>
+        /// Constant DeleteFailed for SecondarySubnetState
+        /// </summary>
+        public static readonly SecondarySubnetState DeleteFailed = new SecondarySubnetState("delete-failed");
+        /// <summary>
+        /// Constant DeleteInProgress for SecondarySubnetState
+        /// </summary>
+        public static readonly SecondarySubnetState DeleteInProgress = new SecondarySubnetState("delete-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecondarySubnetState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecondarySubnetState FindValue(string value)
+        {
+            return FindValue<SecondarySubnetState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecondarySubnetState(string value)
         {
             return FindValue(value);
         }

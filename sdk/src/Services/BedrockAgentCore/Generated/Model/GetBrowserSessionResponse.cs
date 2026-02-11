@@ -39,6 +39,8 @@ namespace Amazon.BedrockAgentCore.Model
         private List<BrowserExtension> _extensions = AWSConfigs.InitializeCollections ? new List<BrowserExtension>() : null;
         private DateTime? _lastUpdatedAt;
         private string _name;
+        private BrowserProfileConfiguration _profileConfiguration;
+        private ProxyConfiguration _proxyConfiguration;
         private string _sessionId;
         private string _sessionReplayArtifact;
         private int? _sessionTimeoutSeconds;
@@ -143,6 +145,46 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileConfiguration. 
+        /// <para>
+        /// The browser profile configuration associated with this session. Contains the profile
+        /// identifier that links to persistent browser data such as cookies and local storage.
+        /// </para>
+        /// </summary>
+        public BrowserProfileConfiguration ProfileConfiguration
+        {
+            get { return this._profileConfiguration; }
+            set { this._profileConfiguration = value; }
+        }
+
+        // Check to see if ProfileConfiguration property is set
+        internal bool IsSetProfileConfiguration()
+        {
+            return this._profileConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProxyConfiguration. 
+        /// <para>
+        /// The active proxy configuration for this browser session. This field is only present
+        /// if proxy configuration was provided when the session was started using <c>StartBrowserSession</c>.
+        /// The configuration includes proxy servers, domain bypass rules and the proxy authentication
+        /// credentials.
+        /// </para>
+        /// </summary>
+        public ProxyConfiguration ProxyConfiguration
+        {
+            get { return this._proxyConfiguration; }
+            set { this._proxyConfiguration = value; }
+        }
+
+        // Check to see if ProxyConfiguration property is set
+        internal bool IsSetProxyConfiguration()
+        {
+            return this._proxyConfiguration != null;
         }
 
         /// <summary>

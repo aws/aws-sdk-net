@@ -128,6 +128,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.MaxConcurrentSessions.Value);
             }
 
+            if(publicRequest.IsSetPortalCustomDomain())
+            {
+                context.Writer.WritePropertyName("portalCustomDomain");
+                context.Writer.WriteStringValue(publicRequest.PortalCustomDomain);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

@@ -3906,6 +3906,84 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  DeleteConnectionType
+
+
+        /// <summary>
+        /// Deletes a custom connection type in Glue.
+        /// 
+        ///  
+        /// <para>
+        /// The connection type must exist and be registered before it can be deleted. This operation
+        /// supports cleanup of connection type resources and helps maintain proper lifecycle
+        /// management of custom connection types.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionType service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectionType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteConnectionType">REST API Reference for DeleteConnectionType Operation</seealso>
+        DeleteConnectionTypeResponse DeleteConnectionType(DeleteConnectionTypeRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a custom connection type in Glue.
+        /// 
+        ///  
+        /// <para>
+        /// The connection type must exist and be registered before it can be deleted. This operation
+        /// supports cleanup of connection type resources and helps maintain proper lifecycle
+        /// management of custom connection types.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectionType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnectionType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteConnectionType">REST API Reference for DeleteConnectionType Operation</seealso>
+        Task<DeleteConnectionTypeResponse> DeleteConnectionTypeAsync(DeleteConnectionTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteCrawler
 
 
@@ -5573,7 +5651,15 @@ namespace Amazon.Glue
 
         /// <summary>
         /// The <c>DescribeConnectionType</c> API provides full details of the supported options
-        /// for a given connection type in Glue.
+        /// for a given connection type in Glue. The response includes authentication configuration
+        /// details that show supported authentication types and properties, and RestConfiguration
+        /// for custom REST-based connection types registered via <c>RegisterConnectionType</c>.
+        /// 
+        ///  
+        /// <para>
+        /// See also: <c>ListConnectionTypes</c>, <c>RegisterConnectionType</c>, <c>DeleteConnectionType</c>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionType service method.</param>
         /// 
@@ -5597,7 +5683,15 @@ namespace Amazon.Glue
 
         /// <summary>
         /// The <c>DescribeConnectionType</c> API provides full details of the supported options
-        /// for a given connection type in Glue.
+        /// for a given connection type in Glue. The response includes authentication configuration
+        /// details that show supported authentication types and properties, and RestConfiguration
+        /// for custom REST-based connection types registered via <c>RegisterConnectionType</c>.
+        /// 
+        ///  
+        /// <para>
+        /// See also: <c>ListConnectionTypes</c>, <c>RegisterConnectionType</c>, <c>DeleteConnectionType</c>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnectionType service method.</param>
         /// <param name="cancellationToken">
@@ -10608,9 +10702,16 @@ namespace Amazon.Glue
         /// <summary>
         /// The <c>ListConnectionTypes</c> API provides a discovery mechanism to learn available
         /// connection types in Glue. The response contains a list of connection types with high-level
-        /// details of what is supported for each connection type. The connection types listed
-        /// are the set of supported options for the <c>ConnectionType</c> value in the <c>CreateConnection</c>
-        /// API.
+        /// details of what is supported for each connection type, including both built-in connection
+        /// types and custom connection types registered via <c>RegisterConnectionType</c>. The
+        /// connection types listed are the set of supported options for the <c>ConnectionType</c>
+        /// value in the <c>CreateConnection</c> API.
+        /// 
+        ///  
+        /// <para>
+        /// See also: <c>DescribeConnectionType</c>, <c>RegisterConnectionType</c>, <c>DeleteConnectionType</c>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConnectionTypes service method.</param>
         /// 
@@ -10629,9 +10730,16 @@ namespace Amazon.Glue
         /// <summary>
         /// The <c>ListConnectionTypes</c> API provides a discovery mechanism to learn available
         /// connection types in Glue. The response contains a list of connection types with high-level
-        /// details of what is supported for each connection type. The connection types listed
-        /// are the set of supported options for the <c>ConnectionType</c> value in the <c>CreateConnection</c>
-        /// API.
+        /// details of what is supported for each connection type, including both built-in connection
+        /// types and custom connection types registered via <c>RegisterConnectionType</c>. The
+        /// connection types listed are the set of supported options for the <c>ConnectionType</c>
+        /// value in the <c>CreateConnection</c> API.
+        /// 
+        ///  
+        /// <para>
+        /// See also: <c>DescribeConnectionType</c>, <c>RegisterConnectionType</c>, <c>DeleteConnectionType</c>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConnectionTypes service method.</param>
         /// <param name="cancellationToken">
@@ -12457,6 +12565,102 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/QuerySchemaVersionMetadata">REST API Reference for QuerySchemaVersionMetadata Operation</seealso>
         Task<QuerySchemaVersionMetadataResponse> QuerySchemaVersionMetadataAsync(QuerySchemaVersionMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RegisterConnectionType
+
+
+        /// <summary>
+        /// Registers a custom connection type in Glue based on the configuration provided. This
+        /// operation enables customers to configure custom connectors for any data source with
+        /// REST-based APIs, eliminating the need for building custom Lambda connectors.
+        /// 
+        ///  
+        /// <para>
+        /// The registered connection type stores details about how requests and responses are
+        /// interpreted by REST sources, including connection properties, authentication configuration,
+        /// and REST configuration with entity definitions. Once registered, customers can create
+        /// connections using this connection type and work with them the same way as natively
+        /// supported Glue connectors.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supports multiple authentication types including Basic, OAuth2 (Client Credentials,
+        /// JWT Bearer, Authorization Code), and Custom Auth configurations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterConnectionType service method.</param>
+        /// 
+        /// <returns>The response from the RegisterConnectionType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RegisterConnectionType">REST API Reference for RegisterConnectionType Operation</seealso>
+        RegisterConnectionTypeResponse RegisterConnectionType(RegisterConnectionTypeRequest request);
+
+
+
+        /// <summary>
+        /// Registers a custom connection type in Glue based on the configuration provided. This
+        /// operation enables customers to configure custom connectors for any data source with
+        /// REST-based APIs, eliminating the need for building custom Lambda connectors.
+        /// 
+        ///  
+        /// <para>
+        /// The registered connection type stores details about how requests and responses are
+        /// interpreted by REST sources, including connection properties, authentication configuration,
+        /// and REST configuration with entity definitions. Once registered, customers can create
+        /// connections using this connection type and work with them the same way as natively
+        /// supported Glue connectors.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supports multiple authentication types including Basic, OAuth2 (Client Credentials,
+        /// JWT Bearer, Authorization Code), and Custom Auth configurations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterConnectionType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterConnectionType service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RegisterConnectionType">REST API Reference for RegisterConnectionType Operation</seealso>
+        Task<RegisterConnectionTypeResponse> RegisterConnectionTypeAsync(RegisterConnectionTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

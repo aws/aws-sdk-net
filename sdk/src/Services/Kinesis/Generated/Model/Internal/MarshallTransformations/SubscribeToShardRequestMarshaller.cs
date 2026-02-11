@@ -101,6 +101,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetStreamId())
+            {
+                context.Writer.WritePropertyName("StreamId");
+                context.Writer.WriteStringValue(publicRequest.StreamId);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

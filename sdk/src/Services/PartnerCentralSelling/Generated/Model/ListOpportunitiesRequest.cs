@@ -66,6 +66,7 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class ListOpportunitiesRequest : AmazonPartnerCentralSellingRequest
     {
         private string _catalog;
+        private CreatedDateFilter _createdDate;
         private List<string> _customerCompanyName = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _identifier = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LastModifiedDate _lastModifiedDate;
@@ -96,6 +97,24 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCatalog()
         {
             return this._catalog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedDate. 
+        /// <para>
+        /// Filter opportunities by creation date criteria.
+        /// </para>
+        /// </summary>
+        public CreatedDateFilter CreatedDate
+        {
+            get { return this._createdDate; }
+            set { this._createdDate = value; }
+        }
+
+        // Check to see if CreatedDate property is set
+        internal bool IsSetCreatedDate()
+        {
+            return this._createdDate != null;
         }
 
         /// <summary>

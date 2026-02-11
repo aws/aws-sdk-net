@@ -63,6 +63,7 @@ namespace Amazon.Kinesis.Model
         private ShardFilter _shardFilter;
         private string _streamARN;
         private DateTime? _streamCreationTimestamp;
+        private string _streamId;
         private string _streamName;
 
         /// <summary>
@@ -249,6 +250,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamCreationTimestamp()
         {
             return this._streamCreationTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamId. 
+        /// <para>
+        /// Not Implemented. Reserved for future use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=24)]
+        public string StreamId
+        {
+            get { return this._streamId; }
+            set { this._streamId = value; }
+        }
+
+        // Check to see if StreamId property is set
+        internal bool IsSetStreamId()
+        {
+            return this._streamId != null;
         }
 
         /// <summary>

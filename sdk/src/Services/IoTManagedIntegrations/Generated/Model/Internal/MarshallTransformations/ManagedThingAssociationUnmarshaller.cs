@@ -62,6 +62,12 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountAssociationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ManagedThingAssociationStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManagedThingAssociationStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ManagedThingId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

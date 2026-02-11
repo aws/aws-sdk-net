@@ -40,7 +40,11 @@ namespace Amazon.PartnerCentralSelling.Model
         private string _nextBestActions;
 
         /// <summary>
-        /// Gets and sets the property AwsProductsSpendInsightsBySource.
+        /// Gets and sets the property AwsProductsSpendInsightsBySource. 
+        /// <para>
+        /// Source-separated spend insights that provide independent analysis for AWS recommendations
+        /// and partner estimates.
+        /// </para>
         /// </summary>
         public AwsProductsSpendInsightsBySource AwsProductsSpendInsightsBySource
         {

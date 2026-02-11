@@ -127,7 +127,7 @@ namespace Amazon.ARCRegionswitch.Model
         /// The global cluster identifier for a global database.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string GlobalClusterIdentifier
         {
             get { return this._globalClusterIdentifier; }

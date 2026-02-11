@@ -848,6 +848,10 @@
     <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.AwsOpportunitySummaryFullView.RelatedOpportunityId</property>
+    <pattern>O[0-9]{1,19}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.AwsProductDetails.Amount</property>
     <pattern>(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?</pattern>
   </property-value-rule>

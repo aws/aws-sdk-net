@@ -30,9 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// A condensed representation of a browser session in Amazon Bedrock. This structure
-    /// contains key information about a browser session, including identifiers, status, and
-    /// timestamps, without the full details of the session configuration and streams.
+    /// A condensed representation of a browser session in Amazon Bedrock AgentCore. This
+    /// structure contains key information about a browser session, including identifiers,
+    /// status, and timestamps, without the full details of the session configuration and
+    /// streams.
     /// </summary>
     public partial class BrowserSessionSummary
     {

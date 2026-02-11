@@ -59,7 +59,7 @@ namespace Amazon.ARCRegionswitch.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// The condition that must be met. Valid values include ALARM and OK.
+        /// The condition that must be met. Valid values include <c>green</c> and <c>red</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

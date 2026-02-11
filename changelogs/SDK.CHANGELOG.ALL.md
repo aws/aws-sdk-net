@@ -1,3 +1,136 @@
+### 4.0.188.0 (2026-02-10 19:23 UTC)
+* BedrockAgentCore (4.0.11.0)
+	* Added AgentCore browser proxy configuration support, allowing routing of browser traffic through HTTP and HTTPS proxy servers with authentication and bypass rules.
+* Connect (4.0.32.0)
+	* Amazon Connect now supports per-channel auto-accept and After Contact Work (ACW) timeouts. Configure agents with auto-accept and ACW timeout settings for chat, tasks, emails, and callbacks. Use the new UpdateUserConfig API to manage these settings.
+* EKS (4.0.12.0)
+	* Introducing an optional policy field, an IAM policy applied to pod identity associations in addition to IAM role policies. When specified, pod permissions are the intersection of IAM role policies and the policy field, ensuring the principle of least privilege.
+* Kafka (4.0.5.0)
+	* Amazon MSK adds three new APIs, CreateTopic, UpdateTopic, and DeleteTopic for managing Kafka topics in your MSK clusters.
+* RDS (4.0.17.0)
+	* This release adds backup configuration for RDS and Aurora restores, letting customers set backup retention period and preferred backup window during restore. It also enables viewing backup settings when describing snapshots or automated backups for instances and clusters.
+* S3 (4.0.18.4)
+	* Cleanup S3 code generation infrastructure after completing the S3 generation.
+* Core 4.0.3.13
+	* Add internal attribute to mark interfaces in `Core` that can be updated without backwards incompatibility issues
+
+### 4.0.187.0 (2026-02-09 20:25 UTC)
+* ConnectCampaignsV2 (4.0.6.0)
+	* Add the missing event type for WhatsApp
+* EC2 (4.0.72.0)
+	* Amazon Secondary Networks is a networking feature that provides high-performance, low-latency connectivity for specialized workloads.
+* EKS (4.0.11.0)
+	* Amazon EKS adds a new DescribeUpdate update type, VendedLogsUpdate, to support an integration between EKS Auto Mode and Amazon CloudWatch Vended Logs.
+* Imagebuilder (4.0.7.0)
+	* EC2 Image Builder now supports wildcard patterns in lifecycle policies with recipes and enhances the experience of tag-scoped policies.
+* LakeFormation (4.0.4.3)
+	* Allow cross account v5 in put data lake settings
+* Neptunedata (4.0.4.0)
+	* Added edgeOnlyLoad boolean parameter to Neptune bulk load request. When TRUE, files are loaded in order without scanning. When FALSE (default), the loader scans files first, then loads vertex files before edge files automatically.
+* PCS (4.0.12.0)
+	* Introduces RESUMING state for clusters, compute node groups, and queues.
+* Transfer (4.0.6.1)
+	* This release adds a documentation update for MdnResponse of type "ASYNC"
+
+### 4.0.186.0 (2026-02-06 19:18 UTC)
+* BedrockDataAutomationRuntime (4.0.5.0)
+	* Add OutputConfiguration to InvokeDataAutomation input and output to support S3 output
+* Deadline (4.0.13.0)
+	* Adds support for tagging jobs during job creation
+* IoTManagedIntegrations (4.0.6.0)
+	* Adding support for Custom(General) Authorization in managed integrations for AWS IoT Device Management cloud connectors.
+* PartnerCentralSelling (4.0.8.0)
+	* Releasing AWS Opportunity Snapshots for SDK release.
+* S3 (4.0.18.3)
+	* Generate S3 Enumerations.
+* SageMaker (4.0.42.0)
+	* Adding g7e instance support in Sagemaker Training
+
+### 4.0.185.0 (2026-02-05 19:17 UTC)
+* ARCRegionswitch (4.0.4.0)
+	* Updates documentation for ARC Region switch and provides stronger validation for Amazon Aurora Global Database execution block parameters.
+* Athena (4.0.4.0)
+	* Reduces the minimum TargetDpus to create or update capacity reservations from 24 to 4.
+* BedrockAgentCore (4.0.10.0)
+	* Support Browser profile persistence (cookies and local storage) across sessions for AgentCore Browser.
+* BedrockAgentCoreControl (4.0.16.0)
+	* Support Browser profile persistence (cookies and local storage) across sessions for AgentCore Browser.
+* Glue (4.0.25.0)
+	* This release adds the capability to easily create custom AWS Glue connections to data sources with REST APIs.
+* MediaLive (4.0.16.0)
+	* Outputs using the AV1 codec in CMAF Ingest output groups in MediaLive now have the ability to specify a target bit depth of 8 or 10.
+* NeptuneGraph (4.0.2.14)
+	* Minor neptune-graph documentation changes
+* RAM (4.0.3.0)
+	* Added ListSourceAssociations API. Allows RAM resource share owners to list source associations that determine which sources can access resources through service principal associations. Supports filtering by resource share ARN, source ID, source type, or status, with pagination.
+* Transfer (4.0.6.0)
+	* Adds support for the customer to send custom HTTP headers and configure an AS2 Connector to receive Asynchronous MDNs from their trading partner
+* WorkSpaces (4.0.9.0)
+	* Added support for 12 new graphics-optimized compute types - Graphics.g6 (xlarge, 2xlarge, 4xlarge, 8xlarge, 16xlarge), Graphics.gr6 (4xlarge, 8xlarge), Graphics.g6f (large, xlarge, 2xlarge, 4xlarge), and Graphics.gr6f (4xlarge).
+
+### 4.0.184.0 (2026-02-04 19:16 UTC)
+* BedrockRuntime (4.0.16.0)
+	* Added support for structured outputs to Converse and ConverseStream APIs.
+* ConnectCases (4.0.9.0)
+	* Amazon Connect Cases now supports larger, multi-line text fields with up to 4,100 characters. Administrators can use the Admin UI to select the appropriate configuration (single-line or multi-line) on a per-field basis, improving case documentation capabilities.
+* EKS (4.0.10.4)
+	* Update delete cluster description
+* MediaLive (4.0.15.0)
+	* AWS Elemental MediaLive now supports SRT listener mode for inputs and outputs, in addition to the existing SRT caller mode.
+* Redshift (4.0.6.4)
+	* We have increased the maximum duration for a deferred maintenance window from 45 days to 60 days for Amazon Redshift provisioned clusters. This enhancement provides customers with greater flexibility in scheduling patching and maintenance activities while also maintaining security compliance.
+* WorkSpacesWeb (4.0.7.0)
+	* Support for configuring and managing custom domain names for WorkSpaces Secure Browser portals.
+
+### 4.0.183.0 (2026-02-03 19:25 UTC)
+* Batch (4.0.4.0)
+	* AWS Batch Array Job Visibility feature support. Includes new statusSummaryLastUpdatedAt for array job parent DescribeJobs responses for the last time the statusSummary was updated. Includes both statusSummary and statusSummaryLastUpdatedAt in ListJobs responses for array job parents.
+* DynamoDBv2 (4.0.14.0)
+	* This change supports the creation of multi-account global tables. It adds two new arguments to CreateTable, GlobalTableSourceArn and GlobalTableSettingsReplicationMode. DescribeTable is also updated to include information about GlobalTableSettingsReplicationMode.
+* GeoMaps (4.0.4.0)
+	* Added support for optional style parameters in maps, including 3D terrain and 3D Buildings
+* Kinesis (4.0.8.0)
+	* Adds StreamId parameter to AWS Kinesis Data Streams APIs that is reserved for future use.
+* MarketplaceCatalog (4.0.5.0)
+	* Adds support for Catalog API us-east-1 dualstack endpoint catalog-marketplace.us-east-1.api.aws
+* Organizations (4.0.10.7)
+	* Updated the CloseAccount description.
+* S3 (4.0.18.2)
+	* Generate PutBucketVersioning, GetBucketVersioning, and UpdateBucketMetadataInventoryTableConfiguration
+* SSOAdmin (4.0.5.0)
+	* Added new Region management APIs to support multi-Region replication in IAM Identity Center.
+
+### 4.0.182.0 (2026-02-02 19:17 UTC)
+* BedrockAgentCoreControl (4.0.15.0)
+	* Adds tagging support for AgentCore Evaluations (evaluator and online evaluation config)
+* CloudFront (4.0.12.0)
+	* Add OriginMTLS support to CloudFront Distribution APIs
+* MPA (4.0.3.0)
+	* Updates to multi-party approval (MPA) service to add support for multi-factor authentication (MFA) for voting operations.
+
+### 4.0.181.0 (2026-01-30 19:23 UTC)
+* Connect (4.0.31.0)
+	* This release adds Estimated Wait Time support to the GetContactMetrics API for Amazon Connect.
+* DynamoDBv2 (4.0.13.0)
+	* Add support for DynamoDbUpdateBehavior for operations.
+* QuickSight (4.0.14.0)
+	* Improve SessionTag usage guidelines in the GenerateEmbedURLForAnonymousUser API documentation. Update the GetIdentityContext document with the region support context.
+
+### 4.0.180.0 (2026-01-29 19:38 UTC)
+* EC2 (4.0.71.0)
+	* G7e instances feature up to 8 NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs with 768 GB of memory and 5th generation Intel Xeon Scalable processors. Supporting up to 192 vCPUs, 1600 Gbps networking bandwidth with EFA, up to 2 TiB of system memory, and up to 15.2 TB of local NVMe SSD storage.
+* GameLift (4.0.6.0)
+	* Amazon GameLift Servers now supports automatic scaling to and from zero instances based on game session activity. Fleets scale down to zero following a defined period of no game session activity and scale up from zero when game sessions are requested, providing an option for cost optimization.
+* S3 (4.0.18.1)
+	* Generate PutObject, GetObject, UploadPart, WriteGetObjectResponse, GetObjectTorrent.
+	* [Breaking Change] WriteOffsetBytes on PutObjectRequest changed from int to int? to be consistent with the nullability changes in V4.
+	* [Breaking Change] TagCount on GetObjectResponse changed from int to int? to be consistent with the nullability changes in V4.
+	* SSEKMSKeyId, SSECustomerAlgorithm, SSECustomerKeyMD5 properties were added to UploadPartResponse.
+	* Expires was added to both PutObjectRequest and InitiateMultipartUploadRequest.
+* Core 4.0.3.12
+	* Update `AssumeRoleAWSCredentials` and `AssumeRoleWithWebIdentityCredentials` to dynamically use a 5-minute preempt expiry if the requested role session duration is less than 20 minutes (to prevent the SDK from refreshing credentials unnecessarily) - https://github.com/aws/aws-sdk-net/issues/4313
+	* All service and extension packages updated to require new Core
+
 ### 4.0.179.0 (2026-01-28 19:27 UTC)
 * CognitoIdentityProvider (4.0.5.0)
 	* This release adds support for a new lambda trigger to transform federated user attributes during the authentication with external identity providers on Cognito Managed Login.

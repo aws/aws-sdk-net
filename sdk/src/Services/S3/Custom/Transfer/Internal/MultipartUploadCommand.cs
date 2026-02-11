@@ -323,6 +323,7 @@ namespace Amazon.S3.Transfer.Internal
                 Metadata = this._fileTransporterRequest.Metadata,
                 WebsiteRedirectLocation = this._fileTransporterRequest.WebsiteRedirectLocation,
                 BucketKeyEnabled = this._fileTransporterRequest.BucketKeyEnabled,
+                Expires = this._fileTransporterRequest.Expires
             };
 
             if (this._fileTransporterRequest.IsSetObjectLockRetainUntilDate())

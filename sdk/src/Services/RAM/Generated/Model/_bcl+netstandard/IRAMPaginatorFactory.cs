@@ -156,5 +156,15 @@ namespace Amazon.RAM.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListResourceTypesPaginator ListResourceTypes(ListResourceTypesRequest request);
+
+        /// <summary>
+        /// Paginator for ListSourceAssociations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSourceAssociationsPaginator ListSourceAssociations(ListSourceAssociationsRequest request);
     }
 }

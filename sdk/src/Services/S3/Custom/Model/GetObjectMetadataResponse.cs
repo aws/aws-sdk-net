@@ -23,9 +23,6 @@ using Amazon.S3.Util;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>
-    /// Returns information about the  HeadObject response and response metadata.
-    /// </summary>
     public partial class GetObjectMetadataResponse : AmazonWebServiceResponse
     {
         private string deleteMarker;

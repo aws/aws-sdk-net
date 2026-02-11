@@ -33,9 +33,16 @@ namespace Amazon.Glue.Model
     /// Container for the parameters to the ListConnectionTypes operation.
     /// The <c>ListConnectionTypes</c> API provides a discovery mechanism to learn available
     /// connection types in Glue. The response contains a list of connection types with high-level
-    /// details of what is supported for each connection type. The connection types listed
-    /// are the set of supported options for the <c>ConnectionType</c> value in the <c>CreateConnection</c>
-    /// API.
+    /// details of what is supported for each connection type, including both built-in connection
+    /// types and custom connection types registered via <c>RegisterConnectionType</c>. The
+    /// connection types listed are the set of supported options for the <c>ConnectionType</c>
+    /// value in the <c>CreateConnection</c> API.
+    /// 
+    ///  
+    /// <para>
+    /// See also: <c>DescribeConnectionType</c>, <c>RegisterConnectionType</c>, <c>DeleteConnectionType</c>
+    /// 
+    /// </para>
     /// </summary>
     public partial class ListConnectionTypesRequest : AmazonGlueRequest
     {

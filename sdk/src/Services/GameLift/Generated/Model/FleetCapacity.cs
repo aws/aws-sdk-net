@@ -50,6 +50,7 @@ namespace Amazon.GameLift.Model
         private EC2InstanceCounts _instanceCounts;
         private EC2InstanceType _instanceType;
         private string _location;
+        private ManagedCapacityConfiguration _managedCapacityConfiguration;
 
         /// <summary>
         /// Gets and sets the property FleetArn. 
@@ -169,6 +170,24 @@ namespace Amazon.GameLift.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedCapacityConfiguration. 
+        /// <para>
+        /// Configuration settings for managed capacity scaling.
+        /// </para>
+        /// </summary>
+        public ManagedCapacityConfiguration ManagedCapacityConfiguration
+        {
+            get { return this._managedCapacityConfiguration; }
+            set { this._managedCapacityConfiguration = value; }
+        }
+
+        // Check to see if ManagedCapacityConfiguration property is set
+        internal bool IsSetManagedCapacityConfiguration()
+        {
+            return this._managedCapacityConfiguration != null;
         }
 
     }

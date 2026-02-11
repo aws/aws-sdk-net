@@ -32,15 +32,58 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceCatalog")]
-        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For custom endpoint with region not set and fips disabled")]
+        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_Test()
+        {
+            var parameters = new MarketplaceCatalogEndpointParameters();
+            parameters["Endpoint"] = "https://example.com";
+            parameters["UseFIPS"] = false;
+            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MarketplaceCatalog")]
+        [Description("For custom endpoint with fips enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_enabled_Test()
+        {
+            var parameters = new MarketplaceCatalogEndpointParameters();
+            parameters["Endpoint"] = "https://example.com";
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MarketplaceCatalog")]
+        [Description("For custom endpoint with fips disabled and dualstack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
+        {
+            var parameters = new MarketplaceCatalogEndpointParameters();
+            parameters["Endpoint"] = "https://example.com";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MarketplaceCatalog")]
+        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MarketplaceCatalogEndpointParameters();
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://catalog.marketplace.us-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://catalog-marketplace.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -77,135 +120,105 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceCatalog")]
-        [Description("For region us-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MarketplaceCatalogEndpointParameters();
             parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://catalog.marketplace.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://catalog.marketplace.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceCatalog")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region cn-northwest-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://catalog.marketplace-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+            Assert.AreEqual("https://catalog.marketplace-fips.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceCatalog")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        [Description("For region cn-northwest-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://catalog.marketplace-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
+            Assert.AreEqual("https://catalog.marketplace-fips.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceCatalog")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region cn-northwest-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://catalog.marketplace.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+            Assert.AreEqual("https://catalog.marketplace.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceCatalog")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region cn-northwest-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://catalog.marketplace.cn-north-1.amazonaws.com.cn", endpoint.URL);
+            Assert.AreEqual("https://catalog.marketplace.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceCatalog")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://catalog.marketplace-fips.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MarketplaceCatalog")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
+            parameters["Region"] = "eusc-de-east-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://catalog.marketplace-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://catalog.marketplace-fips.eusc-de-east-1.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceCatalog")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://catalog.marketplace.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MarketplaceCatalog")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
+            parameters["Region"] = "eusc-de-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://catalog.marketplace.us-gov-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://catalog.marketplace.eusc-de-east-1.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]
@@ -272,63 +285,120 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceCatalog")]
-        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MarketplaceCatalog")]
-        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MarketplaceCatalog")]
-        [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["Region"] = "us-east-1";
+            parameters["Region"] = "eu-isoe-west-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://catalog.marketplace-fips.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceCatalog")]
-        [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
+        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MarketplaceCatalogEndpointParameters();
-            parameters["Region"] = "us-east-1";
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://catalog.marketplace.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MarketplaceCatalog")]
+        [Description("For region us-isof-south-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new MarketplaceCatalogEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://catalog.marketplace-fips.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MarketplaceCatalog")]
+        [Description("For region us-isof-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new MarketplaceCatalogEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://catalog.marketplace.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MarketplaceCatalog")]
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new MarketplaceCatalogEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://catalog.marketplace-fips.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MarketplaceCatalog")]
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new MarketplaceCatalogEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://catalog.marketplace-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MarketplaceCatalog")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new MarketplaceCatalogEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://catalog.marketplace.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MarketplaceCatalog")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new MarketplaceCatalogEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMarketplaceCatalogEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://catalog.marketplace.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]

@@ -130,6 +130,17 @@ namespace Amazon.BedrockDataAutomationRuntime.Model.Internal.MarshallTransformat
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetOutputConfiguration())
+            {
+                context.Writer.WritePropertyName("outputConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OutputConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

@@ -31,9 +31,9 @@ namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBrowserSessions operation.
-    /// Retrieves a list of browser sessions in Amazon Bedrock that match the specified criteria.
-    /// This operation returns summary information about each session, including identifiers,
-    /// status, and timestamps.
+    /// Retrieves a list of browser sessions in Amazon Bedrock AgentCore that match the specified
+    /// criteria. This operation returns summary information about each session, including
+    /// identifiers, status, and timestamps.
     /// 
     ///  
     /// <para>
@@ -114,7 +114,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <para>
         /// The token for the next set of results. Use the value returned in the previous response
         /// in the next request to retrieve the next set of results. If not specified, Amazon
-        /// Bedrock returns the first page of results.
+        /// Bedrock AgentCore returns the first page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

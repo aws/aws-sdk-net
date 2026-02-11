@@ -58,6 +58,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.NetworkInterfaceMode);
             }
 
+            if(requestObject.IsSetPhysicalInterfaceIpAddresses())
+            {
+                context.Writer.WritePropertyName("physicalInterfaceIpAddresses");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPhysicalInterfaceIpAddressesListValue in requestObject.PhysicalInterfaceIpAddresses)
+                {
+                        context.Writer.WriteStringValue(requestObjectPhysicalInterfaceIpAddressesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetPhysicalInterfaceName())
             {
                 context.Writer.WritePropertyName("physicalInterfaceName");

@@ -30,11 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// The configured sources for this SRT input.
+    /// The configured settings for SRT inputs (caller and listener).
     /// </summary>
     public partial class SrtSettings
     {
         private List<SrtCallerSource> _srtCallerSources = AWSConfigs.InitializeCollections ? new List<SrtCallerSource>() : null;
+        private SrtListenerSettings _srtListenerSettings;
 
         /// <summary>
         /// Gets and sets the property SrtCallerSources.
@@ -54,6 +55,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSrtCallerSources()
         {
             return this._srtCallerSources != null && (this._srtCallerSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SrtListenerSettings.
+        /// </summary>
+        public SrtListenerSettings SrtListenerSettings
+        {
+            get { return this._srtListenerSettings; }
+            set { this._srtListenerSettings = value; }
+        }
+
+        // Check to see if SrtListenerSettings property is set
+        internal bool IsSetSrtListenerSettings()
+        {
+            return this._srtListenerSettings != null;
         }
 
     }

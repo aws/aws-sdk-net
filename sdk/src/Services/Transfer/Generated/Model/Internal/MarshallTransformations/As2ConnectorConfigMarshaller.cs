@@ -46,6 +46,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAsyncMdnConfig())
+            {
+                context.Writer.WritePropertyName("AsyncMdnConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = As2AsyncMdnConnectorConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AsyncMdnConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetBasicAuthSecretId())
             {
                 context.Writer.WritePropertyName("BasicAuthSecretId");

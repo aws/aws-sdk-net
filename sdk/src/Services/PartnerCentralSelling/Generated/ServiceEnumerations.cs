@@ -4933,6 +4933,10 @@ namespace Amazon.PartnerCentralSelling
     {
 
         /// <summary>
+        /// Constant CreatedDate for OpportunitySortName
+        /// </summary>
+        public static readonly OpportunitySortName CreatedDate = new OpportunitySortName("CreatedDate");
+        /// <summary>
         /// Constant CustomerCompanyName for OpportunitySortName
         /// </summary>
         public static readonly OpportunitySortName CustomerCompanyName = new OpportunitySortName("CustomerCompanyName");

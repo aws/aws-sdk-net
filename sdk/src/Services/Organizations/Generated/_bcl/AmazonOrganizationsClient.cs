@@ -3428,6 +3428,14 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
+        /// Resources remaining within the account after closing will be automatically deleted
+        /// after 90 days. During this 90-day period, the resources won't be available unless
+        /// you contact Amazon Web Services Support to reopen the account. After 90 days, you
+        /// can't reopen an account. You might still receive a <a href="https://repost.aws/knowledge-center/closed-account-bill">bill
+        /// after account closure</a>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// You can close only 10% of member accounts, between 10 and 1000, within a rolling 30
         /// day period. This quota is not bound by a calendar month, but starts when you close
         /// an account. After you reach this limit, you can't close additional accounts. For more
@@ -4003,6 +4011,14 @@ namespace Amazon.Organizations
         /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
+        /// <para>
+        /// Resources remaining within the account after closing will be automatically deleted
+        /// after 90 days. During this 90-day period, the resources won't be available unless
+        /// you contact Amazon Web Services Support to reopen the account. After 90 days, you
+        /// can't reopen an account. You might still receive a <a href="https://repost.aws/knowledge-center/closed-account-bill">bill
+        /// after account closure</a>. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// You can close only 10% of member accounts, between 10 and 1000, within a rolling 30
         /// day period. This quota is not bound by a calendar month, but starts when you close

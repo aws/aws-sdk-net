@@ -36,6 +36,7 @@ namespace Amazon.IoTManagedIntegrations.Model
     public partial class ManagedThingAssociation
     {
         private string _accountAssociationId;
+        private ManagedThingAssociationStatus _managedThingAssociationStatus;
         private string _managedThingId;
 
         /// <summary>
@@ -55,6 +56,26 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetAccountAssociationId()
         {
             return this._accountAssociationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedThingAssociationStatus. 
+        /// <para>
+        /// The status of the registration between the managed thing and the account association.
+        /// Indicates whether the device is pre-associated or fully associated with the account
+        /// association.
+        /// </para>
+        /// </summary>
+        public ManagedThingAssociationStatus ManagedThingAssociationStatus
+        {
+            get { return this._managedThingAssociationStatus; }
+            set { this._managedThingAssociationStatus = value; }
+        }
+
+        // Check to see if ManagedThingAssociationStatus property is set
+        internal bool IsSetManagedThingAssociationStatus()
+        {
+            return this._managedThingAssociationStatus != null;
         }
 
         /// <summary>

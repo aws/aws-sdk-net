@@ -6113,7 +6113,37 @@ namespace Amazon.Connect
         /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
         /// management.
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
+        /// <para>
+        /// Fields in <c>PhoneConfig</c> cannot be set simultaneously with their corresponding
+        /// channel-specific configuration parameters. Specifically:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AutoAccept</c> conflicts with <c>AutoAcceptConfigs</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AfterContactWorkTimeLimit</c> conflicts with <c>AfterContactWorkConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PhoneType</c> and <c>PhoneConfig.PhoneNumber</c> conflict with <c>PhoneNumberConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PersistentConnection</c> conflicts with <c>PersistentConnectionConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// We recommend using channel-specific parameters such as <c>AutoAcceptConfigs</c>, <c>AfterContactWorkConfigs</c>,
+        /// <c>PhoneNumberConfigs</c>, <c>PersistentConnectionConfigs</c>, and <c>VoiceEnhancementConfigs</c>
+        /// for per-channel configuration.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about how to create users using the Amazon Connect admin website,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
@@ -6165,7 +6195,37 @@ namespace Amazon.Connect
         /// and <c>LastName</c> are required if you are using Amazon Connect or SAML for identity
         /// management.
         /// </para>
-        ///  </important> 
+        ///  </important> <note> 
+        /// <para>
+        /// Fields in <c>PhoneConfig</c> cannot be set simultaneously with their corresponding
+        /// channel-specific configuration parameters. Specifically:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AutoAccept</c> conflicts with <c>AutoAcceptConfigs</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.AfterContactWorkTimeLimit</c> conflicts with <c>AfterContactWorkConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PhoneType</c> and <c>PhoneConfig.PhoneNumber</c> conflict with <c>PhoneNumberConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PhoneConfig.PersistentConnection</c> conflicts with <c>PersistentConnectionConfigs</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// We recommend using channel-specific parameters such as <c>AutoAcceptConfigs</c>, <c>AfterContactWorkConfigs</c>,
+        /// <c>PhoneNumberConfigs</c>, <c>PersistentConnectionConfigs</c>, and <c>VoiceEnhancementConfigs</c>
+        /// for per-channel configuration.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// For information about how to create users using the Amazon Connect admin website,
         /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add
@@ -14358,7 +14418,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Retrieves the position of the contact in the queue.
+        /// Retrieves contact metric data for a specified contact.
         /// 
         ///  
         /// <para>
@@ -14366,23 +14426,27 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// Following are common uses cases for position in queue:
+        /// Following are common use cases for position in queue and estimated wait time:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Understand the expected wait experience of a contact.
+        /// Customer-Facing Wait Time Announcements - Display or announce the estimated wait time
+        /// and position in queue to customers before or during their queue experience. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Inform customers of their position in queue and potentially offer a callback.
+        /// Callback Offerings - Offer customers a callback option when the estimated wait time
+        /// or position in queue exceeds a defined threshold. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Make data-driven routing decisions between primary and alternative queues.
+        /// Queue Routing Decisions - Route incoming contacts to less congested queues by comparing
+        /// estimated wait time and position in queue across multiple queues. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enhance queue visibility and leverage agent proficiencies to streamline contact routing.
+        /// Self-Service Deflection - Redirect customers to self-service options like chatbots
+        /// or FAQs when estimated wait time is high or position in queue is unfavorable. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -14390,8 +14454,7 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The only way to retrieve the position of the contact in queue is by using this API.
-        /// You can't retrieve the position by using flows and attributes.
+        /// Metrics are only available while the contact is actively in queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14437,7 +14500,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Retrieves the position of the contact in the queue.
+        /// Retrieves contact metric data for a specified contact.
         /// 
         ///  
         /// <para>
@@ -14445,23 +14508,27 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// Following are common uses cases for position in queue:
+        /// Following are common use cases for position in queue and estimated wait time:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Understand the expected wait experience of a contact.
+        /// Customer-Facing Wait Time Announcements - Display or announce the estimated wait time
+        /// and position in queue to customers before or during their queue experience. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Inform customers of their position in queue and potentially offer a callback.
+        /// Callback Offerings - Offer customers a callback option when the estimated wait time
+        /// or position in queue exceeds a defined threshold. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Make data-driven routing decisions between primary and alternative queues.
+        /// Queue Routing Decisions - Route incoming contacts to less congested queues by comparing
+        /// estimated wait time and position in queue across multiple queues. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enhance queue visibility and leverage agent proficiencies to streamline contact routing.
+        /// Self-Service Deflection - Redirect customers to self-service options like chatbots
+        /// or FAQs when estimated wait time is high or position in queue is unfavorable. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -14469,8 +14536,7 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The only way to retrieve the position of the contact in queue is by using this API.
-        /// You can't retrieve the position by using flows and attributes.
+        /// Metrics are only available while the contact is actively in queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30933,6 +30999,101 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateUserConfig
+
+
+        /// <summary>
+        /// Updates the configuration settings for the specified user, including per-channel auto-accept
+        /// and after contact work (ACW) timeout settings.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation replaces the UpdateUserPhoneConfig API. While UpdateUserPhoneConfig
+        /// applies the same ACW timeout to all channels, UpdateUserConfig allows you to set different
+        /// auto-accept and ACW timeout values for each channel type.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserConfig">REST API Reference for UpdateUserConfig Operation</seealso>
+        public virtual UpdateUserConfigResponse UpdateUserConfig(UpdateUserConfigRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserConfigResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the configuration settings for the specified user, including per-channel auto-accept
+        /// and after contact work (ACW) timeout settings.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation replaces the UpdateUserPhoneConfig API. While UpdateUserPhoneConfig
+        /// applies the same ACW timeout to all channels, UpdateUserConfig allows you to set different
+        /// auto-accept and ACW timeout values for each channel type.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateUserConfig service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserConfig">REST API Reference for UpdateUserConfig Operation</seealso>
+        public virtual Task<UpdateUserConfigResponse> UpdateUserConfigAsync(UpdateUserConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserConfigResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateUserConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateUserHierarchy
 
 
@@ -31262,6 +31423,16 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates the phone configuration settings for the specified user.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserConfig.html">UpdateUserConfig</a>
+        /// API, which supports additional functionality that is not available in the UpdateUserPhoneConfig
+        /// API, such as voice enhancement settings and per-channel configuration for auto-accept
+        /// and After Contact Work (ACW) timeouts. In comparison, the UpdateUserPhoneConfig API
+        /// will always set the same ACW timeouts to all channels the user handles.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPhoneConfig service method.</param>
         /// 
@@ -31294,6 +31465,16 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates the phone configuration settings for the specified user.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateUserConfig.html">UpdateUserConfig</a>
+        /// API, which supports additional functionality that is not available in the UpdateUserPhoneConfig
+        /// API, such as voice enhancement settings and per-channel configuration for auto-accept
+        /// and After Contact Work (ACW) timeouts. In comparison, the UpdateUserPhoneConfig API
+        /// will always set the same ACW timeouts to all channels the user handles.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPhoneConfig service method.</param>
         /// <param name="cancellationToken">
