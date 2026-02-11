@@ -46,6 +46,12 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMaxAutoscalingTaskCount())
+            {
+                context.Writer.WritePropertyName("maxAutoscalingTaskCount");
+                context.Writer.WriteNumberValue(requestObject.MaxAutoscalingTaskCount.Value);
+            }
+
             if(requestObject.IsSetMaxWorkerCount())
             {
                 context.Writer.WritePropertyName("maxWorkerCount");
