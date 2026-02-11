@@ -48,6 +48,17 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetPartitionSpec())
+            {
+                context.Writer.WritePropertyName("partitionSpec");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IcebergPartitionSpecMarshaller.Instance;
+                marshaller.Marshall(requestObject.PartitionSpec, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("properties");
@@ -69,6 +80,17 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 
                 var marshaller = IcebergSchemaMarshaller.Instance;
                 marshaller.Marshall(requestObject.Schema, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetWriteOrder())
+            {
+                context.Writer.WritePropertyName("writeOrder");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IcebergSortOrderMarshaller.Instance;
+                marshaller.Marshall(requestObject.WriteOrder, context);
 
                 context.Writer.WriteObjectEnd();
             }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SchemaField Marshaller
+    /// IcebergSortField Marshaller
     /// </summary>
-    public class SchemaFieldMarshaller : IRequestMarshaller<SchemaField, JsonMarshallerContext> 
+    public class IcebergSortFieldMarshaller : IRequestMarshaller<IcebergSortField, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,32 +44,32 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SchemaField requestObject, JsonMarshallerContext context)
+        public void Marshall(IcebergSortField requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetId())
+            if(requestObject.IsSetDirection())
             {
-                context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WritePropertyName("direction");
+                context.Writer.Write(requestObject.Direction);
             }
 
-            if(requestObject.IsSetName())
+            if(requestObject.IsSetNullOrder())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WritePropertyName("null-order");
+                context.Writer.Write(requestObject.NullOrder);
             }
 
-            if(requestObject.IsSetRequired())
+            if(requestObject.IsSetSourceId())
             {
-                context.Writer.WritePropertyName("required");
-                context.Writer.Write(requestObject.Required);
+                context.Writer.WritePropertyName("source-id");
+                context.Writer.Write(requestObject.SourceId);
             }
 
-            if(requestObject.IsSetType())
+            if(requestObject.IsSetTransform())
             {
-                context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WritePropertyName("transform");
+                context.Writer.Write(requestObject.Transform);
             }
 
         }
@@ -77,7 +77,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SchemaFieldMarshaller Instance = new SchemaFieldMarshaller();
+        public readonly static IcebergSortFieldMarshaller Instance = new IcebergSortFieldMarshaller();
 
     }
 }
