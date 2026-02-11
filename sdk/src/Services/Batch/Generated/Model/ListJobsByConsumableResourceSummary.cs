@@ -229,7 +229,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ShareIdentifier. 
         /// <para>
-        /// The fair-share scheduling policy identifier for the job.
+        /// The fair-share scheduling identifier for the job.
         /// </para>
         /// </summary>
         public string ShareIdentifier
