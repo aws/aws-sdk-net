@@ -1,3 +1,19 @@
+### 4.0.189.0 (2026-02-11 19:38 UTC)
+* Batch (4.0.5.0)
+	* Add support for listing jobs by share identifier and getting snapshots of active capacity utilization by job queue and share.
+* EC2 (4.0.73.0)
+	* R8i instances powered by custom Intel Xeon 6 processors available only on AWS with sustained all-core 3.9 GHz turbo frequency
+* EKS (4.0.13.0)
+	* This release adds support for Windows Server 2025 in Amazon EKS Managed Node Groups.
+* KafkaConnect (4.0.5.0)
+	* Support configurable upper limits on task count during autoscaling operations via maxAutoscalingTaskCount parameter.
+* S3 (4.0.18.5)
+	* Fix MPU in transfer utility for objects larger than 80GB
+* S3Tables (4.0.9.0)
+	* S3 Tables now supports setting partition specifications and sort orders on tables. Partition specs allow users to define how data is organized using transform functions. Sort order configurations enable users to specify sort directions and null ordering preferences for optimized data layout.
+* Core 4.0.3.14
+	* Update documentation for `MaxErrorRetry` to call out different default value for `DynamoDB`
+
 ### 4.0.188.0 (2026-02-10 19:23 UTC)
 * BedrockAgentCore (4.0.11.0)
 	* Added AgentCore browser proxy configuration support, allowing routing of browser traffic through HTTP and HTTPS proxy servers with authentication and bypass rules.

@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": false,
-    "type": "patch",
-    "changeLogMessages": [
-      "Update documentation for `MaxErrorRetry` to call out different default value for `DynamoDB`"
-    ]
-  }
-}
