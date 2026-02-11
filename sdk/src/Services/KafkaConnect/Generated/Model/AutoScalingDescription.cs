@@ -34,11 +34,31 @@ namespace Amazon.KafkaConnect.Model
     /// </summary>
     public partial class AutoScalingDescription
     {
+        private int? _maxAutoscalingTaskCount;
         private int? _maxWorkerCount;
         private int? _mcuCount;
         private int? _minWorkerCount;
         private ScaleInPolicyDescription _scaleInPolicy;
         private ScaleOutPolicyDescription _scaleOutPolicy;
+
+        /// <summary>
+        /// Gets and sets the property MaxAutoscalingTaskCount. 
+        /// <para>
+        /// The maximum number of tasks allocated to the connector during autoscaling operations.
+        /// Must be at least equal to maxWorkerCount.
+        /// </para>
+        /// </summary>
+        public int MaxAutoscalingTaskCount
+        {
+            get { return this._maxAutoscalingTaskCount.GetValueOrDefault(); }
+            set { this._maxAutoscalingTaskCount = value; }
+        }
+
+        // Check to see if MaxAutoscalingTaskCount property is set
+        internal bool IsSetMaxAutoscalingTaskCount()
+        {
+            return this._maxAutoscalingTaskCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxWorkerCount. 
@@ -98,7 +118,7 @@ namespace Amazon.KafkaConnect.Model
         /// <summary>
         /// Gets and sets the property ScaleInPolicy. 
         /// <para>
-        /// The sacle-in policy for the connector.
+        /// The scale-in policy for the connector.
         /// </para>
         /// </summary>
         public ScaleInPolicyDescription ScaleInPolicy
@@ -116,7 +136,7 @@ namespace Amazon.KafkaConnect.Model
         /// <summary>
         /// Gets and sets the property ScaleOutPolicy. 
         /// <para>
-        /// The sacle-out policy for the connector.&gt;
+        /// The scale-out policy for the connector.
         /// </para>
         /// </summary>
         public ScaleOutPolicyDescription ScaleOutPolicy

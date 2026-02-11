@@ -66,6 +66,12 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("maxAutoscalingTaskCount", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxAutoscalingTaskCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maxWorkerCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
