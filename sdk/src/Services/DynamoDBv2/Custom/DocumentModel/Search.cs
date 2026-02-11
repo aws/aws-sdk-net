@@ -905,21 +905,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <summary>
         /// Gets the history of consumed capacity details for all operations performed during the search.
+        /// For details, see <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html#ConsumedCapacityUnits">ConsumedCapacityUnits</see>.
         /// </summary>
         public IReadOnlyList<ConsumedCapacity> ConsumedCapacityHistory => _history;
 
         /// <summary>
-        /// Total capacity units accumulated.
+        /// Gets the total capacity units accumulated across all operations performed during the search.
+        /// For details, see <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html#ConsumedCapacityUnits">ConsumedCapacityUnits</see>.
         /// </summary>
         public double? TotalCapacityUnits { get; internal set; }
 
         /// <summary>
         /// Gets the total consumed read capacity units accumulated across all operations performed during the search.
+        /// For details, see <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html#ConsumedReadCapacityUnits">ConsumedReadCapacityUnits</see>.
         /// </summary>
         public double? TotalReadCapacityUnits { get; internal set; }
 
         /// <summary>
         /// Gets the total accumulated consumed write capacity units for all operations performed during the search.
+        /// For details, see <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html#ConsumedWriteCapacityUnits">ConsumedWriteCapacityUnits</see>.
         /// </summary>
         public double? TotalWriteCapacityUnits { get; internal set; }
 
