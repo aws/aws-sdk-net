@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SchemaField Marshaller
+    /// IcebergPartitionSpec Marshaller
     /// </summary>
-    public class SchemaFieldMarshaller : IRequestMarshaller<SchemaField, JsonMarshallerContext> 
+    public class IcebergPartitionSpecMarshaller : IRequestMarshaller<IcebergPartitionSpec, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +42,30 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SchemaField requestObject, JsonMarshallerContext context)
+        public void Marshall(IcebergPartitionSpec requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetId())
+            if(requestObject.IsSetFields())
             {
-                context.Writer.WritePropertyName("id");
-                context.Writer.WriteNumberValue(requestObject.Id.Value);
+                context.Writer.WritePropertyName("fields");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectFieldsListValue in requestObject.Fields)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = IcebergPartitionFieldMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFieldsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(requestObject.IsSetName())
+            if(requestObject.IsSetSpecId())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
-            }
-
-            if(requestObject.IsSetRequired())
-            {
-                context.Writer.WritePropertyName("required");
-                context.Writer.WriteBooleanValue(requestObject.Required.Value);
-            }
-
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WritePropertyName("spec-id");
+                context.Writer.WriteNumberValue(requestObject.SpecId.Value);
             }
 
         }
@@ -75,7 +73,7 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SchemaFieldMarshaller Instance = new SchemaFieldMarshaller();
+        public readonly static IcebergPartitionSpecMarshaller Instance = new IcebergPartitionSpecMarshaller();
 
     }
 }
