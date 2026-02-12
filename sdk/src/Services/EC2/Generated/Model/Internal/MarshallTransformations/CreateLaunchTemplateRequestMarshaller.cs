@@ -160,6 +160,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "CoreCount", StringUtils.FromInt(publicRequest.LaunchTemplateData.CpuOptions.CoreCount));
                         }
+                        if(publicRequest.LaunchTemplateData.CpuOptions.IsSetNestedVirtualization())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "NestedVirtualization", StringUtils.FromString(publicRequest.LaunchTemplateData.CpuOptions.NestedVirtualization));
+                        }
                         if(publicRequest.LaunchTemplateData.CpuOptions.IsSetThreadsPerCore())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "ThreadsPerCore", StringUtils.FromInt(publicRequest.LaunchTemplateData.CpuOptions.ThreadsPerCore));

@@ -19813,6 +19813,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type NestedVirtualizationSpecification.
+    /// </summary>
+    public class NestedVirtualizationSpecification : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for NestedVirtualizationSpecification
+        /// </summary>
+        public static readonly NestedVirtualizationSpecification Disabled = new NestedVirtualizationSpecification("disabled");
+        /// <summary>
+        /// Constant Enabled for NestedVirtualizationSpecification
+        /// </summary>
+        public static readonly NestedVirtualizationSpecification Enabled = new NestedVirtualizationSpecification("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NestedVirtualizationSpecification(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NestedVirtualizationSpecification FindValue(string value)
+        {
+            return FindValue<NestedVirtualizationSpecification>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NestedVirtualizationSpecification(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NetworkInterfaceAttribute.
     /// </summary>
     public class NetworkInterfaceAttribute : ConstantClass
@@ -25936,6 +25986,10 @@ namespace Amazon.EC2
         /// Constant AmdSevSnp for SupportedAdditionalProcessorFeature
         /// </summary>
         public static readonly SupportedAdditionalProcessorFeature AmdSevSnp = new SupportedAdditionalProcessorFeature("amd-sev-snp");
+        /// <summary>
+        /// Constant NestedVirtualization for SupportedAdditionalProcessorFeature
+        /// </summary>
+        public static readonly SupportedAdditionalProcessorFeature NestedVirtualization = new SupportedAdditionalProcessorFeature("nested-virtualization");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

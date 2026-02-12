@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CoreCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("nestedVirtualization", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.NestedVirtualization = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("threadsPerCore", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
