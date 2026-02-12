@@ -55,6 +55,7 @@ namespace Amazon.EC2.Model
         private int? _coreCount;
         private bool? _dryRun;
         private string _instanceId;
+        private NestedVirtualizationSpecification _nestedVirtualization;
         private int? _threadsPerCore;
 
         /// <summary>
@@ -63,7 +64,6 @@ namespace Amazon.EC2.Model
         /// The number of CPU cores to activate for the specified instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int? CoreCount
         {
             get { return this._coreCount; }
@@ -116,12 +116,31 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NestedVirtualization. 
+        /// <para>
+        /// Indicates whether to enable or disable nested virtualization for the instance. When
+        /// nested virtualization is enabled, Virtual Secure Mode (VSM) is automatically disabled
+        /// for the instance.
+        /// </para>
+        /// </summary>
+        public NestedVirtualizationSpecification NestedVirtualization
+        {
+            get { return this._nestedVirtualization; }
+            set { this._nestedVirtualization = value; }
+        }
+
+        // Check to see if NestedVirtualization property is set
+        internal bool IsSetNestedVirtualization()
+        {
+            return this._nestedVirtualization != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ThreadsPerCore. 
         /// <para>
         /// The number of threads to run for each CPU core.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int? ThreadsPerCore
         {
             get { return this._threadsPerCore; }
