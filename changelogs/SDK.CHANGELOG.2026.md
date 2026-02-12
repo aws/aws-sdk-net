@@ -1,3 +1,7 @@
+### 3.7.1222.0 (2026-02-12 19:16 UTC)
+* EC2 (3.7.548.0)
+	* Launching nested virtualization. This feature allows you to run nested VMs inside virtual (non-bare metal) EC2 instances.
+
 ### 3.7.1221.0 (2026-02-11 19:40 UTC)
 * Batch (3.7.503.0)
 	* Add support for listing jobs by share identifier and getting snapshots of active capacity utilization by job queue and share.
