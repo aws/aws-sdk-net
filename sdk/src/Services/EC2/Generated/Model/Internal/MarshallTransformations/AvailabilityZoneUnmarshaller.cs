@@ -55,6 +55,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("geographySet/item", targetDepth))
+                    {
+                        var unmarshaller = AvailabilityZoneGeographyUnmarshaller.Instance;
+                        if (unmarshalledObject.Geography == null)
+                        {
+                            unmarshalledObject.Geography = new List<AvailabilityZoneGeography>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Geography.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("groupLongName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -112,6 +123,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("subGeographySet/item", targetDepth))
+                    {
+                        var unmarshaller = AvailabilityZoneSubGeographyUnmarshaller.Instance;
+                        if (unmarshalledObject.SubGeography == null)
+                        {
+                            unmarshalledObject.SubGeography = new List<AvailabilityZoneSubGeography>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SubGeography.Add(item);
                         continue;
                     }
                     if (context.TestExpression("zoneId", targetDepth))
