@@ -71,7 +71,7 @@ namespace Amazon.CloudWatch.Model
         /// The unique identifier for this alarm contributor.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=16)]
         public string ContributorId
         {
             get { return this._contributorId; }

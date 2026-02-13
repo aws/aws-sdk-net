@@ -309,6 +309,14 @@ namespace Amazon.CloudWatch
     {
 
         /// <summary>
+        /// Constant EVALUATION_ERROR for EvaluationState
+        /// </summary>
+        public static readonly EvaluationState EVALUATION_ERROR = new EvaluationState("EVALUATION_ERROR");
+        /// <summary>
+        /// Constant EVALUATION_FAILURE for EvaluationState
+        /// </summary>
+        public static readonly EvaluationState EVALUATION_FAILURE = new EvaluationState("EVALUATION_FAILURE");
+        /// <summary>
         /// Constant PARTIAL_DATA for EvaluationState
         /// </summary>
         public static readonly EvaluationState PARTIAL_DATA = new EvaluationState("PARTIAL_DATA");
