@@ -166,6 +166,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         int Count { get; }
 
         /// <summary>
+        /// Aggregated per-call and accumulated metrics for this search operation.
+        /// </summary>
+        DocumentModel.SearchMetrics Metrics { get; }
+
+        /// <summary>
         /// Gets the total number of items evaluated, before any ScanFilter is applied, for the current call.
         /// <para>
         /// The number of items evaluated, before any <c>ScanFilter</c> is applied. A high <c>ScannedCount</c>
@@ -263,7 +268,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <summary>
         /// Aggregated per-call and accumulated metrics for this search operation.
         /// </summary>
-        public SearchMetrics Metrics => _metrics;
+        public DocumentModel.SearchMetrics Metrics => _metrics;
 
         /// <summary>
         /// The ReturnConsumedCapacity setting used for this search (NONE, TOTAL, INDEXES).
@@ -876,76 +881,5 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
 
         #endregion
-    }
-
-    /// <summary>
-    /// Provides aggregated metrics and capacity usage information for a multi-page search or query operation.
-    /// </summary>
-    /// <remarks>This class exposes read-only properties that summarize capacity consumption, item counts, and
-    /// scan statistics across all pages retrieved during a search or query. Instances are typically returned by
-    /// operations that support capacity reporting, such as paginated database queries. All properties reflect the
-    /// cumulative or most recent values as appropriate, and are updated as additional pages are processed. This type is
-    /// not intended to be instantiated directly.</remarks>
-    public sealed class SearchMetrics
-    {
-        internal SearchMetrics()
-        {
-            _history = new List<ConsumedCapacity>();
-        }
-
-        internal List<ConsumedCapacity> _history;
-
-        /// <summary>
-        /// Gets the details of the capacity units consumed by the most recent operation.
-        /// </summary>
-        /// <remarks>This property is typically populated after a request to a data service that tracks
-        /// consumed capacity, such as a database or storage operation. The value may be null if capacity information is
-        /// not available for the last operation.</remarks>
-        public ConsumedCapacity LastConsumedCapacity { get; internal set; }
-
-        /// <summary>
-        /// Gets the history of consumed capacity details for all operations performed during the search.
-        /// For details, see <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html#ConsumedCapacityUnits">ConsumedCapacityUnits</see>.
-        /// </summary>
-        public IReadOnlyList<ConsumedCapacity> ConsumedCapacityHistory => _history;
-
-        /// <summary>
-        /// Gets the total capacity units accumulated across all operations performed during the search.
-        /// For details, see <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html#ConsumedCapacityUnits">ConsumedCapacityUnits</see>.
-        /// </summary>
-        public double? TotalCapacityUnits { get; internal set; }
-
-        /// <summary>
-        /// Gets the total consumed read capacity units accumulated across all operations performed during the search.
-        /// For details, see <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html#ConsumedReadCapacityUnits">ConsumedReadCapacityUnits</see>.
-        /// </summary>
-        public double? TotalReadCapacityUnits { get; internal set; }
-
-        /// <summary>
-        /// Gets the total accumulated consumed write capacity units for all operations performed during the search.
-        /// For details, see <see href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html#ConsumedWriteCapacityUnits">ConsumedWriteCapacityUnits</see>.
-        /// </summary>
-        public double? TotalWriteCapacityUnits { get; internal set; }
-
-        /// <summary>
-        /// Gets the number of items scanned during the most recent operation.
-        /// </summary>
-        public int ScannedCountLast { get; internal set; }
-
-        /// <summary>
-        /// Gets the total number of items scanned across all operations.
-        /// </summary>
-        /// <remarks>This property is updated internally and reflects the cumulative count of scanned items.</remarks>
-        public int ScannedCountAccumulated { get; internal set; }
-
-        /// <summary>
-        /// Number of items returned in the last operation.
-        /// </summary>
-        public int ItemsReturnedLast { get; internal set; }
-
-        /// <summary>
-        /// Total number of items returned across all operations.
-        /// </summary>
-        public int TotalItemsReturned { get; internal set; }
     }
 }
