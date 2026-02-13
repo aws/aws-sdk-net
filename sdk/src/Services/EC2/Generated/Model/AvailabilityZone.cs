@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AvailabilityZone
     {
+        private List<AvailabilityZoneGeography> _geography = AWSConfigs.InitializeCollections ? new List<AvailabilityZoneGeography>() : null;
         private string _groupLongName;
         private string _groupName;
         private List<AvailabilityZoneMessage> _messages = AWSConfigs.InitializeCollections ? new List<AvailabilityZoneMessage>() : null;
@@ -43,9 +44,34 @@ namespace Amazon.EC2.Model
         private string _parentZoneName;
         private string _regionName;
         private AvailabilityZoneState _state;
+        private List<AvailabilityZoneSubGeography> _subGeography = AWSConfigs.InitializeCollections ? new List<AvailabilityZoneSubGeography>() : null;
         private string _zoneId;
         private string _zoneName;
         private string _zoneType;
+
+        /// <summary>
+        /// Gets and sets the property Geography. 
+        /// <para>
+        /// The geography information for the Availability Zone or Local Zone. The geography is
+        /// returned as a list.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AvailabilityZoneGeography> Geography
+        {
+            get { return this._geography; }
+            set { this._geography = value; }
+        }
+
+        // Check to see if Geography property is set
+        internal bool IsSetGeography()
+        {
+            return this._geography != null && (this._geography.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property GroupLongName. 
@@ -234,6 +260,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubGeography. 
+        /// <para>
+        /// The sub-geography information for the Availability Zone or Local Zone. The sub-geography
+        /// is returned as a list.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AvailabilityZoneSubGeography> SubGeography
+        {
+            get { return this._subGeography; }
+            set { this._subGeography = value; }
+        }
+
+        // Check to see if SubGeography property is set
+        internal bool IsSetSubGeography()
+        {
+            return this._subGeography != null && (this._subGeography.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

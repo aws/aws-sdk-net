@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Region Object
+    /// Response Unmarshaller for AvailabilityZoneGeography Object
     /// </summary>  
-    public class RegionUnmarshaller : IXmlUnmarshaller<Region, XmlUnmarshallerContext>
+    public class AvailabilityZoneGeographyUnmarshaller : IXmlUnmarshaller<AvailabilityZoneGeography, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Region Unmarshall(XmlUnmarshallerContext context)
+        public AvailabilityZoneGeography Unmarshall(XmlUnmarshallerContext context)
         {
-            Region unmarshalledObject = new Region();
+            AvailabilityZoneGeography unmarshalledObject = new AvailabilityZoneGeography();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,33 +55,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("regionEndpoint", targetDepth))
+                    if (context.TestExpression("name", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("geographySet/item", targetDepth))
-                    {
-                        var unmarshaller = RegionGeographyUnmarshaller.Instance;
-                        if (unmarshalledObject.Geography == null)
-                        {
-                            unmarshalledObject.Geography = new List<RegionGeography>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Geography.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("optInStatus", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OptInStatus = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("regionName", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.RegionName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -94,12 +71,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static RegionUnmarshaller _instance = new RegionUnmarshaller();        
+        private static AvailabilityZoneGeographyUnmarshaller _instance = new AvailabilityZoneGeographyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RegionUnmarshaller Instance
+        public static AvailabilityZoneGeographyUnmarshaller Instance
         {
             get
             {

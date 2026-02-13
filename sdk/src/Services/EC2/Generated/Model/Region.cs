@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class Region
     {
         private string _endpoint;
+        private List<RegionGeography> _geography = AWSConfigs.InitializeCollections ? new List<RegionGeography>() : null;
         private string _optInStatus;
         private string _regionName;
 
@@ -54,6 +55,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetEndpoint()
         {
             return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Geography. 
+        /// <para>
+        /// The geography information for the Region. The geography is returned as a list.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<RegionGeography> Geography
+        {
+            get { return this._geography; }
+            set { this._geography = value; }
+        }
+
+        // Check to see if Geography property is set
+        internal bool IsSetGeography()
+        {
+            return this._geography != null && (this._geography.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
