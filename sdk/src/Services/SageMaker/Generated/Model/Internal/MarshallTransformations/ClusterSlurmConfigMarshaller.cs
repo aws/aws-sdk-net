@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ClusterOrchestrator Marshaller
+    /// ClusterSlurmConfig Marshaller
     /// </summary>
-    public class ClusterOrchestratorMarshaller : IRequestMarshaller<ClusterOrchestrator, JsonMarshallerContext> 
+    public class ClusterSlurmConfigMarshaller : IRequestMarshaller<ClusterSlurmConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,25 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ClusterOrchestrator requestObject, JsonMarshallerContext context)
+        public void Marshall(ClusterSlurmConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEks())
+            if(requestObject.IsSetNodeType())
             {
-                context.Writer.WritePropertyName("Eks");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ClusterOrchestratorEksConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Eks, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("NodeType");
+                context.Writer.WriteStringValue(requestObject.NodeType);
             }
 
-            if(requestObject.IsSetSlurm())
+            if(requestObject.IsSetPartitionNames())
             {
-                context.Writer.WritePropertyName("Slurm");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ClusterOrchestratorSlurmConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Slurm, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("PartitionNames");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPartitionNamesListValue in requestObject.PartitionNames)
+                {
+                        context.Writer.WriteStringValue(requestObjectPartitionNamesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -73,7 +68,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ClusterOrchestratorMarshaller Instance = new ClusterOrchestratorMarshaller();
+        public readonly static ClusterSlurmConfigMarshaller Instance = new ClusterSlurmConfigMarshaller();
 
     }
 }

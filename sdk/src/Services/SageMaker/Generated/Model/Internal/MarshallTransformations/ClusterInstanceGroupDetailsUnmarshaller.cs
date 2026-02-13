@@ -152,6 +152,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScheduledUpdateConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SlurmConfig", targetDepth))
+                {
+                    var unmarshaller = ClusterSlurmConfigDetailsUnmarshaller.Instance;
+                    unmarshalledObject.SlurmConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SoftwareUpdateStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

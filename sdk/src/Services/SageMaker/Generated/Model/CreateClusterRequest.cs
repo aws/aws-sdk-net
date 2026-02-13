@@ -186,10 +186,17 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Orchestrator. 
         /// <para>
-        /// The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, the
-        /// only supported value is <c>"eks"</c>, which is to use an Amazon Elastic Kubernetes
-        /// Service cluster as the orchestrator.
+        /// The type of orchestrator to use for the SageMaker HyperPod cluster. Currently, supported
+        /// values are <c>"Eks"</c> and <c>"Slurm"</c>, which is to use an Amazon Elastic Kubernetes
+        /// Service or Slurm cluster as the orchestrator.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you specify the <c>Orchestrator</c> field, you must provide exactly one orchestrator
+        /// configuration: either <c>Eks</c> or <c>Slurm</c>. Specifying both or providing an
+        /// empty configuration returns a validation error.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ClusterOrchestrator Orchestrator
         {

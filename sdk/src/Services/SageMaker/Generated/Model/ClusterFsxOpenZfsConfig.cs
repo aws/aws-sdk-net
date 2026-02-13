@@ -30,47 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The type of orchestrator used for the SageMaker HyperPod cluster.
+    /// Defines the configuration for attaching an Amazon FSx for OpenZFS file system to instances
+    /// in a SageMaker HyperPod cluster instance group.
     /// </summary>
-    public partial class ClusterOrchestrator
+    public partial class ClusterFsxOpenZfsConfig
     {
-        private ClusterOrchestratorEksConfig _eks;
-        private ClusterOrchestratorSlurmConfig _slurm;
+        private string _dnsName;
+        private string _mountPath;
 
         /// <summary>
-        /// Gets and sets the property Eks. 
+        /// Gets and sets the property DnsName. 
         /// <para>
-        /// The Amazon EKS cluster used as the orchestrator for the SageMaker HyperPod cluster.
+        /// The DNS name of the Amazon FSx for OpenZFS file system.
         /// </para>
         /// </summary>
-        public ClusterOrchestratorEksConfig Eks
+        [AWSProperty(Required=true, Min=16, Max=275)]
+        public string DnsName
         {
-            get { return this._eks; }
-            set { this._eks = value; }
+            get { return this._dnsName; }
+            set { this._dnsName = value; }
         }
 
-        // Check to see if Eks property is set
-        internal bool IsSetEks()
+        // Check to see if DnsName property is set
+        internal bool IsSetDnsName()
         {
-            return this._eks != null;
+            return this._dnsName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Slurm. 
+        /// Gets and sets the property MountPath. 
         /// <para>
-        /// The Slurm orchestrator configuration for the SageMaker HyperPod cluster.
+        /// The local path where the Amazon FSx for OpenZFS file system is mounted on instances.
         /// </para>
         /// </summary>
-        public ClusterOrchestratorSlurmConfig Slurm
+        [AWSProperty(Min=1, Max=1024)]
+        public string MountPath
         {
-            get { return this._slurm; }
-            set { this._slurm = value; }
+            get { return this._mountPath; }
+            set { this._mountPath = value; }
         }
 
-        // Check to see if Slurm property is set
-        internal bool IsSetSlurm()
+        // Check to see if MountPath property is set
+        internal bool IsSetMountPath()
         {
-            return this._slurm != null;
+            return this._mountPath != null;
         }
 
     }

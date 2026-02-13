@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterOrchestrator Object
+    /// Response Unmarshaller for ClusterSlurmConfigDetails Object
     /// </summary>  
-    public class ClusterOrchestratorUnmarshaller : IJsonUnmarshaller<ClusterOrchestrator, JsonUnmarshallerContext>
+    public class ClusterSlurmConfigDetailsUnmarshaller : IJsonUnmarshaller<ClusterSlurmConfigDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterOrchestrator Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ClusterSlurmConfigDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ClusterOrchestrator unmarshalledObject = new ClusterOrchestrator();
+            ClusterSlurmConfigDetails unmarshalledObject = new ClusterSlurmConfigDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Eks", targetDepth))
+                if (context.TestExpression("NodeType", targetDepth))
                 {
-                    var unmarshaller = ClusterOrchestratorEksConfigUnmarshaller.Instance;
-                    unmarshalledObject.Eks = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NodeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Slurm", targetDepth))
+                if (context.TestExpression("PartitionNames", targetDepth))
                 {
-                    var unmarshaller = ClusterOrchestratorSlurmConfigUnmarshaller.Instance;
-                    unmarshalledObject.Slurm = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PartitionNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterOrchestratorUnmarshaller _instance = new ClusterOrchestratorUnmarshaller();        
+        private static ClusterSlurmConfigDetailsUnmarshaller _instance = new ClusterSlurmConfigDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterOrchestratorUnmarshaller Instance
+        public static ClusterSlurmConfigDetailsUnmarshaller Instance
         {
             get
             {

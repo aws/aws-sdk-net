@@ -9467,6 +9467,36 @@
     <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterFsxLustreConfig.DnsName</property>
+    <min>16</min>
+    <max>275</max>
+    <pattern>((fs|fc)i?-[0-9a-f]{8,}\..{4,253})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterFsxLustreConfig.MountName</property>
+    <min>1</min>
+    <max>8</max>
+    <pattern>([A-Za-z0-9_-]{1,8})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterFsxLustreConfig.MountPath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>/[a-zA-Z0-9._/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterFsxOpenZfsConfig.DnsName</property>
+    <min>16</min>
+    <max>275</max>
+    <pattern>((fs|fc)i?-[0-9a-f]{8,}\..{4,253})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterFsxOpenZfsConfig.MountPath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>/[a-zA-Z0-9._/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.CurrentCount</property>
     <min>0</min>
   </property-value-rule>

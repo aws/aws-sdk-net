@@ -164,6 +164,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSlurmConfig())
+            {
+                context.Writer.WritePropertyName("SlurmConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterSlurmConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.SlurmConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetThreadsPerCore())
             {
                 context.Writer.WritePropertyName("ThreadsPerCore");

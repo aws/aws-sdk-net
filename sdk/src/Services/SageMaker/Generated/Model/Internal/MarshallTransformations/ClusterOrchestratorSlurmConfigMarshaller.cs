@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ClusterOrchestrator Marshaller
+    /// ClusterOrchestratorSlurmConfig Marshaller
     /// </summary>
-    public class ClusterOrchestratorMarshaller : IRequestMarshaller<ClusterOrchestrator, JsonMarshallerContext> 
+    public class ClusterOrchestratorSlurmConfigMarshaller : IRequestMarshaller<ClusterOrchestratorSlurmConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ClusterOrchestrator requestObject, JsonMarshallerContext context)
+        public void Marshall(ClusterOrchestratorSlurmConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEks())
+            if(requestObject.IsSetSlurmConfigStrategy())
             {
-                context.Writer.WritePropertyName("Eks");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ClusterOrchestratorEksConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Eks, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetSlurm())
-            {
-                context.Writer.WritePropertyName("Slurm");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ClusterOrchestratorSlurmConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.Slurm, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("SlurmConfigStrategy");
+                context.Writer.WriteStringValue(requestObject.SlurmConfigStrategy);
             }
 
         }
@@ -73,7 +57,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ClusterOrchestratorMarshaller Instance = new ClusterOrchestratorMarshaller();
+        public readonly static ClusterOrchestratorSlurmConfigMarshaller Instance = new ClusterOrchestratorSlurmConfigMarshaller();
 
     }
 }
