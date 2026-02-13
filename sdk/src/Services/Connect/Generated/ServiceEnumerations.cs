@@ -1021,6 +1021,56 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ConfigurableNotificationPriority.
+    /// </summary>
+    public class ConfigurableNotificationPriority : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for ConfigurableNotificationPriority
+        /// </summary>
+        public static readonly ConfigurableNotificationPriority HIGH = new ConfigurableNotificationPriority("HIGH");
+        /// <summary>
+        /// Constant LOW for ConfigurableNotificationPriority
+        /// </summary>
+        public static readonly ConfigurableNotificationPriority LOW = new ConfigurableNotificationPriority("LOW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConfigurableNotificationPriority(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurableNotificationPriority FindValue(string value)
+        {
+            return FindValue<ConfigurableNotificationPriority>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurableNotificationPriority(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContactFlowModuleState.
     /// </summary>
     public class ContactFlowModuleState : ConstantClass
@@ -5113,6 +5163,92 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type LocaleCode.
+    /// </summary>
+    public class LocaleCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant De_DE for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode De_DE = new LocaleCode("de_DE");
+        /// <summary>
+        /// Constant En_US for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode En_US = new LocaleCode("en_US");
+        /// <summary>
+        /// Constant Es_ES for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Es_ES = new LocaleCode("es_ES");
+        /// <summary>
+        /// Constant Fr_FR for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Fr_FR = new LocaleCode("fr_FR");
+        /// <summary>
+        /// Constant Id_ID for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Id_ID = new LocaleCode("id_ID");
+        /// <summary>
+        /// Constant It_IT for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode It_IT = new LocaleCode("it_IT");
+        /// <summary>
+        /// Constant Ja_JP for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Ja_JP = new LocaleCode("ja_JP");
+        /// <summary>
+        /// Constant Ko_KR for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Ko_KR = new LocaleCode("ko_KR");
+        /// <summary>
+        /// Constant Pt_BR for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Pt_BR = new LocaleCode("pt_BR");
+        /// <summary>
+        /// Constant Zh_CN for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Zh_CN = new LocaleCode("zh_CN");
+        /// <summary>
+        /// Constant Zh_TW for LocaleCode
+        /// </summary>
+        public static readonly LocaleCode Zh_TW = new LocaleCode("zh_TW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocaleCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocaleCode FindValue(string value)
+        {
+            return FindValue<LocaleCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocaleCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MediaStreamType.
     /// </summary>
     public class MediaStreamType : ConstantClass
@@ -5502,6 +5638,168 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NotificationDeliveryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotificationPriority.
+    /// </summary>
+    public class NotificationPriority : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for NotificationPriority
+        /// </summary>
+        public static readonly NotificationPriority HIGH = new NotificationPriority("HIGH");
+        /// <summary>
+        /// Constant LOW for NotificationPriority
+        /// </summary>
+        public static readonly NotificationPriority LOW = new NotificationPriority("LOW");
+        /// <summary>
+        /// Constant URGENT for NotificationPriority
+        /// </summary>
+        public static readonly NotificationPriority URGENT = new NotificationPriority("URGENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotificationPriority(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationPriority FindValue(string value)
+        {
+            return FindValue<NotificationPriority>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationPriority(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotificationSource.
+    /// </summary>
+    public class NotificationSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOMER for NotificationSource
+        /// </summary>
+        public static readonly NotificationSource CUSTOMER = new NotificationSource("CUSTOMER");
+        /// <summary>
+        /// Constant RULES for NotificationSource
+        /// </summary>
+        public static readonly NotificationSource RULES = new NotificationSource("RULES");
+        /// <summary>
+        /// Constant SYSTEM for NotificationSource
+        /// </summary>
+        public static readonly NotificationSource SYSTEM = new NotificationSource("SYSTEM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotificationSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationSource FindValue(string value)
+        {
+            return FindValue<NotificationSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotificationStatus.
+    /// </summary>
+    public class NotificationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIDDEN for NotificationStatus
+        /// </summary>
+        public static readonly NotificationStatus HIDDEN = new NotificationStatus("HIDDEN");
+        /// <summary>
+        /// Constant READ for NotificationStatus
+        /// </summary>
+        public static readonly NotificationStatus READ = new NotificationStatus("READ");
+        /// <summary>
+        /// Constant UNREAD for NotificationStatus
+        /// </summary>
+        public static readonly NotificationStatus UNREAD = new NotificationStatus("UNREAD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotificationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotificationStatus FindValue(string value)
+        {
+            return FindValue<NotificationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotificationStatus(string value)
         {
             return FindValue(value);
         }

@@ -4065,6 +4065,84 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateNotification
+
+        /// <summary>
+        /// Creates a new notification to be delivered to specified recipients. Notifications
+        /// can include localized content with embedded links, and an optional expiration time.
+        /// Recipients can be specified as individual user ARNs or instance ARNs to target all
+        /// users in an instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotification service method.</param>
+        /// 
+        /// <returns>The response from the CreateNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
+        public virtual CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateNotificationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateNotification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateNotification operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNotification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
+        public virtual IAsyncResult BeginCreateNotification(CreateNotificationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateNotificationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateNotification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateNotification.</param>
+        /// 
+        /// <returns>Returns a  CreateNotificationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateNotification">REST API Reference for CreateNotification Operation</seealso>
+        public virtual CreateNotificationResponse EndCreateNotification(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateNotificationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateParticipant
 
         /// <summary>
@@ -7009,6 +7087,79 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteNotification
+
+        /// <summary>
+        /// Deletes a notification. Once deleted, the notification is no longer visible to all
+        /// users and cannot be managed through the Admin Website or APIs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotification service method.</param>
+        /// 
+        /// <returns>The response from the DeleteNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
+        public virtual DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteNotificationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteNotification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteNotification operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNotification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
+        public virtual IAsyncResult BeginDeleteNotification(DeleteNotificationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteNotificationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteNotification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteNotification.</param>
+        /// 
+        /// <returns>Returns a  DeleteNotificationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteNotification">REST API Reference for DeleteNotification Operation</seealso>
+        public virtual DeleteNotificationResponse EndDeleteNotification(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteNotificationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePredefinedAttribute
 
         /// <summary>
@@ -9744,6 +9895,79 @@ namespace Amazon.Connect
         public virtual DescribeInstanceStorageConfigResponse EndDescribeInstanceStorageConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeInstanceStorageConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeNotification
+
+        /// <summary>
+        /// Retrieves detailed information about a specific notification, including its content,
+        /// priority, recipients, and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotification service method.</param>
+        /// 
+        /// <returns>The response from the DescribeNotification service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeNotification">REST API Reference for DescribeNotification Operation</seealso>
+        public virtual DescribeNotificationResponse DescribeNotification(DescribeNotificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeNotificationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeNotification operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeNotification operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeNotification
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeNotification">REST API Reference for DescribeNotification Operation</seealso>
+        public virtual IAsyncResult BeginDescribeNotification(DescribeNotificationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeNotificationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeNotification operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeNotification.</param>
+        /// 
+        /// <returns>Returns a  DescribeNotificationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeNotification">REST API Reference for DescribeNotification Operation</seealso>
+        public virtual DescribeNotificationResponse EndDescribeNotification(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeNotificationResponse>(asyncResult);
         }
 
         #endregion
@@ -16090,6 +16314,78 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListNotifications
+
+        /// <summary>
+        /// Retrieves a paginated list of all notifications in the Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListNotifications service method.</param>
+        /// 
+        /// <returns>The response from the ListNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListNotifications">REST API Reference for ListNotifications Operation</seealso>
+        public virtual ListNotificationsResponse ListNotifications(ListNotificationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListNotificationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListNotifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListNotifications operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListNotifications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListNotifications">REST API Reference for ListNotifications Operation</seealso>
+        public virtual IAsyncResult BeginListNotifications(ListNotificationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListNotificationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListNotifications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListNotifications.</param>
+        /// 
+        /// <returns>Returns a  ListNotificationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListNotifications">REST API Reference for ListNotifications Operation</seealso>
+        public virtual ListNotificationsResponse EndListNotifications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListNotificationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPhoneNumbers
 
         /// <summary>
@@ -18067,6 +18363,79 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListUserNotifications
+
+        /// <summary>
+        /// Retrieves a paginated list of notifications for a specific user, including the notification
+        /// status for that user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserNotifications service method.</param>
+        /// 
+        /// <returns>The response from the ListUserNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserNotifications">REST API Reference for ListUserNotifications Operation</seealso>
+        public virtual ListUserNotificationsResponse ListUserNotifications(ListUserNotificationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUserNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserNotificationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserNotifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserNotifications operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUserNotifications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserNotifications">REST API Reference for ListUserNotifications Operation</seealso>
+        public virtual IAsyncResult BeginListUserNotifications(ListUserNotificationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListUserNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListUserNotificationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUserNotifications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUserNotifications.</param>
+        /// 
+        /// <returns>Returns a  ListUserNotificationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUserNotifications">REST API Reference for ListUserNotifications Operation</seealso>
+        public virtual ListUserNotificationsResponse EndListUserNotifications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListUserNotificationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListUserProficiencies
 
         /// <summary>
@@ -19997,6 +20366,80 @@ namespace Amazon.Connect
         public virtual SearchHoursOfOperationsResponse EndSearchHoursOfOperations(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchHoursOfOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchNotifications
+
+        /// <summary>
+        /// Searches for notifications based on specified criteria and filters. Returns a paginated
+        /// list of notifications matching the search parameters, ordered by descending creation
+        /// time. Supports filtering by content and tags.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchNotifications service method.</param>
+        /// 
+        /// <returns>The response from the SearchNotifications service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchNotifications">REST API Reference for SearchNotifications Operation</seealso>
+        public virtual SearchNotificationsResponse SearchNotifications(SearchNotificationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchNotificationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchNotifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchNotifications operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchNotifications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchNotifications">REST API Reference for SearchNotifications Operation</seealso>
+        public virtual IAsyncResult BeginSearchNotifications(SearchNotificationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchNotificationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchNotifications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchNotifications.</param>
+        /// 
+        /// <returns>Returns a  SearchNotificationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchNotifications">REST API Reference for SearchNotifications Operation</seealso>
+        public virtual SearchNotificationsResponse EndSearchNotifications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchNotificationsResponse>(asyncResult);
         }
 
         #endregion
@@ -25186,6 +25629,79 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateNotificationContent
+
+        /// <summary>
+        /// Updates the localized content of an existing notification. This operation applies
+        /// to all users for whom the notification was sent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationContent service method.</param>
+        /// 
+        /// <returns>The response from the UpdateNotificationContent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateNotificationContent">REST API Reference for UpdateNotificationContent Operation</seealso>
+        public virtual UpdateNotificationContentResponse UpdateNotificationContent(UpdateNotificationContentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationContentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateNotificationContentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateNotificationContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationContent operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNotificationContent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateNotificationContent">REST API Reference for UpdateNotificationContent Operation</seealso>
+        public virtual IAsyncResult BeginUpdateNotificationContent(UpdateNotificationContentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateNotificationContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateNotificationContentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateNotificationContent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateNotificationContent.</param>
+        /// 
+        /// <returns>Returns a  UpdateNotificationContentResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateNotificationContent">REST API Reference for UpdateNotificationContent Operation</seealso>
+        public virtual UpdateNotificationContentResponse EndUpdateNotificationContent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateNotificationContentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateParticipantAuthentication
 
         /// <summary>
@@ -27447,6 +27963,81 @@ namespace Amazon.Connect
         public virtual UpdateUserIdentityInfoResponse EndUpdateUserIdentityInfo(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUserIdentityInfoResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateUserNotificationStatus
+
+        /// <summary>
+        /// Updates the status of a notification for a specific user, such as marking it as read
+        /// or hidden. Users can only update notification status for notifications that have been
+        /// sent to them. READ status deprioritizes the notification and greys it out, while HIDDEN
+        /// status removes it from the notification widget.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserNotificationStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserNotificationStatus service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserNotificationStatus">REST API Reference for UpdateUserNotificationStatus Operation</seealso>
+        public virtual UpdateUserNotificationStatusResponse UpdateUserNotificationStatus(UpdateUserNotificationStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserNotificationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserNotificationStatusResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserNotificationStatusResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserNotificationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserNotificationStatus operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserNotificationStatus
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserNotificationStatus">REST API Reference for UpdateUserNotificationStatus Operation</seealso>
+        public virtual IAsyncResult BeginUpdateUserNotificationStatus(UpdateUserNotificationStatusRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateUserNotificationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateUserNotificationStatusResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUserNotificationStatus operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserNotificationStatus.</param>
+        /// 
+        /// <returns>Returns a  UpdateUserNotificationStatusResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserNotificationStatus">REST API Reference for UpdateUserNotificationStatus Operation</seealso>
+        public virtual UpdateUserNotificationStatusResponse EndUpdateUserNotificationStatus(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateUserNotificationStatusResponse>(asyncResult);
         }
 
         #endregion
