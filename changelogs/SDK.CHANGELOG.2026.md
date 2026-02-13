@@ -1,3 +1,17 @@
+### 4.0.191.0 (2026-02-13 19:18 UTC)
+* CloudWatch (4.0.7.0)
+	* Adding new evaluation states that provides information about the alarm evaluation process. Evaluation error Indicates configuration errors in alarm setup that require review and correction. Evaluation failure Indicates temporary CloudWatch issues.
+* Connect (4.0.33.0)
+	* API release for headerr notifications in the admin website. APIs allow customers to publish brief messages (including URLs) to a specified audience, and a new header icon will indicate when unread messages are available.
+* EC2 (4.0.75.0)
+	* This release adds geography information to EC2 region and availability zone APIs. DescribeRegions now includes a Geography field, while DescribeAvailabilityZones includes both Geography and SubGeography fields, enabling better geographic classification for AWS regions and zones.
+* Inspector2 (4.0.9.0)
+	* Added .Net 10 (dotnet10) and Node 24.x (node24.x) runtime support for lambda package scanning
+* S3 (4.0.18.6)
+	* Fix AmazonS3Uri class to correctly handle UTF-8 encoded characters
+* SageMaker (4.0.43.0)
+	* Enable g7e instance type support for SageMaker Processing, and enable single file configuration provisioning for HyperPod Slurm, where customers have the option to use HyperPod API to provide the provisioning parameters.
+
 ### 4.0.190.0 (2026-02-12 19:17 UTC)
 * EC2 (4.0.74.0)
 	* Launching nested virtualization. This feature allows you to run nested VMs inside virtual (non-bare metal) EC2 instances.
