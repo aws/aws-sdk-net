@@ -278,10 +278,21 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property EvaluationState. 
         /// <para>
-        /// If the value of this field is <c>PARTIAL_DATA</c>, the alarm is being evaluated based
-        /// on only partial data. This happens if the query used for the alarm returns more than
-        /// 10,000 metrics. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+        /// If the value of this field is <c>PARTIAL_DATA</c>, it indicates that not all the available
+        /// data was able to be retrieved due to quota limitations. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
         /// alarms on Metrics Insights queries</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value of this field is <c>EVALUATION_ERROR</c>, it indicates configuration
+        /// errors in alarm setup that require review and correction. Refer to StateReason field
+        /// of the alarm for more details.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value of this field is <c>EVALUATION_FAILURE</c>, it indicates temporary CloudWatch
+        /// issues. We recommend manual monitoring until the issue is resolved 
         /// </para>
         /// </summary>
         public EvaluationState EvaluationState

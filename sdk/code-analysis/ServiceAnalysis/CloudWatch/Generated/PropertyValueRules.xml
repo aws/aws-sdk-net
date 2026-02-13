@@ -29,7 +29,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.AlarmContributorId</property>
     <min>1</min>
-    <max>1024</max>
+    <max>16</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmHistoryRequest.AlarmName</property>
@@ -359,7 +359,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AlarmContributor.ContributorId</property>
     <min>1</min>
-    <max>1024</max>
+    <max>16</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AlarmContributor.StateReason</property>
@@ -369,7 +369,7 @@
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AlarmHistoryItem.AlarmContributorId</property>
     <min>1</min>
-    <max>1024</max>
+    <max>16</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AlarmHistoryItem.AlarmName</property>
