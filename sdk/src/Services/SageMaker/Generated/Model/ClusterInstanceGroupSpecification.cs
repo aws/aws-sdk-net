@@ -47,6 +47,7 @@ namespace Amazon.SageMaker.Model
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
         private ScheduledUpdateConfig _scheduledUpdateConfig;
+        private ClusterSlurmConfig _slurmConfig;
         private int? _threadsPerCore;
         private string _trainingPlanArn;
 
@@ -191,7 +192,7 @@ namespace Amazon.SageMaker.Model
         /// HyperPod cluster instance group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2)]
+        [AWSProperty(Min=0, Max=4)]
         public List<ClusterInstanceStorageConfig> InstanceStorageConfigs
         {
             get { return this._instanceStorageConfigs; }
@@ -381,6 +382,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetScheduledUpdateConfig()
         {
             return this._scheduledUpdateConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlurmConfig. 
+        /// <para>
+        /// Specifies the Slurm configuration for the instance group.
+        /// </para>
+        /// </summary>
+        public ClusterSlurmConfig SlurmConfig
+        {
+            get { return this._slurmConfig; }
+            set { this._slurmConfig = value; }
+        }
+
+        // Check to see if SlurmConfig property is set
+        internal bool IsSetSlurmConfig()
+        {
+            return this._slurmConfig != null;
         }
 
         /// <summary>

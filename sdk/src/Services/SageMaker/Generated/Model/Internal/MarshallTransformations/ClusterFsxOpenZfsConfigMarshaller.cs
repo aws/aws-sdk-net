@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ClusterInstanceStorageConfig Marshaller
+    /// ClusterFsxOpenZfsConfig Marshaller
     /// </summary>
-    public class ClusterInstanceStorageConfigMarshaller : IRequestMarshaller<ClusterInstanceStorageConfig, JsonMarshallerContext> 
+    public class ClusterFsxOpenZfsConfigMarshaller : IRequestMarshaller<ClusterFsxOpenZfsConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ClusterInstanceStorageConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ClusterFsxOpenZfsConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEbsVolumeConfig())
+            if(requestObject.IsSetDnsName())
             {
-                context.Writer.WritePropertyName("EbsVolumeConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ClusterEbsVolumeConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.EbsVolumeConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("DnsName");
+                context.Writer.Write(requestObject.DnsName);
             }
 
-            if(requestObject.IsSetFsxLustreConfig())
+            if(requestObject.IsSetMountPath())
             {
-                context.Writer.WritePropertyName("FsxLustreConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ClusterFsxLustreConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.FsxLustreConfig, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetFsxOpenZfsConfig())
-            {
-                context.Writer.WritePropertyName("FsxOpenZfsConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ClusterFsxOpenZfsConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.FsxOpenZfsConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("MountPath");
+                context.Writer.Write(requestObject.MountPath);
             }
 
         }
@@ -86,7 +65,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ClusterInstanceStorageConfigMarshaller Instance = new ClusterInstanceStorageConfigMarshaller();
+        public readonly static ClusterFsxOpenZfsConfigMarshaller Instance = new ClusterFsxOpenZfsConfigMarshaller();
 
     }
 }

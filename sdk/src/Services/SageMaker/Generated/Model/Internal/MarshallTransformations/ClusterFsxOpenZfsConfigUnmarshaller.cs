@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterOrchestrator Object
+    /// Response Unmarshaller for ClusterFsxOpenZfsConfig Object
     /// </summary>  
-    public class ClusterOrchestratorUnmarshaller : IUnmarshaller<ClusterOrchestrator, XmlUnmarshallerContext>, IUnmarshaller<ClusterOrchestrator, JsonUnmarshallerContext>
+    public class ClusterFsxOpenZfsConfigUnmarshaller : IUnmarshaller<ClusterFsxOpenZfsConfig, XmlUnmarshallerContext>, IUnmarshaller<ClusterFsxOpenZfsConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ClusterOrchestrator IUnmarshaller<ClusterOrchestrator, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ClusterFsxOpenZfsConfig IUnmarshaller<ClusterFsxOpenZfsConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterOrchestrator Unmarshall(JsonUnmarshallerContext context)
+        public ClusterFsxOpenZfsConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            ClusterOrchestrator unmarshalledObject = new ClusterOrchestrator();
+            ClusterFsxOpenZfsConfig unmarshalledObject = new ClusterFsxOpenZfsConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Eks", targetDepth))
+                if (context.TestExpression("DnsName", targetDepth))
                 {
-                    var unmarshaller = ClusterOrchestratorEksConfigUnmarshaller.Instance;
-                    unmarshalledObject.Eks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DnsName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Slurm", targetDepth))
+                if (context.TestExpression("MountPath", targetDepth))
                 {
-                    var unmarshaller = ClusterOrchestratorSlurmConfigUnmarshaller.Instance;
-                    unmarshalledObject.Slurm = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MountPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterOrchestratorUnmarshaller _instance = new ClusterOrchestratorUnmarshaller();        
+        private static ClusterFsxOpenZfsConfigUnmarshaller _instance = new ClusterFsxOpenZfsConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterOrchestratorUnmarshaller Instance
+        public static ClusterFsxOpenZfsConfigUnmarshaller Instance
         {
             get
             {

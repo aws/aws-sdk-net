@@ -72,6 +72,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.EbsVolumeConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FsxLustreConfig", targetDepth))
+                {
+                    var unmarshaller = ClusterFsxLustreConfigUnmarshaller.Instance;
+                    unmarshalledObject.FsxLustreConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FsxOpenZfsConfig", targetDepth))
+                {
+                    var unmarshaller = ClusterFsxOpenZfsConfigUnmarshaller.Instance;
+                    unmarshalledObject.FsxOpenZfsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

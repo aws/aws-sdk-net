@@ -50,6 +50,7 @@ namespace Amazon.SageMaker.Model
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
         private ScheduledUpdateConfig _scheduledUpdateConfig;
+        private ClusterSlurmConfigDetails _slurmConfig;
         private SoftwareUpdateStatus _softwareUpdateStatus;
         private InstanceGroupStatus _status;
         private int? _targetCount;
@@ -214,7 +215,7 @@ namespace Amazon.SageMaker.Model
         /// cluster instance group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2)]
+        [AWSProperty(Min=0, Max=4)]
         public List<ClusterInstanceStorageConfig> InstanceStorageConfigs
         {
             get { return this._instanceStorageConfigs; }
@@ -358,6 +359,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetScheduledUpdateConfig()
         {
             return this._scheduledUpdateConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlurmConfig. 
+        /// <para>
+        /// The Slurm configuration for the instance group.
+        /// </para>
+        /// </summary>
+        public ClusterSlurmConfigDetails SlurmConfig
+        {
+            get { return this._slurmConfig; }
+            set { this._slurmConfig = value; }
+        }
+
+        // Check to see if SlurmConfig property is set
+        internal bool IsSetSlurmConfig()
+        {
+            return this._slurmConfig != null;
         }
 
         /// <summary>

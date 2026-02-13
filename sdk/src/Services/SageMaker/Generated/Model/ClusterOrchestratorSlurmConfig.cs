@@ -30,47 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The type of orchestrator used for the SageMaker HyperPod cluster.
+    /// The configuration settings for the Slurm orchestrator used with the SageMaker HyperPod
+    /// cluster.
     /// </summary>
-    public partial class ClusterOrchestrator
+    public partial class ClusterOrchestratorSlurmConfig
     {
-        private ClusterOrchestratorEksConfig _eks;
-        private ClusterOrchestratorSlurmConfig _slurm;
+        private ClusterSlurmConfigStrategy _slurmConfigStrategy;
 
         /// <summary>
-        /// Gets and sets the property Eks. 
+        /// Gets and sets the property SlurmConfigStrategy. 
         /// <para>
-        /// The Amazon EKS cluster used as the orchestrator for the SageMaker HyperPod cluster.
+        /// The strategy for managing partitions for the Slurm configuration. Valid values are
+        /// <c>Managed</c>, <c>Overwrite</c>, and <c>Merge</c>.
         /// </para>
         /// </summary>
-        public ClusterOrchestratorEksConfig Eks
+        public ClusterSlurmConfigStrategy SlurmConfigStrategy
         {
-            get { return this._eks; }
-            set { this._eks = value; }
+            get { return this._slurmConfigStrategy; }
+            set { this._slurmConfigStrategy = value; }
         }
 
-        // Check to see if Eks property is set
-        internal bool IsSetEks()
+        // Check to see if SlurmConfigStrategy property is set
+        internal bool IsSetSlurmConfigStrategy()
         {
-            return this._eks != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Slurm. 
-        /// <para>
-        /// The Slurm orchestrator configuration for the SageMaker HyperPod cluster.
-        /// </para>
-        /// </summary>
-        public ClusterOrchestratorSlurmConfig Slurm
-        {
-            get { return this._slurm; }
-            set { this._slurm = value; }
-        }
-
-        // Check to see if Slurm property is set
-        internal bool IsSetSlurm()
-        {
-            return this._slurm != null;
+            return this._slurmConfigStrategy != null;
         }
 
     }
