@@ -1,22 +1,16 @@
-﻿/*******************************************************************************
- *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
- *  this file except in compliance with the License. A copy of the License is located at
- *
+﻿/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
  *  http://aws.amazon.com/apache2.0
- *
- *  or in the "license" file accompanying this file.
- *  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
- *  CONDITIONS OF ANY KIND, either express or implied. See the License for the
- *  specific language governing permissions and limitations under the License.
- * *****************************************************************************
- *    __  _    _  ___
- *   (  )( \/\/ )/ __)
- *   /__\ \    / \__ \
- *  (_)(_) \/\/  (___/
- *
- *  AWS SDK for .NET
- *
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
 
 using System;
@@ -33,6 +27,7 @@ namespace Amazon.S3.Util
     public partial class AmazonS3Uri
     {
         private const string EndpointRegexPattern = @"^(.+\.)?(?:s3|s3express)[.-]([a-z0-9-]+)\.";
+        private static readonly UTF8Encoding _utf8Encoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false, throwOnInvalidBytes: true);
 
 #if NET8_0_OR_GREATER
         [GeneratedRegex(EndpointRegexPattern)]
@@ -318,45 +313,59 @@ namespace Amazon.S3.Util
         static string Decode(string s, int firstPercent)
         {
             var sb = new StringBuilder(s.Substring(0, firstPercent));
+            var bytes = new byte[4]; // Most UTF-8 characters are 1-4 bytes
+            int byteCount;
 
-            AppendDecoded(sb, s, firstPercent);
-
-            for (var i = firstPercent + 3; i < s.Length; ++i)
+            for (var i = firstPercent; i < s.Length; ++i)
             {
                 if (s[i] == '%')
                 {
-                    AppendDecoded(sb, s, i);
-                    i += 2;
+                    // Collect consecutive percent-encoded bytes
+                    byteCount = 0;
+                    while (i < s.Length && s[i] == '%')
+                    {
+                        if (i > s.Length - 3)
+                        {
+                            throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "Invalid percent-encoded string '{0}'", s));
+                        }
+
+                        // Expand array if needed
+                        if (byteCount >= bytes.Length)
+                        {
+                            Array.Resize(ref bytes, bytes.Length * 2);
+                        }
+
+                        var first = s[i + 1];
+                        var second = s[i + 2];
+                        bytes[byteCount++] = (byte)(FromHex(first) << 4 | FromHex(second));
+                        i += 3;
+                    }
+
+                    // Decode the collected bytes as UTF-8. If invalid UTF-8 is encountered,
+                    // fall back to the previous behavior of treating each byte as a char.
+                    try
+                    {
+                        var decoded = _utf8Encoding.GetString(bytes, 0, byteCount);
+                        sb.Append(decoded);
+                    }
+                    catch (DecoderFallbackException)
+                    {
+                        for (var b = 0; b < byteCount; b++)
+                        {
+                            sb.Append((char)bytes[b]);
+                        }
+                    }
+
+                    // Move back one position because the loop will increment
+                    i--;
                 }
                 else
+                {
                     sb.Append(s[i]);
+                }
             }
 
             return sb.ToString();
-        }
-
-        /// <summary>
-        /// Decodes the percent-encoded character at the given index in the string
-        /// and appends the decoded value to the string under construction.
-        /// </summary>
-        /// <param name="builder">
-        /// The string under construction to which the decoded character will be 
-        /// appended.
-        /// </param>
-        /// <param name="s">The string being decoded.</param>
-        /// <param name="index">The index of the '%' character in the string.</param>
-        static void AppendDecoded(StringBuilder builder, string s, int index)
-        {
-            if (index > s.Length - 3)
-                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, 
-                                                                  "Invalid percent-encoded string '{0}'", 
-                                                                  s));
-
-            var first = s[index + 1];
-            var second = s[index + 2];
-
-            var decoded = (char) (FromHex(first) << 4 | FromHex(second));
-            builder.Append(decoded);
         }
 
         /// <summary>
