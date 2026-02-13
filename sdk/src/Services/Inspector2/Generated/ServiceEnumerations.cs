@@ -4937,6 +4937,10 @@ namespace Amazon.Inspector2
     {
 
         /// <summary>
+        /// Constant DOTNET_10 for Runtime
+        /// </summary>
+        public static readonly Runtime DOTNET_10 = new Runtime("DOTNET_10");
+        /// <summary>
         /// Constant DOTNET_6 for Runtime
         /// </summary>
         public static readonly Runtime DOTNET_6 = new Runtime("DOTNET_6");
@@ -4988,6 +4992,10 @@ namespace Amazon.Inspector2
         /// Constant NODEJS_18_X for Runtime
         /// </summary>
         public static readonly Runtime NODEJS_18_X = new Runtime("NODEJS_18_X");
+        /// <summary>
+        /// Constant NODEJS_24_X for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_24_X = new Runtime("NODEJS_24_X");
         /// <summary>
         /// Constant PYTHON_3_10 for Runtime
         /// </summary>
