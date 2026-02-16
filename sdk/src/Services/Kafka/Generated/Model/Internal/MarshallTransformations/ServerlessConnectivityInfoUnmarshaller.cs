@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterOperationV2Serverless Object
+    /// Response Unmarshaller for ServerlessConnectivityInfo Object
     /// </summary>  
-    public class ClusterOperationV2ServerlessUnmarshaller : IUnmarshaller<ClusterOperationV2Serverless, XmlUnmarshallerContext>, IUnmarshaller<ClusterOperationV2Serverless, JsonUnmarshallerContext>
+    public class ServerlessConnectivityInfoUnmarshaller : IUnmarshaller<ServerlessConnectivityInfo, XmlUnmarshallerContext>, IUnmarshaller<ServerlessConnectivityInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ClusterOperationV2Serverless IUnmarshaller<ClusterOperationV2Serverless, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ServerlessConnectivityInfo IUnmarshaller<ServerlessConnectivityInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterOperationV2Serverless Unmarshall(JsonUnmarshallerContext context)
+        public ServerlessConnectivityInfo Unmarshall(JsonUnmarshallerContext context)
         {
-            ClusterOperationV2Serverless unmarshalledObject = new ClusterOperationV2Serverless();
+            ServerlessConnectivityInfo unmarshalledObject = new ServerlessConnectivityInfo();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("sourceClusterInfo", targetDepth))
+                if (context.TestExpression("networkType", targetDepth))
                 {
-                    var unmarshaller = ServerlessConnectivityInfoUnmarshaller.Instance;
-                    unmarshalledObject.SourceClusterInfo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetClusterInfo", targetDepth))
-                {
-                    var unmarshaller = ServerlessConnectivityInfoUnmarshaller.Instance;
-                    unmarshalledObject.TargetClusterInfo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("vpcConnectionInfo", targetDepth))
-                {
-                    var unmarshaller = VpcConnectionInfoServerlessUnmarshaller.Instance;
-                    unmarshalledObject.VpcConnectionInfo = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterOperationV2ServerlessUnmarshaller _instance = new ClusterOperationV2ServerlessUnmarshaller();        
+        private static ServerlessConnectivityInfoUnmarshaller _instance = new ServerlessConnectivityInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterOperationV2ServerlessUnmarshaller Instance
+        public static ServerlessConnectivityInfoUnmarshaller Instance
         {
             get
             {
