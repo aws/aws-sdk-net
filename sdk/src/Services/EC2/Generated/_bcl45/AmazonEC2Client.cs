@@ -8570,7 +8570,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates an Amazon secondary network.
+        /// Creates a secondary network.
         /// 
         ///  
         /// <para>
@@ -8593,7 +8593,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates an Amazon secondary network.
+        /// Creates a secondary network.
         /// 
         ///  
         /// <para>

@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSecondaryNetwork operation.
-    /// Creates an Amazon secondary network.
+    /// Creates a secondary network.
     /// 
     ///  
     /// <para>
