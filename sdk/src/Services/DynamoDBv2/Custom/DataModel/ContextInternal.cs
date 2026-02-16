@@ -114,10 +114,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Atomic counters
 
-        internal static DocumentModel.Expression BuildCounterUpdateExpression(ItemStorage storage)
+        internal static DocumentModel.UpdateExpression BuildCounterUpdateExpression(ItemStorage storage)
         {
             var atomicCounters = GetCounterProperties(storage);
-            DocumentModel.Expression counterExpression = null;
+            DocumentModel.UpdateExpression counterExpression = null;
 
             if (atomicCounters.Length != 0)
             {

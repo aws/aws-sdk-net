@@ -373,7 +373,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var updateConfig = PrepareUpdateOperation(storage, flatConfig, table);
 
-            var updateDocument = table.UpdateHelper(
+            var updateDocument = table.UpdateHelperV2(
                 storage.Document,
                 table.MakeKey(storage.Document),
                 updateConfig.opConfig.ReturnValues,
@@ -401,10 +401,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var updateConfig = PrepareUpdateOperation(storage, flatConfig, table);
 
-            var updateDocument = await table.UpdateHelperAsync(
+            var updateDocument = await table.UpdateHelperV2Async(
                 storage.Document,
                 table.MakeKey(storage.Document),
-                updateConfig.opConfig,
+                updateConfig.opConfig.ReturnValues,
+                updateConfig.opConfig.ConditionalExpression,
                 updateConfig.counterUpdateExpression,
                 cancellationToken,
                 updateConfig.updateIfNotExistsAttributeNames
@@ -413,7 +414,7 @@ namespace Amazon.DynamoDBv2.DataModel
             ApplyPostUpdate(storage, value, flatConfig, updateDocument, updateConfig);
         }
 
-        private (UpdateItemOperationConfig opConfig, Expression versionExpression, Expression counterUpdateExpression, 
+        private (UpdateItemOperationConfig opConfig, Expression versionExpression, UpdateExpression counterUpdateExpression, 
             HashSet<string> updateIfNotExistsAttributeNames, bool updateIfNotExists) PrepareUpdateOperation(ItemStorage storage, DynamoDBFlatConfig flatConfig, Table table)
         {
             var counterUpdateExpression = BuildCounterUpdateExpression(storage);

@@ -33,8 +33,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal bool IsSet
         {
-            get { return this.ExpressionStatement != null; }
+            get { return HasStatement(); }
         }
+
+        internal virtual bool HasStatement() { return this.ExpressionStatement != null; }
 
         /// <summary>
         /// Gets and sets the property ExpressionStatement. "Price > :price" is an example expression statement. 
@@ -333,6 +335,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private List<string> AddParts { get; } = new List<string>();
         private List<string> DeleteParts { get; } = new List<string>();
 
+        private Dictionary<string, AttributeValue> _attributeValues = new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
+
+        internal Dictionary<string, AttributeValue> AttributeValues
+        {
+            get { return this._attributeValues; }
+            set { this._attributeValues = value; }
+        }
+        internal override bool HasStatement()
+        {
+            return SetParts.Count != 0 ||
+                    RemoveParts.Count != 0 ||
+                    AddParts.Count != 0 ||
+                    DeleteParts.Count != 0;
+        }
+
         internal void AddStatement(string operation, string statement)
         {
             if (string.IsNullOrWhiteSpace(operation))
@@ -368,7 +385,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             ExpressionStatement = null;
         }
 
-        internal string BuildExpressionStatement()
+        private string BuildExpressionStatement()
         {
             var parts = new List<string>(4);
 
@@ -384,6 +401,14 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal new void ApplyUpdateExpression(UpdateItemRequest request, Table table)
         {
             base.ExpressionStatement = BuildExpressionStatement();
+            if (AttributeValues != null && AttributeValues.Count > 0)
+            {
+                request.ExpressionAttributeValues ??= new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
+                foreach (var kvp in AttributeValues)
+                {
+                    request.ExpressionAttributeValues[kvp.Key] = kvp.Value;
+                }
+            }
             base.ApplyUpdateExpression(request, table);
         }
         private static void AppendOperation(List<string> parts, string operation, List<string> operationParts)

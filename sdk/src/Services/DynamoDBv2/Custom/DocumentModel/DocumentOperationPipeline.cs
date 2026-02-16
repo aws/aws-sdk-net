@@ -285,7 +285,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
             bool docSet = request.Document != null;
-            bool exprSet = request.UpdateExpression is { IsSet: true };
+            bool exprSet;
+            if (request.UpdateExpression is UpdateExpression { IsSet: true })
+            {
+                exprSet=true;
+            }
+            else
+            {
+                exprSet = request.UpdateExpression is { IsSet: true };
+            }
             if ((docSet && exprSet) || (!docSet && !exprSet))
                 throw new InvalidOperationException("Either Document or UpdateExpression must be set (exclusively).");
         }
@@ -331,8 +339,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         protected override void ApplyExpressions(UpdateItemDocumentOperationRequest request, UpdateItemRequest lowLevel)
         {
-            if (request.UpdateExpression is { IsSet: true })
-                request.UpdateExpression.ApplyUpdateExpression(lowLevel, Table);
+            if(request.UpdateExpression is UpdateExpression ue && ue.IsSet)
+            {
+                ue.ApplyUpdateExpression(lowLevel, Table);
+            }
+            else
+            {
+                if (request.UpdateExpression is { IsSet: true })
+                    request.UpdateExpression.ApplyUpdateExpression(lowLevel, Table);
+            }
             if (request.ConditionalExpression is { IsSet: true })
                 request.ConditionalExpression.ApplyConditionalExpression(lowLevel, Table);
         }

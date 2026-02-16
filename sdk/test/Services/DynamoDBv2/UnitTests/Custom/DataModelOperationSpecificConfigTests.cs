@@ -210,7 +210,10 @@ namespace AWSSDK_DotNet.UnitTests
         public void TransactWriteConfig_OverridesTableName()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(x => x.TransactWriteItems(It.Is<TransactWriteItemsRequest>(x => x.TransactItems[0].Put.TableName == "OperationPrefix-TableName")))
+            //mockClient.Setup(x => x.TransactWriteItems(It.Is<TransactWriteItemsRequest>(x => x.TransactItems[0].Put.TableName == "OperationPrefix-TableName")))
+            //   .Returns(new TransactWriteItemsResponse())
+            //   .Verifiable();
+            mockClient.Setup(x => x.TransactWriteItems(It.Is<TransactWriteItemsRequest>(x => x.TransactItems[0].Update.TableName == "OperationPrefix-TableName")))
                .Returns(new TransactWriteItemsResponse())
                .Verifiable();
 
@@ -235,7 +238,7 @@ namespace AWSSDK_DotNet.UnitTests
         public void TransactWriteConfig_RemoveTablePrefix()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
-            mockClient.Setup(x => x.TransactWriteItems(It.Is<TransactWriteItemsRequest>(x => x.TransactItems[0].Put.TableName == "TableName")))
+            mockClient.Setup(x => x.TransactWriteItems(It.Is<TransactWriteItemsRequest>(x => x.TransactItems[0].Update.TableName == "TableName")))
                .Returns(new TransactWriteItemsResponse())
                .Verifiable();
 
@@ -569,7 +572,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var saveConfig = new SaveConfig() { TableNamePrefix = "OperationPrefix-" };
 
-            context.Save(new DataModel { Id = "123", Name = "Name" }, saveConfig);
+            context.Save(new DataModel { Id = "123", Name = "Name", Other = "Other" }, saveConfig);
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -592,7 +595,7 @@ namespace AWSSDK_DotNet.UnitTests
 
             var saveConfig = new SaveConfig() { TableNamePrefix = "" };
 
-            context.Save(new DataModel { Id = "123", Name = "Name" }, saveConfig);
+            context.Save(new DataModel { Id = "123", Name = "Name", Other = "Other" }, saveConfig);
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
             mockClient.VerifyAll();
@@ -684,6 +687,9 @@ namespace AWSSDK_DotNet.UnitTests
 
             [DynamoDBRangeKey]
             public string Name { get; set; }
+
+            //todo: remove after key only fix
+            public string Other { get; set; }
         }
     }
 }

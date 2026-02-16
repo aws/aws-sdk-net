@@ -1308,6 +1308,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsTrue(result.Contains("PropX"));
             Assert.IsTrue(result.Contains("PropY"));
         }
+
         [TestMethod]
         public void BuildCounterConditionExpression_NoCounters_ReturnsNull()
         {
@@ -1316,7 +1317,7 @@ namespace AWSSDK_DotNet.UnitTests
             foreach (var p in itemStorage.Config.BaseTypeStorageConfig.Properties)
                 p.IsCounter = false;
 
-            var result = DynamoDBContext.BuildCounterConditionExpression(itemStorage);
+            var result = DynamoDBContext.BuildCounterUpdateExpression(itemStorage);
 
             Assert.IsNull(result);
         }
@@ -1358,7 +1359,7 @@ namespace AWSSDK_DotNet.UnitTests
             second.CounterStartValue = 100;
             second.CounterDelta = 10;
 
-            var result = DynamoDBContext.BuildCounterConditionExpression(itemStorage);
+            var result = DynamoDBContext.BuildCounterUpdateExpression(itemStorage);
 
             Assert.IsNotNull(result);
             Assert.IsFalse(string.IsNullOrEmpty(result.ExpressionStatement));
@@ -1413,7 +1414,7 @@ namespace AWSSDK_DotNet.UnitTests
             child.CounterStartValue = 10;
             child.CounterDelta = 3;
 
-            var result = DynamoDBContext.BuildCounterConditionExpression(itemStorage);
+            var result = DynamoDBContext.BuildCounterUpdateExpression(itemStorage);
 
             Assert.IsNotNull(result);
             Assert.IsTrue(result.ExpressionStatement.Contains("Prop1"));
@@ -1461,7 +1462,7 @@ namespace AWSSDK_DotNet.UnitTests
             propY.CounterStartValue = 200;
             propY.CounterDelta = 20;
 
-            var result = DynamoDBContext.BuildCounterConditionExpression(itemStorage);
+            var result = DynamoDBContext.BuildCounterUpdateExpression(itemStorage);
 
             Assert.IsNotNull(result);
             Assert.IsTrue(result.ExpressionStatement.Contains("PropX"));
