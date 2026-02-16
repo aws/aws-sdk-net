@@ -30,13 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kafka.Model
 {
     /// <summary>
-    /// Information about the broker access configuration.
+    /// Describes the cluster's connectivity information, such as its network type, which
+    /// is IPv4 or DUAL.
     /// </summary>
-    public partial class ConnectivityInfo
+    public partial class ServerlessConnectivityInfo
     {
         private NetworkType _networkType;
-        private PublicAccess _publicAccess;
-        private VpcConnectivity _vpcConnectivity;
 
         /// <summary>
         /// Gets and sets the property NetworkType.             
@@ -59,42 +58,6 @@ namespace Amazon.Kafka.Model
         internal bool IsSetNetworkType()
         {
             return this._networkType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PublicAccess.             
-        /// <para>
-        /// Public access control for brokers.
-        /// </para>
-        /// </summary>
-        public PublicAccess PublicAccess
-        {
-            get { return this._publicAccess; }
-            set { this._publicAccess = value; }
-        }
-
-        // Check to see if PublicAccess property is set
-        internal bool IsSetPublicAccess()
-        {
-            return this._publicAccess != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VpcConnectivity.             
-        /// <para>
-        /// VPC connectivity access control for brokers.
-        /// </para>
-        /// </summary>
-        public VpcConnectivity VpcConnectivity
-        {
-            get { return this._vpcConnectivity; }
-            set { this._vpcConnectivity = value; }
-        }
-
-        // Check to see if VpcConnectivity property is set
-        internal bool IsSetVpcConnectivity()
-        {
-            return this._vpcConnectivity != null;
         }
 
     }

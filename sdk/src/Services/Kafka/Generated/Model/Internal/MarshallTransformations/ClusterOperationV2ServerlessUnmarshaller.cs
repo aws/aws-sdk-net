@@ -56,6 +56,18 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("sourceClusterInfo", targetDepth))
+                {
+                    var unmarshaller = ServerlessConnectivityInfoUnmarshaller.Instance;
+                    unmarshalledObject.SourceClusterInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("targetClusterInfo", targetDepth))
+                {
+                    var unmarshaller = ServerlessConnectivityInfoUnmarshaller.Instance;
+                    unmarshalledObject.TargetClusterInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("vpcConnectionInfo", targetDepth))
                 {
                     var unmarshaller = VpcConnectionInfoServerlessUnmarshaller.Instance;

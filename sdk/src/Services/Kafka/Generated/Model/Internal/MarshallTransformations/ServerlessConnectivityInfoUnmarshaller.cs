@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Serverless Object
+    /// Response Unmarshaller for ServerlessConnectivityInfo Object
     /// </summary>  
-    public class ServerlessUnmarshaller : IJsonUnmarshaller<Serverless, JsonUnmarshallerContext>
+    public class ServerlessConnectivityInfoUnmarshaller : IJsonUnmarshaller<ServerlessConnectivityInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Serverless Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ServerlessConnectivityInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Serverless unmarshalledObject = new Serverless();
+            ServerlessConnectivityInfo unmarshalledObject = new ServerlessConnectivityInfo();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("clientAuthentication", targetDepth))
+                if (context.TestExpression("networkType", targetDepth))
                 {
-                    var unmarshaller = ServerlessClientAuthenticationUnmarshaller.Instance;
-                    unmarshalledObject.ClientAuthentication = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("connectivityInfo", targetDepth))
-                {
-                    var unmarshaller = ServerlessConnectivityInfoUnmarshaller.Instance;
-                    unmarshalledObject.ConnectivityInfo = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("vpcConfigs", targetDepth))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<VpcConfig, VpcConfigUnmarshaller>(VpcConfigUnmarshaller.Instance);
-                    unmarshalledObject.VpcConfigs = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NetworkType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServerlessUnmarshaller _instance = new ServerlessUnmarshaller();        
+        private static ServerlessConnectivityInfoUnmarshaller _instance = new ServerlessConnectivityInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServerlessUnmarshaller Instance
+        public static ServerlessConnectivityInfoUnmarshaller Instance
         {
             get
             {

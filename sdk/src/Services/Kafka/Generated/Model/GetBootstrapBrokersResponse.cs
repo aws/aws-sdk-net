@@ -35,12 +35,16 @@ namespace Amazon.Kafka.Model
     public partial class GetBootstrapBrokersResponse : AmazonWebServiceResponse
     {
         private string _bootstrapBrokerString;
+        private string _bootstrapBrokerStringIpv6;
         private string _bootstrapBrokerStringPublicSaslIam;
         private string _bootstrapBrokerStringPublicSaslScram;
         private string _bootstrapBrokerStringPublicTls;
         private string _bootstrapBrokerStringSaslIam;
+        private string _bootstrapBrokerStringSaslIamIpv6;
         private string _bootstrapBrokerStringSaslScram;
+        private string _bootstrapBrokerStringSaslScramIpv6;
         private string _bootstrapBrokerStringTls;
+        private string _bootstrapBrokerStringTlsIpv6;
         private string _bootstrapBrokerStringVpcConnectivitySaslIam;
         private string _bootstrapBrokerStringVpcConnectivitySaslScram;
         private string _bootstrapBrokerStringVpcConnectivityTls;
@@ -61,6 +65,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetBootstrapBrokerString()
         {
             return this._bootstrapBrokerString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringIpv6.             
+        /// <para>
+        /// A string that contains one or more DNS names (or IP) and port pairs for IPv6 connectivity.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringIpv6
+        {
+            get { return this._bootstrapBrokerStringIpv6; }
+            set { this._bootstrapBrokerStringIpv6 = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringIpv6 property is set
+        internal bool IsSetBootstrapBrokerStringIpv6()
+        {
+            return this._bootstrapBrokerStringIpv6 != null;
         }
 
         /// <summary>
@@ -136,6 +158,25 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringSaslIamIpv6.             
+        /// <para>
+        /// A string that contains one or more DNS names (or IP) and SASL IAM port pairs for IPv6
+        /// connectivity.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringSaslIamIpv6
+        {
+            get { return this._bootstrapBrokerStringSaslIamIpv6; }
+            set { this._bootstrapBrokerStringSaslIamIpv6 = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringSaslIamIpv6 property is set
+        internal bool IsSetBootstrapBrokerStringSaslIamIpv6()
+        {
+            return this._bootstrapBrokerStringSaslIamIpv6 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BootstrapBrokerStringSaslScram.             
         /// <para>
         /// A string containing one or more DNS names (or IP) and Sasl Scram port pairs.
@@ -154,6 +195,25 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringSaslScramIpv6.             
+        /// <para>
+        /// A string that contains one or more DNS names (or IP) and SASL SCRAM port pairs for
+        /// IPv6 connectivity.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringSaslScramIpv6
+        {
+            get { return this._bootstrapBrokerStringSaslScramIpv6; }
+            set { this._bootstrapBrokerStringSaslScramIpv6 = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringSaslScramIpv6 property is set
+        internal bool IsSetBootstrapBrokerStringSaslScramIpv6()
+        {
+            return this._bootstrapBrokerStringSaslScramIpv6 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BootstrapBrokerStringTls.             
         /// <para>
         /// A string containing one or more DNS names (or IP) and TLS port pairs.
@@ -169,6 +229,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetBootstrapBrokerStringTls()
         {
             return this._bootstrapBrokerStringTls != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringTlsIpv6.             
+        /// <para>
+        /// A string that contains one or more DNS names (or IP) and TLS port pairs for IPv6 connectivity.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringTlsIpv6
+        {
+            get { return this._bootstrapBrokerStringTlsIpv6; }
+            set { this._bootstrapBrokerStringTlsIpv6 = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringTlsIpv6 property is set
+        internal bool IsSetBootstrapBrokerStringTlsIpv6()
+        {
+            return this._bootstrapBrokerStringTlsIpv6 != null;
         }
 
         /// <summary>
