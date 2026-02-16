@@ -40,8 +40,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the account setting, such as <c>BASIC_SCAN_TYPE_VERSION</c> or <c>REGISTRY_POLICY_SCOPE</c>.
-        /// 
+        /// The name of the account setting, such as <c>BASIC_SCAN_TYPE_VERSION</c>, <c>REGISTRY_POLICY_SCOPE</c>,
+        /// or <c>BLOB_MOUNTING</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

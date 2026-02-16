@@ -2971,6 +2971,12 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Lists the artifacts associated with a specified subject image.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The IAM principal invoking this operation must have the <c>ecr:BatchGetImage</c> permission.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImageReferrers service method.</param>
         /// 
@@ -3001,6 +3007,12 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Lists the artifacts associated with a specified subject image.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The IAM principal invoking this operation must have the <c>ecr:BatchGetImage</c> permission.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImageReferrers service method.</param>
         /// <param name="cancellationToken">
