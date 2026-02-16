@@ -385,7 +385,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             ExpressionStatement = null;
         }
 
-        private string BuildExpressionStatement()
+        internal string BuildExpressionStatement()
         {
             var parts = new List<string>(4);
 
@@ -394,8 +394,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             AppendOperation(parts, OperationAdd, AddParts);
             AppendOperation(parts, OperationDelete, DeleteParts);
 
-            ExpressionStatement = parts.Count == 0 ? null : string.Join(" ", parts);
-            return ExpressionStatement;
+            return parts.Count == 0 ? null : string.Join(" ", parts);
         }
 
         internal new void ApplyUpdateExpression(UpdateItemRequest request, Table table)

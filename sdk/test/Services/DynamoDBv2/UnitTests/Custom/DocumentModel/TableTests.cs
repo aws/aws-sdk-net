@@ -97,9 +97,9 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [DataTestMethod]
-        [DataRow(null, null, "Either Document or UpdateExpression must be set (exclusively).", true)]
+        [DataRow(null, null, "A key must be provided when Document is not set.", true)]
         [DataRow("doc", "expr", "Either Document or UpdateExpression must be set (exclusively).", true)]
-        [DataRow(null, null, "Either Document or UpdateExpression must be set (exclusively).", false)]
+        [DataRow(null, null, "A key must be provided when Document is not set.", false)]
         [DataRow("doc", "expr", "Either Document or UpdateExpression must be set (exclusively).", false)]
         public async Task UpdateHelper_RequestInvalidDocExprCombination_ThrowsInvalidOperationException(object docObj, object exprObj, string expectedMessage, bool isAsync)
         {
