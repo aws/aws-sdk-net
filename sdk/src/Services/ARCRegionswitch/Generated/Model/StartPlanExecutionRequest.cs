@@ -31,14 +31,13 @@ namespace Amazon.ARCRegionswitch.Model
 {
     /// <summary>
     /// Container for the parameters to the StartPlanExecution operation.
-    /// Starts the execution of a Region switch plan. You can execute a plan in either PRACTICE
-    /// or RECOVERY mode.
+    /// Starts the execution of a Region switch plan. You can execute a plan in either <c>graceful</c>
+    /// or <c>ungraceful</c> mode.
     /// 
     ///  
     /// <para>
-    /// In PRACTICE mode, the execution simulates the steps without making actual changes
-    /// to your application's traffic routing. In RECOVERY mode, the execution performs actual
-    /// changes to shift traffic between Regions.
+    /// Specifing <c>ungraceful</c> mode either changes the behavior of the execution blocks
+    /// in a workflow or skips specific execution blocks.
     /// </para>
     /// </summary>
     public partial class StartPlanExecutionRequest : AmazonARCRegionswitchRequest

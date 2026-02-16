@@ -42,8 +42,7 @@ namespace Amazon.ARCRegionswitch
     /// Amazon Application Recovery Controller (ARC) Region switch helps you to quickly and
     /// reliably shift traffic away from an impaired Amazon Web Services Region to a healthy
     /// Region. With Region switch, you can create plans that define the steps to shift traffic
-    /// for your application from one Amazon Web Services Region to another. You can test
-    /// your plans in practice mode before using them in a real recovery scenario.
+    /// for your application from one Amazon Web Services Region to another.
     /// 
     ///  
     /// <para>
@@ -1057,14 +1056,13 @@ namespace Amazon.ARCRegionswitch
 
 
         /// <summary>
-        /// Starts the execution of a Region switch plan. You can execute a plan in either PRACTICE
-        /// or RECOVERY mode.
+        /// Starts the execution of a Region switch plan. You can execute a plan in either <c>graceful</c>
+        /// or <c>ungraceful</c> mode.
         /// 
         ///  
         /// <para>
-        /// In PRACTICE mode, the execution simulates the steps without making actual changes
-        /// to your application's traffic routing. In RECOVERY mode, the execution performs actual
-        /// changes to shift traffic between Regions.
+        /// Specifing <c>ungraceful</c> mode either changes the behavior of the execution blocks
+        /// in a workflow or skips specific execution blocks.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartPlanExecution service method.</param>
