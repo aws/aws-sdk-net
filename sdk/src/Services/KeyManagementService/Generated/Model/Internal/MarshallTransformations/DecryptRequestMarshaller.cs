@@ -81,6 +81,17 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DryRun);
                 }
 
+                if(publicRequest.IsSetDryRunModifiers())
+                {
+                    context.Writer.WritePropertyName("DryRunModifiers");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDryRunModifiersListValue in publicRequest.DryRunModifiers)
+                    {
+                            context.Writer.Write(publicRequestDryRunModifiersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetEncryptionAlgorithm())
                 {
                     context.Writer.WritePropertyName("EncryptionAlgorithm");

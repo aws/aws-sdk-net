@@ -155,6 +155,7 @@ namespace Amazon.KeyManagementService.Model
     {
         private MemoryStream _ciphertextBlob;
         private bool? _dryRun;
+        private List<string> _dryRunModifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EncryptionAlgorithmSpec _encryptionAlgorithm;
         private Dictionary<string, string> _encryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _grantTokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -166,8 +167,13 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Ciphertext to be decrypted. The blob includes metadata.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is required in all cases except when <c>DryRun</c> is <c>true</c> and
+        /// <c>DryRunModifiers</c> is set to <c>IGNORE_CIPHERTEXT</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=6144)]
+        [AWSProperty(Min=1, Max=6144)]
         public MemoryStream CiphertextBlob
         {
             get { return this._ciphertextBlob; }
@@ -201,6 +207,36 @@ namespace Amazon.KeyManagementService.Model
         internal bool IsSetDryRun()
         {
             return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRunModifiers. 
+        /// <para>
+        /// Specifies the modifiers to apply to the dry run operation. <c>DryRunModifiers</c>
+        /// is an optional parameter that only applies when <c>DryRun</c> is set to <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When set to <c>IGNORE_CIPHERTEXT</c>, KMS performs only authorization validation without
+        /// ciphertext validation. This allows you to test permissions without requiring a valid
+        /// ciphertext blob.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more about how to use this parameter, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/testing-permissions.html">Testing
+        /// your permissions</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<string> DryRunModifiers
+        {
+            get { return this._dryRunModifiers; }
+            set { this._dryRunModifiers = value; }
+        }
+
+        // Check to see if DryRunModifiers property is set
+        internal bool IsSetDryRunModifiers()
+        {
+            return this._dryRunModifiers != null && (this._dryRunModifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -304,9 +340,11 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// This parameter is required only when the ciphertext was encrypted under an asymmetric
-        /// KMS key. If you used a symmetric encryption KMS key, KMS can get the KMS key from
-        /// metadata that it adds to the symmetric ciphertext blob. However, it is always recommended
-        /// as a best practice. This practice ensures that you use the KMS key that you intend.
+        /// KMS key or when <c>DryRun</c> is <c>true</c> and <c>DryRunModifiers</c> is set to
+        /// <c>IGNORE_CIPHERTEXT</c>. If you used a symmetric encryption KMS key, KMS can get
+        /// the KMS key from metadata that it adds to the symmetric ciphertext blob. However,
+        /// it is always recommended as a best practice. This practice ensures that you use the
+        /// KMS key that you intend.
         /// </para>
         ///  
         /// <para>
