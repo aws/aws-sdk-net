@@ -41,8 +41,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the account setting, such as <c>BASIC_SCAN_TYPE_VERSION</c> or <c>REGISTRY_POLICY_SCOPE</c>.
-        /// 
+        /// The name of the account setting, such as <c>BASIC_SCAN_TYPE_VERSION</c>, <c>REGISTRY_POLICY_SCOPE</c>,
+        /// or <c>BLOB_MOUNTING</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -61,9 +61,9 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Setting value that is specified. The following are valid values for the basic scan
-        /// type being used: <c>AWS_NATIVE</c> or <c>CLAIR</c>. The following are valid values
-        /// for the registry policy scope being used: <c>V1</c> or <c>V2</c>.
+        /// Setting value that is specified. Valid value for basic scan type: <c>AWS_NATIVE</c>.
+        /// Valid values for registry policy scope: <c>V1</c> or <c>V2</c>. Valid values for blob
+        /// mounting: <c>ENABLED</c> or <c>DISABLED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
