@@ -2068,6 +2068,10 @@ namespace Amazon.QConnect
         /// Constant TEXT for MessageType
         /// </summary>
         public static readonly MessageType TEXT = new MessageType("TEXT");
+        /// <summary>
+        /// Constant TOOL_USE_RESULT for MessageType
+        /// </summary>
+        public static readonly MessageType TOOL_USE_RESULT = new MessageType("TOOL_USE_RESULT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
