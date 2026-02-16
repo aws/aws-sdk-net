@@ -113,6 +113,17 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
             }
 
+            if(publicRequest.IsSetDryRunModifiers())
+            {
+                context.Writer.WritePropertyName("DryRunModifiers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDryRunModifiersListValue in publicRequest.DryRunModifiers)
+                {
+                        context.Writer.WriteStringValue(publicRequestDryRunModifiersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetGrantTokens())
             {
                 context.Writer.WritePropertyName("GrantTokens");

@@ -2865,7 +2865,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  
         /// </para>
-        ///  </dd> <dt>Multi-Region primary keys</dt> <dt>Imported key material</dt> <dd> 
+        ///  </dd> <dt>Multi-Region primary keys</dt> <dd> 
         /// <para>
         /// To create a multi-Region <i>primary key</i> in the local Amazon Web Services Region,
         /// use the <c>MultiRegion</c> parameter with a value of <c>True</c>. To create a multi-Region
@@ -2895,7 +2895,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  
         /// </para>
-        ///  </dd> <dd> 
+        ///  </dd> <dt>Imported key material</dt> <dd> 
         /// <para>
         /// To import your own key material into a KMS key, begin by creating a KMS key with no
         /// key material. To do this, use the <c>Origin</c> parameter of <c>CreateKey</c> with
@@ -3274,7 +3274,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  
         /// </para>
-        ///  </dd> <dt>Multi-Region primary keys</dt> <dt>Imported key material</dt> <dd> 
+        ///  </dd> <dt>Multi-Region primary keys</dt> <dd> 
         /// <para>
         /// To create a multi-Region <i>primary key</i> in the local Amazon Web Services Region,
         /// use the <c>MultiRegion</c> parameter with a value of <c>True</c>. To create a multi-Region
@@ -3304,7 +3304,7 @@ namespace Amazon.KeyManagementService
         /// <para>
         ///  
         /// </para>
-        ///  </dd> <dd> 
+        ///  </dd> <dt>Imported key material</dt> <dd> 
         /// <para>
         /// To import your own key material into a KMS key, begin by creating a KMS key with no
         /// key material. To do this, use the <c>Origin</c> parameter of <c>CreateKey</c> with
@@ -17712,7 +17712,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can perform on-demand key rotation a <b>maximum of 10 times</b> per KMS key. You
+        /// You can perform on-demand key rotation a <b>maximum of 25 times</b> per KMS key. You
         /// can use the KMS console to view the number of remaining on-demand rotations available
         /// for a KMS key.
         /// </para>
@@ -17881,7 +17881,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can perform on-demand key rotation a <b>maximum of 10 times</b> per KMS key. You
+        /// You can perform on-demand key rotation a <b>maximum of 25 times</b> per KMS key. You
         /// can use the KMS console to view the number of remaining on-demand rotations available
         /// for a KMS key.
         /// </para>
