@@ -32,7 +32,7 @@ namespace Amazon.MWAAServerless
     public partial class AmazonMWAAServerlessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("MWAA Serverless", "3.7.500.33");
+            InternalSDKUtils.BuildUserAgentString("MWAA Serverless", "3.7.500.34");
 
         private string _userAgent = UserAgentString;
         ///<summary>

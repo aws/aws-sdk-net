@@ -1,3 +1,20 @@
+### 3.7.1224.0 (2026-02-16 19:36 UTC)
+* ARCRegionswitch (3.7.504.2)
+	* Clarify documentation on ARC Region Switch start-plan-execution operation
+* EC2 (3.7.549.1)
+	* Documentation updates for EC2 Secondary Networks
+* ECR (3.7.506.21)
+	* Adds support for enabling blob mounting, and removes support for Clair based image scanning
+* Kafka (3.7.506.0)
+	* Amazon MSK now supports dual-stack connectivity (IPv4 and IPv6) for existing MSK clusters. You can enable dual-stack on existing clusters by specifying the NetworkType parameter in updateConnectivity API.
+* KeyManagementService (3.7.506.0)
+	* Added support for Decrypt and ReEncrypt API's to use dry run feature without ciphertext for authorization validation
+* QConnect (3.7.507.0)
+	* Update MessageType enum to include missing types.
+* Core 3.7.500.80
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1223.0 (2026-02-13 19:18 UTC)
 * CloudWatch (3.7.506.0)
 	* Adding new evaluation states that provides information about the alarm evaluation process. Evaluation error Indicates configuration errors in alarm setup that require review and correction. Evaluation failure Indicates temporary CloudWatch issues.
