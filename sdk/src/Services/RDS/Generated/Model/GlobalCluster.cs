@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         private string _globalClusterResourceId;
         private string _status;
         private bool? _storageEncrypted;
+        private StorageEncryptionType _storageEncryptionType;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -299,6 +300,40 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageEncryptionType. 
+        /// <para>
+        /// The type of encryption used to protect data at rest in the global database cluster.
+        /// Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>none</c> - The global database cluster is not encrypted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-rds</c> - The global database cluster is encrypted using an Amazon Web Services
+        /// owned KMS key.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>sse-kms</c> - The global database cluster is encrypted using a customer managed
+        /// KMS key or Amazon Web Services managed KMS key.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StorageEncryptionType StorageEncryptionType
+        {
+            get { return this._storageEncryptionType; }
+            set { this._storageEncryptionType = value; }
+        }
+
+        // Check to see if StorageEncryptionType property is set
+        internal bool IsSetStorageEncryptionType()
+        {
+            return this._storageEncryptionType != null;
         }
 
         /// <summary>
