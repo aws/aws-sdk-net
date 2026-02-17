@@ -1,3 +1,16 @@
+### 3.7.1225.0 (2026-02-17 19:55 UTC)
+* EC2 (3.7.550.0)
+	* Add Operator field to CreatePlacementGroup and DescribePlacementGroup APIs.
+* ManagedGrafana (3.7.503.0)
+	* This release updates Amazon Managed Grafana's APIs to support customer managed KMS keys.
+* RDS (3.7.514.0)
+	* Adds support for the StorageEncryptionType field to specify encryption type for DB clusters, DB instances, snapshots, automated backups, and global clusters.
+* WorkSpacesWeb (3.7.507.0)
+	* Adds support for branding customization without requiring a custom wallpaper.
+* Core 3.7.500.81
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1224.0 (2026-02-16 19:36 UTC)
 * ARCRegionswitch (3.7.504.2)
 	* Clarify documentation on ARC Region Switch start-plan-execution operation
