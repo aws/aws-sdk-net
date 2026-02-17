@@ -269,6 +269,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StorageEncryptionType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageEncryptionType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StorageThroughput", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
