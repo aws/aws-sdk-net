@@ -76,8 +76,8 @@ namespace Amazon.WorkSpacesWeb.Model
         /// Gets and sets the property BrandingConfigurationInput. 
         /// <para>
         /// The branding configuration input that customizes the appearance of the web portal
-        /// for end users. This includes a custom logo, favicon, wallpaper, localized strings,
-        /// color theme, and an optional terms of service.
+        /// for end users. This includes a custom logo, favicon, localized strings, color theme,
+        /// and optionally a wallpaper and terms of service.
         /// </para>
         /// </summary>
         public BrandingConfigurationCreateInput BrandingConfigurationInput
