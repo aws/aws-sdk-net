@@ -48,6 +48,7 @@ namespace Amazon.ManagedGrafana.Model
         private string _clientToken;
         private string _configuration;
         private string _grafanaVersion;
+        private string _kmsKeyId;
         private NetworkAccessConfiguration _networkAccessControl;
         private string _organizationRoleName;
         private PermissionType _permissionType;
@@ -168,6 +169,25 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetGrafanaVersion()
         {
             return this._grafanaVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The ID or ARN of the Key Management Service key to use for encrypting workspace data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>
