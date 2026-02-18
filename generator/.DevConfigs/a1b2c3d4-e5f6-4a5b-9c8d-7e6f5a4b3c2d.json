@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "IoTAnalytics",
+            "type": "removal",
+            "changeLogMessages": [
+                "Amazon IoT Analytics has been removed from the SDK because it has been discontinued."
+            ]
+        }
+    ]
+}

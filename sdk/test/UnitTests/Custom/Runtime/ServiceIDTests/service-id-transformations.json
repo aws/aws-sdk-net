@@ -690,11 +690,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_IOT_JOBS_DATA_PLANE"
   },
   {
-    "service_id": "IoTAnalytics",
-    "services_section_name": "iotanalytics",
-    "service_envvar_name": "AWS_ENDPOINT_URL_IOTANALYTICS"
-  },
-  {
     "service_id": "IotDeviceAdvisor",
     "services_section_name": "iotdeviceadvisor",
     "service_envvar_name": "AWS_ENDPOINT_URL_IOTDEVICEADVISOR"
