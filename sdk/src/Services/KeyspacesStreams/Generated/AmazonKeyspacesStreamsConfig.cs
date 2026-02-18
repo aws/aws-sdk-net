@@ -32,7 +32,7 @@ namespace Amazon.KeyspacesStreams
     public partial class AmazonKeyspacesStreamsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("KeyspacesStreams", "3.7.502.39");
+            InternalSDKUtils.BuildUserAgentString("KeyspacesStreams", "3.7.502.40");
 
         private string _userAgent = UserAgentString;
         ///<summary>
