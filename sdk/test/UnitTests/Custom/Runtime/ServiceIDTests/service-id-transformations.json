@@ -545,11 +545,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_EVENTBRIDGE"
   },
   {
-    "service_id": "Evidently",
-    "services_section_name": "evidently",
-    "service_envvar_name": "AWS_ENDPOINT_URL_EVIDENTLY"
-  },
-  {
     "service_id": "finspace",
     "services_section_name": "finspace",
     "service_envvar_name": "AWS_ENDPOINT_URL_FINSPACE"
