@@ -32,9 +32,9 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the CreateNotification operation.
     /// Creates a new notification to be delivered to specified recipients. Notifications
-    /// can include localized content with embedded links, and an optional expiration time.
-    /// Recipients can be specified as individual user ARNs or instance ARNs to target all
-    /// users in an instance.
+    /// can include localized content with links, and an optional expiration time. Recipients
+    /// can be specified as individual user ARNs or instance ARNs to target all users in an
+    /// instance.
     /// </summary>
     public partial class CreateNotificationRequest : AmazonConnectRequest
     {
@@ -73,8 +73,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Content. 
         /// <para>
         /// The localized content of the notification. A map where keys are locale codes and values
-        /// are the notification text in that locale. Content supports markdown formatting and
-        /// embedded links. Maximum 250 characters per locale.
+        /// are the notification text in that locale. Content supports links. Maximum 250 characters
+        /// per locale.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
