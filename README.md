@@ -482,8 +482,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Invoice Configuration allows you to receive separate AWS invoices based on your organizational needs. You can use the AWS SDKs to manage Invoice Units and programmatically fetch the information of the invoice receiver.
 * [AWSSDK.IoT](https://www.nuget.org/packages/AWSSDK.IoT/)
 	* AWS IoT allows you to leverage AWS to build your Internet of Things.
-* [AWSSDK.IoTAnalytics](https://www.nuget.org/packages/AWSSDK.IoTAnalytics/)
-	* AWS IoT Analytics is a fully-managed service that makes it easy to run and operationalize sophisticated analytics on massive volumes of IoT data without having to worry about the cost and complexity typically required to build an IoT analytics platform.
 * [AWSSDK.IotData](https://www.nuget.org/packages/AWSSDK.IotData/)
 	* AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a persistent representation of your things and their state in the AWS cloud.
 * [AWSSDK.IoTDeviceAdvisor](https://www.nuget.org/packages/AWSSDK.IoTDeviceAdvisor/)
