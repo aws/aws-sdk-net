@@ -53,7 +53,7 @@ namespace AWSSDK.Benchmarks
                     {
                         MetricName = customMetricName,
                         Value = metricValue,
-                        TimestampUtc = utcNowMinus15.AddMinutes(i),
+                        Timestamp = utcNowMinus15.AddMinutes(i),
                         Dimensions = new List<Dimension>
                         {
                             new Dimension {Name = "dimension1", Value = "value1"},
