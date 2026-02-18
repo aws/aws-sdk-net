@@ -1,3 +1,13 @@
+### 4.0.194.0 (2026-02-18 19:27 UTC)
+* CleanRooms (4.0.15.0)
+	* This release adds support for federated catalogs in Athena-sourced configured tables.
+* CloudWatchEvidently (Removed)
+	* Amazon CloudWatch Evidently has been removed from the SDK because it has been discontinued.
+* Connect (4.0.33.1)
+	* Correcting in-app notifications API documentation.
+* IoTAnalytics (Removed)
+	* Amazon IoT Analytics has been removed from the SDK because it has been discontinued.
+
 ### 4.0.193.0 (2026-02-17 19:55 UTC)
 * EC2 (4.0.76.0)
 	* Add Operator field to CreatePlacementGroup and DescribePlacementGroup APIs.
