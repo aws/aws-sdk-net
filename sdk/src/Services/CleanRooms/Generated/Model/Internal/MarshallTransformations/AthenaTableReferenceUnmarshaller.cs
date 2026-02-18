@@ -66,6 +66,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("catalogName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CatalogName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("databaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

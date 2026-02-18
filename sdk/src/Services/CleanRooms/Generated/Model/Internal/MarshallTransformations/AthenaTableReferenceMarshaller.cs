@@ -48,6 +48,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCatalogName())
+            {
+                context.Writer.WritePropertyName("catalogName");
+                context.Writer.Write(requestObject.CatalogName);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("databaseName");
