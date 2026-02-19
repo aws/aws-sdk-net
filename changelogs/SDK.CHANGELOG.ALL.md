@@ -1,3 +1,11 @@
+### 3.7.1227.0 (2026-02-19 19:32 UTC)
+* BCMDashboards (3.7.502.0)
+	* The Billing and Cost Management GetDashboard API now returns identifier for each widget, enabling users to uniquely identify widgets within their dashboards.
+* ECR (3.7.507.0)
+	* Adds multiple artifact types filter support in ListImageReferrers API.
+* PcaConnectorScep (3.7.503.0)
+	* AWS Private CA Connector for SCEP now supports AWS PrivateLink, allowing your clients to request certificates from within your Amazon Virtual Private Cloud (VPC) without traversing the public internet. With this launch, you can create VPC endpoints to connect to your SCEP connector privately.
+
 ### 3.7.1226.0 (2026-02-18 19:27 UTC)
 * CleanRooms (3.7.513.0)
 	* This release adds support for federated catalogs in Athena-sourced configured tables.
