@@ -115,6 +115,12 @@ namespace Amazon.PcaConnectorScep.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetVpcEndpointId())
+            {
+                context.Writer.WritePropertyName("VpcEndpointId");
+                context.Writer.WriteStringValue(publicRequest.VpcEndpointId);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array

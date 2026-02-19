@@ -25,6 +25,12 @@
     <pattern>[!-~]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PcaConnectorScep.Model.CreateConnectorRequest.VpcEndpointId</property>
+    <min>13</min>
+    <max>22</max>
+    <pattern>vpce-[0-9a-f]{8}([0-9a-f]{9})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PcaConnectorScep.Model.CreateConnectorResponse.ConnectorArn</property>
     <min>5</min>
     <max>200</max>

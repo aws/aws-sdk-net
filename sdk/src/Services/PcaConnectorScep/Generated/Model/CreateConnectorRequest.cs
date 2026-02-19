@@ -44,6 +44,7 @@ namespace Amazon.PcaConnectorScep.Model
         private string _clientToken;
         private MobileDeviceManagement _mobileDeviceManagement;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _vpcEndpointId;
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
@@ -75,7 +76,7 @@ namespace Amazon.PcaConnectorScep.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Custom string that can be used to distinguish between calls to the <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_CreateChallenge.html">CreateChallenge</a>
+        /// Custom string that can be used to distinguish between calls to the <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_CreateChallenge.html">CreateChallenge</a>
         /// action. Client tokens for <c>CreateChallenge</c> time out after five minutes. Therefore,
         /// if you call <c>CreateChallenge</c> multiple times with the same client token within
         /// five minutes, Connector for SCEP recognizes that you are requesting only one challenge
@@ -148,6 +149,27 @@ namespace Amazon.PcaConnectorScep.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointId. 
+        /// <para>
+        /// If you don't supply a value, by default Connector for SCEP creates a connector accessible
+        /// over the public internet. If you provide a VPC endpoint ID, creates a connector accessible
+        /// only through that specific VPC endpoint.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=13, Max=22)]
+        public string VpcEndpointId
+        {
+            get { return this._vpcEndpointId; }
+            set { this._vpcEndpointId = value; }
+        }
+
+        // Check to see if VpcEndpointId property is set
+        internal bool IsSetVpcEndpointId()
+        {
+            return this._vpcEndpointId != null;
         }
 
     }
