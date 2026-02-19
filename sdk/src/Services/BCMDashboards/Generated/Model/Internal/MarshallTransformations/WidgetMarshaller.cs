@@ -82,6 +82,12 @@ namespace Amazon.BCMDashboards.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HorizontalOffset);
             }
 
+            if(requestObject.IsSetId())
+            {
+                context.Writer.WritePropertyName("id");
+                context.Writer.Write(requestObject.Id);
+            }
+
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("title");

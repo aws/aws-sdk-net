@@ -90,6 +90,12 @@ namespace Amazon.BCMDashboards.Model.Internal.MarshallTransformations
                     unmarshalledObject.HorizontalOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("title", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
