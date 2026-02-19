@@ -54,6 +54,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             Limit = Int32.MaxValue;
             Select = SelectValues.AllAttributes;
+            ReturnConsumedCapacity = ReturnConsumedCapacity.NONE;
         }
         /// <summary>
         /// Gets or sets the key condition expression specifying which items should be returned.
@@ -108,6 +109,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// This token should be retrieved from a Search object.
         /// </summary>
         public string PaginationToken { get; set; }
+
+        /// <summary>
+        /// Controls whether DynamoDB returns capacity consumption details for each Query request.
+        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
     }
 
     /// <summary>
@@ -124,8 +131,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public ScanDocumentOperationRequest()
         {
             Limit = Int32.MaxValue;
+            ConsistentRead = false;
             Select = SelectValues.AllAttributes;
-            TotalSegments = 1;
+            ReturnConsumedCapacity = ReturnConsumedCapacity.NONE;
         }
 
         /// <summary>
@@ -173,15 +181,51 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public string PaginationToken { get; set; }
 
         /// <summary>
-        /// The segment number to scan in a parallel scan. Must be between 0 and TotalSegments - 1 when specified.
-        /// If null, a non-parallel (single segment) scan is performed.
+        /// For parallel <i>Scan</i> requests, <i>Segment</i> identifies an individual segment to be scanned by an application "worker" (such as a
+        /// thread or a process). Each worker issues a <i>Scan</i> request with a distinct value for the segment it will scan. Segment IDs are
+        /// zero-based, so the first segment is always 0. For example, if you want to scan a table using four application threads, the first thread
+        /// would specify a <i>Segment</i> value of 0, the second thread would specify 1, and so on. LastEvaluatedKey returned from a parallel scan
+        /// request must be used with same Segment id in a subsequent operation. The value for <i>Segment</i> must be less than or equal to 0, and less
+        /// than the value provided for <i>TotalSegments</i>. If you specify <i>Segment</i>, you must also specify <i>TotalSegments</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>0 - 999999</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
         public int Segment { get; set; }
 
         /// <summary>
-        /// Total number of segments for a parallel scan. Defaults to 1 (no parallelism).
+        /// For parallel <i>Scan</i> requests, <i>TotalSegments</i>represents the total number of segments for a table that is being scanned. Segments
+        /// are a way to logically divide a table into equally sized portions, for the duration of the <i>Scan</i> request. The value of
+        /// <i>TotalSegments</i> corresponds to the number of application "workers" (such as threads or processes) that will perform the parallel
+        /// <i>Scan</i>. For example, if you want to scan a table using four application threads, you would specify a <i>TotalSegments</i> value of 4.
+        /// The value for <i>TotalSegments</i> must be greater than or equal to 1, and less than or equal to 1000000. If you specify a <i>TotalSegments</i>
+        /// value of 1, the <i>Scan</i> will be sequential rather than parallel. If you specify <i>TotalSegments</i>, you must also specify
+        /// <i>Segment</i>.
+        ///  
+        /// <para>
+        /// <b>Constraints:</b>
+        /// <list type="definition">
+        ///     <item>
+        ///         <term>Range</term>
+        ///         <description>1 - 1000000</description>
+        ///     </item>
+        /// </list>
+        /// </para>
         /// </summary>
         public int TotalSegments { get; set; }
+
+        /// <summary>
+        /// Controls whether DynamoDB returns capacity consumption details for each Scan request.
+        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
     }
 
     /// <summary>
@@ -265,5 +309,5 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// Flag specifying what values should be returned.
         /// </summary>
         public ReturnValues ReturnValues { get; set; }
-    }
+    }   
 }

@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "minor",
+      "changeLogMessages": [
+        "Adds support for ReturnConsumedCapacity on Query/Scan DocumentClient."
+      ]
+    }
+  ]
+}
