@@ -109,6 +109,12 @@ namespace Amazon.PcaConnectorScep.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetVpcEndpointId())
+                {
+                    context.Writer.WritePropertyName("VpcEndpointId");
+                    context.Writer.Write(publicRequest.VpcEndpointId);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

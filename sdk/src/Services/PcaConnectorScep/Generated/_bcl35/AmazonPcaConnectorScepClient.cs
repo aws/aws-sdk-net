@@ -274,7 +274,7 @@ namespace Amazon.PcaConnectorScep
         /// issuing a certificate from a certificate authority (CA). Your SCEP clients include
         /// the challenge password as part of their certificate request to Connector for SCEP.
         /// To retrieve the connector Amazon Resource Names (ARNs) for the connectors in your
-        /// account, call <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_ListConnectors.html">ListConnectors</a>.
+        /// account, call <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_ListConnectors.html">ListConnectors</a>.
         /// 
         ///  
         /// <para>
@@ -455,7 +455,7 @@ namespace Amazon.PcaConnectorScep
         #region  DeleteChallenge
 
         /// <summary>
-        /// Deletes the specified <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.
+        /// Deletes the specified <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChallenge service method.</param>
         /// 
@@ -535,7 +535,7 @@ namespace Amazon.PcaConnectorScep
         #region  DeleteConnector
 
         /// <summary>
-        /// Deletes the specified <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>.
+        /// Deletes the specified <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>.
         /// This operation also deletes any challenges associated with the connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
@@ -616,7 +616,7 @@ namespace Amazon.PcaConnectorScep
         #region  GetChallengeMetadata
 
         /// <summary>
-        /// Retrieves the metadata for the specified <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.
+        /// Retrieves the metadata for the specified <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChallengeMetadata service method.</param>
         /// 
@@ -692,7 +692,7 @@ namespace Amazon.PcaConnectorScep
         #region  GetChallengePassword
 
         /// <summary>
-        /// Retrieves the challenge password for the specified <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.
+        /// Retrieves the challenge password for the specified <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChallengePassword service method.</param>
         /// 
@@ -768,7 +768,7 @@ namespace Amazon.PcaConnectorScep
         #region  GetConnector
 
         /// <summary>
-        /// Retrieves details about the specified <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>.
+        /// Retrieves details about the specified <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>.
         /// Calling this action returns important details about the connector, such as the public
         /// SCEP URL where your clients can request certificates.
         /// </summary>
