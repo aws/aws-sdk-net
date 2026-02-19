@@ -63,7 +63,7 @@ namespace Amazon.ECR.Model
         /// The artifact types with which to filter your <a>ListImageReferrers</a> results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> ArtifactTypes
         {
             get { return this._artifactTypes; }
