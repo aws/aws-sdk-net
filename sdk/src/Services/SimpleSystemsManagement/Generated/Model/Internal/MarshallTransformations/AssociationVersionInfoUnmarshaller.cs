@@ -62,6 +62,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.ApplyOnlyAtCronInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AssociationDispatchAssumeRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AssociationDispatchAssumeRole = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AssociationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
