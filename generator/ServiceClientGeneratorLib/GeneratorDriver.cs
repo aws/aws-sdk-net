@@ -231,7 +231,7 @@ namespace ServiceClientGenerator
                 this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.ClassName + "Exception.cs");
             }
 
-            var operations = Configuration.Namespace == "Amazon.S3" ? Configuration.ServiceModel.S3AllowListOperations : Configuration.ServiceModel.Operations;
+            var operations = Configuration.Namespace == "Amazon.S3" ? Configuration.ServiceModel.Operations.Where(x => !Configuration.ServiceModel.S3ExcludeListOperations.Contains(x.Name)) : Configuration.ServiceModel.Operations;
 
             foreach (var operation in operations)
             {
