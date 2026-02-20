@@ -539,7 +539,9 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoadBalancers. <note> 
+        /// Gets and sets the property LoadBalancers. 
+        /// <para>
+        /// <note> 
         /// <para>
         /// You must have a service-linked role when you update this property
         /// </para>
@@ -586,6 +588,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// This parameter triggers a new service deployment.
+        /// </para>
+        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -804,7 +808,9 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceRegistries. <note> 
+        /// Gets and sets the property ServiceRegistries. 
+        /// <para>
+        /// <note> 
         /// <para>
         /// You must have a service-linked role when you update this property.
         /// </para>
@@ -833,6 +839,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// This parameter triggers a new service deployment.
+        /// </para>
+        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
