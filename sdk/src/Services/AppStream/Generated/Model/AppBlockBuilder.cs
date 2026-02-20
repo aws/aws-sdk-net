@@ -39,6 +39,7 @@ namespace Amazon.AppStream.Model
         private string _arn;
         private DateTime? _createdTime;
         private string _description;
+        private bool? _disableIMDSV1;
         private string _displayName;
         private bool? _enableDefaultInternetAccess;
         private string _iamRoleArn;
@@ -141,6 +142,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableIMDSV1. 
+        /// <para>
+        /// Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the
+        /// app block builder.
+        /// </para>
+        /// </summary>
+        public bool DisableIMDSV1
+        {
+            get { return this._disableIMDSV1.GetValueOrDefault(); }
+            set { this._disableIMDSV1 = value; }
+        }
+
+        // Check to see if DisableIMDSV1 property is set
+        internal bool IsSetDisableIMDSV1()
+        {
+            return this._disableIMDSV1.HasValue; 
         }
 
         /// <summary>

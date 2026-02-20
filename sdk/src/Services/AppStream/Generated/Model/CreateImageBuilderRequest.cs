@@ -45,6 +45,7 @@ namespace Amazon.AppStream.Model
         private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
         private string _appstreamAgentVersion;
         private string _description;
+        private bool? _disableIMDSV1;
         private string _displayName;
         private DomainJoinInfo _domainJoinInfo;
         private bool? _enableDefaultInternetAccess;
@@ -116,6 +117,32 @@ namespace Amazon.AppStream.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableIMDSV1. 
+        /// <para>
+        /// Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2.
+        /// Set to false to enable both IMDSv1 and IMDSv2.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the
+        /// agent version or managed image update released on or after January 16, 2024 to support
+        /// IMDSv2 enforcement.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool DisableIMDSV1
+        {
+            get { return this._disableIMDSV1.GetValueOrDefault(); }
+            set { this._disableIMDSV1 = value; }
+        }
+
+        // Check to see if DisableIMDSV1 property is set
+        internal bool IsSetDisableIMDSV1()
+        {
+            return this._disableIMDSV1.HasValue; 
         }
 
         /// <summary>

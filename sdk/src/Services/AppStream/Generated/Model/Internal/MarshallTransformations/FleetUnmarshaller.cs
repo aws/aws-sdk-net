@@ -90,6 +90,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DisableIMDSV1", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DisableIMDSV1 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DisconnectTimeoutInSeconds", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
