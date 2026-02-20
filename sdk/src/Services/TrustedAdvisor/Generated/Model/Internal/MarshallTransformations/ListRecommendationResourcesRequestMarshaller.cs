@@ -69,6 +69,9 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetExclusionStatus())
                 request.Parameters.Add("exclusionStatus", StringUtils.FromString(publicRequest.ExclusionStatus));
             
+            if (publicRequest.IsSetLanguage())
+                request.Parameters.Add("language", StringUtils.FromString(publicRequest.Language));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

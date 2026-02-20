@@ -32,7 +32,8 @@ namespace Amazon.TrustedAdvisor.Model
     /// <summary>
     /// Container for the parameters to the GetOrganizationRecommendation operation.
     /// Get a specific recommendation within an AWS Organizations organization. This API supports
-    /// only prioritized recommendations.
+    /// only prioritized recommendations and provides global priority recommendations, eliminating
+    /// the need to call the API in each AWS Region.
     /// </summary>
     public partial class GetOrganizationRecommendationRequest : AmazonTrustedAdvisorRequest
     {

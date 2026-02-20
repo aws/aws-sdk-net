@@ -263,7 +263,12 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// Update one or more exclusion status for a list of recommendation resources
+        /// Update one or more exclusion statuses for a list of recommendation resources. This
+        /// API supports up to 25 unique recommendation resource ARNs per request. This API currently
+        /// doesn't support prioritized recommendation resources. This API updates global recommendations,
+        /// eliminating the need to call the API in each AWS Region. After submitting an exclusion
+        /// update, note that it might take a few minutes for the changes to be reflected in the
+        /// system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateRecommendationResourceExclusion service method.</param>
         /// 
@@ -296,7 +301,12 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// Update one or more exclusion status for a list of recommendation resources
+        /// Update one or more exclusion statuses for a list of recommendation resources. This
+        /// API supports up to 25 unique recommendation resource ARNs per request. This API currently
+        /// doesn't support prioritized recommendation resources. This API updates global recommendations,
+        /// eliminating the need to call the API in each AWS Region. After submitting an exclusion
+        /// update, note that it might take a few minutes for the changes to be reflected in the
+        /// system.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateRecommendationResourceExclusion service method.</param>
         /// <param name="cancellationToken">
@@ -337,7 +347,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// Get a specific recommendation within an AWS Organizations organization. This API supports
-        /// only prioritized recommendations.
+        /// only prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationRecommendation service method.</param>
         /// 
@@ -371,7 +382,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// Get a specific recommendation within an AWS Organizations organization. This API supports
-        /// only prioritized recommendations.
+        /// only prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationRecommendation service method.</param>
         /// <param name="cancellationToken">
@@ -411,7 +423,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// Get a specific Recommendation
+        /// Get a specific Recommendation. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecommendation service method.</param>
         /// 
@@ -444,7 +457,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// Get a specific Recommendation
+        /// Get a specific Recommendation. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecommendation service method.</param>
         /// <param name="cancellationToken">
@@ -484,7 +498,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// List a filterable set of Checks
+        /// List a filterable set of Checks. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChecks service method.</param>
         /// 
@@ -514,7 +529,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// List a filterable set of Checks
+        /// List a filterable set of Checks. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChecks service method.</param>
         /// <param name="cancellationToken">
@@ -552,7 +568,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// Lists the accounts that own the resources for an organization aggregate recommendation.
-        /// This API only supports prioritized recommendations.
+        /// This API only supports prioritized recommendations and provides global priority recommendations,
+        /// eliminating the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendationAccounts service method.</param>
         /// 
@@ -586,7 +603,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// Lists the accounts that own the resources for an organization aggregate recommendation.
-        /// This API only supports prioritized recommendations.
+        /// This API only supports prioritized recommendations and provides global priority recommendations,
+        /// eliminating the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendationAccounts service method.</param>
         /// <param name="cancellationToken">
@@ -627,7 +645,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// List Resources of a Recommendation within an Organization. This API only supports
-        /// prioritized recommendations.
+        /// prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendationResources service method.</param>
         /// 
@@ -661,7 +680,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// List Resources of a Recommendation within an Organization. This API only supports
-        /// prioritized recommendations.
+        /// prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendationResources service method.</param>
         /// <param name="cancellationToken">
@@ -702,7 +722,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// List a filterable set of Recommendations within an Organization. This API only supports
-        /// prioritized recommendations.
+        /// prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendations service method.</param>
         /// 
@@ -733,7 +754,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// List a filterable set of Recommendations within an Organization. This API only supports
-        /// prioritized recommendations.
+        /// prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -770,7 +792,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// List Resources of a Recommendation
+        /// List Resources of a Recommendation. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecommendationResources service method.</param>
         /// 
@@ -803,7 +826,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// List Resources of a Recommendation
+        /// List Resources of a Recommendation. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecommendationResources service method.</param>
         /// <param name="cancellationToken">
@@ -843,7 +867,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// List a filterable set of Recommendations
+        /// List a filterable set of Recommendations. This API provides global recommendations,
+        /// eliminating the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecommendations service method.</param>
         /// 
@@ -873,7 +898,8 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// List a filterable set of Recommendations
+        /// List a filterable set of Recommendations. This API provides global recommendations,
+        /// eliminating the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -911,7 +937,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// Update the lifecycle of a Recommendation within an Organization. This API only supports
-        /// prioritized recommendations.
+        /// prioritized recommendations and updates global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationRecommendationLifecycle service method.</param>
         /// 
@@ -948,7 +975,8 @@ namespace Amazon.TrustedAdvisor
 
         /// <summary>
         /// Update the lifecycle of a Recommendation within an Organization. This API only supports
-        /// prioritized recommendations.
+        /// prioritized recommendations and updates global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationRecommendationLifecycle service method.</param>
         /// <param name="cancellationToken">
@@ -991,7 +1019,9 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// Update the lifecyle of a Recommendation. This API only supports prioritized recommendations.
+        /// Update the lifecyle of a Recommendation. This API only supports prioritized recommendations
+        /// and updates global priority recommendations, eliminating the need to call the API
+        /// in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecommendationLifecycle service method.</param>
         /// 
@@ -1027,7 +1057,9 @@ namespace Amazon.TrustedAdvisor
 
 
         /// <summary>
-        /// Update the lifecyle of a Recommendation. This API only supports prioritized recommendations.
+        /// Update the lifecyle of a Recommendation. This API only supports prioritized recommendations
+        /// and updates global priority recommendations, eliminating the need to call the API
+        /// in each AWS Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecommendationLifecycle service method.</param>
         /// <param name="cancellationToken">
