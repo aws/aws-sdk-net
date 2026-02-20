@@ -86,6 +86,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ApplyOnlyAtCronInterval);
                 }
 
+                if(publicRequest.IsSetAssociationDispatchAssumeRole())
+                {
+                    context.Writer.WritePropertyName("AssociationDispatchAssumeRole");
+                    context.Writer.Write(publicRequest.AssociationDispatchAssumeRole);
+                }
+
                 if(publicRequest.IsSetAssociationName())
                 {
                     context.Writer.WritePropertyName("AssociationName");

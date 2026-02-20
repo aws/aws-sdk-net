@@ -69,6 +69,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAssociationDispatchAssumeRole())
+                {
+                    context.Writer.WritePropertyName("AssociationDispatchAssumeRole");
+                    context.Writer.Write(publicRequest.AssociationDispatchAssumeRole);
+                }
+
                 if(publicRequest.IsSetEntries())
                 {
                     context.Writer.WritePropertyName("Entries");

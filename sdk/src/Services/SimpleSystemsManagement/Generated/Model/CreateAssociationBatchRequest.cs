@@ -48,6 +48,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateAssociationBatchRequest : AmazonSimpleSystemsManagementRequest
     {
+        private string _associationDispatchAssumeRole;
         private List<CreateAssociationBatchRequestEntry> _entries = AWSConfigs.InitializeCollections ? new List<CreateAssociationBatchRequestEntry>() : null;
 
         /// <summary>
@@ -62,6 +63,39 @@ namespace Amazon.SimpleSystemsManagement.Model
         public CreateAssociationBatchRequest(List<CreateAssociationBatchRequestEntry> entries)
         {
             _entries = entries;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AssociationDispatchAssumeRole. 
+        /// <para>
+        /// A role used by association to take actions on your behalf. State Manager will assume
+        /// this role and call required APIs when dispatching configurations to nodes. If not
+        /// specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html">
+        /// service-linked role for Systems Manager</a> will be used by default. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// It is recommended that you define a custom IAM role so that you have full control
+        /// of the permissions that State Manager has when taking actions on your behalf.
+        /// </para>
+        ///  
+        /// <para>
+        /// Service-linked role support in State Manager is being phased out. Associations relying
+        /// on service-linked role may require updates in the future to continue functioning properly.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string AssociationDispatchAssumeRole
+        {
+            get { return this._associationDispatchAssumeRole; }
+            set { this._associationDispatchAssumeRole = value; }
+        }
+
+        // Check to see if AssociationDispatchAssumeRole property is set
+        internal bool IsSetAssociationDispatchAssumeRole()
+        {
+            return this._associationDispatchAssumeRole != null;
         }
 
         /// <summary>
