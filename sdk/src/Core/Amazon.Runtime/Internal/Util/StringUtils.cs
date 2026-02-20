@@ -22,6 +22,7 @@ using Amazon.Util;
 using System.Linq;
 using System.Diagnostics.CodeAnalysis;
 using System.Buffers;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -61,6 +62,46 @@ namespace Amazon.Runtime.Internal.Util
                 {
                     value.Read(array, 0, (int)value.Length);
                     return Convert.ToBase64String(array, 0, (int)value.Length);
+                }
+                finally
+                {
+                    ArrayPool<byte>.Shared.Return(array);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Writes the contents of a MemoryStream as a Base64-encoded JSON string value
+        /// directly to a Utf8JsonWriter, avoiding the intermediate Base64 string allocation
+        /// that would occur when using <see cref="FromMemoryStream"/> with WriteStringValue.
+        /// </summary>
+        /// <remarks>
+        /// This method always encodes the entire contents of the MemoryStream, regardless of
+        /// the current <see cref="MemoryStream.Position"/>. When <see cref="MemoryStream.TryGetBuffer"/>
+        /// succeeds, the underlying buffer is accessed directly without modifying the stream.
+        /// When TryGetBuffer fails (e.g., for MemoryStreams wrapping a byte array), the stream's
+        /// <see cref="MemoryStream.Position"/> is reset to 0 before reading. In this fallback case,
+        /// the caller's stream position will be modified as a side effect.
+        /// </remarks>
+        /// <param name="writer">The Utf8JsonWriter to write to.</param>
+        /// <param name="value">The MemoryStream containing the binary data to encode.</param>
+        public static void WriteBase64StringValue(Utf8JsonWriter writer, MemoryStream value)
+        {
+            if (value.TryGetBuffer(out var buffer))
+            {
+                writer.WriteBase64StringValue(new ReadOnlySpan<byte>(buffer.Array, buffer.Offset, buffer.Count));
+            }
+            else
+            {
+                var array = ArrayPool<byte>.Shared.Rent((int)value.Length);
+                try
+                {
+                    value.Position = 0;
+                    // MemoryStream.Read is backed by an in-memory byte array and always returns the full requested byte count in a single call,
+                    // so there is no need to handle partial reads in a loop.
+                    // See: https://github.com/dotnet/runtime/blob/960dca4391a731a20b25a92cdb500ef737bfcbbd/src/libraries/System.Private.CoreLib/src/System/IO/MemoryStream.cs#L320
+                    value.Read(array, 0, (int)value.Length);
+                    writer.WriteBase64StringValue(new ReadOnlySpan<byte>(array, 0, (int)value.Length));
                 }
                 finally
                 {
