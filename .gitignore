@@ -71,4 +71,6 @@ sdk/test/ProtocolTests/Generated/**/model
 sdk/test/ProtocolTests/Generated/**/sources
 sdk/test/ProtocolTests/Generated/**/build-info
 
+#compatibility tests
+sdk/test/CompatibilityTests/DownloadedDlls/
 .DS_Store
