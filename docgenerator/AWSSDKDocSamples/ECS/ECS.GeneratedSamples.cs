@@ -13,7 +13,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
     {
         public void ECSCreateCapacityProvider()
         {
-            #region to-create-a-capacity-provider--1733861347945
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.CreateCapacityProvider(new CreateCapacityProviderRequest 
@@ -36,7 +36,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSCreateCluster()
         {
-            #region to-create-a-new-cluster-1472514079365
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.CreateCluster(new CreateClusterRequest 
@@ -51,7 +51,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSCreateService()
         {
-            #region to-create-a-new-service-1472512584282
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.CreateService(new CreateServiceRequest 
@@ -68,7 +68,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSCreateService()
         {
-            #region to-create-a-new-service-behind-a-load-balancer-1472512484823
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.CreateService(new CreateServiceRequest 
@@ -93,7 +93,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSCreateTaskSet()
         {
-            #region to-create-a-task-set-1733864092815
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.CreateTaskSet(new CreateTaskSetRequest 
@@ -118,7 +118,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteAccountSetting()
         {
-            #region to-delete-the-account-setting-for-your-user-account-1549524548115
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DeleteAccountSetting(new DeleteAccountSettingRequest 
@@ -133,7 +133,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteAccountSetting()
         {
-            #region to-delete-the-account-setting-for-a-specific-iam-user-or-iam-role-1549524612917
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.DeleteAccountSetting(new DeleteAccountSettingRequest 
@@ -149,7 +149,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteAttributes()
         {
-            #region to-delete-a-custom-attribute-from-an-amazon-ecs-instance-1733867267541
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DeleteAttributes(new DeleteAttributesRequest 
@@ -169,7 +169,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteCapacityProvider()
         {
-            #region to-delete-a-specified-capacity-provider-1733868702678
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DeleteCapacityProvider(new DeleteCapacityProviderRequest 
@@ -184,7 +184,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteCluster()
         {
-            #region to-delete-an-empty-cluster-1472512705352
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DeleteCluster(new DeleteClusterRequest 
@@ -199,7 +199,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteService()
         {
-            #region e8183e38-f86e-4390-b811-f74f30a6007d
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DeleteService(new DeleteServiceRequest 
@@ -213,7 +213,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteTaskDefinitions()
         {
-            #region to-delete-a-task-definition-that-has-been-deregistered-1733940790186
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DeleteTaskDefinitions(new DeleteTaskDefinitionsRequest 
@@ -231,7 +231,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeleteTaskSet()
         {
-            #region to-delete-a-task-set-within-a-service-that-uses-the-external-deployment-controller-type-1733949897807
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DeleteTaskSet(new DeleteTaskSetRequest 
@@ -249,7 +249,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeregisterContainerInstance()
         {
-            #region bf624927-cf64-4f4b-8b7e-c024a4e682f6
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DeregisterContainerInstance(new DeregisterContainerInstanceRequest 
@@ -265,7 +265,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDeregisterTaskDefinition()
         {
-            #region to-deregister-a-revision-of-a-task-definition-1733950214421
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DeregisterTaskDefinition(new DeregisterTaskDefinitionRequest 
@@ -280,7 +280,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeCapacityProviders()
         {
-            #region to-describe-all-capacity-providers-1733951199913
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DescribeCapacityProviders(new DescribeCapacityProvidersRequest 
@@ -294,7 +294,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeCapacityProviders()
         {
-            #region to-describe-a-specific-capacity-provider-1733951378688
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.DescribeCapacityProviders(new DescribeCapacityProvidersRequest 
@@ -314,7 +314,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeClusters()
         {
-            #region ba88d100-9672-4231-80da-a4bd210bf728
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DescribeClusters(new DescribeClustersRequest 
@@ -332,7 +332,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeContainerInstances()
         {
-            #region c8f439de-eb27-4269-8ca7-2c0a7ba75ab0
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DescribeContainerInstances(new DescribeContainerInstancesRequest 
@@ -351,7 +351,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeServiceDeployments()
         {
-            #region to-describe-a-service-deployment--1733954961143
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DescribeServiceDeployments(new DescribeServiceDeploymentsRequest 
@@ -369,7 +369,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeServiceRevisions()
         {
-            #region to-describe-a-service-revision--1734033215738
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DescribeServiceRevisions(new DescribeServiceRevisionsRequest 
@@ -387,7 +387,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeServices()
         {
-            #region to-describe-a-service-1472513256350
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DescribeServices(new DescribeServicesRequest 
@@ -405,7 +405,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeTaskDefinition()
         {
-            #region 4c21eeb1-f1da-4a08-8c44-297fc8d0ea88
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DescribeTaskDefinition(new DescribeTaskDefinitionRequest 
@@ -420,7 +420,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeTasks()
         {
-            #region a90b0cde-f965-4946-b55e-cfd8cc54e827
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DescribeTasks(new DescribeTasksRequest 
@@ -438,7 +438,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSDescribeTaskSets()
         {
-            #region to-describe-a-task-set--1734035629507
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.DescribeTaskSets(new DescribeTaskSetsRequest 
@@ -458,7 +458,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSExecuteCommand()
         {
-            #region to-run-a-command-remotely-on-a-container-in-a-task-1734037663312
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.ExecuteCommand(new ExecuteCommandRequest 
@@ -482,7 +482,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSGetTaskProtection()
         {
-            #region get-the-protection-status-for-a-single-task-2022-11-02T06:56:32.553Z
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.GetTaskProtection(new GetTaskProtectionRequest 
@@ -501,7 +501,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListAccountSettings()
         {
-            #region to-view-your-account-settings-1549524118170
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.ListAccountSettings(new ListAccountSettingsRequest 
@@ -516,7 +516,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListAccountSettings()
         {
-            #region to-view-the-account-settings-for-a-specific-iam-user-or-iam-role-1549524237932
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.ListAccountSettings(new ListAccountSettingsRequest 
@@ -532,7 +532,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListAttributes()
         {
-            #region to-list-container-instances-that-have-a-specific-attribute-1734368946577
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.ListAttributes(new ListAttributesRequest 
@@ -550,7 +550,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListClusters()
         {
-            #region e337d059-134f-4125-ba8e-4f499139facf
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.ListClusters(new ListClustersRequest 
@@ -564,7 +564,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListContainerInstances()
         {
-            #region 62a82a94-713c-4e18-8420-1d2b2ba9d484
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.ListContainerInstances(new ListContainerInstancesRequest 
@@ -579,7 +579,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListServiceDeployments()
         {
-            #region to-list-service-deployments-that-meet-the-specified-criteria-1734370445427
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.ListServiceDeployments(new ListServiceDeploymentsRequest 
@@ -598,7 +598,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListServices()
         {
-            #region 1d9a8037-4e0e-4234-a528-609656809a3a
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.ListServices(new ListServicesRequest 
@@ -612,7 +612,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTagsForResource()
         {
-            #region to-list-the-tags-for-a-cluster-1540582700259
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.ListTagsForResource(new ListTagsForResourceRequest 
@@ -627,7 +627,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTaskDefinitionFamilies()
         {
-            #region b5c89769-1d94-4ca2-a79e-8069103c7f75
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.ListTaskDefinitionFamilies(new ListTaskDefinitionFamiliesRequest 
@@ -641,7 +641,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTaskDefinitionFamilies()
         {
-            #region 8a4cf9a6-42c1-4fe3-852d-99ac8968e11b
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.ListTaskDefinitionFamilies(new ListTaskDefinitionFamiliesRequest 
@@ -656,7 +656,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTaskDefinitions()
         {
-            #region b381ebaf-7eba-4d60-b99b-7f6ae49d3d60
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.ListTaskDefinitions(new ListTaskDefinitionsRequest 
@@ -670,7 +670,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTaskDefinitions()
         {
-            #region 734e7afd-753a-4bc2-85d0-badddce10910
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.ListTaskDefinitions(new ListTaskDefinitionsRequest 
@@ -685,7 +685,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTasks()
         {
-            #region 9a6ec707-1a77-45d0-b2eb-516b5dd9e924
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.ListTasks(new ListTasksRequest 
@@ -700,7 +700,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSListTasks()
         {
-            #region 024bf3b7-9cbb-44e3-848f-9d074e1fecce
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.ListTasks(new ListTasksRequest 
@@ -716,7 +716,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutAccountSetting()
         {
-            #region to-modify-the-account-settings-for-your-iam-user-account-1549523130939
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.PutAccountSetting(new PutAccountSettingRequest 
@@ -732,7 +732,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutAccountSetting()
         {
-            #region to-modify-the-account-settings-for-a-specific-iam-user-or-iam-role-1549523518390
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.PutAccountSetting(new PutAccountSettingRequest 
@@ -749,7 +749,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutAccountSettingDefault()
         {
-            #region to-modify-the-default-account-settings-for-all-iam-users-or-roles-on-your-account-1549523794603
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.PutAccountSettingDefault(new PutAccountSettingDefaultRequest 
@@ -765,7 +765,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutAttributes()
         {
-            #region to-create-or-update-an-attribute-on-a-resource-1734382423405
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.PutAttributes(new PutAttributesRequest 
@@ -787,7 +787,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutClusterCapacityProviders()
         {
-            #region to-add-an-existing-capacity-provider-to-a-cluster-1734385195698
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest 
@@ -816,7 +816,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutClusterCapacityProviders()
         {
-            #region to-remove-a-capacity-provider-from-a-cluster-1734386641517
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest 
@@ -841,7 +841,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSPutClusterCapacityProviders()
         {
-            #region to-remove-all-capacity-providers-from-a-cluster-1734387170874
+            #region example-3
 
             var client = new AmazonECSClient();
             var response = client.PutClusterCapacityProviders(new PutClusterCapacityProvidersRequest 
@@ -862,7 +862,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSRegisterTaskDefinition()
         {
-            #region to-register-a-task-definition-1470764550877
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.RegisterTaskDefinition(new RegisterTaskDefinitionRequest 
@@ -894,7 +894,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSRunTask()
         {
-            #region 6f238c83-a133-42cd-ab3d-abeca0560445
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.RunTask(new RunTaskRequest 
@@ -910,7 +910,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSStartTask()
         {
-            #region to-start-a-new-task-1734455482966
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.StartTask(new StartTaskRequest 
@@ -930,7 +930,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSStopServiceDeployment()
         {
-            #region to-stop-service-deployment-1734638754369
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.StopServiceDeployment(new StopServiceDeploymentRequest 
@@ -946,7 +946,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSStopTask()
         {
-            #region to-stop-a-task-1734457210346
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.StopTask(new StopTaskRequest 
@@ -963,7 +963,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSTagResource()
         {
-            #region to-tag-a-cluster-1540581863751
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.TagResource(new TagResourceRequest 
@@ -983,7 +983,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUntagResource()
         {
-            #region to-untag-a-cluster-1540582546056
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.UntagResource(new UntagResourceRequest 
@@ -1000,7 +1000,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateCapacityProvider()
         {
-            #region to-update-a-capacity-providers-parameters-1734557290198
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.UpdateCapacityProvider(new UpdateCapacityProviderRequest 
@@ -1020,7 +1020,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateCluster()
         {
-            #region to-update-a-clusters-observability-settings-1734626018966
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.UpdateCluster(new UpdateClusterRequest 
@@ -1041,7 +1041,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateCluster()
         {
-            #region to-update-a-clusters-service-connect-defaults-1734626891648
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.UpdateCluster(new UpdateClusterRequest 
@@ -1057,7 +1057,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateClusterSettings()
         {
-            #region to-update-a-clusters-settings-1734628004887
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.UpdateClusterSettings(new UpdateClusterSettingsRequest 
@@ -1078,7 +1078,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateContainerAgent()
         {
-            #region to-update-the-container-agent-version-on-a-container-instance-1734628653210
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.UpdateContainerAgent(new UpdateContainerAgentRequest 
@@ -1094,7 +1094,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateContainerInstancesState()
         {
-            #region to-update-the-state-of-a-container-instance-1734630991280
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.UpdateContainerInstancesState(new UpdateContainerInstancesStateRequest 
@@ -1114,7 +1114,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateService()
         {
-            #region cc9e8900-0cc2-44d2-8491-64d1d3d37887
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.UpdateService(new UpdateServiceRequest 
@@ -1129,7 +1129,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateService()
         {
-            #region 9581d6c5-02e3-4140-8cc1-5a4301586633
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.UpdateService(new UpdateServiceRequest 
@@ -1144,7 +1144,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateServicePrimaryTaskSet()
         {
-            #region to-update-the-primary-task-set-for-a-service-1734637150370
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.UpdateServicePrimaryTaskSet(new UpdateServicePrimaryTaskSetRequest 
@@ -1161,7 +1161,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateTaskProtection()
         {
-            #region enable-the-protection-status-for-a-single-task-for-60-minutes-2022-11-02T06:56:32.553Z
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest 
@@ -1182,7 +1182,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateTaskProtection()
         {
-            #region enable-the-protection-status-for-a-single-task-with-default-expiresinminutes-2022-11-02T06:56:32.553Z
+            #region example-2
 
             var client = new AmazonECSClient();
             var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest 
@@ -1202,7 +1202,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateTaskProtection()
         {
-            #region disable-scale-in-protection-on-a-single-task
+            #region example-3
 
             var client = new AmazonECSClient();
             var response = client.UpdateTaskProtection(new UpdateTaskProtectionRequest 
@@ -1222,7 +1222,7 @@ namespace AWSSDKDocSamples.Amazon.ECS.Generated
 
         public void ECSUpdateTaskSet()
         {
-            #region to-update-a-task-set-1734638754368
+            #region example-1
 
             var client = new AmazonECSClient();
             var response = client.UpdateTaskSet(new UpdateTaskSetRequest 
