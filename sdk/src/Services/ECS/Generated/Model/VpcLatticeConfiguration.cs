@@ -63,8 +63,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The ARN of the IAM role to associate with this VPC Lattice configuration. This is
-        /// the Amazon ECS&#x2028; infrastructure IAM role that is used to manage your VPC Lattice
-        /// infrastructure.
+        /// the Amazon ECS infrastructure IAM role that is used to manage your VPC Lattice infrastructure.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

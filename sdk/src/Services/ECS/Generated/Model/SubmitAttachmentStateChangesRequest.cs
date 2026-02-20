@@ -35,10 +35,12 @@ namespace Amazon.ECS.Model
     /// <para>
     /// This action is only used by the Amazon ECS agent, and it is not intended for use outside
     /// of the agent.
-    /// </para>
+    /// 
     ///  </note> 
     /// <para>
     /// Sent to acknowledge that an attachment changed states.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial class SubmitAttachmentStateChangesRequest : AmazonECSRequest

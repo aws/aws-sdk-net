@@ -166,7 +166,7 @@ namespace Amazon.ECS.Model
         /// these instance types, subject to the other requirements specified.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=400)]
+        [AWSProperty(Min=0, Max=400)]
         public List<string> AllowedInstanceTypes
         {
             get { return this._allowedInstanceTypes; }
@@ -264,7 +264,7 @@ namespace Amazon.ECS.Model
         /// selecting specific instance types that may not be suitable for your workloads.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=400)]
+        [AWSProperty(Min=0, Max=400)]
         public List<string> ExcludedInstanceTypes
         {
             get { return this._excludedInstanceTypes; }

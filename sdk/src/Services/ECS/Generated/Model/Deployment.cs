@@ -277,7 +277,9 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RolloutState. <note> 
+        /// Gets and sets the property RolloutState. 
+        /// <para>
+        /// <note> 
         /// <para>
         /// The <c>rolloutState</c> of a service is only returned for services that use the rolling
         /// update (<c>ECS</c>) deployment type that aren't behind a Classic Load Balancer.
@@ -290,6 +292,8 @@ namespace Amazon.ECS.Model
         /// and circuit breaker is turned on, the deployment transitions to a <c>FAILED</c> state.
         /// A deployment in <c>FAILED</c> state doesn't launch any new tasks. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeploymentCircuitBreaker.html">DeploymentCircuitBreaker</a>.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public DeploymentRolloutState RolloutState

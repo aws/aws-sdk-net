@@ -435,7 +435,9 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EntryPoint. <important> 
+        /// Gets and sets the property EntryPoint. 
+        /// <para>
+        /// <important> 
         /// <para>
         /// Early versions of the Amazon ECS container agent don't properly handle <c>entryPoint</c>
         /// parameters. If you have problems using <c>entryPoint</c>, update your container agent
@@ -446,6 +448,8 @@ namespace Amazon.ECS.Model
         /// The entry point that's passed to the container. This parameter maps to <c>Entrypoint</c>
         /// in the docker container create command and the <c>--entrypoint</c> option to docker
         /// run.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         public List<string> EntryPoint
