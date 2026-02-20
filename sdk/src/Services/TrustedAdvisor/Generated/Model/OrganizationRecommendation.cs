@@ -246,7 +246,7 @@ namespace Amazon.TrustedAdvisor.Model
         /// The Pillars that the Recommendation is optimizing
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> Pillars
         {
             get { return this._pillars; }

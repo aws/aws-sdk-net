@@ -31,7 +31,9 @@ namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRecommendationLifecycle operation.
-    /// Update the lifecyle of a Recommendation. This API only supports prioritized recommendations.
+    /// Update the lifecyle of a Recommendation. This API only supports prioritized recommendations
+    /// and updates global priority recommendations, eliminating the need to call the API
+    /// in each AWS Region.
     /// </summary>
     public partial class UpdateRecommendationLifecycleRequest : AmazonTrustedAdvisorRequest
     {

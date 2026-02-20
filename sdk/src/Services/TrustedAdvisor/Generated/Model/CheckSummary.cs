@@ -163,7 +163,7 @@ namespace Amazon.TrustedAdvisor.Model
         /// The Recommendation pillars that the AWS Trusted Advisor Check falls under
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> Pillars
         {
             get { return this._pillars; }

@@ -144,6 +144,12 @@ namespace Amazon.TrustedAdvisor.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("statusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

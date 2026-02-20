@@ -50,6 +50,7 @@ namespace Amazon.TrustedAdvisor.Model
         private RecommendationResourcesAggregates _resourcesAggregates;
         private RecommendationSource _source;
         private RecommendationStatus _status;
+        private StatusReason _statusReason;
         private RecommendationType _type;
         private string _updatedOnBehalfOf;
         private string _updatedOnBehalfOfJobTitle;
@@ -246,7 +247,7 @@ namespace Amazon.TrustedAdvisor.Model
         /// The Pillars that the Recommendation is optimizing
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=50)]
         public List<string> Pillars
         {
             get { return this._pillars; }
@@ -350,6 +351,25 @@ namespace Amazon.TrustedAdvisor.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// This attribute provides additional details about potential discrepancies in check
+        /// status determination.
+        /// </para>
+        /// </summary>
+        public StatusReason StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
         /// <summary>
