@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.SignerData.Model.GetRevocationStatusRequest.JobArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SignerData.Model.GetRevocationStatusRequest.PlatformId</property>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SignerData.Model.GetRevocationStatusRequest.ProfileVersionArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+</property-value-rules>
