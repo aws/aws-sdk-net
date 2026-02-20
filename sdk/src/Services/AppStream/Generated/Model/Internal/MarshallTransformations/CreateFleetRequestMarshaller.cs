@@ -92,6 +92,12 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetDisableIMDSV1())
+            {
+                context.Writer.WritePropertyName("DisableIMDSV1");
+                context.Writer.WriteBooleanValue(publicRequest.DisableIMDSV1.Value);
+            }
+
             if(publicRequest.IsSetDisconnectTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("DisconnectTimeoutInSeconds");
