@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.SignerData.IAmazonSignerData.GetRevocationStatus(Amazon.SignerData.Model.GetRevocationStatusRequest)" />
+            <member name="M:Amazon.SignerData.AmazonSignerDataClient.GetRevocationStatus(Amazon.SignerData.Model.GetRevocationStatusRequest)" />
+            <member name="T:Amazon.SignerData.Model.GetRevocationStatusRequest" />
+            <member name="T:Amazon.SignerData.Model.GetRevocationStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Checks if a signing profile, job, or certificate has been revoked for a given artifact.
+                </para>
+                <code
+                    title="Check revocation status for a signed artifact"
+                    source=".\AWSSDKDocSamples\SignerData\SignerData.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>
