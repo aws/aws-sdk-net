@@ -61,10 +61,12 @@ namespace Amazon.SageMakerRuntime.Model
         private string _contentType;
         private string _customAttributes;
         private string _endpointName;
+        private string _filename;
         private string _inferenceId;
         private string _inputLocation;
         private int? _invocationTimeoutSeconds;
         private int? _requestTTLSeconds;
+        private string _s3OutputPathExtension;
 
         /// <summary>
         /// Gets and sets the property Accept. 
@@ -164,6 +166,26 @@ namespace Amazon.SageMakerRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Filename. 
+        /// <para>
+        /// The filename for the inference response payload stored in Amazon S3. If not specified,
+        /// Amazon SageMaker AI generates a filename based on the inference ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public string Filename
+        {
+            get { return this._filename; }
+            set { this._filename = value; }
+        }
+
+        // Check to see if Filename property is set
+        internal bool IsSetFilename()
+        {
+            return !string.IsNullOrEmpty(this._filename);
+        }
+
+        /// <summary>
         /// Gets and sets the property InferenceId. 
         /// <para>
         /// The identifier for the inference request. Amazon SageMaker AI will generate an identifier
@@ -240,6 +262,26 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetRequestTTLSeconds()
         {
             return this._requestTTLSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3OutputPathExtension. 
+        /// <para>
+        /// The path extension that is appended to the Amazon S3 output path where the inference
+        /// response payload is stored.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string S3OutputPathExtension
+        {
+            get { return this._s3OutputPathExtension; }
+            set { this._s3OutputPathExtension = value; }
+        }
+
+        // Check to see if S3OutputPathExtension property is set
+        internal bool IsSetS3OutputPathExtension()
+        {
+            return !string.IsNullOrEmpty(this._s3OutputPathExtension);
         }
 
     }
