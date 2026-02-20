@@ -145,7 +145,7 @@ namespace AWSSDK_DotNet.UnitTests
         /// Verifies that when a Search has a FilterExpression but no ScanFilter conditions,
         /// the ScanRequest sent to DynamoDB does NOT include an empty ScanFilter.
         /// This prevents the error: "Can not use both expression and non-expression parameters"
-        /// Regression test for: https://github.com/aws/aws-sdk-net/issues/XXXX
+        /// Regression test for: https://github.com/aws/aws-sdk-net/issues/4324
         /// </summary>
         [TestMethod]
         [TestCategory("DynamoDBv2")]
