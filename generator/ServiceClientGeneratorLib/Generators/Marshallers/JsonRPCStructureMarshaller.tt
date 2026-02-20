@@ -94,7 +94,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			else if(member.IsMemoryStream)
 			{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(<#=variableName + "." + member.PropertyName#>));
+<#=new string(' ', level * 4)#>                StringUtils.WriteBase64StringValue(context.Writer, <#=variableName + "." + member.PropertyName#>);
 <#+
 			}
 			else
@@ -207,7 +207,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			else if(structure.IsMemoryStream)
 			{
 #>
-<#=new string(' ', level * 4)#>            context.Writer.WriteStringValue(StringUtils.FromMemoryStream(<#=variableName#>));
+<#=new string(' ', level * 4)#>            StringUtils.WriteBase64StringValue(context.Writer, <#=variableName#>);
 <#+
 			}
 			else
