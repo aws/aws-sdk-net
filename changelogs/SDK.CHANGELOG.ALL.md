@@ -1,3 +1,19 @@
+### 4.0.196.0 (2026-02-20 20:48 UTC)
+* AppStream (4.0.6.0)
+	* Adding new attribute to disable IMDS v1 APIs for fleet, Image Builder and AppBlockBuilder instances.
+* DynamoDBv2 (4.0.14.1)
+	* Fix regression in V4 where `Scan` operation could not be invoked with a `FilterExpression` (https://github.com/aws/aws-sdk-net/issues/4324)
+* ECS (4.0.13.0)
+	* Migrated to Smithy. No functional changes
+* SageMakerRuntime (4.0.2.0)
+	* Added support for S3OutputPathExtension and Filename parameters to the InvokeEndpointAsync API to allow users to customize the S3 output path and file name for async inference response payloads.
+* SignerData (4.0.0.0)
+	* This release introduces AWS Signer Data Plane SDK client supporting GetRevocationStatus API. The new client enables AWS PrivateLink connectivity with both private DNS and VPC endpoint URLs.
+* SimpleSystemsManagement (4.0.7.0)
+	* Add support for AssociationDispatchAssumeRole in AWS SSM State Manager.
+* TrustedAdvisor (4.0.3.0)
+	* Adding a new enum attribute(statusReason) to TrustedAdvisorAPI response. This attribute explains reasoning behind check status for certain specific scenarios.
+
 ### 4.0.195.0 (2026-02-19 19:31 UTC)
 * BCMDashboards (4.0.2.0)
 	* The Billing and Cost Management GetDashboard API now returns identifier for each widget, enabling users to uniquely identify widgets within their dashboards.
