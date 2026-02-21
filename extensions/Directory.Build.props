@@ -1,5 +1,7 @@
 <Project>
  <PropertyGroup>
+   <Deterministic>true</Deterministic>
+   <EmbedUntrackedSources>true</EmbedUntrackedSources>
    <NuGetAuditMode>direct</NuGetAuditMode>
  </PropertyGroup>
 </Project>

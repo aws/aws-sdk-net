@@ -1,6 +1,8 @@
 <Project>
  <PropertyGroup>
    <BaseIntermediateOutputPath>$(MSBuildProjectDirectory)\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+   <Deterministic>true</Deterministic>
+   <EmbedUntrackedSources>true</EmbedUntrackedSources>
    <NuGetAuditMode>direct</NuGetAuditMode>
  </PropertyGroup>
 </Project>
