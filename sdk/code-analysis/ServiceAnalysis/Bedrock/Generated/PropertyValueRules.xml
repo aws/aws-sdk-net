@@ -792,6 +792,12 @@
     <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:automated-reasoning-policy/[a-z0-9]{12}(:([1-9][0-9]{0,11}))?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest.AssetId</property>
+    <min>0</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.GetAutomatedReasoningPolicyBuildWorkflowResultAssetsRequest.BuildWorkflowId</property>
     <min>0</min>
     <max>36</max>
@@ -2285,6 +2291,33 @@
     <pattern>[A-Za-z][A-Za-z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyAnnotatedLine.LineText</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyAtomicStatement.Id</property>
+    <min>0</min>
+    <max>8</max>
+    <pattern>[a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyAtomicStatement.Text</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyBuildResultAssetManifestEntry.AssetId</property>
+    <min>0</min>
+    <max>36</max>
+    <pattern>[0-9a-fA-F\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyBuildResultAssetManifestEntry.AssetName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyBuildWorkflowDocument.Document</property>
     <min>1</min>
     <max>5000000</max>
@@ -2426,6 +2459,16 @@
     <pattern>[A-Za-z][A-Za-z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyFidelityReport.AccuracyScore</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyFidelityReport.CoverageScore</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyGeneratedTestCase.GuardContent</property>
     <min>0</min>
     <max>2048</max>
@@ -2442,6 +2485,38 @@
     <pattern>[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyReportSourceDocument.DocumentHash</property>
+    <min>64</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyReportSourceDocument.DocumentId</property>
+    <min>0</min>
+    <max>8</max>
+    <pattern>[a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyReportSourceDocument.DocumentName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyRuleReport.AccuracyJustification</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyRuleReport.AccuracyScore</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyRuleReport.Rule</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[A-Z][0-9A-Z]{11}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyScenario.AlternateExpression</property>
     <min>0</min>
     <max>1024</max>
@@ -2450,6 +2525,38 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyScenario.Expression</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicySourceDocument.Document</property>
+    <min>1</min>
+    <max>5000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicySourceDocument.DocumentDescription</property>
+    <min>0</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicySourceDocument.DocumentHash</property>
+    <min>64</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicySourceDocument.DocumentName</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyStatementReference.DocumentId</property>
+    <min>0</min>
+    <max>8</max>
+    <pattern>[a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyStatementReference.StatementId</property>
+    <min>0</min>
+    <max>8</max>
+    <pattern>[a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicySummary.Description</property>
@@ -2587,6 +2694,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyUpdateVariableAnnotation.NewName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z][A-Za-z0-9_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyVariableReport.AccuracyJustification</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyVariableReport.AccuracyScore</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyVariableReport.PolicyVariable</property>
     <min>1</min>
     <max>64</max>
     <pattern>[A-Za-z][A-Za-z0-9_]*</pattern>

@@ -66,6 +66,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockException("Request object does not have required field PolicyArn set");
             request.AddPathResource("{policyArn}", StringUtils.FromString(publicRequest.PolicyArn));
             
+            if (publicRequest.IsSetAssetId())
+                request.Parameters.Add("assetId", StringUtils.FromString(publicRequest.AssetId));
+            
             if (publicRequest.IsSetAssetType())
                 request.Parameters.Add("assetType", StringUtils.FromString(publicRequest.AssetType));
             request.ResourcePath = "/automated-reasoning-policies/{policyArn}/build-workflows/{buildWorkflowId}/result-assets";

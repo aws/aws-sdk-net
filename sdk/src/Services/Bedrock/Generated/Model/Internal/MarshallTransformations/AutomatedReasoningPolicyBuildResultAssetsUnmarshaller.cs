@@ -66,10 +66,28 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("assetManifest", targetDepth))
+                {
+                    var unmarshaller = AutomatedReasoningPolicyBuildResultAssetManifestUnmarshaller.Instance;
+                    unmarshalledObject.AssetManifest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("buildLog", targetDepth))
                 {
                     var unmarshaller = AutomatedReasoningPolicyBuildLogUnmarshaller.Instance;
                     unmarshalledObject.BuildLog = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("document", targetDepth))
+                {
+                    var unmarshaller = AutomatedReasoningPolicySourceDocumentUnmarshaller.Instance;
+                    unmarshalledObject.Document = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fidelityReport", targetDepth))
+                {
+                    var unmarshaller = AutomatedReasoningPolicyFidelityReportUnmarshaller.Instance;
+                    unmarshalledObject.FidelityReport = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("generatedTestCases", targetDepth))

@@ -35,6 +35,7 @@ namespace Amazon.Bedrock.Model
     public partial class AutomatedReasoningPolicyWorkflowTypeContent
     {
         private List<AutomatedReasoningPolicyBuildWorkflowDocument> _documents = AWSConfigs.InitializeCollections ? new List<AutomatedReasoningPolicyBuildWorkflowDocument>() : null;
+        private AutomatedReasoningPolicyGenerateFidelityReportContent _generateFidelityReportContent;
         private AutomatedReasoningPolicyBuildWorkflowRepairContent _policyRepairAssets;
 
         /// <summary>
@@ -54,6 +55,26 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetDocuments()
         {
             return this._documents != null && (this._documents.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GenerateFidelityReportContent. 
+        /// <para>
+        /// The content configuration for generating a fidelity report workflow. This can include
+        /// source documents to analyze or an existing fidelity report to update with a new policy
+        /// definition.
+        /// </para>
+        /// </summary>
+        public AutomatedReasoningPolicyGenerateFidelityReportContent GenerateFidelityReportContent
+        {
+            get { return this._generateFidelityReportContent; }
+            set { this._generateFidelityReportContent = value; }
+        }
+
+        // Check to see if GenerateFidelityReportContent property is set
+        internal bool IsSetGenerateFidelityReportContent()
+        {
+            return this._generateFidelityReportContent != null;
         }
 
         /// <summary>
