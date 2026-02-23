@@ -78,7 +78,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetAttachmentBody())
             {
                 context.Writer.WritePropertyName("AttachmentBody");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.AttachmentBody));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.AttachmentBody);
             }
 
             if(publicRequest.IsSetAttachmentUrl())

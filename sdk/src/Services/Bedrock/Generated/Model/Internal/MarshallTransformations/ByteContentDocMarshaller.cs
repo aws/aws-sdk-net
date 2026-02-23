@@ -55,7 +55,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetData())
             {
                 context.Writer.WritePropertyName("data");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Data));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Data);
             }
 
             if(requestObject.IsSetIdentifier())

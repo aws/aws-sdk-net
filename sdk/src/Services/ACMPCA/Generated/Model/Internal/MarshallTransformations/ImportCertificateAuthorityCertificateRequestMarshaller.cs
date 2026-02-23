@@ -78,7 +78,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCertificate())
             {
                 context.Writer.WritePropertyName("Certificate");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Certificate));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Certificate);
             }
 
             if(publicRequest.IsSetCertificateAuthorityArn())
@@ -90,7 +90,7 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCertificateChain())
             {
                 context.Writer.WritePropertyName("CertificateChain");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.CertificateChain));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.CertificateChain);
             }
 
             writer.WriteEndObject();

@@ -87,7 +87,7 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetInlineRecipe())
             {
                 context.Writer.WritePropertyName("inlineRecipe");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.InlineRecipe));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.InlineRecipe);
             }
 
             if(publicRequest.IsSetLambdaFunction())

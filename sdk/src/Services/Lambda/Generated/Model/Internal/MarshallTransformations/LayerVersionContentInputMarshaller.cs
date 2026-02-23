@@ -67,7 +67,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(requestObject.IsSetZipFile())
             {
                 context.Writer.WritePropertyName("ZipFile");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.ZipFile));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.ZipFile);
             }
 
         }

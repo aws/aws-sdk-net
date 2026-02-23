@@ -49,7 +49,7 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlob())
             {
                 context.Writer.WritePropertyName("Blob");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Blob));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Blob);
             }
 
             if(requestObject.IsSetBoolean())

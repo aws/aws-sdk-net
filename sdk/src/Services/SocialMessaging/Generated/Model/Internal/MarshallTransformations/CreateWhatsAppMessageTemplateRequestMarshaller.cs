@@ -82,7 +82,7 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetTemplateDefinition())
             {
                 context.Writer.WritePropertyName("templateDefinition");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.TemplateDefinition));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.TemplateDefinition);
             }
 
             writer.WriteEndObject();

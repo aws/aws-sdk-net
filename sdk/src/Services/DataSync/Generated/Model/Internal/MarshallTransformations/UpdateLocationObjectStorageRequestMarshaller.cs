@@ -129,7 +129,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetServerCertificate())
             {
                 context.Writer.WritePropertyName("ServerCertificate");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ServerCertificate));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.ServerCertificate);
             }
 
             if(publicRequest.IsSetServerHostname())

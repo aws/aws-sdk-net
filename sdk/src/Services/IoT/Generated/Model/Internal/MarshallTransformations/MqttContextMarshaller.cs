@@ -55,7 +55,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("password");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Password));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Password);
             }
 
             if(requestObject.IsSetUsername())

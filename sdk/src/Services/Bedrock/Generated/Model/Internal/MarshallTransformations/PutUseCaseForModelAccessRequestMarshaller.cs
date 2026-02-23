@@ -76,7 +76,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetFormData())
             {
                 context.Writer.WritePropertyName("formData");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.FormData));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.FormData);
             }
 
             writer.WriteEndObject();

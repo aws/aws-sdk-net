@@ -78,7 +78,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetBytes())
             {
                 context.Writer.WritePropertyName("Bytes");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Bytes));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Bytes);
             }
 
             if(publicRequest.IsSetDocumentReaderConfig())

@@ -134,13 +134,13 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetKerberosKeytab())
             {
                 context.Writer.WritePropertyName("KerberosKeytab");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.KerberosKeytab));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.KerberosKeytab);
             }
 
             if(publicRequest.IsSetKerberosKrb5Conf())
             {
                 context.Writer.WritePropertyName("KerberosKrb5Conf");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.KerberosKrb5Conf));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.KerberosKrb5Conf);
             }
 
             if(publicRequest.IsSetKerberosPrincipal())

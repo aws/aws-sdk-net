@@ -107,7 +107,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetPublicKey())
             {
                 context.Writer.WritePropertyName("PublicKey");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.PublicKey));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.PublicKey);
             }
 
             if(publicRequest.IsSetRecipient())

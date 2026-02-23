@@ -49,7 +49,7 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioChunk())
             {
                 context.Writer.WritePropertyName("audioChunk");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.AudioChunk));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.AudioChunk);
             }
 
             if(requestObject.IsSetClientTimestampMillis())

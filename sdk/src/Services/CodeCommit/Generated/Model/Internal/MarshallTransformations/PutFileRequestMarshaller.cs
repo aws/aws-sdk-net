@@ -96,7 +96,7 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetFileContent())
             {
                 context.Writer.WritePropertyName("fileContent");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.FileContent));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.FileContent);
             }
 
             if(publicRequest.IsSetFileMode())

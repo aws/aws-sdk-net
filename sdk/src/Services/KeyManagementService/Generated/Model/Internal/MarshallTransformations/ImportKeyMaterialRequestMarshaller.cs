@@ -78,7 +78,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEncryptedKeyMaterial())
             {
                 context.Writer.WritePropertyName("EncryptedKeyMaterial");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.EncryptedKeyMaterial));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.EncryptedKeyMaterial);
             }
 
             if(publicRequest.IsSetExpirationModel())
@@ -90,7 +90,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetImportToken())
             {
                 context.Writer.WritePropertyName("ImportToken");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ImportToken));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.ImportToken);
             }
 
             if(publicRequest.IsSetImportType())

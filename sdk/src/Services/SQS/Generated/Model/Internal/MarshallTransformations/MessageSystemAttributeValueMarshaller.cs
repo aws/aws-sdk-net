@@ -52,7 +52,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStartArray();
                 foreach(var requestObjectBinaryListValuesListValue in requestObject.BinaryListValues)
                 {
-                    context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObjectBinaryListValuesListValue));
+                    StringUtils.WriteBase64StringValue(context.Writer, requestObjectBinaryListValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
@@ -60,7 +60,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBinaryValue())
             {
                 context.Writer.WritePropertyName("BinaryValue");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.BinaryValue));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.BinaryValue);
             }
 
             if(requestObject.IsSetDataType())

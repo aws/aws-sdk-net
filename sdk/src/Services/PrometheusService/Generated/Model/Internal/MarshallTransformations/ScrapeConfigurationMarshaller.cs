@@ -49,7 +49,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigurationBlob())
             {
                 context.Writer.WritePropertyName("configurationBlob");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.ConfigurationBlob));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.ConfigurationBlob);
             }
 
         }

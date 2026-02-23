@@ -49,7 +49,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetData())
             {
                 context.Writer.WritePropertyName("Data");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Data));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Data);
             }
 
         }

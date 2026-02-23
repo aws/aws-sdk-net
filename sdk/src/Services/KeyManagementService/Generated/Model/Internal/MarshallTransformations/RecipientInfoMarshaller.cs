@@ -49,7 +49,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttestationDocument())
             {
                 context.Writer.WritePropertyName("AttestationDocument");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.AttestationDocument));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.AttestationDocument);
             }
 
             if(requestObject.IsSetKeyEncryptionAlgorithm())

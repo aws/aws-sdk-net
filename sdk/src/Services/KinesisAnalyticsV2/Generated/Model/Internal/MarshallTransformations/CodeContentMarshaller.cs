@@ -66,7 +66,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetZipFileContent())
             {
                 context.Writer.WritePropertyName("ZipFileContent");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.ZipFileContent));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.ZipFileContent);
             }
 
         }

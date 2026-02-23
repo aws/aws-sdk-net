@@ -129,7 +129,7 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetSecretBinary())
             {
                 context.Writer.WritePropertyName("SecretBinary");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.SecretBinary));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.SecretBinary);
             }
 
             if(publicRequest.IsSetSecretString())

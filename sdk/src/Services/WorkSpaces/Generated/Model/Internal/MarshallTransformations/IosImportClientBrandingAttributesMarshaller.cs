@@ -69,19 +69,19 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogo())
             {
                 context.Writer.WritePropertyName("Logo");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Logo));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Logo);
             }
 
             if(requestObject.IsSetLogo2x())
             {
                 context.Writer.WritePropertyName("Logo2x");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Logo2x));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Logo2x);
             }
 
             if(requestObject.IsSetLogo3x())
             {
                 context.Writer.WritePropertyName("Logo3x");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Logo3x));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Logo3x);
             }
 
             if(requestObject.IsSetSupportEmail())

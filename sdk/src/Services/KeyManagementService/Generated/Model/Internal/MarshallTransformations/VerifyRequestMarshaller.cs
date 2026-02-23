@@ -101,7 +101,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetMessage())
             {
                 context.Writer.WritePropertyName("Message");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Message));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Message);
             }
 
             if(publicRequest.IsSetMessageType())
@@ -113,7 +113,7 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetSignature())
             {
                 context.Writer.WritePropertyName("Signature");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Signature));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Signature);
             }
 
             if(publicRequest.IsSetSigningAlgorithm())
