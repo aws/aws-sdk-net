@@ -77,7 +77,7 @@ namespace Amazon.ConnectCases.Model
         /// The list of field identifiers to be returned as part of the response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=10)]
+        [AWSProperty(Min=0, Max=25)]
         public List<FieldIdentifier> Fields
         {
             get { return this._fields; }
