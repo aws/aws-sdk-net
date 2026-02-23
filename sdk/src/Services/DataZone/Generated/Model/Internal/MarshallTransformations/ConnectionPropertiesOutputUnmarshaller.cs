@@ -126,6 +126,18 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.SparkGlueProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("workflowsMwaaProperties", targetDepth))
+                {
+                    var unmarshaller = WorkflowsMwaaPropertiesOutputUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowsMwaaProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workflowsServerlessProperties", targetDepth))
+                {
+                    var unmarshaller = WorkflowsServerlessPropertiesOutputUnmarshaller.Instance;
+                    unmarshalledObject.WorkflowsServerlessProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
