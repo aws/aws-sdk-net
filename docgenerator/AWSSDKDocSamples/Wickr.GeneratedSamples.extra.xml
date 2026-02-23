@@ -895,6 +895,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetOpentdfConfig(Amazon.Wickr.Model.GetOpentdfConfigRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetOpentdfConfig(Amazon.Wickr.Model.GetOpentdfConfigRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetOpentdfConfigRequest" />
+            <member name="T:Amazon.Wickr.Model.GetOpentdfConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get OpenTDF info successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.GetOpentdfConfig(Amazon.Wickr.Model.GetOpentdfConfigRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.GetOpentdfConfig(Amazon.Wickr.Model.GetOpentdfConfigRequest)" />
+            <member name="T:Amazon.Wickr.Model.GetOpentdfConfigRequest" />
+            <member name="T:Amazon.Wickr.Model.GetOpentdfConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get OpenTDF info - not configured"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Wickr.IAmazonWickr.GetSecurityGroup(Amazon.Wickr.Model.GetSecurityGroupRequest)" />
             <member name="M:Amazon.Wickr.AmazonWickrClient.GetSecurityGroup(Amazon.Wickr.Model.GetSecurityGroupRequest)" />
             <member name="T:Amazon.Wickr.Model.GetSecurityGroupRequest" />
@@ -1517,6 +1555,101 @@
                     title="Test OIDC config - invalid endpoint"
                     source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
                     region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.RegisterOpentdfConfig(Amazon.Wickr.Model.RegisterOpentdfConfigRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.RegisterOpentdfConfig(Amazon.Wickr.Model.RegisterOpentdfConfigRequest)" />
+            <member name="T:Amazon.Wickr.Model.RegisterOpentdfConfigRequest" />
+            <member name="T:Amazon.Wickr.Model.RegisterOpentdfConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Save OpenTDF config successfully"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.RegisterOpentdfConfig(Amazon.Wickr.Model.RegisterOpentdfConfigRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.RegisterOpentdfConfig(Amazon.Wickr.Model.RegisterOpentdfConfigRequest)" />
+            <member name="T:Amazon.Wickr.Model.RegisterOpentdfConfigRequest" />
+            <member name="T:Amazon.Wickr.Model.RegisterOpentdfConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Dry run saving OpenTDF config"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.RegisterOpentdfConfig(Amazon.Wickr.Model.RegisterOpentdfConfigRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.RegisterOpentdfConfig(Amazon.Wickr.Model.RegisterOpentdfConfigRequest)" />
+            <member name="T:Amazon.Wickr.Model.RegisterOpentdfConfigRequest" />
+            <member name="T:Amazon.Wickr.Model.RegisterOpentdfConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Dry run saving OpenTDF config - failed test"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.RegisterOpentdfConfig(Amazon.Wickr.Model.RegisterOpentdfConfigRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.RegisterOpentdfConfig(Amazon.Wickr.Model.RegisterOpentdfConfigRequest)" />
+            <member name="T:Amazon.Wickr.Model.RegisterOpentdfConfigRequest" />
+            <member name="T:Amazon.Wickr.Model.RegisterOpentdfConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Save OpenTDF config - invalid provider"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Wickr.IAmazonWickr.RegisterOpentdfConfig(Amazon.Wickr.Model.RegisterOpentdfConfigRequest)" />
+            <member name="M:Amazon.Wickr.AmazonWickrClient.RegisterOpentdfConfig(Amazon.Wickr.Model.RegisterOpentdfConfigRequest)" />
+            <member name="T:Amazon.Wickr.Model.RegisterOpentdfConfigRequest" />
+            <member name="T:Amazon.Wickr.Model.RegisterOpentdfConfigResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Save OpenTDF config - network not found"
+                    source=".\AWSSDKDocSamples\Wickr\Wickr.GeneratedSamples.cs"
+                    region="example-5" />
             </example>
         </value>
     </doc>
