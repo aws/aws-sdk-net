@@ -415,6 +415,28 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Wickr.Model.GetOpentdfConfigRequest.NetworkId</property>
+    <min>8</min>
+    <max>8</max>
+    <pattern>[0-9]{8}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.GetOpentdfConfigResponse.ClientId</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.GetOpentdfConfigResponse.ClientSecret</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.GetOpentdfConfigResponse.Domain</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.GetOpentdfConfigResponse.Provider</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Wickr.Model.GetSecurityGroupRequest.GroupId</property>
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
@@ -787,6 +809,44 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Wickr.Model.RegisterOidcConfigTestResponse.UserinfoEndpoint</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.RegisterOpentdfConfigRequest.ClientId</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.RegisterOpentdfConfigRequest.ClientSecret</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.RegisterOpentdfConfigRequest.Domain</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.RegisterOpentdfConfigRequest.NetworkId</property>
+    <min>8</min>
+    <max>8</max>
+    <pattern>[0-9]{8}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.RegisterOpentdfConfigRequest.Provider</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.RegisterOpentdfConfigResponse.ClientId</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.RegisterOpentdfConfigResponse.ClientSecret</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.RegisterOpentdfConfigResponse.Domain</property>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Wickr.Model.RegisterOpentdfConfigResponse.Provider</property>
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
