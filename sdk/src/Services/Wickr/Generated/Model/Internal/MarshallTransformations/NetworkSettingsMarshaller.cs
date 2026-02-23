@@ -58,6 +58,12 @@ namespace Amazon.Wickr.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.EnableClientMetrics.Value);
             }
 
+            if(requestObject.IsSetEnableTrustedDataFormat())
+            {
+                context.Writer.WritePropertyName("enableTrustedDataFormat");
+                context.Writer.WriteBooleanValue(requestObject.EnableTrustedDataFormat.Value);
+            }
+
             if(requestObject.IsSetReadReceiptConfig())
             {
                 context.Writer.WritePropertyName("readReceiptConfig");

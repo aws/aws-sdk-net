@@ -37,6 +37,7 @@ namespace Amazon.Wickr.Model
     {
         private bool? _dataRetention;
         private bool? _enableClientMetrics;
+        private bool? _enableTrustedDataFormat;
         private ReadReceiptConfig _readReceiptConfig;
 
         /// <summary>
@@ -75,6 +76,25 @@ namespace Amazon.Wickr.Model
         internal bool IsSetEnableClientMetrics()
         {
             return this._enableClientMetrics.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableTrustedDataFormat. 
+        /// <para>
+        /// Configuration for OpenTDF integration at the network level, enforcing ABAC decision
+        /// making when operating in TDF enabled rooms.
+        /// </para>
+        /// </summary>
+        public bool? EnableTrustedDataFormat
+        {
+            get { return this._enableTrustedDataFormat; }
+            set { this._enableTrustedDataFormat = value; }
+        }
+
+        // Check to see if EnableTrustedDataFormat property is set
+        internal bool IsSetEnableTrustedDataFormat()
+        {
+            return this._enableTrustedDataFormat.HasValue; 
         }
 
         /// <summary>
