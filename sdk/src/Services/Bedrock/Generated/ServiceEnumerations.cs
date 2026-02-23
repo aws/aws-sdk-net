@@ -521,9 +521,17 @@ namespace Amazon.Bedrock
     {
 
         /// <summary>
+        /// Constant ASSET_MANIFEST for AutomatedReasoningPolicyBuildResultAssetType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildResultAssetType ASSET_MANIFEST = new AutomatedReasoningPolicyBuildResultAssetType("ASSET_MANIFEST");
+        /// <summary>
         /// Constant BUILD_LOG for AutomatedReasoningPolicyBuildResultAssetType
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildResultAssetType BUILD_LOG = new AutomatedReasoningPolicyBuildResultAssetType("BUILD_LOG");
+        /// <summary>
+        /// Constant FIDELITY_REPORT for AutomatedReasoningPolicyBuildResultAssetType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildResultAssetType FIDELITY_REPORT = new AutomatedReasoningPolicyBuildResultAssetType("FIDELITY_REPORT");
         /// <summary>
         /// Constant GENERATED_TEST_CASES for AutomatedReasoningPolicyBuildResultAssetType
         /// </summary>
@@ -540,6 +548,10 @@ namespace Amazon.Bedrock
         /// Constant QUALITY_REPORT for AutomatedReasoningPolicyBuildResultAssetType
         /// </summary>
         public static readonly AutomatedReasoningPolicyBuildResultAssetType QUALITY_REPORT = new AutomatedReasoningPolicyBuildResultAssetType("QUALITY_REPORT");
+        /// <summary>
+        /// Constant SOURCE_DOCUMENT for AutomatedReasoningPolicyBuildResultAssetType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildResultAssetType SOURCE_DOCUMENT = new AutomatedReasoningPolicyBuildResultAssetType("SOURCE_DOCUMENT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -656,6 +668,10 @@ namespace Amazon.Bedrock
     public class AutomatedReasoningPolicyBuildWorkflowType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant GENERATE_FIDELITY_REPORT for AutomatedReasoningPolicyBuildWorkflowType
+        /// </summary>
+        public static readonly AutomatedReasoningPolicyBuildWorkflowType GENERATE_FIDELITY_REPORT = new AutomatedReasoningPolicyBuildWorkflowType("GENERATE_FIDELITY_REPORT");
         /// <summary>
         /// Constant IMPORT_POLICY for AutomatedReasoningPolicyBuildWorkflowType
         /// </summary>

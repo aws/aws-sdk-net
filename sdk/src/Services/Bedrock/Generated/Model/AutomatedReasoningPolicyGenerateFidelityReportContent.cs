@@ -30,18 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Defines the content and configuration for different types of policy build workflows.
+    /// Configuration for generating a fidelity report, which can either analyze new documents
+    /// or update an existing fidelity report with a new policy definition.
     /// </summary>
-    public partial class AutomatedReasoningPolicyWorkflowTypeContent
+    public partial class AutomatedReasoningPolicyGenerateFidelityReportContent
     {
         private List<AutomatedReasoningPolicyBuildWorkflowDocument> _documents = AWSConfigs.InitializeCollections ? new List<AutomatedReasoningPolicyBuildWorkflowDocument>() : null;
-        private AutomatedReasoningPolicyGenerateFidelityReportContent _generateFidelityReportContent;
-        private AutomatedReasoningPolicyBuildWorkflowRepairContent _policyRepairAssets;
 
         /// <summary>
         /// Gets and sets the property Documents. 
         /// <para>
-        /// The list of documents to be processed in a document ingestion workflow.
+        /// Source documents to analyze for generating a new fidelity report. The documents will
+        /// be processed to create atomic statements and grounding information.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -49,7 +49,7 @@ namespace Amazon.Bedrock.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=0, Max=5)]
         public List<AutomatedReasoningPolicyBuildWorkflowDocument> Documents
         {
             get { return this._documents; }
@@ -60,45 +60,6 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetDocuments()
         {
             return this._documents != null && (this._documents.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property GenerateFidelityReportContent. 
-        /// <para>
-        /// The content configuration for generating a fidelity report workflow. This can include
-        /// source documents to analyze or an existing fidelity report to update with a new policy
-        /// definition.
-        /// </para>
-        /// </summary>
-        public AutomatedReasoningPolicyGenerateFidelityReportContent GenerateFidelityReportContent
-        {
-            get { return this._generateFidelityReportContent; }
-            set { this._generateFidelityReportContent = value; }
-        }
-
-        // Check to see if GenerateFidelityReportContent property is set
-        internal bool IsSetGenerateFidelityReportContent()
-        {
-            return this._generateFidelityReportContent != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PolicyRepairAssets. 
-        /// <para>
-        /// The assets and instructions needed for a policy repair workflow, including repair
-        /// annotations and guidance.
-        /// </para>
-        /// </summary>
-        public AutomatedReasoningPolicyBuildWorkflowRepairContent PolicyRepairAssets
-        {
-            get { return this._policyRepairAssets; }
-            set { this._policyRepairAssets = value; }
-        }
-
-        // Check to see if PolicyRepairAssets property is set
-        internal bool IsSetPolicyRepairAssets()
-        {
-            return this._policyRepairAssets != null;
         }
 
     }

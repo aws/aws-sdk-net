@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AutomatedReasoningPolicyWorkflowTypeContent Marshaller
+    /// AutomatedReasoningPolicyGenerateFidelityReportContent Marshaller
     /// </summary>
-    public class AutomatedReasoningPolicyWorkflowTypeContentMarshaller : IRequestMarshaller<AutomatedReasoningPolicyWorkflowTypeContent, JsonMarshallerContext> 
+    public class AutomatedReasoningPolicyGenerateFidelityReportContentMarshaller : IRequestMarshaller<AutomatedReasoningPolicyGenerateFidelityReportContent, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AutomatedReasoningPolicyWorkflowTypeContent requestObject, JsonMarshallerContext context)
+        public void Marshall(AutomatedReasoningPolicyGenerateFidelityReportContent requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -62,34 +62,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
-            if(requestObject.IsSetGenerateFidelityReportContent())
-            {
-                context.Writer.WritePropertyName("generateFidelityReportContent");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AutomatedReasoningPolicyGenerateFidelityReportContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.GenerateFidelityReportContent, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetPolicyRepairAssets())
-            {
-                context.Writer.WritePropertyName("policyRepairAssets");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AutomatedReasoningPolicyBuildWorkflowRepairContentMarshaller.Instance;
-                marshaller.Marshall(requestObject.PolicyRepairAssets, context);
-
-                context.Writer.WriteEndObject();
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AutomatedReasoningPolicyWorkflowTypeContentMarshaller Instance = new AutomatedReasoningPolicyWorkflowTypeContentMarshaller();
+        public readonly static AutomatedReasoningPolicyGenerateFidelityReportContentMarshaller Instance = new AutomatedReasoningPolicyGenerateFidelityReportContentMarshaller();
 
     }
 }
