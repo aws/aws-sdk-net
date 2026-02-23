@@ -1,3 +1,24 @@
+### 4.0.197.0 (2026-02-23 19:15 UTC)
+* Bedrock (4.0.20.0)
+	* Automated Reasoning checks in Amazon Bedrock Guardrails now support fidelity report generation. The new workflow type assesses policy coverage and accuracy against customer documents. The GetAutomatedReasoningPolicyBuildWorkflowResultAssets API adds support for the three new asset types.
+* ConnectCases (4.0.10.0)
+	* SearchCases API can now accept 25 fields in the request and response as opposed to the previous limit of 10. DeleteField's hard limit of 100 fields per domain has been lifted.
+* ControlCatalog (4.0.4.11)
+	* Updated ExemptedPrincipalArns parameter documentation for improved accuracy
+* DataZone (4.0.21.0)
+	* Add workflow properties support to connections APIs
+* DynamoDBv2 (4.0.15.0)
+	* This change supports the creation of multi-account global tables. It adds one new arguments to UpdateTable, GlobalTableSettingsReplicationMode.
+* MediaTailor (4.0.6.0)
+	* Updated endpoint rule set for dualstack endpoints. Added a new opt-in option to log raw ad decision server requests for Playback Configurations.
+* QuickSight (4.0.15.0)
+	* Adds support for SEMISTRUCT to InputColumn Type
+* Wickr (4.0.1.0)
+	* AWS Wickr now provides APIs to manage your Wickr OpenTDF integration. These APIs enable you to test and save your OpenTDF configuration allowing you to manage rooms based on Trusted Data Format attributes.
+* Core 4.0.3.15
+	* Optimize MemoryStream Base64 serialization in JSON marshallers (Fix: https://github.com/aws/aws-sdk-net/issues/1922).
+	* All service and extension packages updated to require new Core
+
 ### 4.0.196.0 (2026-02-20 20:48 UTC)
 * AppStream (4.0.6.0)
 	* Adding new attribute to disable IMDS v1 APIs for fleet, Image Builder and AppBlockBuilder instances.
