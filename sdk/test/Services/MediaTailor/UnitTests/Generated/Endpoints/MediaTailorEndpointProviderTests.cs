@@ -32,105 +32,43 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MediaTailor")]
-        [Description("For region ap-northeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For custom endpoint with region not set and fips disabled")]
+        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_Test()
         {
             var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
+            parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
             var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.ap-northeast-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://example.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MediaTailor")]
-        [Description("For region ap-southeast-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For custom endpoint with fips enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_enabled_Test()
         {
             var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
+            parameters["Endpoint"] = "https://example.com";
+            parameters["UseFIPS"] = true;
             var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MediaTailor")]
-        [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For custom endpoint with fips disabled and dualstack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
+            parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.ap-southeast-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MediaTailor")]
-        [Description("For region eu-central-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.eu-central-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MediaTailor")]
-        [Description("For region eu-west-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "eu-west-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.eu-west-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MediaTailor")]
-        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.us-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MediaTailor")]
-        [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.us-west-2.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -175,127 +113,112 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://mediatailor.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MediaTailor")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region us-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MediaTailor")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = true;
-            parameters["UseDualStack"] = false;
-            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MediaTailor")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = true;
-            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MediaTailor")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "us-east-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.cn-north-1.amazonaws.com.cn", endpoint.URL);
+            Assert.AreEqual("https://api.mediatailor.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MediaTailor")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region cn-northwest-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor-fips.us-gov-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://api.mediatailor-fips.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MediaTailor")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        [Description("For region cn-northwest-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://api.mediatailor-fips.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MediaTailor")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region cn-northwest-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.us-gov-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://api.mediatailor.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MediaTailor")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region cn-northwest-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://api.mediatailor.us-gov-east-1.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://api.mediatailor.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MediaTailor")]
+        [Description("For region eusc-de-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new MediaTailorEndpointParameters();
+            parameters["Region"] = "eusc-de-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://api.mediatailor-fips.eusc-de-east-1.amazonaws.eu", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MediaTailor")]
+        [Description("For region eusc-de-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euscdeeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new MediaTailorEndpointParameters();
+            parameters["Region"] = "eusc-de-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://api.mediatailor.eusc-de-east-1.amazonaws.eu", endpoint.URL);
         }
 
         [TestMethod]
@@ -362,63 +285,120 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MediaTailor")]
-        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For region eu-isoe-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MediaTailor")]
-        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new MediaTailorEndpointParameters();
-            parameters["UseFIPS"] = false;
-            parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("MediaTailor")]
-        [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "us-east-1";
+            parameters["Region"] = "eu-isoe-west-1";
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
-            parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://api.mediatailor-fips.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MediaTailor")]
-        [Description("For custom endpoint with fips disabled and dualstack enabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Dualstack and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
+        [Description("For region eu-isoe-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_euisoewest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new MediaTailorEndpointParameters();
-            parameters["Region"] = "us-east-1";
+            parameters["Region"] = "eu-isoe-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://api.mediatailor.eu-isoe-west-1.cloud.adc-e.uk", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MediaTailor")]
+        [Description("For region us-isof-south-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new MediaTailorEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://api.mediatailor-fips.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MediaTailor")]
+        [Description("For region us-isof-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisofsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new MediaTailorEndpointParameters();
+            parameters["Region"] = "us-isof-south-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://api.mediatailor.us-isof-south-1.csp.hci.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MediaTailor")]
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new MediaTailorEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://api.mediatailor-fips.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MediaTailor")]
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new MediaTailorEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://api.mediatailor-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MediaTailor")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new MediaTailorEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
-            parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://api.mediatailor.us-gov-west-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MediaTailor")]
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new MediaTailorEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMediaTailorEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://api.mediatailor.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
