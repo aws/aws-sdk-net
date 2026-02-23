@@ -56,7 +56,7 @@ namespace Amazon.ControlCatalog.Model
     /// <para>
     ///  <b>ExemptedPrincipalArns</b>: List of Amazon Web Services IAM principal ARNs exempted
     /// from the control. Each string is expected to be an IAM principal that follows the
-    /// pattern <c>^arn:(aws|aws-us-gov):(iam|sts)::.+:.+$</c> 
+    /// format <c>arn:partition:service::account:resource</c> 
     /// </para>
     ///  
     /// <para>
