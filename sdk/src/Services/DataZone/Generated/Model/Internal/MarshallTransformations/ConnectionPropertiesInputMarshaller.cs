@@ -156,6 +156,28 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetWorkflowsMwaaProperties())
+            {
+                context.Writer.WritePropertyName("workflowsMwaaProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkflowsMwaaPropertiesInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.WorkflowsMwaaProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetWorkflowsServerlessProperties())
+            {
+                context.Writer.WritePropertyName("workflowsServerlessProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WorkflowsServerlessPropertiesInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.WorkflowsServerlessProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>
