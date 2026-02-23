@@ -65,6 +65,7 @@ namespace Amazon.DynamoDBv2.Model
         private BillingMode _billingMode;
         private bool? _deletionProtectionEnabled;
         private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndexUpdate>() : null;
+        private GlobalTableSettingsReplicationMode _globalTableSettingsReplicationMode;
         private List<GlobalTableWitnessGroupUpdate> _globalTableWitnessUpdates = AWSConfigs.InitializeCollections ? new List<GlobalTableWitnessGroupUpdate>() : null;
         private MultiRegionConsistency _multiRegionConsistency;
         private OnDemandThroughput _onDemandThroughput;
@@ -206,6 +207,37 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetGlobalSecondaryIndexUpdates()
         {
             return this._globalSecondaryIndexUpdates != null && (this._globalSecondaryIndexUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalTableSettingsReplicationMode. 
+        /// <para>
+        /// Controls the settings replication mode for a global table replica. This attribute
+        /// can be defined using UpdateTable operation only on a regional table with values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c>: Defines settings replication on a regional table to be used as a
+        /// source table for creating Multi-Account Global Table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c>: Remove settings replication on a regional table. Settings replication
+        /// needs to be defined to ENABLED again in order to create a Multi-Account Global Table
+        /// using this table. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public GlobalTableSettingsReplicationMode GlobalTableSettingsReplicationMode
+        {
+            get { return this._globalTableSettingsReplicationMode; }
+            set { this._globalTableSettingsReplicationMode = value; }
+        }
+
+        // Check to see if GlobalTableSettingsReplicationMode property is set
+        internal bool IsSetGlobalTableSettingsReplicationMode()
+        {
+            return this._globalTableSettingsReplicationMode != null;
         }
 
         /// <summary>

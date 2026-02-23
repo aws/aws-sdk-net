@@ -562,8 +562,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// The <c>ADD</c> action only supports Number and set data types. In addition, <c>ADD</c>
-        /// can only be used on top-level attributes, not nested attributes.
+        /// The <c>ADD</c> action only supports Number and set data types.
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
@@ -578,8 +577,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// The <c>DELETE</c> action only supports set data types. In addition, <c>DELETE</c>
-        /// can only be used on top-level attributes, not nested attributes.
+        /// The <c>DELETE</c> action only supports set data types.
         /// </para>
         ///  </important> </li> </ul> 
         /// <para>
