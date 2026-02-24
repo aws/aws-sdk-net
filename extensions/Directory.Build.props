@@ -1,5 +1,6 @@
 <Project>
  <PropertyGroup>
+   <ContinuousIntegrationBuild>$([MSBuild]::ValueOrDefault('$(CI)', 'false'))</ContinuousIntegrationBuild>
    <Deterministic>true</Deterministic>
    <EmbedUntrackedSources>true</EmbedUntrackedSources>
    <NuGetAuditMode>direct</NuGetAuditMode>
