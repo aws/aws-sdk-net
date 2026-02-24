@@ -23,17 +23,19 @@ public static class ChatMessageExtensions
 {
 	/// <summary>Enables prompt caching for the specified <see cref="ChatMessage"/> instance.</summary>
 	/// <param name="message">The chat message to enable caching for.</param>
+	/// <param name="cacheTTL">The cache time to live...defaults to 5 minutes.</param>
 	/// <returns>The <see cref="ChatMessage"/> instance with caching enabled.</returns>
 	/// <remarks>
 	/// This method adds a cache point marker to the message's additional properties. Prompt caching
 	/// allows Bedrock to cache the prompt tokens for reuse in subsequent requests, reducing costs
-	/// and latency. This message must meet the mimimum token requirements and is held in cache for 5 minutes.
+	/// and latency. The model must support prompt caching and the message must be within the minimum token threshold for caching.
 	/// </remarks>
-	public static ChatMessage UsePromptCaching(this ChatMessage message)
+	public static ChatMessage UsePromptCaching(this ChatMessage message, CacheTTL? cacheTTL = null)
 	{
+		cacheTTL ??= CacheTTL.FIVE_MINUTES;
 		message.AdditionalProperties ??= [];
 
-		message.AdditionalProperties.Add(nameof(ContentBlock.CachePoint), new CachePointBlock { Type = CachePointType.Default });
+		message.AdditionalProperties.Add(nameof(ContentBlock.CachePoint), new CachePointBlock { Type = CachePointType.Default, Ttl = cacheTTL });
 
 		return message;
 	}
