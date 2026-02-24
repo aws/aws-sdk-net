@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DestinationLogsConfiguration Object
+    /// Response Unmarshaller for LogGroupNameConfiguration Object
     /// </summary>  
-    public class DestinationLogsConfigurationUnmarshaller : IUnmarshaller<DestinationLogsConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DestinationLogsConfiguration, JsonUnmarshallerContext>
+    public class LogGroupNameConfigurationUnmarshaller : IUnmarshaller<LogGroupNameConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LogGroupNameConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DestinationLogsConfiguration IUnmarshaller<DestinationLogsConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LogGroupNameConfiguration IUnmarshaller<LogGroupNameConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public DestinationLogsConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public LogGroupNameConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            DestinationLogsConfiguration unmarshalledObject = new DestinationLogsConfiguration();
+            LogGroupNameConfiguration unmarshalledObject = new LogGroupNameConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BackupConfiguration", targetDepth))
+                if (context.TestExpression("LogGroupNamePattern", targetDepth))
                 {
-                    var unmarshaller = LogsBackupConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.BackupConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LogGroupNameConfiguration", targetDepth))
-                {
-                    var unmarshaller = LogGroupNameConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogGroupNameConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LogsEncryptionConfiguration", targetDepth))
-                {
-                    var unmarshaller = LogsEncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogsEncryptionConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogGroupNamePattern = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         }
 
 
-        private static DestinationLogsConfigurationUnmarshaller _instance = new DestinationLogsConfigurationUnmarshaller();        
+        private static LogGroupNameConfigurationUnmarshaller _instance = new LogGroupNameConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DestinationLogsConfigurationUnmarshaller Instance
+        public static LogGroupNameConfigurationUnmarshaller Instance
         {
             get
             {

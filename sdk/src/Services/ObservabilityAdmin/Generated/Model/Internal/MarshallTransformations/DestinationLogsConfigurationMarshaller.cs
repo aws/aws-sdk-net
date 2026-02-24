@@ -59,6 +59,17 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetLogGroupNameConfiguration())
+            {
+                context.Writer.WritePropertyName("LogGroupNameConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = LogGroupNameConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LogGroupNameConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetLogsEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("LogsEncryptionConfiguration");

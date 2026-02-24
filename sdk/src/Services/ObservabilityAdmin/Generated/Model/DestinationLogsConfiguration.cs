@@ -36,6 +36,7 @@ namespace Amazon.ObservabilityAdmin.Model
     public partial class DestinationLogsConfiguration
     {
         private LogsBackupConfiguration _backupConfiguration;
+        private LogGroupNameConfiguration _logGroupNameConfiguration;
         private LogsEncryptionConfiguration _logsEncryptionConfiguration;
 
         /// <summary>
@@ -54,6 +55,26 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetBackupConfiguration()
         {
             return this._backupConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogGroupNameConfiguration. 
+        /// <para>
+        /// Configuration that specifies a naming pattern for destination log groups created during
+        /// centralization. The pattern supports static text and dynamic variables that are replaced
+        /// with source attributes when log groups are created.
+        /// </para>
+        /// </summary>
+        public LogGroupNameConfiguration LogGroupNameConfiguration
+        {
+            get { return this._logGroupNameConfiguration; }
+            set { this._logGroupNameConfiguration = value; }
+        }
+
+        // Check to see if LogGroupNameConfiguration property is set
+        internal bool IsSetLogGroupNameConfiguration()
+        {
+            return this._logGroupNameConfiguration != null;
         }
 
         /// <summary>
