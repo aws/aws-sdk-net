@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DestinationLogsConfiguration Object
+    /// Response Unmarshaller for LogGroupNameConfiguration Object
     /// </summary>  
-    public class DestinationLogsConfigurationUnmarshaller : IJsonUnmarshaller<DestinationLogsConfiguration, JsonUnmarshallerContext>
+    public class LogGroupNameConfigurationUnmarshaller : IJsonUnmarshaller<LogGroupNameConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DestinationLogsConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LogGroupNameConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DestinationLogsConfiguration unmarshalledObject = new DestinationLogsConfiguration();
+            LogGroupNameConfiguration unmarshalledObject = new LogGroupNameConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("BackupConfiguration", targetDepth))
+                if (context.TestExpression("LogGroupNamePattern", targetDepth))
                 {
-                    var unmarshaller = LogsBackupConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.BackupConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LogGroupNameConfiguration", targetDepth))
-                {
-                    var unmarshaller = LogGroupNameConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogGroupNameConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LogsEncryptionConfiguration", targetDepth))
-                {
-                    var unmarshaller = LogsEncryptionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogsEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogGroupNamePattern = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
         }
 
 
-        private static DestinationLogsConfigurationUnmarshaller _instance = new DestinationLogsConfigurationUnmarshaller();        
+        private static LogGroupNameConfigurationUnmarshaller _instance = new LogGroupNameConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DestinationLogsConfigurationUnmarshaller Instance
+        public static LogGroupNameConfigurationUnmarshaller Instance
         {
             get
             {
