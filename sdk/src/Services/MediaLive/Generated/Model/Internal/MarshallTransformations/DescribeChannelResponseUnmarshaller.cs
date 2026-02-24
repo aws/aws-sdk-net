@@ -112,6 +112,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inferenceSettings", targetDepth))
+                {
+                    var unmarshaller = DescribeInferenceSettingsUnmarshaller.Instance;
+                    response.InferenceSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputAttachments", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<InputAttachment, InputAttachmentUnmarshaller>(InputAttachmentUnmarshaller.Instance);

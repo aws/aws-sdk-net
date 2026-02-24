@@ -18425,6 +18425,10 @@ namespace Amazon.MediaLive
         /// </summary>
         public static readonly VideoDescriptionScalingBehavior DEFAULT = new VideoDescriptionScalingBehavior("DEFAULT");
         /// <summary>
+        /// Constant SMART_CROP for VideoDescriptionScalingBehavior
+        /// </summary>
+        public static readonly VideoDescriptionScalingBehavior SMART_CROP = new VideoDescriptionScalingBehavior("SMART_CROP");
+        /// <summary>
         /// Constant STRETCH_TO_OUTPUT for VideoDescriptionScalingBehavior
         /// </summary>
         public static readonly VideoDescriptionScalingBehavior STRETCH_TO_OUTPUT = new VideoDescriptionScalingBehavior("STRETCH_TO_OUTPUT");
