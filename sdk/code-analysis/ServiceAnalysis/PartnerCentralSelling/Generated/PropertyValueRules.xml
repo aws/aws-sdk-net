@@ -1352,6 +1352,14 @@
     <pattern>(?=.{0,256}$)([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.TargetCloseDateFilter.AfterTargetCloseDate</property>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.TargetCloseDateFilter.BeforeTargetCloseDate</property>
+    <pattern>[1-9][0-9]{3}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.UpdateLeadContext.QualificationStatus</property>
     <pattern>(?s).{1,255}</pattern>
   </property-value-rule>

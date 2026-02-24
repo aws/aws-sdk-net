@@ -164,6 +164,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetTargetCloseDate())
+                {
+                    context.Writer.WritePropertyName("TargetCloseDate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TargetCloseDateFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TargetCloseDate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
