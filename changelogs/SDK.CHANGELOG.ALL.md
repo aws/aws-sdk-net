@@ -1,3 +1,21 @@
+### 4.0.198.0 (2026-02-24 19:17 UTC)
+* CloudWatch (4.0.8.0)
+	* This release adds the APIs (PutAlarmMuteRule, ListAlarmMuteRules, GetAlarmMuteRule and DeleteAlarmMuteRule) to manage a new Cloudwatch resource, AlarmMuteRules. AlarmMuteRules allow customers to temporarily mute alarm notifications during expected downtime periods.
+* EC2 (4.0.77.0)
+	* Adds httpTokensEnforced property to ModifyInstanceMetadataDefaults API. Set per account or manage organization-wide using declarative policies to prevent IMDSv1-enabled instance launch and block attempts to enable IMDSv1 on existing IMDSv2-only instances.
+* Elasticsearch (4.0.3.0)
+	* Fixed HTTP binding for DescribeDomainAutoTunes API to correctly pass request parameters as query parameters in the HTTP request.
+* ElementalInference (4.0.0.0)
+	* Initial GA launch for AWS Elemental Inference including capabilities of Smart Crop and Live Event Clipping
+* MediaLive (4.0.17.0)
+	* AWS Elemental MediaLive - Added support for Elemental Inference for Smart Cropping and Clipping features for MediaLive.
+* ObservabilityAdmin (4.0.6.0)
+	* Adding a new field in the CreateCentralizationRuleForOrganization, UpdateCentralizationRuleForOrganization API and updating the GetCentralizationRuleForOrganization API response to include the new field
+* OpenSearchService (4.0.10.0)
+	* Fixed HTTP binding for DescribeDomainAutoTunes API to correctly pass request parameters as query parameters in the HTTP request.
+* PartnerCentralSelling (4.0.9.0)
+	* Added support for filtering opportunities by target close date in the ListOpportunities API. You can now filter results to return opportunities with a target close date before or after a specified date, enabling more precise opportunity searches based on expected closure timelines.
+
 ### 4.0.197.0 (2026-02-23 19:15 UTC)
 * Bedrock (4.0.20.0)
 	* Automated Reasoning checks in Amazon Bedrock Guardrails now support fidelity report generation. The new workflow type assesses policy coverage and accuracy against customer documents. The GetAutomatedReasoningPolicyBuildWorkflowResultAssets API adds support for the three new asset types.
