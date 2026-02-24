@@ -15,7 +15,6 @@
 
 using Amazon.BedrockRuntime.Model;
 using Microsoft.Extensions.AI;
-using System;
 
 namespace Amazon.BedrockRuntime;
 
