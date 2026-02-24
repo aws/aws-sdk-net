@@ -11,7 +11,7 @@
     <title><#=this.Session["NuGetTitle"]#></title>
     <version><#=this.Session["AssemblyVersion"]#><#=this.Session["NuGetPreviewFlag"]#></version> 
     <authors>Amazon Web Services</authors>
-    <description><#=this.Session["AssemblyDescription"]#></description>
+    <description>AWS SDK for .NET V3 is in maintenance mode as of March 1st, 2026, with only critical bugs and security issues addressed until end of support on June 1st, 2026. See https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-v4.html for migration guidance. <#=this.Session["AssemblyDescription"]#></description>
     <language>en-US</language>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>

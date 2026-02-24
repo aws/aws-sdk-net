@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\Dev\repos\aws-sdk-net-staging-3.7\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -28,45 +28,48 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>AWSS" +
                     "DK.Core</id>\r\n    <title>AWSSDK - Core Runtime</title>\r\n    <version>");
             
-            #line 9 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\Dev\repos\aws-sdk-net-staging-3.7\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
             #line hidden
             
-            #line 9 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\Dev\repos\aws-sdk-net-staging-3.7\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
             
             #line default
             #line hidden
-            this.Write("</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description>The Ama" +
-                    "zon Web Services SDK for .NET - Core Runtime</description>\r\n    <language>en-US<" +
-                    "/language>\r\n    <license type=\"expression\">Apache-2.0</license>\r\n    <projectUrl" +
-                    ">https://github.com/aws/aws-sdk-net/</projectUrl>\r\n    <tags>AWS Amazon cloud aw" +
-                    "s-sdk-v3</tags>\r\n    <icon>images\\AWSLogo.png</icon>\r\n    <dependencies>\r\n      " +
-                    "<group targetFramework=\"net35\">\r\n      </group>\r\n      <group targetFramework=\"n" +
-                    "et45\">\r\n      </group>\r\n\t    <group targetFramework=\"netstandard2.0\">\r\n        <" +
-                    "dependency id=\"Microsoft.Bcl.AsyncInterfaces\" version=\"1.1.0\" />\r\n      </group>" +
-                    "\r\n      <group targetFramework=\"netcoreapp3.1\">\r\n      </group>\r\n      <group ta" +
-                    "rgetFramework=\"net8.0\">\r\n      </group>\t\t\r\n    </dependencies>\r\n  </metadata> \r\n" +
-                    "  <files>\r\n    <file src=\"..\\..\\nuget-content\\AWSLogo.png\" target=\"images\\\" />\r\n" +
-                    "    <file src=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n\r\n" +
-                    "    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target=\"lib\\net35\" />\r\n    <" +
-                    "file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib\\net35\" />\r\n    <file " +
-                    "src=\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net35\" />\r\n\r\n    <file src" +
-                    "=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" />\r\n    <file src=\".\\b" +
-                    "in\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n    <file src=\".\\bin\\Re" +
-                    "lease\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n    <file src=\".\\bin\\Relea" +
-                    "se\\netstandard2.0\\AWSSDK.Core.dll\" target=\"lib\\netstandard2.0\"/>\r\n    <file src=" +
-                    "\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.xml\" target=\"lib\\netstandard2.0\"/>\r\n  " +
-                    "  <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.pdb\" target=\"lib\\netstanda" +
-                    "rd2.0\"/>\r\n\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.dll\" target=\"" +
-                    "lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.xml" +
-                    "\" target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSD" +
-                    "K.Core.pdb\" target=\"lib\\netcoreapp3.1\"/>\r\n\r\n    <file src=\".\\bin\\Release\\net8.0\\" +
-                    "AWSSDK.Core.dll\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bin\\Release\\net8.0\\AWSS" +
-                    "DK.Core.xml\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bin\\Release\\net8.0\\AWSSDK.C" +
-                    "ore.pdb\" target=\"lib\\net8.0\"/>\r\n  </files>\r\n</package>");
+            this.Write("</version> \r\n    <authors>Amazon Web Services</authors>\r\n    <description>AWS SDK" +
+                    " for .NET V3 is in maintenance mode as of March 1st, 2026, with only critical bu" +
+                    "gs and security issues addressed until end of support on June 1st, 2026. See htt" +
+                    "ps://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-v4.html for migra" +
+                    "tion guidance. The Amazon Web Services SDK for .NET - Core Runtime</description>" +
+                    "\r\n    <language>en-US</language>\r\n    <license type=\"expression\">Apache-2.0</lic" +
+                    "ense>\r\n    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>\r\n    <ta" +
+                    "gs>AWS Amazon cloud aws-sdk-v3</tags>\r\n    <icon>images\\AWSLogo.png</icon>\r\n    " +
+                    "<dependencies>\r\n      <group targetFramework=\"net35\">\r\n      </group>\r\n      <gr" +
+                    "oup targetFramework=\"net45\">\r\n      </group>\r\n\t    <group targetFramework=\"netst" +
+                    "andard2.0\">\r\n        <dependency id=\"Microsoft.Bcl.AsyncInterfaces\" version=\"1.1" +
+                    ".0\" />\r\n      </group>\r\n      <group targetFramework=\"netcoreapp3.1\">\r\n      </g" +
+                    "roup>\r\n      <group targetFramework=\"net8.0\">\r\n      </group>\t\t\r\n    </dependenc" +
+                    "ies>\r\n  </metadata> \r\n  <files>\r\n    <file src=\"..\\..\\nuget-content\\AWSLogo.png\"" +
+                    " target=\"images\\\" />\r\n    <file src=\"..\\..\\nuget-content\\account-management.ps1\"" +
+                    " target=\"tools\" />\r\n\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.dll\" target" +
+                    "=\"lib\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.xml\" target=\"lib" +
+                    "\\net35\" />\r\n    <file src=\".\\bin\\Release\\net35\\AWSSDK.Core.pdb\" target=\"lib\\net3" +
+                    "5\" />\r\n\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.dll\" target=\"lib\\net45\" " +
+                    "/>\r\n    <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.xml\" target=\"lib\\net45\" />\r\n " +
+                    "   <file src=\".\\bin\\Release\\net45\\AWSSDK.Core.pdb\" target=\"lib\\net45\" />\r\n\r\n    " +
+                    "<file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.dll\" target=\"lib\\netstandard" +
+                    "2.0\"/>\r\n    <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.xml\" target=\"lib" +
+                    "\\netstandard2.0\"/>\r\n    <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.pdb\"" +
+                    " target=\"lib\\netstandard2.0\"/>\r\n\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWS" +
+                    "SDK.Core.dll\" target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcore" +
+                    "app3.1\\AWSSDK.Core.xml\" target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Relea" +
+                    "se\\netcoreapp3.1\\AWSSDK.Core.pdb\" target=\"lib\\netcoreapp3.1\"/>\r\n\r\n    <file src=" +
+                    "\".\\bin\\Release\\net8.0\\AWSSDK.Core.dll\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\b" +
+                    "in\\Release\\net8.0\\AWSSDK.Core.xml\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bin\\R" +
+                    "elease\\net8.0\\AWSSDK.Core.pdb\" target=\"lib\\net8.0\"/>\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }

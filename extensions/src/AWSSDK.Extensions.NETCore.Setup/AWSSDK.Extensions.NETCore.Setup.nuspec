@@ -3,9 +3,9 @@
   <metadata> 
     <id>AWSSDK.Extensions.NETCore.Setup</id>
     <title>AWSSDK - Extensions for NETCore Setup</title>
-    <version>3.7.400</version>
+    <version>3.7.400.1</version>
     <authors>Amazon Web Services</authors>
-    <description>Extensions for the AWS SDK for .NET to integrate with .NET Core configuration and dependency injection frameworks.</description>
+    <description>AWS SDK for .NET V3 is in maintenance mode as of March 1st, 2026, with only critical bugs and security issues addressed until end of support on June 1st, 2026. See https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-v4.html for migration guidance. Extensions for the AWS SDK for .NET to integrate with .NET Core configuration and dependency injection frameworks.</description>
     <language>en-US</language>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
