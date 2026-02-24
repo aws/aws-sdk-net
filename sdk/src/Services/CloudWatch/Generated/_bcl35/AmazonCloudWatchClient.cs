@@ -282,6 +282,81 @@ namespace Amazon.CloudWatch
         #endregion
 
 
+        #region  DeleteAlarmMuteRule
+
+        /// <summary>
+        /// Deletes a specific alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// When you delete a mute rule, any alarms that are currently being muted by that rule
+        /// are immediately unmuted. If those alarms are in an ALARM state, their configured actions
+        /// will trigger.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent. If you delete a mute rule that does not exist, the operation
+        /// succeeds without returning an error.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a mute rule, you need the <c>cloudwatch:DeleteAlarmMuteRule</c> permission
+        /// on the alarm mute rule resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarmMuteRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarmMuteRule">REST API Reference for DeleteAlarmMuteRule Operation</seealso>
+        public virtual DeleteAlarmMuteRuleResponse DeleteAlarmMuteRule(DeleteAlarmMuteRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAlarmMuteRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAlarmMuteRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlarmMuteRule operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAlarmMuteRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarmMuteRule">REST API Reference for DeleteAlarmMuteRule Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAlarmMuteRule(DeleteAlarmMuteRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAlarmMuteRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAlarmMuteRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteAlarmMuteRuleResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarmMuteRule">REST API Reference for DeleteAlarmMuteRule Operation</seealso>
+        public virtual DeleteAlarmMuteRuleResponse EndDeleteAlarmMuteRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAlarmMuteRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteAlarms
 
         /// <summary>
@@ -1318,6 +1393,95 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetAlarmMuteRule
+
+        /// <summary>
+        /// Retrieves details for a specific alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns complete information about the mute rule, including its configuration,
+        /// status, targeted alarms, and metadata.
+        /// </para>
+        ///  
+        /// <para>
+        /// The returned status indicates the current state of the mute rule:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>SCHEDULED</b>: The mute rule is configured and will become active in the future
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ACTIVE</b>: The mute rule is currently muting alarm actions
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>EXPIRED</b>: The mute rule has passed its expiration date and will no longer become
+        /// active
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve details for a mute rule, you need the <c>cloudwatch:GetAlarmMuteRule</c>
+        /// permission on the alarm mute rule resource.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAlarmMuteRule service method.</param>
+        /// 
+        /// <returns>The response from the GetAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetAlarmMuteRule">REST API Reference for GetAlarmMuteRule Operation</seealso>
+        public virtual GetAlarmMuteRuleResponse GetAlarmMuteRule(GetAlarmMuteRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetAlarmMuteRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAlarmMuteRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAlarmMuteRule operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAlarmMuteRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetAlarmMuteRule">REST API Reference for GetAlarmMuteRule Operation</seealso>
+        public virtual IAsyncResult BeginGetAlarmMuteRule(GetAlarmMuteRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAlarmMuteRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAlarmMuteRule.</param>
+        /// 
+        /// <returns>Returns a  GetAlarmMuteRuleResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetAlarmMuteRule">REST API Reference for GetAlarmMuteRule Operation</seealso>
+        public virtual GetAlarmMuteRuleResponse EndGetAlarmMuteRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAlarmMuteRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDashboard
 
         /// <summary>
@@ -1930,6 +2094,85 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  ListAlarmMuteRules
+
+        /// <summary>
+        /// Lists alarm mute rules in your Amazon Web Services account and region.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by alarm name to find all mute rules targeting a specific
+        /// alarm, or by status to find rules that are scheduled, active, or expired.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation supports pagination for accounts with many mute rules. Use the <c>MaxRecords</c>
+        /// and <c>NextToken</c> parameters to retrieve results in multiple calls.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To list mute rules, you need the <c>cloudwatch:ListAlarmMuteRules</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmMuteRules service method.</param>
+        /// 
+        /// <returns>The response from the ListAlarmMuteRules service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.InvalidNextTokenException">
+        /// The next token specified is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListAlarmMuteRules">REST API Reference for ListAlarmMuteRules Operation</seealso>
+        public virtual ListAlarmMuteRulesResponse ListAlarmMuteRules(ListAlarmMuteRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAlarmMuteRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmMuteRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAlarmMuteRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAlarmMuteRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAlarmMuteRules operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAlarmMuteRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListAlarmMuteRules">REST API Reference for ListAlarmMuteRules Operation</seealso>
+        public virtual IAsyncResult BeginListAlarmMuteRules(ListAlarmMuteRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAlarmMuteRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAlarmMuteRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAlarmMuteRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAlarmMuteRules.</param>
+        /// 
+        /// <returns>Returns a  ListAlarmMuteRulesResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListAlarmMuteRules">REST API Reference for ListAlarmMuteRules Operation</seealso>
+        public virtual ListAlarmMuteRulesResponse EndListAlarmMuteRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAlarmMuteRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDashboards
 
         /// <summary>
@@ -2320,6 +2563,108 @@ namespace Amazon.CloudWatch
         public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
         {
             return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutAlarmMuteRule
+
+        /// <summary>
+        /// Creates or updates an alarm mute rule.
+        /// 
+        ///  
+        /// <para>
+        /// Alarm mute rules automatically mute alarm actions during predefined time windows.
+        /// When a mute rule is active, targeted alarms continue to evaluate metrics and transition
+        /// between states, but their configured actions (such as Amazon SNS notifications or
+        /// Auto Scaling actions) are muted.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can create mute rules with recurring schedules using <c>cron</c> expressions or
+        /// one-time mute windows using <c>at</c> expressions. Each mute rule can target up to
+        /// 100 specific alarms by name.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a rule name that already exists, this operation updates the existing
+        /// rule with the new configuration.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To create or update a mute rule, you must have the <c>cloudwatch:PutAlarmMuteRule</c>
+        /// permission on two types of resources: the alarm mute rule resource itself, and each
+        /// alarm that the rule targets.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, If you want to allow a user to create mute rules that target only specific
+        /// alarms named "WebServerCPUAlarm" and "DatabaseConnectionAlarm", you would create an
+        /// IAM policy with one statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the alarm
+        /// mute rule resource (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm-mute:*</c>),
+        /// and another statement granting <c>cloudwatch:PutAlarmMuteRule</c> on the targeted
+        /// alarm resources (<c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:WebServerCPUAlarm</c>
+        /// and <c>arn:aws:cloudwatch:[REGION]:123456789012:alarm:DatabaseConnectionAlarm</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use IAM policy conditions to allow targeting alarms based on resource
+        /// tags. For example, you can restrict users to create/update mute rules to only target
+        /// alarms that have a specific tag key-value pair, such as <c>Team=TeamA</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAlarmMuteRule service method.</param>
+        /// 
+        /// <returns>The response from the PutAlarmMuteRule service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.LimitExceededException">
+        /// The quota for alarms for this customer has already been reached.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAlarmMuteRule">REST API Reference for PutAlarmMuteRule Operation</seealso>
+        public virtual PutAlarmMuteRuleResponse PutAlarmMuteRule(PutAlarmMuteRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return Invoke<PutAlarmMuteRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAlarmMuteRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAlarmMuteRule operation on AmazonCloudWatchClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAlarmMuteRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAlarmMuteRule">REST API Reference for PutAlarmMuteRule Operation</seealso>
+        public virtual IAsyncResult BeginPutAlarmMuteRule(PutAlarmMuteRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAlarmMuteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAlarmMuteRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAlarmMuteRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAlarmMuteRule.</param>
+        /// 
+        /// <returns>Returns a  PutAlarmMuteRuleResult from CloudWatch.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAlarmMuteRule">REST API Reference for PutAlarmMuteRule Operation</seealso>
+        public virtual PutAlarmMuteRuleResponse EndPutAlarmMuteRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutAlarmMuteRuleResponse>(asyncResult);
         }
 
         #endregion
