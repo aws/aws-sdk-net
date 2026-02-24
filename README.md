@@ -402,6 +402,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Elastic MapReduce (Amazon EMR) is a web service that makes it easy to quickly and cost-effectively process vast amounts of data.
 * [AWSSDK.Elasticsearch](https://www.nuget.org/packages/AWSSDK.Elasticsearch/)
 	* Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.
+* [AWSSDK.ElementalInference](https://www.nuget.org/packages/AWSSDK.ElementalInference/)
+	* Initial GA launch for AWS Elemental Inference including capabilities of Smart Crop and Live Event Clipping
 * [AWSSDK.EMRContainers](https://www.nuget.org/packages/AWSSDK.EMRContainers/)
 	* This release adds support for Amazon EMR on EKS, a simple way to run Spark on Kubernetes.
 * [AWSSDK.EMRServerless](https://www.nuget.org/packages/AWSSDK.EMRServerless/)
