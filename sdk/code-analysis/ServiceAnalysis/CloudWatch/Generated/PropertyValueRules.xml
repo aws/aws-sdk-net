@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DeleteAlarmMuteRuleRequest.AlarmMuteRuleName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.DeleteAnomalyDetectorRequest.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -102,6 +107,26 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetAlarmMuteRuleRequest.AlarmMuteRuleName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetAlarmMuteRuleResponse.AlarmMuteRuleArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetAlarmMuteRuleResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetAlarmMuteRuleResponse.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.GetInsightRuleReportRequest.OrderBy</property>
     <min>1</min>
     <max>32</max>
@@ -163,6 +188,16 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ListAlarmMuteRulesRequest.AlarmName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ListAlarmMuteRulesRequest.MaxRecords</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.ListManagedInsightRulesRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
@@ -197,6 +232,16 @@
     <property>Amazon.CloudWatch.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutAlarmMuteRuleRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutAlarmMuteRuleRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutAnomalyDetectorRequest.MetricName</property>
@@ -385,6 +430,11 @@
     <property>Amazon.CloudWatch.Model.AlarmHistoryItem.HistorySummary</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AlarmMuteRuleSummary.AlarmMuteRuleArn</property>
+    <min>1</min>
+    <max>1600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AnomalyDetector.MetricName</property>
@@ -664,6 +714,21 @@
     <min>1</min>
     <max>255</max>
     <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.Schedule.Duration</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.Schedule.Expression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.Schedule.Timezone</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.SingleMetricAnomalyDetector.AccountId</property>

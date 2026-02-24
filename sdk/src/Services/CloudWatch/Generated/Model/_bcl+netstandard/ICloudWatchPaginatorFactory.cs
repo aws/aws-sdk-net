@@ -78,6 +78,16 @@ namespace Amazon.CloudWatch.Model
         IGetMetricDataPaginator GetMetricData(GetMetricDataRequest request);
 
         /// <summary>
+        /// Paginator for ListAlarmMuteRules operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAlarmMuteRulesPaginator ListAlarmMuteRules(ListAlarmMuteRulesRequest request);
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         [AWSPaginator(
