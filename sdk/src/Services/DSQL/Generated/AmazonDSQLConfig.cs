@@ -32,7 +32,7 @@ namespace Amazon.DSQL
     public partial class AmazonDSQLConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("DSQL", "3.7.505.35");
+            InternalSDKUtils.BuildUserAgentString("DSQL", "3.7.505.36");
 
         private string _userAgent = UserAgentString;
         ///<summary>
