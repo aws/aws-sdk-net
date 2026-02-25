@@ -148,6 +148,8 @@ namespace Amazon.CloudFront
                                            TextReader privateKey,
                                            DateTime expiresOn)
         {
+            AmazonCloudFrontUrlSigner.ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
+
             var cookies = new CookiesForCannedPolicy();
 
             string epochSeconds = AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn);

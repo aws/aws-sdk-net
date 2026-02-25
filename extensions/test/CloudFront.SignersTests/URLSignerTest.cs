@@ -164,5 +164,99 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.NotNull(AmazonCloudFrontUrlSigner.GetCannedSignedURL("http://example.com", reader, "keyPairId", DateTime.UtcNow));
            
         }
+
+        [Theory]
+        [Trait("Category", "CloudFront")]
+        [InlineData("https://example.com/file\",\"Resource\":\"*\",\"x\":\"")]
+        [InlineData("https://example.com/file\\bad")]
+        [InlineData("https://example.com/file\n")]
+        public void BuildPolicyForSignedUrl_RejectsInvalidResourcePath(string maliciousUrl)
+        {
+            var dateTime = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            var exception = Assert.Throws<ArgumentException>(() =>
+                AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(maliciousUrl, dateTime, ""));
+
+            Assert.Equal("resourcePath", exception.ParamName);
+        }
+
+        [Theory]
+        [Trait("Category", "CloudFront")]
+        [InlineData("192.168.0.1/24\",\"x\":\"injected")]
+        [InlineData("192.168.0.1/24\\injected")]
+        [InlineData("192.168.0.1/24\n")]
+        public void BuildPolicyForSignedUrl_RejectsInvalidIpAddress(string maliciousIp)
+        {
+            var resourcePath = "https://example.com/file.txt";
+            var dateTime = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            var exception = Assert.Throws<ArgumentException>(() =>
+                AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(resourcePath, dateTime, maliciousIp));
+
+            Assert.Equal("limitToIpAddressCIDR", exception.ParamName);
+        }
+
+        [Theory]
+        [Trait("Category", "CloudFront")]
+        [InlineData("https://d111111abcdef8.cloudfront.net/path/to/file.txt")]
+        [InlineData("*")]
+        [InlineData("https://example.com/file?.txt")]
+        public void BuildPolicyForSignedUrl_AcceptsValidResourcePaths(string resourcePath)
+        {
+            var dateTime = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            var policy = AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(resourcePath, dateTime, "");
+            Assert.NotNull(policy);
+
+            using (var jsonObject = JsonDocument.Parse(policy))
+            {
+                var statement = jsonObject.RootElement.GetProperty("Statement").EnumerateArray().First();
+                Assert.Equal(resourcePath, statement.GetProperty("Resource").ToString());
+            }
+        }
+
+        [Theory]
+        [Trait("Category", "CloudFront")]
+        [InlineData("https://example.com/file\",\"Resource\":\"*\",\"x\":\"")]
+        [InlineData("https://example.com/file\\bad")]
+        [InlineData("https://example.com/file\n")]
+        public void SignUrlCanned_RejectsInvalidResourceUrl(string maliciousUrl)
+        {
+            var dateTime = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            var reader = new StringReader(@"
+                              -----BEGIN PRIVATE KEY-----
+                              MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCa5udYGtrIPUU5
+                              EA0uTAGIc/gPFKqk9rnx6ubTkkEErA6ZiIbG/lj4bSRHendy06qd1X5zuJ4k73oi
+                              SsXKzCOuJHAZA872+iIbFI5axdYH25E3LIzJZu7KHlL08QGsIl9ccx8usuSotsj2
+                              pvb+uswg6kM3sy6Kiqw6e+5GlR4i0CNtt9pOTPb1+5ZQGehx0oeAypV4vGRZIQBm
+                              aCYXo2sBMZI1nNhe6fW7jpNrtki+nh1CKpmxE2TEwfFNh8xCiZ4wCJ4Y8GE3Te9E
+                              8otXM4+15ksIdMzJi7WbtiPsrEc4bxkBD+Hor8bGgFxXAWRRM3ttzLsZrotgEgYO
+                              fu7y0EtXAgMBAAECggEALqqhx8lPYEQVNru/PNNpItLNSL3RKyGpo1hBcjv9moq7
+                              W0XmVM0LwMwgwegDVHSwUhyfm/1ip33+LZaZQB+AIFaZ7u9WytFQtRfcSzyO3o8n
+                              kJe7UnHQPtQj6ecxucohMJj+K/N5L9rhcG2cu+FK3h+1YHJ68wIUIQp1Ho6OJa5W
+                              6/ad/aEPnSH5vd3LmUTSiD/jOtpoSge1axwVoCY4sdK8aTSAld/KexVHb7S5V2m2
+                              IB1tZ+lE+5NyggKbop1ZtqsmJSbpNlHVDuboJMQppK8M/CENetykPe3L8BiIY3zU
+                              J6jylM3dPA+bjlOvylZsWmtAe3ItajftzYSrGXKuAQKBgQDOubkIYSj+O8a5h4Hw
+                              n/YequdduArKe/loKh2987mM2yqyU56XKoJ48GA6X3nZKPy5ZxcQD0maGUtf/6Bk
+                              0rQwq+Tyk2m5fShIhTNoCukjteLClfyw6F2I+3xqMJi7+o0l+t2XB2nFXjTJE8jS
+                              zL9uyDG+w45Q8PBbYhrrnMK9iQKBgQC/0vArSNkdrYf2gpVbGW15rWcCtloDm85l
+                              X1TFIRAh4dVQyonz5ZD5VVl3RYsm0VaH01q6G3pgY8gfVyxPTebm01MC2z5GQk1V
+                              1PWbeIbP4P1+wl1uFb4o9ksGGwhwUvm1JO/7PwmcClvdjvO3tv3rpotJAhJr2vBl
+                              UAp87fBp3wKBgGamxKHLlU6BIlH4Xua8l7tsxAy+meUoIJW/7BrpzqaKIi6A5UxN
+                              GJKzUiVKSbgy6SOrdEFORg8WJl6aEexe0Ikmoj5uQt6PrpQsSHWOjWxlIh/b2KmE
+                              CQY/Uu1sCju106cbZjNbxAL0n6OFhoBemWSKVmFSu/WnXsMR+SosImt5AoGBALXf
+                              UJkpi7low4WFEAj81eBM+WMH89aCDjHtLhltnLcTQMZGEoAtw8OzGY1NYX7fcjR7
+                              vwS/cssbMC4O39MdIHTwHj+SEbxZtqtPq8LJhsBoKNDbhewPL2n1AvL6BIlDEsCe
+                              Ee7cOMc6xxkNJaSlGqEoGd2R2ldqkQzt09PZYV1vAoGABLeRlh3Jw+T34o9xsCM3
+                              N2hU89VWIgvy5Tnz2CekZ7Lw9oL4dACM0LnAs2XG258H1eaVICBkYM/HYPrrTDuf
+                              CKahgTe2mWpYYIuX9FeuEde8/aCFjmx3Ex+QhApPRKh/Sjt/KDYklv/uM8yVwA0Z
+                              i6bFYQM/GnNZd4VnbUZ28ro=
+                              -----END PRIVATE KEY-----
+                              ");
+
+            Assert.Throws<ArgumentException>(() =>
+                AmazonCloudFrontUrlSigner.SignUrlCanned(maliciousUrl, "keyPairId", reader, dateTime));
+        }
     }
 }

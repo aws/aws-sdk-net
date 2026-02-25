@@ -126,5 +126,54 @@ namespace AWSSDK_DotNet.UnitTests
             }
 
         }
+
+        [Theory]
+        [Trait("Category", "CloudFront")]
+        [InlineData("https://example.com/file\",\"Resource\":\"*\",\"x\":\"")]
+        [InlineData("https://example.com/file\\bad")]
+        [InlineData("https://example.com/file\n")]
+        public void GetCookiesForCannedPolicy_RejectsInvalidResourceUrl(string maliciousUrl)
+        {
+            Assert.Throws<ArgumentException>(() =>
+                AmazonCloudFrontCookieSigner.GetCookiesForCannedPolicy(
+                    maliciousUrl,
+                    "keyPairId",
+                    privateRSAKeyStreamReader,
+                    new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc)));
+        }
+
+        [Theory]
+        [Trait("Category", "CloudFront")]
+        [InlineData("https://example.com/file\",\"Resource\":\"*\",\"x\":\"")]
+        [InlineData("https://example.com/file\\bad")]
+        [InlineData("https://example.com/file\n")]
+        public void GetCookiesForCustomPolicy_RejectsInvalidResourceUrl(string maliciousUrl)
+        {
+            Assert.Throws<ArgumentException>(() =>
+                AmazonCloudFrontCookieSigner.GetCookiesForCustomPolicy(
+                    maliciousUrl,
+                    privateRSAKeyStreamReader,
+                    "keyPairId",
+                    new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc),
+                    DateTime.MinValue,
+                    ""));
+        }
+
+        [Theory]
+        [Trait("Category", "CloudFront")]
+        [InlineData("192.168.0.1/24\",\"x\":\"injected")]
+        [InlineData("192.168.0.1/24\\injected")]
+        [InlineData("192.168.0.1/24\n")]
+        public void GetCookiesForCustomPolicy_RejectsInvalidIpRange(string maliciousIp)
+        {
+            Assert.Throws<ArgumentException>(() =>
+                AmazonCloudFrontCookieSigner.GetCookiesForCustomPolicy(
+                    "https://example.com/file.txt",
+                    privateRSAKeyStreamReader,
+                    "keyPairId",
+                    new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc),
+                    DateTime.MinValue,
+                    maliciousIp));
+        }
     }
 }
