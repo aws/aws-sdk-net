@@ -42,7 +42,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property CapacityUnit. 
         /// <para>
         /// The unit of measure for the capacity usage. For compute jobs, this is <c>VCPU</c>
-        /// for Amazon EC2 and <c>cpu</c> for Amazon EKS. For service jobs, this is <c>NUM_INSTANCES</c>.
+        /// for Amazon EC2 and <c>cpu</c> for Amazon EKS. For service jobs, this is the instance
+        /// type.
         /// </para>
         /// </summary>
         public string CapacityUnit
