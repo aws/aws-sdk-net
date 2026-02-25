@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         private int? _ultraserverCount;
         private string _ultraserverType;
         private string _upfrontFee;
+        private string _zoneType;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -284,6 +285,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetUpfrontFee()
         {
             return this._upfrontFee != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZoneType. 
+        /// <para>
+        /// The type of zone where the Capacity Block offering is available.
+        /// </para>
+        /// </summary>
+        public string ZoneType
+        {
+            get { return this._zoneType; }
+            set { this._zoneType = value; }
+        }
+
+        // Check to see if ZoneType property is set
+        internal bool IsSetZoneType()
+        {
+            return this._zoneType != null;
         }
 
     }
