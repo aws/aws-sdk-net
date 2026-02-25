@@ -1,3 +1,17 @@
+### 4.0.199.0 (2026-02-25 21:00 UTC)
+* Batch (4.0.5.2)
+	* AWS Batch documentation update for service job capacity units.
+* EC2 (4.0.78.0)
+	* Add support for EC2 Capacity Blocks in Local Zones.
+* ECR (4.0.11.0)
+	* Update repository name regex to comply with OCI Distribution Specification
+* Neptune (4.0.5.0)
+	* Neptune global clusters now supports tags
+* WAFV2 (4.0.8.0)
+	* AWS WAF now supports GetTopPathStatisticsByTraffic that provides aggregated statistics on the top URI paths accessed by bot traffic. Use this operation to see which paths receive the most bot traffic, identify the specific bots accessing them, and filter by category, organization, or bot name.
+* Extensions.CloudFront.Signers (4.0.0.26)
+	* Fixed JSON injection vulnerability in Cloudfront signed URL and cookie policy generation
+
 ### 4.0.198.0 (2026-02-24 19:17 UTC)
 * CloudWatch (4.0.8.0)
 	* This release adds the APIs (PutAlarmMuteRule, ListAlarmMuteRules, GetAlarmMuteRule and DeleteAlarmMuteRule) to manage a new Cloudwatch resource, AlarmMuteRules. AlarmMuteRules allow customers to temporarily mute alarm notifications during expected downtime periods.
