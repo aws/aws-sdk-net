@@ -113,9 +113,21 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("GlobalClusterAlreadyExistsFault"))
+                {
+                    return GlobalClusterAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("GlobalClusterNotFoundFault"))
                 {
                     return GlobalClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
+                {
+                    return InvalidDBClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBInstanceState"))
+                {
+                    return InvalidDBInstanceStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidGlobalClusterStateFault"))
                 {

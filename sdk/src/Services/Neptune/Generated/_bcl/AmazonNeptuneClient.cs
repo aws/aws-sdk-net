@@ -4482,8 +4482,18 @@ namespace Amazon.Neptune
         /// <param name="request">Container for the necessary parameters to execute the ModifyGlobalCluster service method.</param>
         /// 
         /// <returns>The response from the ModifyGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterAlreadyExistsException">
+        /// The <c>GlobalClusterIdentifier</c> already exists. Choose a new global database identifier
+        /// (unique name) to create a new global database cluster.
+        /// </exception>
         /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
         /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
         /// The global cluster is in an invalid state and can't perform the requested operation.
@@ -4510,8 +4520,18 @@ namespace Amazon.Neptune
         /// </param>
         /// 
         /// <returns>The response from the ModifyGlobalCluster service method, as returned by Neptune.</returns>
+        /// <exception cref="Amazon.Neptune.Model.GlobalClusterAlreadyExistsException">
+        /// The <c>GlobalClusterIdentifier</c> already exists. Choose a new global database identifier
+        /// (unique name) to create a new global database cluster.
+        /// </exception>
         /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
         /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
+        /// The DB cluster is not in a valid state.
+        /// </exception>
+        /// <exception cref="Amazon.Neptune.Model.InvalidDBInstanceStateException">
+        /// The specified DB instance is not in the <i>available</i> state.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
         /// The global cluster is in an invalid state and can't perform the requested operation.

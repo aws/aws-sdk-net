@@ -55,6 +55,12 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("DatabaseName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DeletionProtection", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
@@ -118,6 +124,17 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("TagList/Tag", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.TagList == null)
+                        {
+                            unmarshalledObject.TagList = new List<Tag>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TagList.Add(item);
                         continue;
                     }
                 }
