@@ -271,6 +271,8 @@ namespace Amazon.CloudFront
         /// <returns>A signed URL that will permit access to distribution and S3 objects as specified in the policy document.</returns>
         public static string SignUrl(string resourceUrlOrPath, string keyPairId, TextReader privateKey, string policy)
         {
+            ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
+
             RSAParameters rsaParameters = ConvertPEMToRSAParameters(privateKey);
             byte[] signatureBytes = SignWithSha1RSA(UTF8Encoding.UTF8.GetBytes(policy), rsaParameters);
 
@@ -334,6 +336,8 @@ namespace Amazon.CloudFront
                                            TextReader privateKey,
                                            DateTime expiresOn)
         {
+            ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
+
             string epochSeconds = AWSSDKUtils.ConvertToUnixEpochSecondsString(expiresOn.ToUniversalTime());
             RSAParameters rsaParameters = ConvertPEMToRSAParameters(privateKey);
             string cannedPolicy = "{\"Statement\":[{\"Resource\":\"" + resourceUrlOrPath
@@ -407,6 +411,9 @@ namespace Amazon.CloudFront
                 resourcePath = "*";
             }
 
+            ValidatePolicyInput(resourcePath, "resourcePath");
+            ValidatePolicyInput(limitToIpAddressCIDR, "limitToIpAddressCIDR");
+
             string policy = "{\"Statement\": [{"
                     + "\"Resource\":\""
                     + resourcePath
@@ -467,6 +474,38 @@ namespace Amazon.CloudFront
         {
             return BuildPolicyForSignedUrl(resourcePath, expiresOn,
                 limitToIpAddressCIDR, DateTime.MinValue);
+        }
+
+        /// <summary>
+        /// Validates that the input string does not contain characters that could
+        /// lead to JSON injection when constructing policy documents.
+        /// Rejects double quotes, backslashes, and control characters.
+        /// </summary>
+        /// <param name="input">The input string to validate.</param>
+        /// <param name="parameterName">The name of the parameter being validated, used in the exception message.</param>
+        /// <exception cref="ArgumentException">
+        /// Thrown if the input contains double quotes, backslashes, or control characters.
+        /// </exception>
+        internal static void ValidatePolicyInput(string input, string parameterName)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return;
+            }
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                char c = input[i];
+                if (c == '"' || c == '\\' || char.IsControl(c))
+                {
+                    throw new ArgumentException(
+                        string.Format(CultureInfo.InvariantCulture,
+                            "The value contains an invalid character '{0}'. " +
+                            "The value must not contain double quotes, backslashes, or control characters to prevent JSON injection.",
+                            c == '"' ? "\\\"" : c == '\\' ? "\\\\" : string.Format(CultureInfo.InvariantCulture, "\\u{0:x4}", (int)c)),
+                        parameterName);
+                }
+            }
         }
 
         /// <summary>

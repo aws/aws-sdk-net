@@ -166,6 +166,8 @@ namespace Amazon.CloudFront
             cookies.Expires = new KeyValuePair<string, string>(
                 ExpiresKey, epochSeconds);
 
+            AmazonCloudFrontUrlSigner.ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
+
             RSAParameters rsaParameters = AmazonCloudFrontUrlSigner.ConvertPEMToRSAParameters(privateKey);
             string cannedPolicy = "{\"Statement\":[{\"Resource\":\"" + resourceUrlOrPath
                     + "\",\"Condition\":{\"DateLessThan\":{\"AWS:EpochTime\":" + epochSeconds

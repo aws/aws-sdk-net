@@ -121,5 +121,67 @@ namespace AWSSDK_DotNet35.UnitTests
             var epochTime = condition["DateLessThan"]["AWS:EpochTime"];
             Assert.AreEqual(1357034400, long.Parse(epochTime.ToString()));
         }
+
+        [DataTestMethod]
+        [TestCategory("CloudFront")]
+        [DataRow("https://example.com/file\",\"Resource\":\"*\",\"x\":\"")]
+        [DataRow("https://example.com/file\\bad")]
+        [DataRow("https://example.com/file\n")]
+        public void BuildPolicyForSignedUrl_RejectsInvalidResourcePath(string maliciousUrl)
+        {
+            var dateTime = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            var exception = Assert.ThrowsException<ArgumentException>(() =>
+                AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(maliciousUrl, dateTime, ""));
+
+            Assert.AreEqual("resourcePath", exception.ParamName);
+        }
+
+        [DataTestMethod]
+        [TestCategory("CloudFront")]
+        [DataRow("192.168.0.1/24\",\"x\":\"injected")]
+        [DataRow("192.168.0.1/24\\injected")]
+        [DataRow("192.168.0.1/24\n")]
+        public void BuildPolicyForSignedUrl_RejectsInvalidIpAddress(string maliciousIp)
+        {
+            var resourcePath = "https://example.com/file.txt";
+            var dateTime = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            var exception = Assert.ThrowsException<ArgumentException>(() =>
+                AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(resourcePath, dateTime, maliciousIp));
+
+            Assert.AreEqual("limitToIpAddressCIDR", exception.ParamName);
+        }
+
+        [DataTestMethod]
+        [TestCategory("CloudFront")]
+        [DataRow("https://d111111abcdef8.cloudfront.net/path/to/file.txt")]
+        [DataRow("*")]
+        [DataRow("https://example.com/file?.txt")]
+        public void BuildPolicyForSignedUrl_AcceptsValidResourcePaths(string resourcePath)
+        {
+            var dateTime = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            var policy = AmazonCloudFrontUrlSigner.BuildPolicyForSignedUrl(resourcePath, dateTime, "");
+            Assert.IsNotNull(policy);
+
+            var jsonObject = JsonMapper.ToObject(policy);
+            var resource = jsonObject["Statement"][0]["Resource"];
+            Assert.AreEqual(resourcePath, resource.ToString());
+        }
+
+        [DataTestMethod]
+        [TestCategory("CloudFront")]
+        [DataRow("https://example.com/file\",\"Resource\":\"*\",\"x\":\"")]
+        [DataRow("https://example.com/file\\bad")]
+        [DataRow("https://example.com/file\n")]
+        public void SignUrlCanned_RejectsInvalidResourceUrl(string maliciousUrl)
+        {
+            var dateTime = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+            Assert.ThrowsException<ArgumentException>(() =>
+                AmazonCloudFrontUrlSigner.SignUrlCanned(maliciousUrl, "keyPairId",
+                    privateRSAKeyStreamReader, dateTime));
+        }
     }
 }

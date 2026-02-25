@@ -112,5 +112,54 @@ namespace AWSSDK_DotNet35.UnitTests
 
             Assert.AreEqual(expectedResourceUrl, actualResourceUrl);
         }
+
+        [DataTestMethod]
+        [TestCategory("CloudFront")]
+        [DataRow("https://example.com/file\",\"Resource\":\"*\",\"x\":\"")]
+        [DataRow("https://example.com/file\\bad")]
+        [DataRow("https://example.com/file\n")]
+        public void GetCookiesForCannedPolicy_RejectsInvalidResourceUrl(string maliciousUrl)
+        {
+            Assert.ThrowsException<ArgumentException>(() =>
+                AmazonCloudFrontCookieSigner.GetCookiesForCannedPolicy(
+                    maliciousUrl,
+                    "keyPairId",
+                    privateRSAKeyStreamReader,
+                    new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc)));
+        }
+
+        [DataTestMethod]
+        [TestCategory("CloudFront")]
+        [DataRow("https://example.com/file\",\"Resource\":\"*\",\"x\":\"")]
+        [DataRow("https://example.com/file\\bad")]
+        [DataRow("https://example.com/file\n")]
+        public void GetCookiesForCustomPolicy_RejectsInvalidResourceUrl(string maliciousUrl)
+        {
+            Assert.ThrowsException<ArgumentException>(() =>
+                AmazonCloudFrontCookieSigner.GetCookiesForCustomPolicy(
+                    maliciousUrl,
+                    privateRSAKeyStreamReader,
+                    "keyPairId",
+                    new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc),
+                    DateTime.MinValue,
+                    ""));
+        }
+
+        [DataTestMethod]
+        [TestCategory("CloudFront")]
+        [DataRow("192.168.0.1/24\",\"x\":\"injected")]
+        [DataRow("192.168.0.1/24\\injected")]
+        [DataRow("192.168.0.1/24\n")]
+        public void GetCookiesForCustomPolicy_RejectsInvalidIpRange(string maliciousIp)
+        {
+            Assert.ThrowsException<ArgumentException>(() =>
+                AmazonCloudFrontCookieSigner.GetCookiesForCustomPolicy(
+                    "https://example.com/file.txt",
+                    privateRSAKeyStreamReader,
+                    "keyPairId",
+                    new DateTime(2024, 1, 1, 12, 0, 0, DateTimeKind.Utc),
+                    DateTime.MinValue,
+                    maliciousIp));
+        }
     }
 }
