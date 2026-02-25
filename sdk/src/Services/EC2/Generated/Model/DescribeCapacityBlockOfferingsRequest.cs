@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeCapacityBlockOfferingsRequest : AmazonEC2Request
     {
+        private bool? _allAvailabilityZones;
         private int? _capacityDurationHours;
         private DateTime? _endDateRange;
         private int? _instanceCount;
@@ -52,6 +53,27 @@ namespace Amazon.EC2.Model
         private DateTime? _startDateRange;
         private int? _ultraserverCount;
         private string _ultraserverType;
+
+        /// <summary>
+        /// Gets and sets the property AllAvailabilityZones. 
+        /// <para>
+        ///  Include all Availability Zones and Local Zones, regardless of your opt-in status.
+        /// If you do not use this parameter, the results include available offerings from all
+        /// Availability Zones in the Amazon Web Services Region and Local Zones you are opted
+        /// into. 
+        /// </para>
+        /// </summary>
+        public bool AllAvailabilityZones
+        {
+            get { return this._allAvailabilityZones.GetValueOrDefault(); }
+            set { this._allAvailabilityZones = value; }
+        }
+
+        // Check to see if AllAvailabilityZones property is set
+        internal bool IsSetAllAvailabilityZones()
+        {
+            return this._allAvailabilityZones.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityDurationHours. 
