@@ -10935,6 +10935,58 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C8i96xlarge = new InstanceType("c8i.96xlarge");
         /// <summary>
+        /// Constant C8id12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8id12xlarge = new InstanceType("c8id.12xlarge");
+        /// <summary>
+        /// Constant C8id16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8id16xlarge = new InstanceType("c8id.16xlarge");
+        /// <summary>
+        /// Constant C8id24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8id24xlarge = new InstanceType("c8id.24xlarge");
+        /// <summary>
+        /// Constant C8id2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8id2xlarge = new InstanceType("c8id.2xlarge");
+        /// <summary>
+        /// Constant C8id32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8id32xlarge = new InstanceType("c8id.32xlarge");
+        /// <summary>
+        /// Constant C8id48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8id48xlarge = new InstanceType("c8id.48xlarge");
+        /// <summary>
+        /// Constant C8id4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8id4xlarge = new InstanceType("c8id.4xlarge");
+        /// <summary>
+        /// Constant C8id8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8id8xlarge = new InstanceType("c8id.8xlarge");
+        /// <summary>
+        /// Constant C8id96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8id96xlarge = new InstanceType("c8id.96xlarge");
+        /// <summary>
+        /// Constant C8idLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8idLarge = new InstanceType("c8id.large");
+        /// <summary>
+        /// Constant C8idMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8idMetal48xl = new InstanceType("c8id.metal-48xl");
+        /// <summary>
+        /// Constant C8idMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8idMetal96xl = new InstanceType("c8id.metal-96xl");
+        /// <summary>
+        /// Constant C8idXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType C8idXlarge = new InstanceType("c8id.xlarge");
+        /// <summary>
         /// Constant C8iFlex12xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C8iFlex12xlarge = new InstanceType("c8i-flex.12xlarge");
@@ -11382,6 +11434,10 @@ namespace Amazon.EC2
         /// Constant Hpc7g8xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Hpc7g8xlarge = new InstanceType("hpc7g.8xlarge");
+        /// <summary>
+        /// Constant Hpc8a96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Hpc8a96xlarge = new InstanceType("hpc8a.96xlarge");
         /// <summary>
         /// Constant Hs18xlarge for InstanceType
         /// </summary>
@@ -12862,6 +12918,58 @@ namespace Amazon.EC2
         /// Constant M8i96xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M8i96xlarge = new InstanceType("m8i.96xlarge");
+        /// <summary>
+        /// Constant M8id12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8id12xlarge = new InstanceType("m8id.12xlarge");
+        /// <summary>
+        /// Constant M8id16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8id16xlarge = new InstanceType("m8id.16xlarge");
+        /// <summary>
+        /// Constant M8id24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8id24xlarge = new InstanceType("m8id.24xlarge");
+        /// <summary>
+        /// Constant M8id2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8id2xlarge = new InstanceType("m8id.2xlarge");
+        /// <summary>
+        /// Constant M8id32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8id32xlarge = new InstanceType("m8id.32xlarge");
+        /// <summary>
+        /// Constant M8id48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8id48xlarge = new InstanceType("m8id.48xlarge");
+        /// <summary>
+        /// Constant M8id4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8id4xlarge = new InstanceType("m8id.4xlarge");
+        /// <summary>
+        /// Constant M8id8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8id8xlarge = new InstanceType("m8id.8xlarge");
+        /// <summary>
+        /// Constant M8id96xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8id96xlarge = new InstanceType("m8id.96xlarge");
+        /// <summary>
+        /// Constant M8idLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idLarge = new InstanceType("m8id.large");
+        /// <summary>
+        /// Constant M8idMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idMetal48xl = new InstanceType("m8id.metal-48xl");
+        /// <summary>
+        /// Constant M8idMetal96xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idMetal96xl = new InstanceType("m8id.metal-96xl");
+        /// <summary>
+        /// Constant M8idXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType M8idXlarge = new InstanceType("m8id.xlarge");
         /// <summary>
         /// Constant M8iFlex12xlarge for InstanceType
         /// </summary>
