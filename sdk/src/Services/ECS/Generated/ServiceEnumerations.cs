@@ -619,6 +619,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly CapacityOptionType ON_DEMAND = new CapacityOptionType("ON_DEMAND");
         /// <summary>
+        /// Constant RESERVED for CapacityOptionType
+        /// </summary>
+        public static readonly CapacityOptionType RESERVED = new CapacityOptionType("RESERVED");
+        /// <summary>
         /// Constant SPOT for CapacityOptionType
         /// </summary>
         public static readonly CapacityOptionType SPOT = new CapacityOptionType("SPOT");
@@ -892,6 +896,60 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapacityProviderUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationPreference.
+    /// </summary>
+    public class CapacityReservationPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESERVATIONS_EXCLUDED for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference RESERVATIONS_EXCLUDED = new CapacityReservationPreference("RESERVATIONS_EXCLUDED");
+        /// <summary>
+        /// Constant RESERVATIONS_FIRST for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference RESERVATIONS_FIRST = new CapacityReservationPreference("RESERVATIONS_FIRST");
+        /// <summary>
+        /// Constant RESERVATIONS_ONLY for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference RESERVATIONS_ONLY = new CapacityReservationPreference("RESERVATIONS_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationPreference FindValue(string value)
+        {
+            return FindValue<CapacityReservationPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationPreference(string value)
         {
             return FindValue(value);
         }
