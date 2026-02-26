@@ -90,6 +90,12 @@ namespace Amazon.MarketplaceEntitlementService.Model.Internal.MarshallTransforma
                     unmarshalledObject.ExpirationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LicenseArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LicenseArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProductCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

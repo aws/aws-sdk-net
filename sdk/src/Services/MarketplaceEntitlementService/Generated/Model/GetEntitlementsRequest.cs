@@ -32,19 +32,8 @@ namespace Amazon.MarketplaceEntitlementService.Model
     /// <summary>
     /// Container for the parameters to the GetEntitlements operation.
     /// GetEntitlements retrieves entitlement values for a given product. The results can
-    /// be filtered based on customer identifier, AWS account ID, or product dimensions.
-    /// 
-    ///  <important> 
-    /// <para>
-    ///  The <c>CustomerIdentifier</c> parameter is on path for deprecation. Use <c>CustomerAWSAccountID</c>
-    /// instead.
-    /// </para>
-    ///  
-    /// <para>
-    /// These parameters are mutually exclusive. You can't specify both <c>CustomerIdentifier</c>
-    /// and <c>CustomerAWSAccountID</c> in the same request. 
-    /// </para>
-    ///  </important>
+    /// be filtered based on customer identifier, AWS account ID, license ARN, or product
+    /// dimensions.
     /// </summary>
     public partial class GetEntitlementsRequest : AmazonMarketplaceEntitlementServiceRequest
     {
@@ -62,9 +51,17 @@ namespace Amazon.MarketplaceEntitlementService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>CustomerIdentifier</c> and <c>CustomerAWSAccountID</c> are mutually exclusive.
-        /// You can't specify both in the same request. 
+        ///  <c>CustomerIdentifier</c> and <c>CustomerAWSAccountId</c> are mutually exclusive
+        /// parameters. You must use one or the other, but not both in the same request. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you're migrating an existing integration, use <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account
+        /// Feeds</a> to map <c>CustomerIdentifier</c> to <c>CustomerAWSAccountId</c>, and <a
+        /// href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html">Agreements
+        /// Feeds</a> to map <c>CustomerAWSAccountId</c> and <c>LicenseArn</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, List<string>> Filter
         {
