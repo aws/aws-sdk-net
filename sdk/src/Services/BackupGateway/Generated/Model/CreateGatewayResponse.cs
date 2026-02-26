@@ -42,7 +42,7 @@ namespace Amazon.BackupGateway.Model
         /// The Amazon Resource Name (ARN) of the gateway you create.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=500)]
+        [AWSProperty(Min=50, Max=180)]
         public string GatewayArn
         {
             get { return this._gatewayArn; }

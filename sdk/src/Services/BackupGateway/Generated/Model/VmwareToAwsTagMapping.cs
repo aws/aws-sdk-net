@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BackupGateway.Model
 {
     /// <summary>
-    /// This displays the mapping of on-premises VMware tags to the corresponding Amazon Web
-    /// Services tags.
+    /// This displays the mapping of VMware tags to the corresponding Amazon Web Services
+    /// tags.
     /// </summary>
     public partial class VmwareToAwsTagMapping
     {
