@@ -48,6 +48,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCapacityReservations())
+            {
+                context.Writer.WritePropertyName("capacityReservations");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CapacityReservationRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.CapacityReservations, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEc2InstanceProfileArn())
             {
                 context.Writer.WritePropertyName("ec2InstanceProfileArn");
