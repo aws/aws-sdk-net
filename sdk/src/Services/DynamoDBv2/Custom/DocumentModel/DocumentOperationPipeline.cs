@@ -1,6 +1,7 @@
 ﻿using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -209,31 +210,55 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// projection expressions, and processes responses into document objects. It is intended for internal use within
     /// the document operation framework.</remarks>
     internal sealed class GetItemPipeline
-        : DocumentOperationPipeline<GetItemDocumentOperationRequest, GetItemRequest, GetItemResponse, Document>
+        : DocumentOperationPipeline<BaseGetItemDocumentOperationRequest, GetItemRequest, GetItemResponse, Document>
     {
         public GetItemPipeline(Table table) : base(table)
         {
         }
 
-        protected override void Validate(GetItemDocumentOperationRequest request)
+        protected override void Validate(BaseGetItemDocumentOperationRequest request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
 
-            if (request.Key == null || request.Key.Count == 0)
-                throw new InvalidOperationException("GetItemDocumentOperationRequest.Key cannot be null or empty.");
-        }
-
-        protected override GetItemRequest Map(GetItemDocumentOperationRequest request)
-        {
-            return new GetItemRequest
+            switch (request)
             {
-                TableName = Table.TableName,
-                Key = Table.MakeKey(request.Key),
-                ConsistentRead = request.ConsistentRead
-            };
+                case GetItemDocumentOperationRequest getItemRequest:
+                    if (getItemRequest.Key == null || getItemRequest.Key.Count == 0)
+                        throw new InvalidOperationException("GetItemDocumentOperationRequest.Key cannot be null or empty.");
+                    break;
+                case InternalGetItemDocumentOperationRequest internalGetItemRequest:
+                    if (internalGetItemRequest.Key == null || internalGetItemRequest.Key.Count == 0)
+                        throw new InvalidOperationException("GetItemDocumentOperationRequest.Key cannot be null or empty.");
+                    break;
+                default:
+                    throw new InvalidOperationException("Unsupported type for BaseGetItemDocumentOperationRequest");
+            }
         }
 
-        protected override void ApplyExpressions(GetItemDocumentOperationRequest request, GetItemRequest lowLevel)
+        protected override GetItemRequest Map(BaseGetItemDocumentOperationRequest request)
+        {
+            switch (request)
+            {
+                case GetItemDocumentOperationRequest getItemRequest:
+                    return new GetItemRequest
+                    {
+                        TableName = Table.TableName,
+                        Key = Table.MakeKey(getItemRequest.Key),
+                        ConsistentRead = request.ConsistentRead
+                    };
+                case InternalGetItemDocumentOperationRequest internalGetItemRequest:
+                    return new GetItemRequest
+                    {
+                        TableName = Table.TableName,
+                        Key =  new Dictionary<string, AttributeValue>(internalGetItemRequest.Key),
+                        ConsistentRead = request.ConsistentRead
+                    };
+                default:
+                    throw new InvalidOperationException("Unsupported type for BaseGetItemDocumentOperationRequest");
+            }
+        }
+
+        protected override void ApplyExpressions(BaseGetItemDocumentOperationRequest request, GetItemRequest lowLevel)
         {
             if (request.ProjectionExpression is { IsSet: true })
                 request.ProjectionExpression.ApplyExpression(lowLevel, Table);
@@ -259,7 +284,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         protected override async Task<GetItemResponse> InvokeAsync(GetItemRequest lowLevel, CancellationToken ct) =>
             await Table.DDBClient.GetItemAsync(lowLevel, ct).ConfigureAwait(false);
 
-        protected override Document PostProcess(GetItemDocumentOperationRequest request, GetItemResponse serviceResponse)
+        protected override Document PostProcess(BaseGetItemDocumentOperationRequest request, GetItemResponse serviceResponse)
         {
             var map = serviceResponse.Item;
             return (map == null || map.Count == 0) ? null : Table.FromAttributeMap(map);

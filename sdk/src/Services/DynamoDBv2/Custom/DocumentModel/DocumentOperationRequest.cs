@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Amazon.DynamoDBv2.Model;
+using System;
 using System.Collections.Generic;
 
 namespace Amazon.DynamoDBv2.DocumentModel
@@ -17,7 +18,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
     /// This class introduces a modern expression-based API that replaces legacy parameter-based approaches.
     /// Legacy parameters such as AttributesToGet are not supported. Use ProjectionExpression instead.
     /// </summary>
-    public class GetItemDocumentOperationRequest : DocumentOperationRequest
+    public class GetItemDocumentOperationRequest : BaseGetItemDocumentOperationRequest
     {
         /// <summary>
         /// Gets or sets the key identifying the item in the table.
@@ -25,6 +26,30 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public IDictionary<string, DynamoDBEntry> Key { get; set; }
 
+    }
+
+    /// <summary>
+    /// Represents a request to get a single item from a DynamoDB table using the Document Model.
+    /// This class introduces a modern expression-based API that replaces legacy parameter-based approaches.
+    /// Legacy parameters such as AttributesToGet are not supported. Use ProjectionExpression instead.
+    /// </summary>
+    public class InternalGetItemDocumentOperationRequest : BaseGetItemDocumentOperationRequest
+    {
+        /// <summary>
+        /// Gets or sets the key identifying the item in the table.
+        /// All key components (partition and sort key, if the table has one) must be provided.
+        /// </summary>
+        internal IDictionary<string, AttributeValue> Key { get; set; }
+
+    }
+
+    /// <summary>
+    /// Represents a request to get a single item from a DynamoDB table using the Document Model.
+    /// This class introduces a modern expression-based API that replaces legacy parameter-based approaches.
+    /// Legacy parameters such as AttributesToGet are not supported. Use ProjectionExpression instead.
+    /// </summary>
+    public class BaseGetItemDocumentOperationRequest : DocumentOperationRequest
+    {
         /// <summary>
         /// Gets or sets the projection expression specifying which attributes should be retrieved.
         /// If null, all attributes are returned.
@@ -37,6 +62,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public bool ConsistentRead { get; set; }
     }
+
+
+    // make a common GetItemDocumentOperationRequest class that wil be inherited by the public and internal get DocumentOperationRequest
+    // with the key having a different type
+    // update map methos in pipeline accordingly for public/ internal operation request
 
     /// <summary>
     /// Represents a request to query items in a DynamoDB table using the Document Model.

@@ -2381,6 +2381,294 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.IsTrue((DateTime.UtcNow - loaded.LastUpdated.Value).TotalMinutes < 1, "LastUpdated should be recent");
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_GetItem_WithProjectionExpression()
+        {
+            TableCache.Clear();
+            await CleanupTables();
+            TableCache.Clear();
+
+            var product = new Product
+            {
+                Id = 1,
+                Name = "Product name",
+                CompanyName = "Company name",
+                Price = 123,
+                Map = new Dictionary<string, string> // M
+                {
+                    {
+                        "Position", "Position map"
+                    }
+                },
+                CompanyInfo = new CompanyInfo // L
+                {
+                    Name = "Company info name",
+                    AllProducts = new List<Product>
+                    {
+                        new Product { Id = 12, Name = "product name 2", IsPublic = true }
+                    },
+                },
+                Components = new List<string> // SS
+                {
+                    string.Empty
+                }
+            };
+
+            await Context.SaveAsync(product);
+
+            // Get record using Table instead of Context
+            var tableProduct = Context.GetTargetTable<Product>();
+            var getItemRequestProduct = new GetItemDocumentOperationRequest
+            {
+                ProjectionExpression = new Expression()
+                {
+                    ExpressionStatement = "#P0, #P1, #P2, #P3.#P4, #P3.#P5[0].#P6",
+                    ExpressionAttributeNames = new Dictionary<string, string>()
+                    {
+                        {"#P0", "Company" },
+                        {"#P1", "Product" },
+                        {"#P2", "Price" },
+                        {"#P3", "CompanyInfo" },
+                        {"#P4", "Name" },
+                        {"#P5", "AllProducts"},
+                        {"#P6", "Product" },
+                    }
+                },
+                Key = new Dictionary<string, DynamoDBEntry> { { "Id", new Primitive("1", true) } },
+            };
+
+            Document savedProduct = await tableProduct.GetItemAsync(getItemRequestProduct);
+            Assert.AreEqual(product.CompanyName, savedProduct["Company"].AsString());
+            Assert.AreEqual(product.Name, savedProduct["Product"].AsString());
+            Assert.AreEqual(product.Price, savedProduct["Price"].AsInt());
+            Assert.AreEqual(product.CompanyInfo.Name, savedProduct["CompanyInfo"].AsDocument()["Name"].AsString());
+            Assert.AreEqual(product.CompanyInfo.AllProducts[0].Name, savedProduct["CompanyInfo"].AsDocument()["AllProducts"].AsListOfDocument()[0]["Product"].AsString());
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_GetItem_WithProjectionExpression_AndDerivedTypes()
+        {
+            await CleanupTables();
+            TableCache.Clear();
+
+            var a1 = new A { Name = "A1", MyPropA = 1 };
+            var b1 = new B { Name = "B1", MyPropA = 2, MyPropB = 3 };
+
+            var model1 = new ModelA1
+            {
+                Id = Guid.NewGuid(),
+                MyType = b1,
+                MyInterface = new InterfaceA()
+                {
+                    S1 = "s1",
+                    S2 = 2,
+                    S3 = 3
+                },
+                FlatAddress = new Address()
+                {
+                    City = "Seattle",
+                    Street = "Street"
+                },
+                Price = 555
+            };
+
+            var model2 = new ModelA2
+            {
+                Id = Guid.NewGuid(),
+                MyType = a1,
+                MyInterface = new InterfaceB()
+                {
+                    S2 = 2,
+                    S1 = "s1",
+                    S4 = "s4"
+                },
+                FlatAddress = new Address()
+                {
+                    City = "Chicago",
+                    Street = "Street2"
+                },
+                Price = 200
+            };
+
+            await Context.SaveAsync(model1);
+            await Context.SaveAsync(model2);
+
+            var projectionExpression = new Expression()
+            {
+                ExpressionStatement = "#P0, #P1, #P2.#P3",
+                ExpressionAttributeNames = new Dictionary<string, string>()
+                    {
+                        {"#P0", "Price" },
+                        {"#P1", "City" },
+                        {"#P2", "MyInterface" },
+                        {"#P3", "S1" }
+                    }
+            };
+
+            var table = Context.GetTargetTable<ModelA>();
+
+            var getItemRequestModel1 = new GetItemDocumentOperationRequest
+            {
+                ProjectionExpression = projectionExpression,
+                Key = new Dictionary<string, DynamoDBEntry>
+                {
+                    { "Id", new Primitive(model1.Id.ToString()) },
+                },
+            };
+
+            Document storedModel1 = await table.GetItemAsync(getItemRequestModel1);
+
+            Assert.AreEqual(model1.Price, storedModel1["Price"].AsInt());
+            Assert.AreEqual(model1.FlatAddress.City, storedModel1["City"].AsString());
+            Assert.AreEqual(model1.MyInterface.S1, storedModel1["MyInterface"].AsDocument()["S1"].AsString());
+
+            var getItemRequestModel2 = new GetItemDocumentOperationRequest
+            {
+                ProjectionExpression = projectionExpression,
+                Key = new Dictionary<string, DynamoDBEntry> 
+                { 
+                    { "Id", new Primitive(model2.Id.ToString()) },
+                },
+            };
+
+            Document storedModel2 = await table.GetItemAsync(getItemRequestModel2);
+
+            Assert.AreEqual(model2.Price, storedModel2["Price"].AsInt());
+            Assert.AreEqual(model2.FlatAddress.City, storedModel2["City"].AsString());
+            Assert.AreEqual(model2.MyInterface.S1, storedModel2["MyInterface"].AsDocument()["S1"].AsString());
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_GetItem_WithProjectionExpression_AndReservedWords()
+        {
+            TableCache.Clear();
+            await CleanupTables();
+            TableCache.Clear();
+
+            var productReview = new ProductReviews
+            {
+                Id = 1,
+                Reviews = new List<Review>()
+                {
+                    new Review()
+                    {
+                        Comment = "Comment1",
+                        Date = DateTime.Now,
+                    },
+                    new Review()
+                    {
+                        Comment = "Comment2",
+                        Date = DateTime.Now,
+                    },
+                    new Review()
+                    {
+                        Comment = "Comment3",
+                        Date = DateTime.Now,
+                    }
+                }
+            };
+
+            await Context.SaveAsync(productReview);
+
+            // Get record using Table instead of Context
+            var table = Context.GetTargetTable<ProductReviews>();
+            var getItemRequest = new GetItemDocumentOperationRequest
+            {
+                ProjectionExpression = new Expression()
+                {
+                    ExpressionStatement = "#P0[0].#P1, #P0[1].#P1, #P0[2].#P2",
+                    ExpressionAttributeNames = new Dictionary<string, string>()
+                    {
+                        {"#P0", "Reviews" },
+                        {"#P1", "Comment" },
+                        {"#P2", "Date" }
+                    }
+                },
+                Key = new Dictionary<string, DynamoDBEntry> { { "Id", new Primitive("1", true) } },
+            };
+
+            Document retrieved = await table.GetItemAsync(getItemRequest);
+
+            Assert.AreEqual(productReview.Reviews[0].Comment, retrieved["Reviews"].AsListOfDocument()[0]["Comment"].AsString());
+            Assert.AreEqual(productReview.Reviews[1].Comment, retrieved["Reviews"].AsListOfDocument()[1]["Comment"].AsString());
+            ApproximatelyEqual(productReview.Reviews[1].Date.ToUniversalTime(), retrieved["Reviews"].AsListOfDocument()[2]["Date"].AsDateTime());
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task Test_LoadAsync_WithProjectionExpression()
+        {
+            TableCache.Clear();
+            await CleanupTables();
+            TableCache.Clear();
+
+            var product = new Product
+            {
+                Id = 1,
+                Name = "Product name",
+                CompanyName = "Company name",
+                Price = 123,
+                Map = new Dictionary<string, string> // M
+                {
+                    {
+                        "Position", "Position map"
+                    }
+                },
+                CompanyInfo = new CompanyInfo // L
+                {
+                    Name = "Company info name",
+                    AllProducts = new List<Product>
+                    {
+                        new Product { Id = 12, Name = "product name 2", IsPublic = true }
+                    },
+                },
+                Components = new List<string> // SS
+                {
+                    string.Empty
+                }
+            };
+
+            await Context.SaveAsync(product);
+
+            // Get record using Table instead of Context
+            var tableProduct = Context.GetTargetTable<Product>();
+            var getItemRequestProduct = new GetItemDocumentOperationRequest
+            {
+                ProjectionExpression = new Expression()
+                {
+                    ExpressionStatement = "#P0, #P1, #P2, #P3.#P4, #P3.#P5[0].#P6",
+                    ExpressionAttributeNames = new Dictionary<string, string>()
+                    {
+                        {"#P0", "Company" },
+                        {"#P1", "Product" },
+                        {"#P2", "Price" },
+                        {"#P3", "CompanyInfo" },
+                        {"#P4", "Name" },
+                        {"#P5", "AllProducts"},
+                        {"#P6", "Product" },
+                    }
+                },
+                Key = new Dictionary<string, DynamoDBEntry> { { "Id", new Primitive("1", true) } },
+            };
+
+            var savedProduct = await Context.LoadAsync<Product>(1);
+            Assert.AreEqual(product.CompanyName, savedProduct.CompanyName);
+            Assert.AreEqual(product.Name, savedProduct.Name);
+            Assert.AreEqual(product.Price, savedProduct.Price);
+            Assert.AreEqual(product.Map.Count, savedProduct.Map.Count);
+            Assert.AreEqual(product.Map["Position"], savedProduct.Map["Position"]);
+            Assert.AreEqual(product.CompanyInfo.Name, savedProduct.CompanyInfo.Name);
+            Assert.AreEqual(product.CompanyInfo.AllProducts.Count, savedProduct.CompanyInfo.AllProducts.Count);
+            Assert.AreEqual(product.CompanyInfo.AllProducts[0].Name, savedProduct.CompanyInfo.AllProducts[0].Name);
+            Assert.AreEqual(product.CompanyInfo.AllProducts[0].IsPublic, savedProduct.CompanyInfo.AllProducts[0].IsPublic);
+            Assert.AreEqual(product.CompanyInfo.AllProducts[0].Id, savedProduct.CompanyInfo.AllProducts[0].Id);
+            Assert.AreEqual(product.Components.Count, savedProduct.Components.Count);
+            Assert.AreEqual(product.Components[0], savedProduct.Components[0]);
+        }
+
         private static async Task TestEmptyStringsWithFeatureEnabled()
         {
             var product = new Product
@@ -4759,6 +5047,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         {
             [DynamoDBProperty(typeof(DateTimeUtcConverter))]
             public DateTime EventDate { get; set; }
+        }
+
+        /// <summary>
+        /// A table with reserved words as property name
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class ProductReviews
+        {
+            [DynamoDBHashKey]
+            public int Id { get; set; }
+
+            public List<Review> Reviews { get; set; }
+        }
+
+        public class Review
+        {
+            // reserved word
+            [DynamoDBProperty(StoreAsEpoch = true)]
+            public DateTime Date { get; set; }
+
+            // reserved word
+            public string Comment { get; set; }
         }
 
 

@@ -13,6 +13,12 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,12 +30,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading;
-using Amazon.DynamoDBv2.DocumentModel;
-using Amazon.DynamoDBv2.Model;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal.Util;
-using Amazon.Util;
-using Amazon.Util.Internal;
 using ThirdParty.RuntimeBackports;
 
 namespace Amazon.DynamoDBv2.DataModel
@@ -504,6 +504,8 @@ namespace Amazon.DynamoDBv2.DataModel
         // properties to get
         public List<string> AttributesToGet { get; private set; }
 
+        public Expression ProjectionExpression { get; private set; }
+
         // version
         public string VersionPropertyName { get; private set; }
         public bool HasVersion { get { return !string.IsNullOrEmpty(VersionPropertyName); } }
@@ -619,7 +621,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (StorePolymorphicTypes)
             {
+                // keep the AttributesToGet setting for flows that are not yet migrated to use ProjectionExpression
                 AttributesToGet.Add(derivedTypeAttributeName);
+                var expressionAttributeName = "#P" + $"{ProjectionExpression.ExpressionAttributeNames.Count}";
+                ProjectionExpression.ExpressionStatement += ProjectionExpression.ExpressionAttributeNames.Count > 0 ? $", {expressionAttributeName}" : expressionAttributeName;
+                ProjectionExpression.ExpressionAttributeNames.Add(expressionAttributeName, derivedTypeAttributeName);
             }
 
             if (this.BaseTypeStorageConfig.Properties.Count == 0)
@@ -683,8 +689,17 @@ namespace Amazon.DynamoDBv2.DataModel
 
             config.AddPropertyStorage(propertyName, value);
 
+            // keep the AttributesToGet setting for flows that are not yet migrated to use ProjectionExpression
             if (!AttributesToGet.Contains(attributeName))
                 AttributesToGet.Add(attributeName);
+
+            if (!ProjectionExpression.ExpressionAttributeNames.ContainsValue(attributeName))
+            {
+                var expressionAttributeName = "#P" + $"{ProjectionExpression.ExpressionAttributeNames.Count}";
+                ProjectionExpression.ExpressionStatement += ProjectionExpression.ExpressionAttributeNames.Count > 0 ? $", {expressionAttributeName}" : expressionAttributeName;
+                ProjectionExpression.ExpressionAttributeNames.Add(expressionAttributeName, attributeName);
+            }
+
             if (value.StoreAsEpoch)
                 AttributesToStoreAsEpoch.Add(attributeName);
             if (value.StoreAsEpochLong)
@@ -774,6 +789,7 @@ namespace Amazon.DynamoDBv2.DataModel
             IndexNameToLSIRangePropertiesMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
             IndexNameToGSIMapping = new Dictionary<string, GSIConfig>(StringComparer.Ordinal);
             AttributesToGet = new List<string>();
+            ProjectionExpression = new Expression();
             HashKeyPropertyNames = new List<string>();
             RangeKeyPropertyNames = new List<string>();
             AttributesToStoreAsEpoch = new HashSet<string>();
