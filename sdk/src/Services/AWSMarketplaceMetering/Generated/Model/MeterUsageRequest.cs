@@ -180,7 +180,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// product.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=0, Max=255)]
         public string ProductCode
         {
             get { return this._productCode; }

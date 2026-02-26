@@ -2,7 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.BatchMeterUsageRequest.ProductCode</property>
-    <min>1</min>
+    <min>0</min>
     <max>255</max>
     <pattern>^[-a-zA-Z0-9/=:_.@]*$</pattern>
   </property-value-rule>
@@ -13,7 +13,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.MeterUsageRequest.ProductCode</property>
-    <min>1</min>
+    <min>0</min>
     <max>255</max>
     <pattern>^[-a-zA-Z0-9/=:_.@]*$</pattern>
   </property-value-rule>
@@ -35,7 +35,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.RegisterUsageRequest.ProductCode</property>
-    <min>1</min>
+    <min>0</min>
     <max>255</max>
     <pattern>^[-a-zA-Z0-9/=:_.@]*$</pattern>
   </property-value-rule>
@@ -64,8 +64,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.ResolveCustomerResponse.LicenseArn</property>
+    <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.ResolveCustomerResponse.ProductCode</property>
-    <min>1</min>
+    <min>0</min>
     <max>255</max>
     <pattern>^[-a-zA-Z0-9/=:_.@]*$</pattern>
   </property-value-rule>
@@ -103,6 +107,10 @@
     <min>1</min>
     <max>255</max>
     <pattern>[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.LicenseArn</property>
+    <pattern>^arn:aws[a-zA-Z-]*:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.UsageRecord.Quantity</property>
