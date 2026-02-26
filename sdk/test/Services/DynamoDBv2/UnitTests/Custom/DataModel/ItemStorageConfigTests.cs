@@ -120,7 +120,7 @@ namespace AWSSDK_DotNet.UnitTests
             var config = CreatePopulatedConfig(mockClient);
 
             // denormalize should populate attribute lists, key property names and index mappings
-            config.Denormalize(context, derivedTypeAttributeName: "dtype");
+            config.Denormalize(context, new DynamoDBFlatConfig(null, null) { DerivedTypeAttributeName = "dtype" });
 
             CollectionAssert.IsSubsetOf(new List<string> { "Id", "Name", "EventTime", "EventTimeLong", "GsiHash", "LsiRange" }, config.AttributesToGet);
 
@@ -234,7 +234,7 @@ namespace AWSSDK_DotNet.UnitTests
             config.BaseTypeStorageConfig.Properties.Add(polyPropOnBase);
 
             // call Denormalize and request derived type attribute name "dtype"
-            config.Denormalize(context, derivedTypeAttributeName: "dtype");
+            config.Denormalize(context, new DynamoDBFlatConfig(null, null) { DerivedTypeAttributeName = "dtype" });
 
             Assert.IsTrue(config.AttributesToGet.Contains("dtype"));
 
@@ -277,7 +277,7 @@ namespace AWSSDK_DotNet.UnitTests
             parentProp.FlattenProperties.Add(childProp);
             config.BaseTypeStorageConfig.Properties.Add(parentProp);
 
-            config.Denormalize(context, derivedTypeAttributeName: "dtype");
+            config.Denormalize(context, new DynamoDBFlatConfig(null, null) { DerivedTypeAttributeName = "dtype" });
 
             // The flattened child should be treated like a normal property by Denormalize
             Assert.IsTrue(config.AttributesToGet.Contains("FlattenedGsi"));
@@ -369,7 +369,7 @@ namespace AWSSDK_DotNet.UnitTests
             versionProp.FlattenProperties ??= new List<PropertyStorage>();
 
             config.BaseTypeStorageConfig.Properties.Add(versionProp);
-            config.Denormalize(context, derivedTypeAttributeName: "dtype");
+            config.Denormalize(context, new DynamoDBFlatConfig(null, null) { DerivedTypeAttributeName = "dtype" });
             var result = config.VersionPropertyStorage;
             Assert.IsNotNull(result);
             Assert.AreSame(versionProp, result);
