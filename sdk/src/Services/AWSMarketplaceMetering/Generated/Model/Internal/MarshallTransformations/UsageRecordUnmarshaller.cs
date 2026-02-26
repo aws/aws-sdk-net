@@ -84,6 +84,12 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                     unmarshalledObject.Dimension = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LicenseArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LicenseArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Quantity", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

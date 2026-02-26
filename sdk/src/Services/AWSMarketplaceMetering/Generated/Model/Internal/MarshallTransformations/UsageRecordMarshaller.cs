@@ -66,6 +66,12 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Dimension);
             }
 
+            if(requestObject.IsSetLicenseArn())
+            {
+                context.Writer.WritePropertyName("LicenseArn");
+                context.Writer.Write(requestObject.LicenseArn);
+            }
+
             if(requestObject.IsSetQuantity())
             {
                 context.Writer.WritePropertyName("Quantity");
