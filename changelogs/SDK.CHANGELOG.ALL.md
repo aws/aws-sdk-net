@@ -1,3 +1,17 @@
+### 4.0.200.0 (2026-02-26 19:15 UTC)
+* AWSMarketplaceMetering (4.0.4.0)
+	* Added LicenseArn to ResolveCustomer response and BatchMeterUsage usage records. BatchMeterUsage now accepts LicenseArn in each UsageRecord to report usage at the license level. Added InvalidLicenseException error response for invalid license parameters.
+* BackupGateway (4.0.3.0)
+	* This release updates GetGateway API to include deprecationDate and softwareVersion in the response, enabling customers to track gateway software versions and upcoming deprecation dates.
+* EC2 (4.0.79.0)
+	* Add c8id, m8id and hpc8a instance types.
+* ECS (4.0.14.0)
+	* Adding support for Capacity Reservations for ECS Managed Instances by introducing a new "capacityOptionType" value of "RESERVED" and new field "capacityReservations" for CreateCapacityProvider and UpdateCapacityProvider APIs.
+* MarketplaceEntitlementService (4.0.4.0)
+	* Added License Arn as a new optional filter for GetEntitlements and LicenseArn field in each entitlement in the response.
+* SecurityHub (4.0.8.0)
+	* Security Hub added EXTENDED PLAN integration type to DescribeProductsV2 and added metadata.product.vendor name GroupBy support to GetFindingStatisticsV2
+
 ### 4.0.199.0 (2026-02-25 21:00 UTC)
 * Batch (4.0.5.2)
 	* AWS Batch documentation update for service job capacity units.
