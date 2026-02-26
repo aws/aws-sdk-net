@@ -31,10 +31,10 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMembers operation.
-    /// Creates a member association in Security Hub between the specified accounts and the
-    /// account used to make the request, which is the administrator account. If you are integrated
-    /// with Organizations, then the administrator account is designated by the organization
-    /// management account.
+    /// Creates a member association in Security Hub CSPM between the specified accounts and
+    /// the account used to make the request, which is the administrator account. If you are
+    /// integrated with Organizations, then the administrator account is designated by the
+    /// organization management account.
     /// 
     ///  
     /// <para>
@@ -47,42 +47,42 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Security Hub is not configured to automatically add new organization accounts.
+    /// Security Hub CSPM is not configured to automatically add new organization accounts.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The account was disassociated or deleted in Security Hub.
+    /// The account was disassociated or deleted in Security Hub CSPM.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// This action can only be used by an account that has Security Hub enabled. To enable
-    /// Security Hub, you can use the <c>EnableSecurityHub</c> operation.
+    /// This action can only be used by an account that has Security Hub CSPM enabled. To
+    /// enable Security Hub CSPM, you can use the <c>EnableSecurityHub</c> operation.
     /// </para>
     ///  
     /// <para>
     /// For accounts that are not organization members, you create the account association
     /// and then send an invitation to the member account. To send the invitation, you use
     /// the <c>InviteMembers</c> operation. If the account owner accepts the invitation, the
-    /// account becomes a member account in Security Hub.
+    /// account becomes a member account in Security Hub CSPM.
     /// </para>
     ///  
     /// <para>
     /// Accounts that are managed using Organizations don't receive an invitation. They automatically
-    /// become a member account in Security Hub.
+    /// become a member account in Security Hub CSPM.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If the organization account does not have Security Hub enabled, then Security Hub
-    /// and the default standards are automatically enabled. Note that Security Hub cannot
-    /// be enabled automatically for the organization management account. The organization
-    /// management account must enable Security Hub before the administrator account enables
-    /// it as a member account.
+    /// If the organization account does not have Security Hub CSPM enabled, then Security
+    /// Hub CSPM and the default standards are automatically enabled. Note that Security Hub
+    /// CSPM cannot be enabled automatically for the organization management account. The
+    /// organization management account must enable Security Hub CSPM before the administrator
+    /// account enables it as a member account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For organization accounts that already have Security Hub enabled, Security Hub does
-    /// not make any other changes to those accounts. It does not change their enabled standards
-    /// or controls.
+    /// For organization accounts that already have Security Hub CSPM enabled, Security Hub
+    /// CSPM does not make any other changes to those accounts. It does not change their enabled
+    /// standards or controls.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -102,8 +102,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountDetails. 
         /// <para>
-        /// The list of accounts to associate with the Security Hub administrator account. For
-        /// each account, the list includes the account ID and optionally the email address.
+        /// The list of accounts to associate with the Security Hub CSPM administrator account.
+        /// For each account, the list includes the account ID and optionally the email address.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -64,7 +64,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        ///  The Security Hub default value for a control parameter that is a list of enums. 
+        ///  The Security Hub CSPM default value for a control parameter that is a list of enums.
+        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

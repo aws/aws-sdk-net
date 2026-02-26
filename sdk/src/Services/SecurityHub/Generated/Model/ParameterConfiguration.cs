@@ -60,14 +60,14 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ValueType. 
         /// <para>
         ///  Identifies whether a control parameter uses a custom user-defined value or subscribes
-        /// to the default Security Hub behavior.
+        /// to the default Security Hub CSPM behavior.
         /// </para>
         ///  
         /// <para>
         /// When <c>ValueType</c> is set equal to <c>DEFAULT</c>, the default behavior can be
-        /// a specific Security Hub default value, or the default behavior can be to ignore a
-        /// specific parameter. When <c>ValueType</c> is set equal to <c>DEFAULT</c>, Security
-        /// Hub ignores user-provided input for the <c>Value</c> field.
+        /// a specific Security Hub CSPM default value, or the default behavior can be to ignore
+        /// a specific parameter. When <c>ValueType</c> is set equal to <c>DEFAULT</c>, Security
+        /// Hub CSPM ignores user-provided input for the <c>Value</c> field.
         /// </para>
         ///  
         /// <para>

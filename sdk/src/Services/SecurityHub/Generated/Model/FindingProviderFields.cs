@@ -58,8 +58,9 @@ namespace Amazon.SecurityHub.Model
     /// <para>
     /// The preceding fields are nested under the <c>FindingProviderFields</c> object, but
     /// also have analogues of the same name as top-level ASFF fields. When a new finding
-    /// is sent to Security Hub by a finding provider, Security Hub populates the <c>FindingProviderFields</c>
-    /// object automatically, if it is empty, based on the corresponding top-level fields.
+    /// is sent to Security Hub CSPM by a finding provider, Security Hub CSPM populates the
+    /// <c>FindingProviderFields</c> object automatically, if it is empty, based on the corresponding
+    /// top-level fields.
     /// </para>
     ///  
     /// <para>
@@ -70,10 +71,10 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  
     /// <para>
-    /// For information about how Security Hub handles updates from <c>BatchImportFindings</c>
+    /// For information about how Security Hub CSPM handles updates from <c>BatchImportFindings</c>
     /// to <c>FindingProviderFields</c> and to the corresponding top-level attributes, see
     /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchimportfindings.html#batchimportfindings-findingproviderfields">Using
-    /// <c>FindingProviderFields</c> </a> in the <i>Security Hub User Guide</i>.
+    /// <c>FindingProviderFields</c> </a> in the <i>Security Hub CSPM User Guide</i>.
     /// </para>
     /// </summary>
     public partial class FindingProviderFields

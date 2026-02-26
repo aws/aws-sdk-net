@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Members. 
         /// <para>
-        /// The list of details about the Security Hub member accounts.
+        /// The list of details about the Security Hub CSPM member accounts.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

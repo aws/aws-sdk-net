@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMembers operation.
-    /// Deletes the specified member accounts from Security Hub.
+    /// Deletes the specified member accounts from Security Hub CSPM.
     /// 
     ///  
     /// <para>

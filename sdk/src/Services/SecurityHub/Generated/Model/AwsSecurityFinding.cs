@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides a consistent format for Security Hub findings. <c>AwsSecurityFinding</c>
+    /// Provides a consistent format for Security Hub CSPM findings. <c>AwsSecurityFinding</c>
     /// format allows you to share findings between Amazon Web Services security services
     /// and third-party solutions.
     /// 
@@ -159,14 +159,14 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Security Hub populates this attribute automatically for each finding. You cannot update
-        /// this attribute with <c>BatchImportFindings</c> or <c>BatchUpdateFindings</c>. The
-        /// exception to this is a custom integration.
+        /// Security Hub CSPM populates this attribute automatically for each finding. You cannot
+        /// update this attribute with <c>BatchImportFindings</c> or <c>BatchUpdateFindings</c>.
+        /// The exception to this is a custom integration.
         /// </para>
         ///  
         /// <para>
-        /// When you use the Security Hub console or API to filter findings by company name, you
-        /// use this attribute.
+        /// When you use the Security Hub CSPM console or API to filter findings by company name,
+        /// you use this attribute.
         /// </para>
         ///  
         /// <para>
@@ -238,7 +238,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -305,8 +305,8 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Provides details about an Amazon GuardDuty Extended Threat Detection attack sequence.
         /// GuardDuty generates an attack sequence finding when multiple events align to a potentially
-        /// suspicious activity. To receive GuardDuty attack sequence findings in Security Hub,
-        /// you must have GuardDuty enabled. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty
+        /// suspicious activity. To receive GuardDuty attack sequence findings in Security Hub
+        /// CSPM, you must have GuardDuty enabled. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty
         /// Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>. 
         /// </para>
         /// </summary>
@@ -351,7 +351,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         /// </summary>
         public string FirstObservedAt
@@ -372,8 +372,8 @@ namespace Amazon.SecurityHub.Model
         /// Provides metadata for the Amazon CodeGuru detector associated with a finding. This
         /// field pertains to findings that relate to Lambda functions. Amazon Inspector identifies
         /// policy violations and vulnerabilities in Lambda function code based on internal detectors
-        /// developed in collaboration with Amazon CodeGuru. Security Hub receives those findings.
-        /// 
+        /// developed in collaboration with Amazon CodeGuru. Security Hub CSPM receives those
+        /// findings. 
         /// </para>
         /// </summary>
         public GeneratorDetails GeneratorDetails
@@ -445,7 +445,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         /// </summary>
         public string LastObservedAt
@@ -587,13 +587,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProcessedAt. 
         /// <para>
-        /// A timestamp that indicates when Security Hub received a finding and begins to process
-        /// it.
+        /// A timestamp that indicates when Security Hub CSPM received a finding and begins to
+        /// process it.
         /// </para>
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         /// </summary>
         public string ProcessedAt
@@ -611,9 +611,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProductArn. 
         /// <para>
-        /// The ARN generated by Security Hub that uniquely identifies a product that generates
+        /// The ARN generated by Security Hub CSPM that uniquely identifies a product that generates
         /// findings. This can be the ARN for a third-party product that is integrated with Security
-        /// Hub, or the ARN for a custom integration.
+        /// Hub CSPM, or the ARN for a custom integration.
         /// </para>
         ///  
         /// <para>
@@ -669,14 +669,14 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Security Hub populates this attribute automatically for each finding. You cannot update
-        /// this attribute with <c>BatchImportFindings</c> or <c>BatchUpdateFindings</c>. The
-        /// exception to this is a custom integration.
+        /// Security Hub CSPM populates this attribute automatically for each finding. You cannot
+        /// update this attribute with <c>BatchImportFindings</c> or <c>BatchUpdateFindings</c>.
+        /// The exception to this is a custom integration.
         /// </para>
         ///  
         /// <para>
-        /// When you use the Security Hub console or API to filter findings by product name, you
-        /// use this attribute.
+        /// When you use the Security Hub CSPM console or API to filter findings by product name,
+        /// you use this attribute.
         /// </para>
         ///  
         /// <para>
@@ -720,8 +720,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Security Hub populates this attribute automatically for each finding. You cannot update
-        /// it using <c>BatchImportFindings</c> or <c>BatchUpdateFindings</c>.
+        /// Security Hub CSPM populates this attribute automatically for each finding. You cannot
+        /// update it using <c>BatchImportFindings</c> or <c>BatchUpdateFindings</c>.
         /// </para>
         ///  
         /// <para>
@@ -1006,7 +1006,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

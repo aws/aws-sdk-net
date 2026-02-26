@@ -31,13 +31,14 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMembers operation.
-    /// Returns the details for the Security Hub member accounts for the specified account
+    /// Returns the details for the Security Hub CSPM member accounts for the specified account
     /// IDs.
     /// 
     ///  
     /// <para>
-    /// An administrator account can be either the delegated Security Hub administrator account
-    /// for an organization or an administrator account that enabled Security Hub manually.
+    /// An administrator account can be either the delegated Security Hub CSPM administrator
+    /// account for an organization or an administrator account that enabled Security Hub
+    /// CSPM manually.
     /// </para>
     ///  
     /// <para>
@@ -52,7 +53,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The list of account IDs for the Security Hub member accounts to return the details
+        /// The list of account IDs for the Security Hub CSPM member accounts to return the details
         /// for. 
         /// </para>
         /// <para />

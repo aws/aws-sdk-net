@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateInsight operation.
-    /// Creates a custom insight in Security Hub. An insight is a consolidation of findings
+    /// Creates a custom insight in Security Hub CSPM. An insight is a consolidation of findings
     /// that relate to a security issue that requires attention or remediation.
     /// 
     ///  

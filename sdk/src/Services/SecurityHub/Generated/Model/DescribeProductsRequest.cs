@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeProducts operation.
-    /// Returns information about product integrations in Security Hub.
+    /// Returns information about product integrations in Security Hub CSPM.
     /// 
     ///  
     /// <para>
