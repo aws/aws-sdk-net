@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// An object that contains the details of an Security Hub configuration policy that’s
-    /// returned in a <c>ListConfigurationPolicies</c> request.
+    /// An object that contains the details of an Security Hub CSPM configuration policy
+    /// that’s returned in a <c>ListConfigurationPolicies</c> request.
     /// </summary>
     public partial class ConfigurationPolicySummary
     {

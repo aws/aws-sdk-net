@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        ///  The Security Hub default value for a control parameter that is a list of integers.
+        ///  The Security Hub CSPM default value for a control parameter that is a list of integers.
         /// 
         /// </para>
         /// </summary>

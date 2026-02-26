@@ -1301,6 +1301,10 @@ namespace Amazon.SecurityHub
         /// </summary>
         public static readonly GroupByField MetadataProductUid = new GroupByField("metadata.product.uid");
         /// <summary>
+        /// Constant MetadataProductVendor_name for GroupByField
+        /// </summary>
+        public static readonly GroupByField MetadataProductVendor_name = new GroupByField("metadata.product.vendor_name");
+        /// <summary>
         /// Constant ResourcesType for GroupByField
         /// </summary>
         public static readonly GroupByField ResourcesType = new GroupByField("resources.type");
@@ -1424,6 +1428,10 @@ namespace Amazon.SecurityHub
     public class IntegrationV2Type : ConstantClass
     {
 
+        /// <summary>
+        /// Constant EXTENDED_PLAN for IntegrationV2Type
+        /// </summary>
+        public static readonly IntegrationV2Type EXTENDED_PLAN = new IntegrationV2Type("EXTENDED_PLAN");
         /// <summary>
         /// Constant RECEIVE_FINDINGS_FROM_SECURITY_HUB for IntegrationV2Type
         /// </summary>

@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        ///  The Security Hub default value for a control parameter that is a list of strings.
+        ///  The Security Hub CSPM default value for a control parameter that is a list of strings.
         /// 
         /// </para>
         /// </summary>
@@ -98,8 +98,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Re2Expression. 
         /// <para>
-        ///  An RE2 regular expression that Security Hub uses to validate a user-provided list
-        /// of strings for a control parameter. 
+        ///  An RE2 regular expression that Security Hub CSPM uses to validate a user-provided
+        /// list of strings for a control parameter. 
         /// </para>
         /// </summary>
         public string Re2Expression

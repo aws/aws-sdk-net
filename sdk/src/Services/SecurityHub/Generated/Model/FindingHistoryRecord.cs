@@ -123,7 +123,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Identifies the source of the event that changed the finding. For example, an integrated
         /// Amazon Web Services service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
-        /// <c>BatchImportFindings</c> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
+        /// <c>BatchImportFindings</c> </a>, or an Security Hub CSPM customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
         /// <c>BatchUpdateFindings</c> </a>. 
         /// </para>
         /// </summary>
@@ -142,12 +142,12 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        ///  A timestamp that indicates when Security Hub processed the updated finding record.
+        ///  A timestamp that indicates when Security Hub CSPM processed the updated finding record.
         /// </para>
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         /// </summary>
         public DateTime UpdateTime

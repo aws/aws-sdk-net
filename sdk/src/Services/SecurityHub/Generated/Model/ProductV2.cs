@@ -39,6 +39,7 @@ namespace Amazon.SecurityHub.Model
         private string _companyName;
         private string _description;
         private List<string> _integrationV2Types = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _marketplaceProductId;
         private string _marketplaceUrl;
         private string _productV2Name;
 
@@ -131,6 +132,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetIntegrationV2Types()
         {
             return this._integrationV2Types != null && (this._integrationV2Types.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MarketplaceProductId. 
+        /// <para>
+        /// The identifier for the AWS Marketplace product associated with this integration.
+        /// </para>
+        /// </summary>
+        public string MarketplaceProductId
+        {
+            get { return this._marketplaceProductId; }
+            set { this._marketplaceProductId = value; }
+        }
+
+        // Check to see if MarketplaceProductId property is set
+        internal bool IsSetMarketplaceProductId()
+        {
+            return this._marketplaceProductId != null;
         }
 
         /// <summary>

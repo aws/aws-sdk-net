@@ -146,7 +146,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsControlArns. 
         /// <para>
-        ///  Provides the input parameter that Security Hub uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a>
+        ///  Provides the input parameter that Security Hub CSPM uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a>
         /// API. This API can be used to enable or disable a control in a specified standard.
         /// 
         /// </para>
@@ -166,7 +166,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsControlDescription. 
         /// <para>
-        ///  The description of a control. This typically summarizes how Security Hub evaluates
+        ///  The description of a control. This typically summarizes how Security Hub CSPM evaluates
         /// the control and the conditions under which it produces a failed finding. This parameter
         /// may reference a specific standard. 
         /// </para>

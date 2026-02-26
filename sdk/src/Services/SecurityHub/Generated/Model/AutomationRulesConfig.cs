@@ -74,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -112,9 +112,9 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  A set of <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon
         /// Web Services Security Finding Format</a> finding field attributes and corresponding
-        /// expected values that Security Hub uses to filter findings. If a rule is enabled and
-        /// a finding matches the conditions specified in this parameter, Security Hub applies
-        /// the rule action to the finding. 
+        /// expected values that Security Hub CSPM uses to filter findings. If a rule is enabled
+        /// and a finding matches the conditions specified in this parameter, Security Hub CSPM
+        /// applies the rule action to the finding. 
         /// </para>
         /// </summary>
         public AutomationRulesFindingFilters Criteria
@@ -153,7 +153,7 @@ namespace Amazon.SecurityHub.Model
         /// Specifies whether a rule is the last to be applied with respect to a finding that
         /// matches the rule criteria. This is useful when a finding matches the criteria for
         /// multiple rules, and each rule has different actions. If a rule is terminal, Security
-        /// Hub applies the rule action to a finding that matches the rule criteria and doesn't
+        /// Hub CSPM applies the rule action to a finding that matches the rule criteria and doesn't
         /// evaluate other rules for the finding. By default, a rule isn't terminal. 
         /// </para>
         /// </summary>
@@ -209,8 +209,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property RuleOrder. 
         /// <para>
         ///  An integer ranging from 1 to 1000 that represents the order in which the rule action
-        /// is applied to findings. Security Hub applies rules with lower values for this parameter
-        /// first. 
+        /// is applied to findings. Security Hub CSPM applies rules with lower values for this
+        /// parameter first. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -230,8 +230,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property RuleStatus. 
         /// <para>
         ///  Whether the rule is active after it is created. If this parameter is equal to <c>ENABLED</c>,
-        /// Security Hub starts applying the rule to findings and finding updates after the rule
-        /// is created. 
+        /// Security Hub CSPM starts applying the rule to findings and finding updates after the
+        /// rule is created. 
         /// </para>
         /// </summary>
         public RuleStatus RuleStatus
@@ -254,7 +254,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

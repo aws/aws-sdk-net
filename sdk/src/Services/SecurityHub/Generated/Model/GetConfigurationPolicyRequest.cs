@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConfigurationPolicy operation.
-    /// Provides information about a configuration policy. Only the Security Hub delegated
+    /// Provides information about a configuration policy. Only the Security Hub CSPM delegated
     /// administrator can invoke this operation from the home Region.
     /// </summary>
     public partial class GetConfigurationPolicyRequest : AmazonSecurityHubRequest

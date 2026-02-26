@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A finding from a <c>BatchUpdateFindings</c> request that Security Hub was unable to
-    /// update.
+    /// A finding from a <c>BatchUpdateFindings</c> request that Security Hub CSPM was unable
+    /// to update.
     /// </summary>
     public partial class BatchUpdateFindingsUnprocessedFinding
     {

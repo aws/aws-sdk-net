@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// One or more actions that Security Hub takes when a finding matches the defined criteria
-    /// of a rule.
+    /// One or more actions that Security Hub CSPM takes when a finding matches the defined
+    /// criteria of a rule.
     /// </summary>
     public partial class AutomationRulesAction
     {
@@ -59,8 +59,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  Specifies the type of action that Security Hub takes when a finding matches the defined
-        /// criteria of a rule. 
+        ///  Specifies the type of action that Security Hub CSPM takes when a finding matches
+        /// the defined criteria of a rule. 
         /// </para>
         /// </summary>
         public AutomationRulesActionType Type

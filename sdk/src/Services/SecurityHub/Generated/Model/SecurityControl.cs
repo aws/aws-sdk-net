@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A security control in Security Hub describes a security best practice related to
-    /// a specific resource.
+    /// A security control in Security Hub CSPM describes a security best practice related
+    /// to a specific resource.
     /// </summary>
     public partial class SecurityControl
     {
@@ -50,7 +50,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Description. 
         /// <para>
         ///  The description of a security control across standards. This typically summarizes
-        /// how Security Hub evaluates the control and the conditions under which it produces
+        /// how Security Hub CSPM evaluates the control and the conditions under which it produces
         /// a failed finding. This parameter doesn't reference a specific standard. 
         /// </para>
         /// </summary>
@@ -111,8 +111,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RemediationUrl. 
         /// <para>
-        ///  A link to Security Hub documentation that explains how to remediate a failed finding
-        /// for a security control. 
+        ///  A link to Security Hub CSPM documentation that explains how to remediate a failed
+        /// finding for a security control. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -191,9 +191,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SeverityRating. 
         /// <para>
-        ///  The severity of a security control. For more information about how Security Hub determines
-        /// control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning
-        /// severity to control findings</a> in the <i>Security Hub User Guide</i>. 
+        ///  The severity of a security control. For more information about how Security Hub CSPM
+        /// determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning
+        /// severity to control findings</a> in the <i>Security Hub CSPM User Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -232,10 +232,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property UpdateStatus. 
         /// <para>
         ///  Identifies whether customizable properties of a security control are reflected in
-        /// Security Hub findings. A status of <c>READY</c> indicates that Security Hub uses the
-        /// current control parameter values when running security checks of the control. A status
-        /// of <c>UPDATING</c> indicates that all security checks might not use the current parameter
-        /// values. 
+        /// Security Hub CSPM findings. A status of <c>READY</c> indicates that Security Hub CSPM
+        /// uses the current control parameter values when running security checks of the control.
+        /// A status of <c>UPDATING</c> indicates that all security checks might not use the current
+        /// parameter values. 
         /// </para>
         /// </summary>
         public UpdateStatus UpdateStatus

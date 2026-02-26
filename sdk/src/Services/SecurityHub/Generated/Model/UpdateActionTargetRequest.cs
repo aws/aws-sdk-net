@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateActionTarget operation.
-    /// Updates the name and description of a custom action target in Security Hub.
+    /// Updates the name and description of a custom action target in Security Hub CSPM.
     /// </summary>
     public partial class UpdateActionTargetRequest : AmazonSecurityHubRequest
     {

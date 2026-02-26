@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeActionTargets operation.
-    /// Returns a list of the custom action targets in Security Hub in your account.
+    /// Returns a list of the custom action targets in Security Hub CSPM in your account.
     /// </summary>
     public partial class DescribeActionTargetsRequest : AmazonSecurityHubRequest
     {

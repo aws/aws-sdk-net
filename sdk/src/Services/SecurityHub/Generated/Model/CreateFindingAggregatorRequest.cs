@@ -43,8 +43,8 @@ namespace Amazon.SecurityHub.Model
     ///  
     /// <para>
     /// For information about how cross-Region aggregation works, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Understanding
-    /// cross-Region aggregation in Security Hub</a> in the <i>Security Hub User Guide</i>.
-    /// 
+    /// cross-Region aggregation in Security Hub CSPM</a> in the <i>Security Hub CSPM User
+    /// Guide</i>. 
     /// </para>
     /// </summary>
     public partial class CreateFindingAggregatorRequest : AmazonSecurityHubRequest
@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Indicates whether to aggregate findings from all of the available Regions in the current
         /// partition. Also determines whether to automatically aggregate findings from new Regions
-        /// as Security Hub supports them and you opt into them.
+        /// as Security Hub CSPM supports them and you opt into them.
         /// </para>
         ///  
         /// <para>
@@ -71,21 +71,23 @@ namespace Amazon.SecurityHub.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>ALL_REGIONS</c> - Aggregates findings from all of the Regions where Security Hub
-        /// is enabled. When you choose this option, Security Hub also automatically aggregates
-        /// findings from new Regions as Security Hub supports them and you opt into them. 
+        /// CSPM is enabled. When you choose this option, Security Hub CSPM also automatically
+        /// aggregates findings from new Regions as Security Hub CSPM supports them and you opt
+        /// into them. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>ALL_REGIONS_EXCEPT_SPECIFIED</c> - Aggregates findings from all of the Regions
-        /// where Security Hub is enabled, except for the Regions listed in the <c>Regions</c>
-        /// parameter. When you choose this option, Security Hub also automatically aggregates
-        /// findings from new Regions as Security Hub supports them and you opt into them. 
+        /// where Security Hub CSPM is enabled, except for the Regions listed in the <c>Regions</c>
+        /// parameter. When you choose this option, Security Hub CSPM also automatically aggregates
+        /// findings from new Regions as Security Hub CSPM supports them and you opt into them.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>SPECIFIED_REGIONS</c> - Aggregates findings only from the Regions listed in the
-        /// <c>Regions</c> parameter. Security Hub does not automatically aggregate findings from
-        /// new Regions. 
+        /// <c>Regions</c> parameter. Security Hub CSPM does not automatically aggregate findings
+        /// from new Regions. 
         /// </para>
         ///  </li> <li> 
         /// <para>

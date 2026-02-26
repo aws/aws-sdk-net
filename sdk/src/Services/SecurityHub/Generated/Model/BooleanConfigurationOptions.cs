@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        ///  The Security Hub default value for a boolean parameter. 
+        ///  The Security Hub CSPM default value for a boolean parameter. 
         /// </para>
         /// </summary>
         public bool DefaultValue

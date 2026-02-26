@@ -61,14 +61,15 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property EnabledByDefault. 
         /// <para>
-        /// Whether the standard is enabled by default. When Security Hub is enabled from the
-        /// console, if a standard is enabled by default, the check box for that standard is selected
-        /// by default.
+        /// Whether the standard is enabled by default. When Security Hub CSPM is enabled from
+        /// the console, if a standard is enabled by default, the check box for that standard
+        /// is selected by default.
         /// </para>
         ///  
         /// <para>
-        /// When Security Hub is enabled using the <c>EnableSecurityHub</c> API operation, the
-        /// standard is enabled by default unless <c>EnableDefaultStandards</c> is set to <c>false</c>.
+        /// When Security Hub CSPM is enabled using the <c>EnableSecurityHub</c> API operation,
+        /// the standard is enabled by default unless <c>EnableDefaultStandards</c> is set to
+        /// <c>false</c>.
         /// </para>
         /// </summary>
         public bool EnabledByDefault

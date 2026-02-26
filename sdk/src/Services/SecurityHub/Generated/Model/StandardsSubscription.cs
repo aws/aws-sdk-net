@@ -115,7 +115,7 @@ namespace Amazon.SecurityHub.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>PENDING</c> - The standard is in the process of being enabled. Or the standard
-        /// is already enabled and Security Hub is adding new controls to the standard.
+        /// is already enabled and Security Hub CSPM is adding new controls to the standard.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -124,8 +124,8 @@ namespace Amazon.SecurityHub.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>INCOMPLETE</c> - The standard could not be enabled completely. One or more errors
-        /// (<c>StandardsStatusReason</c>) occurred when Security Hub attempted to enable the
-        /// standard.
+        /// (<c>StandardsStatusReason</c>) occurred when Security Hub CSPM attempted to enable
+        /// the standard.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -134,7 +134,7 @@ namespace Amazon.SecurityHub.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>FAILED</c> - The standard could not be disabled. One or more errors (<c>StandardsStatusReason</c>)
-        /// occurred when Security Hub attempted to disable the standard.
+        /// occurred when Security Hub CSPM attempted to disable the standard.
         /// </para>
         ///  </li> </ul>
         /// </summary>

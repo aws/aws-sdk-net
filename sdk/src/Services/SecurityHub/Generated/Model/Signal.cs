@@ -33,8 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// Contains information about the signals involved in an Amazon GuardDuty Extended Threat
     /// Detection attack sequence. An attack sequence is a type of threat detected by GuardDuty.
     /// GuardDuty generates an attack sequence finding when multiple events, or signals, align
-    /// to a potentially suspicious activity. When GuardDuty and Security Hub are integrated,
-    /// GuardDuty sends attack sequence findings to Security Hub.
+    /// to a potentially suspicious activity. When GuardDuty and Security Hub CSPM are integrated,
+    /// GuardDuty sends attack sequence findings to Security Hub CSPM.
     /// 
     ///  
     /// <para>

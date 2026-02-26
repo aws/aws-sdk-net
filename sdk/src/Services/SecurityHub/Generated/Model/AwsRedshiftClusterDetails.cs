@@ -183,7 +183,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         /// </summary>
         public string ClusterCreateTime
@@ -534,7 +534,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         /// </summary>
         public string ExpectedNextSnapshotScheduleTime
@@ -720,7 +720,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// For more information about the validation and formatting of timestamp fields in Security
-        /// Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
         /// </para>
         /// </summary>
         public string NextMaintenanceWindowStartTime

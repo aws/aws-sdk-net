@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// An object that defines which security controls are enabled in an Security Hub configuration
-    /// policy. The enablement status of a control is aligned across all of the enabled standards
-    /// in an account.
+    /// An object that defines which security controls are enabled in an Security Hub CSPM
+    /// configuration policy. The enablement status of a control is aligned across all of
+    /// the enabled standards in an account.
     /// </summary>
     public partial class SecurityControlsConfiguration
     {
@@ -44,8 +44,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property DisabledSecurityControlIdentifiers. 
         /// <para>
         ///  A list of security controls that are disabled in the configuration policy. Security
-        /// Hub enables all other controls (including newly released controls) other than the
-        /// listed controls. 
+        /// Hub CSPM enables all other controls (including newly released controls) other than
+        /// the listed controls. 
         /// </para>
         /// </summary>
         public List<string> DisabledSecurityControlIdentifiers
@@ -64,8 +64,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property EnabledSecurityControlIdentifiers. 
         /// <para>
         ///  A list of security controls that are enabled in the configuration policy. Security
-        /// Hub disables all other controls (including newly released controls) other than the
-        /// listed controls. 
+        /// Hub CSPM disables all other controls (including newly released controls) other than
+        /// the listed controls. 
         /// </para>
         /// </summary>
         public List<string> EnabledSecurityControlIdentifiers

@@ -48,7 +48,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ActivationUrl. 
         /// <para>
         /// The URL to the service or product documentation about the integration with Security
-        /// Hub, including how to activate the integration.
+        /// Hub CSPM, including how to activate the integration.
         /// </para>
         /// </summary>
         public string ActivationUrl
@@ -125,18 +125,18 @@ namespace Amazon.SecurityHub.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>SEND_FINDINGS_TO_SECURITY_HUB</c> - The integration sends findings to Security
-        /// Hub.
+        /// Hub CSPM.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>RECEIVE_FINDINGS_FROM_SECURITY_HUB</c> - The integration receives findings from
-        /// Security Hub.
+        /// Security Hub CSPM.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>UPDATE_FINDINGS_IN_SECURITY_HUB</c> - The integration does not send new findings
-        /// to Security Hub, but does make updates to the findings that it receives from Security
-        /// Hub.
+        /// to Security Hub CSPM, but does make updates to the findings that it receives from
+        /// Security Hub CSPM.
         /// </para>
         ///  </li> </ul>
         /// </summary>

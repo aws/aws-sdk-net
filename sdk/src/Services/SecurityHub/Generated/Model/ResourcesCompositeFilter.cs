@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Enables the creation of criteria for Amazon Web Services resources in Security Hub.
+    /// Enables the creation of criteria for Amazon Web Services resources in Security Hub
+    /// CSPM.
     /// </summary>
     public partial class ResourcesCompositeFilter
     {

@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteActionTarget operation.
-    /// Deletes a custom action target from Security Hub.
+    /// Deletes a custom action target from Security Hub CSPM.
     /// 
     ///  
     /// <para>

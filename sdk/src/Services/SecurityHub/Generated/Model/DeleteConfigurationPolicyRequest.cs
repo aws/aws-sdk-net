@@ -31,8 +31,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConfigurationPolicy operation.
-    /// Deletes a configuration policy. Only the Security Hub delegated administrator can
-    /// invoke this operation from the home Region. For the deletion to succeed, you must
+    /// Deletes a configuration policy. Only the Security Hub CSPM delegated administrator
+    /// can invoke this operation from the home Region. For the deletion to succeed, you must
     /// first disassociate a configuration policy from target accounts, organizational units,
     /// or the root by invoking the <c>StartConfigurationPolicyDisassociation</c> operation.
     /// </summary>

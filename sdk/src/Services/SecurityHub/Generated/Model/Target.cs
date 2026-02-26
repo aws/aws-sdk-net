@@ -31,7 +31,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// The target account, organizational unit, or the root that is associated with an Security
-    /// Hub configuration. The configuration can be a configuration policy or self-managed
+    /// Hub CSPM configuration. The configuration can be a configuration policy or self-managed
     /// behavior.
     /// </summary>
     public partial class Target

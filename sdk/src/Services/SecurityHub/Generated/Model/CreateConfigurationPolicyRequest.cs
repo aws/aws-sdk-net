@@ -32,7 +32,7 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the CreateConfigurationPolicy operation.
     /// Creates a configuration policy with the defined configuration. Only the Security
-    /// Hub delegated administrator can invoke this operation from the home Region.
+    /// Hub CSPM delegated administrator can invoke this operation from the home Region.
     /// </summary>
     public partial class CreateConfigurationPolicyRequest : AmazonSecurityHubRequest
     {
@@ -44,13 +44,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ConfigurationPolicy. 
         /// <para>
-        ///  An object that defines how Security Hub is configured. It includes whether Security
-        /// Hub is enabled or disabled, a list of enabled security standards, a list of enabled
+        ///  An object that defines how Security Hub CSPM is configured. It includes whether Security
+        /// Hub CSPM is enabled or disabled, a list of enabled security standards, a list of enabled
         /// or disabled security controls, and a list of custom parameter values for specified
         /// controls. If you provide a list of security controls that are enabled in the configuration
-        /// policy, Security Hub disables all other controls (including newly released controls).
+        /// policy, Security Hub CSPM disables all other controls (including newly released controls).
         /// If you provide a list of security controls that are disabled in the configuration
-        /// policy, Security Hub enables all other controls (including newly released controls).
+        /// policy, Security Hub CSPM enables all other controls (including newly released controls).
         /// 
         /// </para>
         /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  User-defined tags associated with a configuration policy. For more information, see
         /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/tagging-resources.html">Tagging
-        /// Security Hub resources</a> in the <i>Security Hub user guide</i>. 
+        /// Security Hub CSPM resources</a> in the <i>Security Hub CSPM user guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
