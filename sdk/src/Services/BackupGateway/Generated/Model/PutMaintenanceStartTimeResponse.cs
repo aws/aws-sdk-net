@@ -43,7 +43,7 @@ namespace Amazon.BackupGateway.Model
         /// time.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=50, Max=500)]
+        [AWSProperty(Min=50, Max=180)]
         public string GatewayArn
         {
             get { return this._gatewayArn; }

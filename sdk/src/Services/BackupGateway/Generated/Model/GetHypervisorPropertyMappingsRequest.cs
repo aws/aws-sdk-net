@@ -33,7 +33,7 @@ namespace Amazon.BackupGateway.Model
     /// Container for the parameters to the GetHypervisorPropertyMappings operation.
     /// This action retrieves the property mappings for the specified hypervisor. A hypervisor
     /// property mapping displays the relationship of entity properties available from the
-    /// on-premises hypervisor to the properties available in Amazon Web Services.
+    /// hypervisor to the properties available in Amazon Web Services.
     /// </summary>
     public partial class GetHypervisorPropertyMappingsRequest : AmazonBackupGatewayRequest
     {

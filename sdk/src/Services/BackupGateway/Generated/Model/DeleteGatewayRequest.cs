@@ -43,7 +43,7 @@ namespace Amazon.BackupGateway.Model
         /// The Amazon Resource Name (ARN) of the gateway to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=50, Max=500)]
+        [AWSProperty(Required=true, Min=50, Max=180)]
         public string GatewayArn
         {
             get { return this._gatewayArn; }

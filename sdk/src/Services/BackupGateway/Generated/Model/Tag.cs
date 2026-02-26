@@ -31,8 +31,8 @@ namespace Amazon.BackupGateway.Model
 {
     /// <summary>
     /// A key-value pair you can use to manage, filter, and search for your resources. Allowed
-    /// characters include UTF-8 letters, numbers, spaces, and the following characters: +
-    /// - = . _ : /.
+    /// characters include UTF-8 letters, numbers, and the following characters: + - = . _
+    /// : /. Spaces are not allowed in tag values.
     /// </summary>
     public partial class Tag
     {
