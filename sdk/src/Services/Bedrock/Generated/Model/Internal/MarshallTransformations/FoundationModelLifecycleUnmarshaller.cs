@@ -66,6 +66,30 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("endOfLifeTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndOfLifeTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("legacyTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LegacyTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("publicExtendedAccessTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.PublicExtendedAccessTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startOfLifeTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartOfLifeTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

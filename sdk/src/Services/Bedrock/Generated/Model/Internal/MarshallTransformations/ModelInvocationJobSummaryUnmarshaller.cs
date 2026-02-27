@@ -120,6 +120,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.ModelId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("modelInvocationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelInvocationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("outputDataConfig", targetDepth))
                 {
                     var unmarshaller = ModelInvocationJobOutputDataConfigUnmarshaller.Instance;

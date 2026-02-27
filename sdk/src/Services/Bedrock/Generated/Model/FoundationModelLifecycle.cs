@@ -34,7 +34,85 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class FoundationModelLifecycle
     {
+        private DateTime? _endOfLifeTime;
+        private DateTime? _legacyTime;
+        private DateTime? _publicExtendedAccessTime;
+        private DateTime? _startOfLifeTime;
         private FoundationModelLifecycleStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property EndOfLifeTime. 
+        /// <para>
+        /// Time when the model is no longer available for use
+        /// </para>
+        /// </summary>
+        public DateTime EndOfLifeTime
+        {
+            get { return this._endOfLifeTime.GetValueOrDefault(); }
+            set { this._endOfLifeTime = value; }
+        }
+
+        // Check to see if EndOfLifeTime property is set
+        internal bool IsSetEndOfLifeTime()
+        {
+            return this._endOfLifeTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LegacyTime. 
+        /// <para>
+        /// Time when the model enters legacy state. Models in legacy state can still be used,
+        /// but users should plan to transition to an Active model before the end of life time
+        /// </para>
+        /// </summary>
+        public DateTime LegacyTime
+        {
+            get { return this._legacyTime.GetValueOrDefault(); }
+            set { this._legacyTime = value; }
+        }
+
+        // Check to see if LegacyTime property is set
+        internal bool IsSetLegacyTime()
+        {
+            return this._legacyTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicExtendedAccessTime. 
+        /// <para>
+        /// Public extended access portion of the legacy period, when users should expect higher
+        /// pricing
+        /// </para>
+        /// </summary>
+        public DateTime PublicExtendedAccessTime
+        {
+            get { return this._publicExtendedAccessTime.GetValueOrDefault(); }
+            set { this._publicExtendedAccessTime = value; }
+        }
+
+        // Check to see if PublicExtendedAccessTime property is set
+        internal bool IsSetPublicExtendedAccessTime()
+        {
+            return this._publicExtendedAccessTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartOfLifeTime. 
+        /// <para>
+        /// Launch time when the model first becomes available
+        /// </para>
+        /// </summary>
+        public DateTime StartOfLifeTime
+        {
+            get { return this._startOfLifeTime.GetValueOrDefault(); }
+            set { this._startOfLifeTime = value; }
+        }
+
+        // Check to see if StartOfLifeTime property is set
+        internal bool IsSetStartOfLifeTime()
+        {
+            return this._startOfLifeTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 

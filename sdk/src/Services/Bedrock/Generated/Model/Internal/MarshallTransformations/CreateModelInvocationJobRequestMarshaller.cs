@@ -101,6 +101,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ModelId);
                 }
 
+                if(publicRequest.IsSetModelInvocationType())
+                {
+                    context.Writer.WritePropertyName("modelInvocationType");
+                    context.Writer.Write(publicRequest.ModelInvocationType);
+                }
+
                 if(publicRequest.IsSetOutputDataConfig())
                 {
                     context.Writer.WritePropertyName("outputDataConfig");

@@ -49,6 +49,7 @@ namespace Amazon.Bedrock.Model
         private ModelInvocationJobInputDataConfig _inputDataConfig;
         private string _jobName;
         private string _modelId;
+        private ModelInvocationType _modelInvocationType;
         private ModelInvocationJobOutputDataConfig _outputDataConfig;
         private string _roleArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -132,6 +133,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetModelId()
         {
             return this._modelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelInvocationType. 
+        /// <para>
+        /// The invocation endpoint for ModelInvocationJob
+        /// </para>
+        /// </summary>
+        public ModelInvocationType ModelInvocationType
+        {
+            get { return this._modelInvocationType; }
+            set { this._modelInvocationType = value; }
+        }
+
+        // Check to see if ModelInvocationType property is set
+        internal bool IsSetModelInvocationType()
+        {
+            return this._modelInvocationType != null;
         }
 
         /// <summary>
