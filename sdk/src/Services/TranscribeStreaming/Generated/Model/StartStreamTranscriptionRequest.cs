@@ -75,6 +75,7 @@ namespace Amazon.TranscribeStreaming.Model
         private string _piiEntityTypes;
         private LanguageCode _preferredLanguage;
         private string _sessionId;
+        private int? _sessionResumeWindow;
         private bool? _showSpeakerLabel;
         private VocabularyFilterMethod _vocabularyFilterMethod;
         private string _vocabularyFilterName;
@@ -542,7 +543,9 @@ namespace Amazon.TranscribeStreaming.Model
         /// <para>
         /// Values must be comma-separated and can include: <c>ADDRESS</c>, <c>BANK_ACCOUNT_NUMBER</c>,
         /// <c>BANK_ROUTING</c>, <c>CREDIT_DEBIT_CVV</c>, <c>CREDIT_DEBIT_EXPIRY</c>, <c>CREDIT_DEBIT_NUMBER</c>,
-        /// <c>EMAIL</c>, <c>NAME</c>, <c>PHONE</c>, <c>PIN</c>, <c>SSN</c>, or <c>ALL</c>.
+        /// <c>EMAIL</c>, <c>NAME</c>, <c>PHONE</c>, <c>PIN</c>, <c>SSN</c>, <c>AGE</c>, <c>DATE_TIME</c>,
+        /// <c>LICENSE_PLATE</c>, <c>PASSPORT_NUMBER</c>, <c>PASSWORD</c>, <c>USERNAME</c>, <c>VEHICLE_IDENTIFICATION_NUMBER</c>,
+        /// or <c>ALL</c>.
         /// </para>
         ///  
         /// <para>
@@ -609,6 +612,33 @@ namespace Amazon.TranscribeStreaming.Model
         internal bool IsSetSessionId()
         {
             return this._sessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionResumeWindow. 
+        /// <para>
+        /// Specify the time window, in minutes, during which your transcription session can be
+        /// resumed, measured from the stream start time. This optional parameter accepts integer
+        /// values from 1 to 300 (5 hours).
+        /// </para>
+        ///  
+        /// <para>
+        ///  For example, if your stream starts at 1 PM and you specify a <c>SessionResumeWindow</c>
+        /// of 30 minutes, you can reconnect to the session as many times as you want until 1:30
+        /// PM. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=300)]
+        public int? SessionResumeWindow
+        {
+            get { return this._sessionResumeWindow; }
+            set { this._sessionResumeWindow = value; }
+        }
+
+        // Check to see if SessionResumeWindow property is set
+        internal bool IsSetSessionResumeWindow()
+        {
+            return this._sessionResumeWindow.HasValue; 
         }
 
         /// <summary>

@@ -51,6 +51,7 @@ namespace Amazon.TranscribeStreaming.Model
         private LanguageCode _preferredLanguage;
         private string _requestId;
         private string _sessionId;
+        private int? _sessionResumeWindow;
         private bool? _showSpeakerLabel;
         private TranscriptResultStream _transcriptResultStream;
         private VocabularyFilterMethod _vocabularyFilterMethod;
@@ -369,6 +370,25 @@ namespace Amazon.TranscribeStreaming.Model
         internal bool IsSetSessionId()
         {
             return this._sessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionResumeWindow. 
+        /// <para>
+        /// Provides the session resume window, in minutes, that you specified in your request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=300)]
+        public int? SessionResumeWindow
+        {
+            get { return this._sessionResumeWindow; }
+            set { this._sessionResumeWindow = value; }
+        }
+
+        // Check to see if SessionResumeWindow property is set
+        internal bool IsSetSessionResumeWindow()
+        {
+            return this._sessionResumeWindow.HasValue; 
         }
 
         /// <summary>
