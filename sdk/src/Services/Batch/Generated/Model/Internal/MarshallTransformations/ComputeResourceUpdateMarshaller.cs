@@ -138,6 +138,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.PlacementGroup);
             }
 
+            if(requestObject.IsSetScalingPolicy())
+            {
+                context.Writer.WritePropertyName("scalingPolicy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ComputeScalingPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.ScalingPolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");
