@@ -78,6 +78,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RequestedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RequestedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("RequestedTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.RequestedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReviewId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
