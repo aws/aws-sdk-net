@@ -42,7 +42,7 @@ namespace Amazon.KeyspacesStreams.Model
         /// <para>
         ///  A pagination token that can be used in a subsequent <c>ListStreams</c> request. This
         /// token is returned if the response contains more streams than can be returned in a
-        /// single response based on the <c>MaxResults</c> parameter. 
+        /// single response based on the <c>maxResults</c> parameter. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=80, Max=3000)]
