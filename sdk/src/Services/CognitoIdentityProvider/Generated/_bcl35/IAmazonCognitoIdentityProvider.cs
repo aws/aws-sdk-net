@@ -184,6 +184,68 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AddUserPoolClientSecret
+
+
+        /// <summary>
+        /// Creates a new client secret for an existing confidential user pool app client. Supports
+        /// up to 2 active secrets per app client for zero-downtime credential rotation workflows.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddUserPoolClientSecret service method.</param>
+        /// 
+        /// <returns>The response from the AddUserPoolClientSecret service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.AccessDeniedException">
+        /// This exception is thrown when you don't have sufficient permissions to perform the
+        /// requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalServerException">
+        /// This exception is thrown when Amazon Cognito encounters an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddUserPoolClientSecret">REST API Reference for AddUserPoolClientSecret Operation</seealso>
+        AddUserPoolClientSecretResponse AddUserPoolClientSecret(AddUserPoolClientSecretRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddUserPoolClientSecret operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddUserPoolClientSecret operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddUserPoolClientSecret
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddUserPoolClientSecret">REST API Reference for AddUserPoolClientSecret Operation</seealso>
+        IAsyncResult BeginAddUserPoolClientSecret(AddUserPoolClientSecretRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddUserPoolClientSecret operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddUserPoolClientSecret.</param>
+        /// 
+        /// <returns>Returns a  AddUserPoolClientSecretResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AddUserPoolClientSecret">REST API Reference for AddUserPoolClientSecret Operation</seealso>
+        AddUserPoolClientSecretResponse EndAddUserPoolClientSecret(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AdminAddUserToGroup
 
 
@@ -3105,6 +3167,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
@@ -5121,6 +5186,64 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DeleteUserPoolClientSecret
+
+
+        /// <summary>
+        /// Deletes a specific client secret from a user pool app client. You cannot delete the
+        /// last remaining secret for an app client.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPoolClientSecret service method.</param>
+        /// 
+        /// <returns>The response from the DeleteUserPoolClientSecret service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalServerException">
+        /// This exception is thrown when Amazon Cognito encounters an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClientSecret">REST API Reference for DeleteUserPoolClientSecret Operation</seealso>
+        DeleteUserPoolClientSecretResponse DeleteUserPoolClientSecret(DeleteUserPoolClientSecretRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteUserPoolClientSecret operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteUserPoolClientSecret operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUserPoolClientSecret
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClientSecret">REST API Reference for DeleteUserPoolClientSecret Operation</seealso>
+        IAsyncResult BeginDeleteUserPoolClientSecret(DeleteUserPoolClientSecretRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteUserPoolClientSecret operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteUserPoolClientSecret.</param>
+        /// 
+        /// <returns>Returns a  DeleteUserPoolClientSecretResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserPoolClientSecret">REST API Reference for DeleteUserPoolClientSecret Operation</seealso>
+        DeleteUserPoolClientSecretResponse EndDeleteUserPoolClientSecret(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteUserPoolDomain
 
 
@@ -5220,6 +5343,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
@@ -8059,6 +8185,67 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  ListUserPoolClientSecrets
+
+
+        /// <summary>
+        /// Lists all client secrets associated with a user pool app client. Returns metadata
+        /// about the secrets. The response does not include pagination tokens as there are only
+        /// 2 secrets at any given time and we return both with every ListUserPoolClientSecrets
+        /// call. For security reasons, the response never reveals the actual secret value in
+        /// ClientSecretValue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUserPoolClientSecrets service method.</param>
+        /// 
+        /// <returns>The response from the ListUserPoolClientSecrets service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalServerException">
+        /// This exception is thrown when Amazon Cognito encounters an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClientSecrets">REST API Reference for ListUserPoolClientSecrets Operation</seealso>
+        ListUserPoolClientSecretsResponse ListUserPoolClientSecrets(ListUserPoolClientSecretsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserPoolClientSecrets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserPoolClientSecrets operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUserPoolClientSecrets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClientSecrets">REST API Reference for ListUserPoolClientSecrets Operation</seealso>
+        IAsyncResult BeginListUserPoolClientSecrets(ListUserPoolClientSecretsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUserPoolClientSecrets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUserPoolClientSecrets.</param>
+        /// 
+        /// <returns>Returns a  ListUserPoolClientSecretsResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserPoolClientSecrets">REST API Reference for ListUserPoolClientSecrets Operation</seealso>
+        ListUserPoolClientSecretsResponse EndListUserPoolClientSecrets(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListUserPools
 
 
@@ -8139,6 +8326,12 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Given a user pool ID, returns a list of users and their basic details in a user pool.
         /// 
+        ///  
+        /// <para>
+        /// This operation is eventually consistent. You might experience a delay before results
+        /// are up-to-date. To validate the existence or configuration of an individual user,
+        /// use <c>AdminGetUser</c>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
@@ -8332,6 +8525,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception is thrown when the user has made too many requests for a given operation.
@@ -9484,6 +9680,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception is thrown when the user has made too many requests for a given operation.
         /// </exception>
@@ -10516,8 +10715,8 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  <important> 
         /// <para>
-        /// If you don't provide a value for an attribute, Amazon Cognito sets it to its default
-        /// value.
+        /// With the exception of <c>UserPoolTier</c>, if you don't provide a value for an attribute,
+        /// Amazon Cognito sets it to its default value.
         /// </para>
         ///  </important> <note> 
         /// <para>

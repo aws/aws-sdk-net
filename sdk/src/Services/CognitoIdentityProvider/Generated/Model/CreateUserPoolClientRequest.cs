@@ -78,6 +78,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private int? _authSessionValidity;
         private List<string> _callbackURLs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientName;
+        private string _clientSecret;
         private string _defaultRedirectURI;
         private bool? _enablePropagateAdditionalUserContextData;
         private bool? _enableTokenRevocation;
@@ -323,12 +324,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes
-        /// only.
+        /// Amazon Cognito requires HTTPS over HTTP except for callback URLs to <c>http://localhost</c>,
+        /// <c>http://127.0.0.1</c> and <c>http://[::1]</c>. These callback URLs are for testing
+        /// purposes only. You can specify custom TCP ports for your callback URLs.
         /// </para>
         ///  
         /// <para>
-        /// App callback URLs such as myapp://example are also supported.
+        /// App callback URLs such as <c>myapp://example</c> are also supported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -361,6 +363,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetClientName()
         {
             return this._clientName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSecret. 
+        /// <para>
+        /// A custom client secret that you want to use for the app client. You cannot specify
+        /// both GenerateSecret as true and provide a ClientSecret value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=24, Max=64)]
+        public string ClientSecret
+        {
+            get { return this._clientSecret; }
+            set { this._clientSecret = value; }
+        }
+
+        // Check to see if ClientSecret property is set
+        internal bool IsSetClientSecret()
+        {
+            return this._clientSecret != null;
         }
 
         /// <summary>

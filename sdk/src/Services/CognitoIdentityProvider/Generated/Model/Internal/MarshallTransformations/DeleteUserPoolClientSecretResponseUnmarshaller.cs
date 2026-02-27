@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteWebAuthnCredential operation
+    /// Response Unmarshaller for DeleteUserPoolClientSecret operation
     /// </summary>  
-    public class DeleteWebAuthnCredentialResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteUserPoolClientSecretResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteWebAuthnCredentialResponse response = new DeleteWebAuthnCredentialResponse();
+            DeleteUserPoolClientSecretResponse response = new DeleteUserPoolClientSecretResponse();
 
 
             return response;
@@ -70,13 +70,9 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ForbiddenException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return ForbiddenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
-                {
-                    return InternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
@@ -85,14 +81,6 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("NotAuthorizedException"))
-                {
-                    return NotAuthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("PasswordResetRequiredException"))
-                {
-                    return PasswordResetRequiredExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -106,9 +94,9 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             return new AmazonCognitoIdentityProviderException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteWebAuthnCredentialResponseUnmarshaller _instance = new DeleteWebAuthnCredentialResponseUnmarshaller();        
+        private static DeleteUserPoolClientSecretResponseUnmarshaller _instance = new DeleteUserPoolClientSecretResponseUnmarshaller();        
 
-        internal static DeleteWebAuthnCredentialResponseUnmarshaller GetInstance()
+        internal static DeleteUserPoolClientSecretResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +104,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteWebAuthnCredentialResponseUnmarshaller Instance
+        public static DeleteUserPoolClientSecretResponseUnmarshaller Instance
         {
             get
             {

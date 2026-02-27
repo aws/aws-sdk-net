@@ -254,19 +254,32 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientMetadata. 
         /// <para>
-        /// A map of custom key-value pairs that you can provide as input for certain custom workflows
-        /// that this action triggers.
+        /// A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. You create custom workflows by assigning Lambda functions
+        /// to user pool triggers.
         /// </para>
         ///  
         /// <para>
-        /// You create custom workflows by assigning Lambda functions to user pool triggers. When
-        /// you send an <c>InitiateAuth</c> request, Amazon Cognito invokes the Lambda functions
-        /// that are specified for various triggers. The <c>ClientMetadata</c> value is passed
-        /// as input to the functions for only the following triggers.
+        /// When Amazon Cognito invokes any of these functions, it passes a JSON payload, which
+        /// the function receives as input. This payload contains a <c>clientMetadata</c> attribute
+        /// that provides the data that you assigned to the ClientMetadata parameter in your request.
+        /// In your function code, you can process the <c>clientMetadata</c> value to enhance
+        /// your workflow for your specific needs.
+        /// </para>
+        ///  
+        /// <para>
+        /// To review the Lambda trigger types that Amazon Cognito invokes at runtime with API
+        /// requests, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event">
+        /// Connecting API actions to Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>ClientMetadata</c> value is passed as input to the functions for only the following
+        /// triggers:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Pre sign-up
+        /// Pre signup
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -278,16 +291,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload
-        /// as input to the function. This payload contains a <c>validationData</c> attribute
-        /// with the data that you assigned to the <c>ClientMetadata</c> parameter in your <c>InitiateAuth</c>
-        /// request. In your function, <c>validationData</c> can contribute to operations that
-        /// require data that isn't in the default payload.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>InitiateAuth</c> requests invokes the following triggers without <c>ClientMetadata</c>
-        /// as input.
+        /// This request also invokes the functions for the following triggers, but doesn't pass
+        /// <c>ClientMetadata</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -317,12 +322,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// Custom SMS sender
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
-        /// </para>
-        ///  <note> 
+        ///  </li> </ul> <note> 
         /// <para>
         /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
         /// the following:

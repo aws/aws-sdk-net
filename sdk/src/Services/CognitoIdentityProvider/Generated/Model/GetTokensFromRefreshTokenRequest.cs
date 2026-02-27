@@ -69,19 +69,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientMetadata. 
         /// <para>
-        /// A map of custom key-value pairs that you can provide as input for certain custom workflows
-        /// that this action triggers.
+        /// A map of custom key-value pairs that you can provide as input for any custom workflows
+        /// that this action triggers. You create custom workflows by assigning Lambda functions
+        /// to user pool triggers.
         /// </para>
         ///  
         /// <para>
-        /// You create custom workflows by assigning Lambda functions to user pool triggers. When
-        /// you use the <c>GetTokensFromRefreshToken</c> API action, Amazon Cognito invokes the
-        /// Lambda function the pre token generation trigger.
+        /// When Amazon Cognito invokes any of these functions, it passes a JSON payload, which
+        /// the function receives as input. This payload contains a <c>clientMetadata</c> attribute
+        /// that provides the data that you assigned to the ClientMetadata parameter in your request.
+        /// In your function code, you can process the <c>clientMetadata</c> value to enhance
+        /// your workflow for your specific needs.
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
-        /// Using Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
+        /// To review the Lambda trigger types that Amazon Cognito invokes at runtime with API
+        /// requests, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event">
+        /// Connecting API actions to Lambda triggers</a> in the <i>Amazon Cognito Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -123,7 +127,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The client secret of the requested app client, if the client has a secret.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=24, Max=64)]
         public string ClientSecret
         {
             get { return this._clientSecret; }
