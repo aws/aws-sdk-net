@@ -7,14 +7,15 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB;
 public abstract class LiveDynamoDbTableBenchmark : DynamoDbTableBenchmark
 {
     [GlobalSetup]
-    public void Setup()
+    public async Task Setup()
     {
         BenchmarkTableRuntimeOptions.Configure(options =>
         {
             options.ClientFactory = _ => new AmazonDynamoDBClient();
         });
 
-        DynamoDbBenchmarkTableManager.EnsureTableExists(new AmazonDynamoDBClient());
+        using var client = new AmazonDynamoDBClient();
+        await DynamoDbBenchmarkTableManager.EnsureTableExistsAsync(client).ConfigureAwait(false);
 
         ApplyParameterOverrides();
 

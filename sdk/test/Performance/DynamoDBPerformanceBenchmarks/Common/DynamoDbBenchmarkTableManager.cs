@@ -1,7 +1,5 @@
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
-using System;
-using System.Threading;
 
 namespace AWSSDK.Benchmarks.MockedDynamoDB;
 
@@ -9,11 +7,11 @@ internal static class DynamoDbBenchmarkTableManager
 {
     private const string TableName = "BenchmarkTable";
 
-    public static void EnsureTableExists(AmazonDynamoDBClient client)
+    public static async Task EnsureTableExistsAsync(AmazonDynamoDBClient client, CancellationToken cancellationToken = default)
     {
         try
         {
-            client.DescribeTableAsync(TableName).GetAwaiter().GetResult();
+            await client.DescribeTableAsync(TableName, cancellationToken).ConfigureAwait(false);
             return;
         }
         catch (ResourceNotFoundException)
@@ -32,21 +30,20 @@ internal static class DynamoDbBenchmarkTableManager
             {
                 new("PartitionKey", ScalarAttributeType.S),
                 new("SortKey", ScalarAttributeType.S)
-            },
-            ProvisionedThroughput = new ProvisionedThroughput(1, 1)
+            }
         };
 
-        client.CreateTableAsync(request).GetAwaiter().GetResult();
+        await client.CreateTableAsync(request, cancellationToken).ConfigureAwait(false);
 
         for (var i = 0; i < 10; i++)
         {
-            var table = client.DescribeTableAsync(TableName).GetAwaiter().GetResult();
+            var table = await client.DescribeTableAsync(TableName, cancellationToken).ConfigureAwait(false);
             if (string.Equals(table.Table.TableStatus, TableStatus.ACTIVE, StringComparison.Ordinal))
             {
                 return;
             }
 
-            Thread.Sleep(500);
+            await Task.Delay(500, cancellationToken).ConfigureAwait(false);
         }
     }
 }
