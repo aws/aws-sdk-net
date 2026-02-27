@@ -114,6 +114,12 @@ namespace Amazon.KeyspacesStreams.Model.Internal.MarshallTransformations
                     unmarshalledObject.DoubleT = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("durationT", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DurationT = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("floatT", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

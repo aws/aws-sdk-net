@@ -67,8 +67,8 @@ namespace Amazon.KeyspacesStreams.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of streams to return in a single <c>ListStreams</c> request. Default
-        /// value is 100. The minimum value is 1 and the maximum value is 100. 
+        ///  The maximum number of streams to return in a single <c>ListStreams</c> request. The
+        /// default value is 100. The minimum value is 1 and the maximum value is 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

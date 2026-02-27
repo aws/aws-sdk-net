@@ -43,6 +43,7 @@ namespace Amazon.KeyspacesStreams.Model
         private string _datet;
         private string _decimalt;
         private string _doublet;
+        private string _durationt;
         private string _floatt;
         private string _inett;
         private string _intt;
@@ -204,6 +205,25 @@ namespace Amazon.KeyspacesStreams.Model
         internal bool IsSetDoubleT()
         {
             return this._doublet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DurationT. 
+        /// <para>
+        /// A duration value with nanosecond precision, representing a period of time encoded
+        /// as 32-bit months, 32-bit days, and 64-bit nanoseconds. 
+        /// </para>
+        /// </summary>
+        public string DurationT
+        {
+            get { return this._durationt; }
+            set { this._durationt = value; }
+        }
+
+        // Check to see if DurationT property is set
+        internal bool IsSetDurationT()
+        {
+            return this._durationt != null;
         }
 
         /// <summary>
@@ -500,7 +520,7 @@ namespace Amazon.KeyspacesStreams.Model
         /// <summary>
         /// Gets and sets the property VarintT. 
         /// <para>
-        /// A variable precision integer value with arbitrary length. 
+        /// An integer value within the +/-10^38 range. 
         /// </para>
         /// </summary>
         public string VarintT
