@@ -213,6 +213,10 @@
     <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.StartPlanExecutionRequest.RecoveryExecutionId</property>
+    <pattern>[a-z]{2}(-[a-z]+)+-[0-9]+/[0-9a-fA-F]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.StartPlanExecutionResponse.Plan</property>
     <pattern>arn:aws[a-zA-Z-]*:arc-region-switch::[0-9]{12}:plan/([a-zA-Z0-9](?:[a-zA-Z0-9-]{0,30}[a-zA-Z0-9])?):([a-z0-9]{6})</pattern>
   </property-value-rule>
@@ -413,6 +417,22 @@
     <property>Amazon.ARCRegionswitch.Model.Plan.RecoveryTimeObjectiveMinutes</property>
     <min>1</min>
     <max>10080</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.RdsCreateCrossRegionReplicaConfiguration.CrossAccountRole</property>
+    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.RdsCreateCrossRegionReplicaConfiguration.TimeoutMinutes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.RdsPromoteReadReplicaConfiguration.CrossAccountRole</property>
+    <pattern>arn:aws[a-zA-Z0-9-]*:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ARCRegionswitch.Model.RdsPromoteReadReplicaConfiguration.TimeoutMinutes</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ARCRegionswitch.Model.RegionSwitchPlanConfiguration.Arn</property>
