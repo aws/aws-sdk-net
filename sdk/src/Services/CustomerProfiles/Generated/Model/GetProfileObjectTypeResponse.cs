@@ -46,6 +46,7 @@ namespace Amazon.CustomerProfiles.Model
         private int? _maxProfileObjectCount;
         private string _objectTypeName;
         private string _sourceLastUpdatedTimestampFormat;
+        private int? _sourcePriority;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateId;
 
@@ -287,6 +288,27 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetSourceLastUpdatedTimestampFormat()
         {
             return this._sourceLastUpdatedTimestampFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourcePriority. 
+        /// <para>
+        /// An integer that determines the priority of this object type when data from multiple
+        /// sources is ingested. Lower values take priority. Object types without a specified
+        /// source priority default to the lowest priority.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? SourcePriority
+        {
+            get { return this._sourcePriority; }
+            set { this._sourcePriority = value; }
+        }
+
+        // Check to see if SourcePriority property is set
+        internal bool IsSetSourcePriority()
+        {
+            return this._sourcePriority.HasValue; 
         }
 
         /// <summary>
