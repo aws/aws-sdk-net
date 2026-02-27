@@ -46,6 +46,7 @@ namespace Amazon.Odb.Model
         private string _odbNetworkId;
         private List<string> _peerNetworkCidrsToBeAdded = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _peerNetworkId;
+        private List<string> _peerNetworkRouteTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -151,6 +152,26 @@ namespace Amazon.Odb.Model
         internal bool IsSetPeerNetworkId()
         {
             return this._peerNetworkId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PeerNetworkRouteTableIds. 
+        /// <para>
+        /// The unique identifier of the VPC route table for which a route to the ODB network
+        /// is automatically created during peering connection establishment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> PeerNetworkRouteTableIds
+        {
+            get { return this._peerNetworkRouteTableIds; }
+            set { this._peerNetworkRouteTableIds = value; }
+        }
+
+        // Check to see if PeerNetworkRouteTableIds property is set
+        internal bool IsSetPeerNetworkRouteTableIds()
+        {
+            return this._peerNetworkRouteTableIds != null && (this._peerNetworkRouteTableIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

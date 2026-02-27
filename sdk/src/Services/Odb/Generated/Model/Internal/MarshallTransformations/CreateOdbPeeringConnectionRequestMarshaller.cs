@@ -109,6 +109,17 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PeerNetworkId);
                 }
 
+                if(publicRequest.IsSetPeerNetworkRouteTableIds())
+                {
+                    context.Writer.WritePropertyName("peerNetworkRouteTableIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPeerNetworkRouteTableIdsListValue in publicRequest.PeerNetworkRouteTableIds)
+                    {
+                            context.Writer.Write(publicRequestPeerNetworkRouteTableIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
