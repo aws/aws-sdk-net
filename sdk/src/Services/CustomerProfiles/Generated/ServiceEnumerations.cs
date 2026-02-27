@@ -3001,6 +3001,10 @@ namespace Amazon.CustomerProfiles
         /// </summary>
         public static readonly StandardIdentifier COMMUNICATION_RECORD = new StandardIdentifier("COMMUNICATION_RECORD");
         /// <summary>
+        /// Constant DEVICE for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier DEVICE = new StandardIdentifier("DEVICE");
+        /// <summary>
         /// Constant HOTEL_PREFERENCE for StandardIdentifier
         /// </summary>
         public static readonly StandardIdentifier HOTEL_PREFERENCE = new StandardIdentifier("HOTEL_PREFERENCE");
@@ -3048,6 +3052,10 @@ namespace Amazon.CustomerProfiles
         /// Constant UNIQUE for StandardIdentifier
         /// </summary>
         public static readonly StandardIdentifier UNIQUE = new StandardIdentifier("UNIQUE");
+        /// <summary>
+        /// Constant WEB_ANALYTICS for StandardIdentifier
+        /// </summary>
+        public static readonly StandardIdentifier WEB_ANALYTICS = new StandardIdentifier("WEB_ANALYTICS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

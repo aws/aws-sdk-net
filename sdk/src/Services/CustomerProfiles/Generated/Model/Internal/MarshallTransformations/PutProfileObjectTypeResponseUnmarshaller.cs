@@ -124,6 +124,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.SourceLastUpdatedTimestampFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourcePriority", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.SourcePriority = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

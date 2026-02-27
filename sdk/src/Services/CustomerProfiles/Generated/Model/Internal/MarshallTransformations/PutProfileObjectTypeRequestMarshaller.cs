@@ -152,6 +152,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SourceLastUpdatedTimestampFormat);
                 }
 
+                if(publicRequest.IsSetSourcePriority())
+                {
+                    context.Writer.WritePropertyName("SourcePriority");
+                    context.Writer.Write(publicRequest.SourcePriority);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
