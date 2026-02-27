@@ -123,7 +123,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ReplyTo. 
         /// <para>
-        /// The reply-to email address of an email template.
+        /// The reply-to email address of an email template. Can be an email address in the format
+        /// <c>admin@example.com</c> or <c>Administrator &lt;admin@example.com&gt;</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]
