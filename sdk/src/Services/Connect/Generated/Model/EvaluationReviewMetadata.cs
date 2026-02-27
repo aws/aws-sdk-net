@@ -36,6 +36,8 @@ namespace Amazon.Connect.Model
     {
         private string _createdBy;
         private DateTime? _createdTime;
+        private string _requestedBy;
+        private DateTime? _requestedTime;
         private string _reviewId;
         private List<EvaluationReviewRequestComment> _reviewRequestComments = AWSConfigs.InitializeCollections ? new List<EvaluationReviewRequestComment>() : null;
 
@@ -45,7 +47,7 @@ namespace Amazon.Connect.Model
         /// The user who created the evaluation review.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("CreatedBy is deprecated.")]
         public string CreatedBy
         {
             get { return this._createdBy; }
@@ -64,7 +66,7 @@ namespace Amazon.Connect.Model
         /// The timestamp when the evaluation review was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("CreatedTime is deprecated.")]
         public DateTime? CreatedTime
         {
             get { return this._createdTime; }
@@ -75,6 +77,42 @@ namespace Amazon.Connect.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestedBy. 
+        /// <para>
+        /// The user who requested the evaluation review.
+        /// </para>
+        /// </summary>
+        public string RequestedBy
+        {
+            get { return this._requestedBy; }
+            set { this._requestedBy = value; }
+        }
+
+        // Check to see if RequestedBy property is set
+        internal bool IsSetRequestedBy()
+        {
+            return this._requestedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestedTime. 
+        /// <para>
+        /// The timestamp when the evaluation review was requested.
+        /// </para>
+        /// </summary>
+        public DateTime? RequestedTime
+        {
+            get { return this._requestedTime; }
+            set { this._requestedTime = value; }
+        }
+
+        // Check to see if RequestedTime property is set
+        internal bool IsSetRequestedTime()
+        {
+            return this._requestedTime.HasValue; 
         }
 
         /// <summary>
