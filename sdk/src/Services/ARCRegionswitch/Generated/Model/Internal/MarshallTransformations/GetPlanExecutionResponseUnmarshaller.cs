@@ -124,6 +124,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     response.PlanArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("recoveryExecutionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RecoveryExecutionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

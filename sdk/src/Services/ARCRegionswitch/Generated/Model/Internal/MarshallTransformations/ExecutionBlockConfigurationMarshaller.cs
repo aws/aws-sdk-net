@@ -147,6 +147,28 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRdsCreateCrossRegionReadReplicaConfig())
+            {
+                context.Writer.WritePropertyName("rdsCreateCrossRegionReadReplicaConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RdsCreateCrossRegionReplicaConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RdsCreateCrossRegionReadReplicaConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRdsPromoteReadReplicaConfig())
+            {
+                context.Writer.WritePropertyName("rdsPromoteReadReplicaConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RdsPromoteReadReplicaConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RdsPromoteReadReplicaConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRegionSwitchPlanConfig())
             {
                 context.Writer.WritePropertyName("regionSwitchPlanConfig");

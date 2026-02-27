@@ -120,6 +120,18 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParallelConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rdsCreateCrossRegionReadReplicaConfig", targetDepth))
+                {
+                    var unmarshaller = RdsCreateCrossRegionReplicaConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RdsCreateCrossRegionReadReplicaConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("rdsPromoteReadReplicaConfig", targetDepth))
+                {
+                    var unmarshaller = RdsPromoteReadReplicaConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RdsPromoteReadReplicaConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("regionSwitchPlanConfig", targetDepth))
                 {
                     var unmarshaller = RegionSwitchPlanConfigurationUnmarshaller.Instance;

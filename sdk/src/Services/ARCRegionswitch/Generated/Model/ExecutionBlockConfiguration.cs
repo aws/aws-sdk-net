@@ -44,6 +44,8 @@ namespace Amazon.ARCRegionswitch.Model
         private ExecutionApprovalConfiguration _executionApprovalConfig;
         private GlobalAuroraConfiguration _globalAuroraConfig;
         private ParallelExecutionBlockConfiguration _parallelConfig;
+        private RdsCreateCrossRegionReplicaConfiguration _rdsCreateCrossRegionReadReplicaConfig;
+        private RdsPromoteReadReplicaConfiguration _rdsPromoteReadReplicaConfig;
         private RegionSwitchPlanConfiguration _regionSwitchPlanConfig;
         private Route53HealthCheckConfiguration _route53HealthCheckConfig;
 
@@ -204,6 +206,42 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetParallelConfig()
         {
             return this._parallelConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsCreateCrossRegionReadReplicaConfig. 
+        /// <para>
+        /// An Amazon RDS create cross-Region replica execution block.
+        /// </para>
+        /// </summary>
+        public RdsCreateCrossRegionReplicaConfiguration RdsCreateCrossRegionReadReplicaConfig
+        {
+            get { return this._rdsCreateCrossRegionReadReplicaConfig; }
+            set { this._rdsCreateCrossRegionReadReplicaConfig = value; }
+        }
+
+        // Check to see if RdsCreateCrossRegionReadReplicaConfig property is set
+        internal bool IsSetRdsCreateCrossRegionReadReplicaConfig()
+        {
+            return this._rdsCreateCrossRegionReadReplicaConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsPromoteReadReplicaConfig. 
+        /// <para>
+        /// An Amazon RDS promote read replica execution block.
+        /// </para>
+        /// </summary>
+        public RdsPromoteReadReplicaConfiguration RdsPromoteReadReplicaConfig
+        {
+            get { return this._rdsPromoteReadReplicaConfig; }
+            set { this._rdsPromoteReadReplicaConfig = value; }
+        }
+
+        // Check to see if RdsPromoteReadReplicaConfig property is set
+        internal bool IsSetRdsPromoteReadReplicaConfig()
+        {
+            return this._rdsPromoteReadReplicaConfig != null;
         }
 
         /// <summary>
