@@ -1,3 +1,25 @@
+### 3.7.1233.0 (2026-02-27 19:16 UTC)
+* ARCRegionswitch (3.7.505.0)
+	* Post-Recovery Workflows enable customers to maintain comprehensive disaster recovery automation. This allows customer SREs and leadership to have complete recovery orchestration from failover through post-recovery preparation, ensuring Regions remain ready for subsequent recovery events.
+* AWSHealth (3.7.505.0)
+	* Updates the regex for validating availabilityZone strings used in the describe events filters.
+* Batch (3.7.504.0)
+	* This feature allows customers to specify the minimum time (in minutes) that AWS Batch keeps instances running in a compute environment after all jobs on the instance complete
+* Bedrock (3.7.513.0)
+	* Added four new model lifecycle date fields, startOfLifeTime, endOfLifeTime, legacyTime, and publicExtendedAccessTime. Adds support for using the Converse API with Bedrock Batch inference jobs.
+* CognitoIdentityProvider (3.7.505.0)
+	* Cognito is introducing a two-secret rotation model for app clients, enabling seamless credential rotation without downtime. Dedicated APIs support passing in a custom secret. Custom secrets need to be at least 24 characters. This eliminates reconfiguration needs and reduces security risks.
+* Connect (3.7.530.0)
+	* Deprecate EvaluationReviewMetadata's CreatedBy and CreatedTime, add EvaluationReviewMetadata's RequestedBy and RequestedTime
+* CustomerProfiles (3.7.505.0)
+	* This release introduces an optional SourcePriority parameter to the ProfileObjectType APIs, allowing you to control the precedence of object types when ingesting data from multiple sources. Additionally, WebAnalytics and Device have been added as new StandardIdentifier values.
+* KeyspacesStreams (3.7.503.0)
+	* Added support for Change Data Capture (CDC) streams with Duration DataType.
+* Odb (3.7.505.0)
+	* ODB Networking Route Management is a feature improvement which allows for implicit creation and deletion of EC2 Routes in the Peer Network Route Table designated by the customer via new optional input. This feature release is combined with Multiple App-VPC functionality for ODB Network Peering(s).
+* RAM (3.7.504.0)
+	* Resource owners can now specify ResourceShareConfiguration request parameter for CreateResourceShare API including RetainSharingOnAccountLeaveOrganization boolean parameter
+
 ### 3.7.1232.0 (2026-02-26 19:16 UTC)
 * AWSMarketplaceMetering (3.7.504.0)
 	* Added LicenseArn to ResolveCustomer response and BatchMeterUsage usage records. BatchMeterUsage now accepts LicenseArn in each UsageRecord to report usage at the license level. Added InvalidLicenseException error response for invalid license parameters.
