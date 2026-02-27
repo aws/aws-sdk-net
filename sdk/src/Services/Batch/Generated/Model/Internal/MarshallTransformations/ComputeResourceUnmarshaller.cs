@@ -138,6 +138,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.PlacementGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scalingPolicy", targetDepth))
+                {
+                    var unmarshaller = ComputeScalingPolicyUnmarshaller.Instance;
+                    unmarshalledObject.ScalingPolicy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("securityGroupIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
