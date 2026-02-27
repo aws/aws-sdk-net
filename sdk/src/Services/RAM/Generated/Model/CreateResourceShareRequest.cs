@@ -52,6 +52,7 @@ namespace Amazon.RAM.Model
         private List<string> _permissionArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ResourceShareConfiguration _resourceShareConfiguration;
         private List<string> _sources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -224,6 +225,24 @@ namespace Amazon.RAM.Model
         internal bool IsSetResourceArns()
         {
             return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareConfiguration. 
+        /// <para>
+        /// Specifies the configuration of this resource share.
+        /// </para>
+        /// </summary>
+        public ResourceShareConfiguration ResourceShareConfiguration
+        {
+            get { return this._resourceShareConfiguration; }
+            set { this._resourceShareConfiguration = value; }
+        }
+
+        // Check to see if ResourceShareConfiguration property is set
+        internal bool IsSetResourceShareConfiguration()
+        {
+            return this._resourceShareConfiguration != null;
         }
 
         /// <summary>
