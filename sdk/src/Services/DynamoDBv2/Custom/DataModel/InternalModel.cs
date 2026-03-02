@@ -623,9 +623,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 // keep the AttributesToGet setting for flows that are not yet migrated to use ProjectionExpression
                 AttributesToGet.Add(derivedTypeAttributeName);
-                var expressionAttributeName = "#P" + $"{ProjectionExpression.ExpressionAttributeNames.Count}";
-                ProjectionExpression.ExpressionStatement += ProjectionExpression.ExpressionAttributeNames.Count > 0 ? $", {expressionAttributeName}" : expressionAttributeName;
-                ProjectionExpression.ExpressionAttributeNames.Add(expressionAttributeName, derivedTypeAttributeName);
+                AddAtributteNameToProjectionExpression(derivedTypeAttributeName);
             }
 
             if (this.BaseTypeStorageConfig.Properties.Count == 0)
@@ -681,6 +679,12 @@ namespace Amazon.DynamoDBv2.DataModel
             this.PolymorphicTypesStorageConfig.Add(typeDiscriminator, polymorphicStorageConfig);
             this.PolymorphicConfig.Add(derivedType, typeDiscriminator);
         }
+        private void AddAtributteNameToProjectionExpression(string derivedTypeAttributeName)
+        {
+            var expressionAttributeName = "#P" + $"{ProjectionExpression.ExpressionAttributeNames.Count}";
+            ProjectionExpression.ExpressionStatement += ProjectionExpression.ExpressionAttributeNames.Count > 0 ? $", {expressionAttributeName}" : expressionAttributeName;
+            ProjectionExpression.ExpressionAttributeNames.Add(expressionAttributeName, derivedTypeAttributeName);
+        }
 
         private void AddPropertyStorage(PropertyStorage value, StorageConfig config)
         {
@@ -694,11 +698,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 AttributesToGet.Add(attributeName);
 
             if (!ProjectionExpression.ExpressionAttributeNames.ContainsValue(attributeName))
-            {
-                var expressionAttributeName = "#P" + $"{ProjectionExpression.ExpressionAttributeNames.Count}";
-                ProjectionExpression.ExpressionStatement += ProjectionExpression.ExpressionAttributeNames.Count > 0 ? $", {expressionAttributeName}" : expressionAttributeName;
-                ProjectionExpression.ExpressionAttributeNames.Add(expressionAttributeName, attributeName);
-            }
+                AddAtributteNameToProjectionExpression(attributeName);
 
             if (value.StoreAsEpoch)
                 AttributesToStoreAsEpoch.Add(attributeName);
