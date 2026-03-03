@@ -2283,6 +2283,52 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type GraphEntityType.
+    /// </summary>
+    public class GraphEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINEAGE_NODE for GraphEntityType
+        /// </summary>
+        public static readonly GraphEntityType LINEAGE_NODE = new GraphEntityType("LINEAGE_NODE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GraphEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GraphEntityType FindValue(string value)
+        {
+            return FindValue<GraphEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GraphEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GroupProfileStatus.
     /// </summary>
     public class GroupProfileStatus : ConstantClass
@@ -3668,6 +3714,102 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RejectRuleBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RelationDirection.
+    /// </summary>
+    public class RelationDirection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IN for RelationDirection
+        /// </summary>
+        public static readonly RelationDirection IN = new RelationDirection("IN");
+        /// <summary>
+        /// Constant OUT for RelationDirection
+        /// </summary>
+        public static readonly RelationDirection OUT = new RelationDirection("OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelationDirection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelationDirection FindValue(string value)
+        {
+            return FindValue<RelationDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelationDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RelationType.
+    /// </summary>
+    public class RelationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINEAGE for RelationType
+        /// </summary>
+        public static readonly RelationType LINEAGE = new RelationType("LINEAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelationType FindValue(string value)
+        {
+            return FindValue<RelationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelationType(string value)
         {
             return FindValue(value);
         }

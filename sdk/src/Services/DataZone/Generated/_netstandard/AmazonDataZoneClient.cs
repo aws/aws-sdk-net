@@ -8611,6 +8611,55 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  QueryGraph
+
+        internal virtual QueryGraphResponse QueryGraph(QueryGraphRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = QueryGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryGraphResponseUnmarshaller.Instance;
+
+            return Invoke<QueryGraphResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Queries entities in the graph store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the QueryGraph service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the QueryGraph service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/QueryGraph">REST API Reference for QueryGraph Operation</seealso>
+        public virtual Task<QueryGraphResponse> QueryGraphAsync(QueryGraphRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = QueryGraphRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = QueryGraphResponseUnmarshaller.Instance;
+
+            return InvokeAsync<QueryGraphResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RejectPredictions
 
         internal virtual RejectPredictionsResponse RejectPredictions(RejectPredictionsRequest request)
