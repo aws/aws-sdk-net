@@ -1,3 +1,15 @@
+### 4.0.202.0 (2026-03-03 20:07 UTC)
+* BedrockAgentCoreControl (4.0.17.0)
+	* Support for AgentCore Policy GA
+* CloudWatchLogs (4.0.15.0)
+	* CloudWatch Logs updates- Added support for the PutBearerTokenAuthentication API to enable or disable bearer token authentication on a log group. For more information, see CloudWatch Logs API documentation.
+* DataZone (4.0.22.0)
+	* Adding QueryGraph operation to DataZone SDK
+* PartnerCentralChannel (4.0.1.0)
+	* Adds the Resold Unified Operations support plan and removes the Resold Business support plan in the CreateRelationship and UpdateRelationship APIs
+* SageMaker (4.0.44.0)
+	* This release adds b300 and g7e instance types for SageMaker inference endpoints.
+
 ### 4.0.201.0 (2026-02-27 19:15 UTC)
 * ARCRegionswitch (4.0.5.0)
 	* Post-Recovery Workflows enable customers to maintain comprehensive disaster recovery automation. This allows customer SREs and leadership to have complete recovery orchestration from failover through post-recovery preparation, ensuring Regions remain ready for subsequent recovery events.
