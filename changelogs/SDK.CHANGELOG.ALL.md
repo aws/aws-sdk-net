@@ -1,3 +1,19 @@
+### 3.7.1234.0 (2026-03-03 19:53 UTC)
+* BedrockAgentCoreControl (3.7.517.0)
+	* Support for AgentCore Policy GA
+* CloudWatchLogs (3.7.508.0)
+	* CloudWatch Logs updates- Added support for the PutBearerTokenAuthentication API to enable or disable bearer token authentication on a log group. For more information, see CloudWatch Logs API documentation.
+* DataZone (3.7.518.0)
+	* Adding QueryGraph operation to DataZone SDK
+* PartnerCentralChannel (3.7.501.0)
+	* Adds the Resold Unified Operations support plan and removes the Resold Business support plan in the CreateRelationship and UpdateRelationship APIs
+* SageMaker (3.7.530.0)
+	* This release adds b300 and g7e instance types for SageMaker inference endpoints.
+* Core 3.7.500.86
+	* Added maintenance mode notice to NuGet package descriptions for AWS SDK for .NET V3.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1233.0 (2026-02-27 19:16 UTC)
 * ARCRegionswitch (3.7.505.0)
 	* Post-Recovery Workflows enable customers to maintain comprehensive disaster recovery automation. This allows customer SREs and leadership to have complete recovery orchestration from failover through post-recovery preparation, ensuring Regions remain ready for subsequent recovery events.
