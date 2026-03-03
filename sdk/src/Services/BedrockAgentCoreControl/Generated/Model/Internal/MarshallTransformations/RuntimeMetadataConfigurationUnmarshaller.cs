@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PolicyDefinition Object
+    /// Response Unmarshaller for RuntimeMetadataConfiguration Object
     /// </summary>  
-    public class PolicyDefinitionUnmarshaller : IJsonUnmarshaller<PolicyDefinition, JsonUnmarshallerContext>
+    public class RuntimeMetadataConfigurationUnmarshaller : IJsonUnmarshaller<RuntimeMetadataConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PolicyDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RuntimeMetadataConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            PolicyDefinition unmarshalledObject = new PolicyDefinition();
+            RuntimeMetadataConfiguration unmarshalledObject = new RuntimeMetadataConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cedar", targetDepth))
+                if (context.TestExpression("requireMMDSV2", targetDepth))
                 {
-                    var unmarshaller = CedarPolicyUnmarshaller.Instance;
-                    unmarshalledObject.Cedar = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("policyGeneration", targetDepth))
-                {
-                    var unmarshaller = PolicyGenerationDetailsUnmarshaller.Instance;
-                    unmarshalledObject.PolicyGeneration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.RequireMMDSV2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static PolicyDefinitionUnmarshaller _instance = new PolicyDefinitionUnmarshaller();        
+        private static RuntimeMetadataConfigurationUnmarshaller _instance = new RuntimeMetadataConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PolicyDefinitionUnmarshaller Instance
+        public static RuntimeMetadataConfigurationUnmarshaller Instance
         {
             get
             {

@@ -30,33 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Represents a Cedar policy statement within the AgentCore Policy system. Cedar is a
-    /// policy language designed for authorization that provides human-readable, analyzable,
-    /// and high-performance policy evaluation for controlling agent behavior and access decisions.
+    /// Configuration for microVM metadata service settings.
     /// </summary>
-    public partial class CedarPolicy
+    public partial class RuntimeMetadataConfiguration
     {
-        private string _statement;
+        private bool? _requiremmdsv2;
 
         /// <summary>
-        /// Gets and sets the property Statement. 
+        /// Gets and sets the property RequireMMDSV2. 
         /// <para>
-        /// The Cedar policy statement that defines the authorization logic. This statement follows
-        /// Cedar syntax and specifies principals, actions, resources, and conditions that determine
-        /// when access should be allowed or denied.
+        /// Enables MMDSv2 (microVM Metadata Service Version 2) requirement for the agent runtime.
+        /// When set to <c>true</c>, the runtime microVM will only accept MMDSv2 requests.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=35, Max=10000)]
-        public string Statement
+        [AWSProperty(Required=true)]
+        public bool? RequireMMDSV2
         {
-            get { return this._statement; }
-            set { this._statement = value; }
+            get { return this._requiremmdsv2; }
+            set { this._requiremmdsv2 = value; }
         }
 
-        // Check to see if Statement property is set
-        internal bool IsSetStatement()
+        // Check to see if RequireMMDSV2 property is set
+        internal bool IsSetRequireMMDSV2()
         {
-            return this._statement != null;
+            return this._requiremmdsv2.HasValue; 
         }
 
     }

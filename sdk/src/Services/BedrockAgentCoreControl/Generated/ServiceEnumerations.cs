@@ -46,6 +46,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant PYTHON_3_13 for AgentManagedRuntimeType
         /// </summary>
         public static readonly AgentManagedRuntimeType PYTHON_3_13 = new AgentManagedRuntimeType("PYTHON_3_13");
+        /// <summary>
+        /// Constant PYTHON_3_14 for AgentManagedRuntimeType
+        /// </summary>
+        public static readonly AgentManagedRuntimeType PYTHON_3_14 = new AgentManagedRuntimeType("PYTHON_3_14");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

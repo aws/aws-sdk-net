@@ -61,7 +61,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             IRequest request = new DefaultRequest(publicRequest, "Amazon.BedrockAgentCoreControl");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-06-05";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "PATCH";
 
             if (!publicRequest.IsSetPolicyEngineId())
                 throw new AmazonBedrockAgentCoreControlException("Request object does not have required field PolicyEngineId set");
@@ -93,7 +93,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.WriteStringValue(publicRequest.Description);
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedDescriptionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Description, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetValidationMode())

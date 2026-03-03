@@ -30,33 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Represents a Cedar policy statement within the AgentCore Policy system. Cedar is a
-    /// policy language designed for authorization that provides human-readable, analyzable,
-    /// and high-performance policy evaluation for controlling agent behavior and access decisions.
+    /// Respresents an optional value that can be provided to update the human-readable description
+    /// of the resource. If the field is omitted from the request, it will leave the current
+    /// decription value unchanged.
     /// </summary>
-    public partial class CedarPolicy
+    public partial class UpdatedDescription
     {
-        private string _statement;
+        private string _optionalValue;
 
         /// <summary>
-        /// Gets and sets the property Statement. 
+        /// Gets and sets the property OptionalValue. 
         /// <para>
-        /// The Cedar policy statement that defines the authorization logic. This statement follows
-        /// Cedar syntax and specifies principals, actions, resources, and conditions that determine
-        /// when access should be allowed or denied.
+        /// Represents an optional value that is used to update the human-readable description
+        /// of the resource. If set to null, it will clear the current description of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=35, Max=10000)]
-        public string Statement
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
+        public string OptionalValue
         {
-            get { return this._statement; }
-            set { this._statement = value; }
+            get { return this._optionalValue; }
+            set { this._optionalValue = value; }
         }
 
-        // Check to see if Statement property is set
-        internal bool IsSetStatement()
+        // Check to see if OptionalValue property is set
+        internal bool IsSetOptionalValue()
         {
-            return this._statement != null;
+            return this._optionalValue != null;
         }
 
     }
