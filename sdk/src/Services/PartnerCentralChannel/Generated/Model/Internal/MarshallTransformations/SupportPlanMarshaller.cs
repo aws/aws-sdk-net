@@ -59,17 +59,6 @@ namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetResoldBusiness())
-            {
-                context.Writer.WritePropertyName("resoldBusiness");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ResoldBusinessMarshaller.Instance;
-                marshaller.Marshall(requestObject.ResoldBusiness, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetResoldEnterprise())
             {
                 context.Writer.WritePropertyName("resoldEnterprise");
@@ -77,6 +66,17 @@ namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
 
                 var marshaller = ResoldEnterpriseMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResoldEnterprise, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetResoldUnifiedOperations())
+            {
+                context.Writer.WritePropertyName("resoldUnifiedOperations");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ResoldUnifiedOperationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ResoldUnifiedOperations, context);
 
                 context.Writer.WriteObjectEnd();
             }
