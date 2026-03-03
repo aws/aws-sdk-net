@@ -35,6 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class LogGroup
     {
         private string _arn;
+        private bool? _bearerTokenAuthenticationEnabled;
         private DateTime? _creationTime;
         private DataProtectionStatus _dataProtectionStatus;
         private bool? _deletionProtectionEnabled;
@@ -73,6 +74,26 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BearerTokenAuthenticationEnabled. 
+        /// <para>
+        /// Indicates whether bearer token authentication is enabled for this log group. When
+        /// enabled, bearer token authentication is allowed on operations until it is explicitly
+        /// disabled.
+        /// </para>
+        /// </summary>
+        public bool BearerTokenAuthenticationEnabled
+        {
+            get { return this._bearerTokenAuthenticationEnabled.GetValueOrDefault(); }
+            set { this._bearerTokenAuthenticationEnabled = value; }
+        }
+
+        // Check to see if BearerTokenAuthenticationEnabled property is set
+        internal bool IsSetBearerTokenAuthenticationEnabled()
+        {
+            return this._bearerTokenAuthenticationEnabled.HasValue; 
         }
 
         /// <summary>

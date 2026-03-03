@@ -931,11 +931,11 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (If source has an associated AWS KMS Key) kms:Decrypt
+        /// (If source has an associated Amazon Web Services KMS Key) kms:Decrypt
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (If source has an associated AWS KMS Key) kms:GenerateDataKey
+        /// (If source has an associated Amazon Web Services KMS Key) kms:GenerateDataKey
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5253,6 +5253,17 @@ namespace Amazon.CloudWatchLogs
         /// the large field was located. For example, this could be <c>@ptr.$['input']['message']</c>,
         /// <c>@ptr.$['AAA']['BBB']['CCC']['DDD']</c>, <c>@ptr.$['AAA']</c>, or any other path
         /// matching your log structure.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>GetLogObject</c> API routes requests using SDK host prefix injection. SDK versions
+        /// released before April 1, 2026 route to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>,
+        /// which does not support VPC endpoints. SDK versions released on or after April 1, 2026
+        /// route to <c>stream-logs.<i>Region</i>.amazonaws.com</c>, which supports VPC endpoints.
+        /// To set up a VPC endpoint for this API, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs">Creating
+        /// a VPC endpoint for CloudWatch Logs </a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogObject service method.</param>
         /// 
@@ -6852,11 +6863,11 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <important> 
         /// <para>
-        /// Creating a policy disables metrics for AWS features that use EMF to create metrics,
-        /// such as CloudWatch Container Insights and CloudWatch Application Signals. To prevent
-        /// turning off those features by accident, we recommend that you exclude the underlying
-        /// log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT IN ["/aws/containerinsights",
-        /// "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
+        /// Creating a policy disables metrics for Amazon Web Services features that use EMF to
+        /// create metrics, such as CloudWatch Container Insights and CloudWatch Application Signals.
+        /// To prevent turning off those features by accident, we recommend that you exclude the
+        /// underlying log-groups through a selection-criteria such as <c>LogGroupNamePrefix NOT
+        /// IN ["/aws/containerinsights", "/aws/ecs/containerinsights", "/aws/application-signals/data"]</c>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -6973,6 +6984,86 @@ namespace Amazon.CloudWatchLogs
         public virtual PutAccountPolicyResponse EndPutAccountPolicy(IAsyncResult asyncResult)
         {
             return EndInvoke<PutAccountPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutBearerTokenAuthentication
+
+        /// <summary>
+        /// Enables or disables bearer token authentication for the specified log group. When
+        /// enabled on a log group, bearer token authentication is enabled on operations until
+        /// it is explicitly disabled.
+        /// 
+        ///  
+        /// <para>
+        /// For information about the parameters that are common to all actions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html">Common
+        /// Parameters</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutBearerTokenAuthentication service method.</param>
+        /// 
+        /// <returns>The response from the PutBearerTokenAuthentication service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidOperationException">
+        /// The operation is not valid on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutBearerTokenAuthentication">REST API Reference for PutBearerTokenAuthentication Operation</seealso>
+        public virtual PutBearerTokenAuthenticationResponse PutBearerTokenAuthentication(PutBearerTokenAuthenticationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutBearerTokenAuthenticationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBearerTokenAuthenticationResponseUnmarshaller.Instance;
+
+            return Invoke<PutBearerTokenAuthenticationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutBearerTokenAuthentication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutBearerTokenAuthentication operation on AmazonCloudWatchLogsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutBearerTokenAuthentication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutBearerTokenAuthentication">REST API Reference for PutBearerTokenAuthentication Operation</seealso>
+        public virtual IAsyncResult BeginPutBearerTokenAuthentication(PutBearerTokenAuthenticationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutBearerTokenAuthenticationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutBearerTokenAuthenticationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutBearerTokenAuthentication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutBearerTokenAuthentication.</param>
+        /// 
+        /// <returns>Returns a  PutBearerTokenAuthenticationResult from CloudWatchLogs.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutBearerTokenAuthentication">REST API Reference for PutBearerTokenAuthentication Operation</seealso>
+        public virtual PutBearerTokenAuthenticationResponse EndPutBearerTokenAuthentication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutBearerTokenAuthenticationResponse>(asyncResult);
         }
 
         #endregion
@@ -8737,8 +8828,12 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <c>StartLiveTail</c> API routes requests to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>
-        /// using SDK host prefix injection. VPC endpoint support is not available for this API.
+        /// The <c>StartLiveTail</c> API routes requests using SDK host prefix injection. SDK
+        /// versions released before April 1, 2026 route to <c>streaming-logs.<i>Region</i>.amazonaws.com</c>,
+        /// which does not support VPC endpoints. SDK versions released on or after April 1, 2026
+        /// route to <c>stream-logs.<i>Region</i>.amazonaws.com</c>, which supports VPC endpoints.
+        /// To set up a VPC endpoint for this API, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs">Creating
+        /// a VPC endpoint for CloudWatch Logs </a>.
         /// </para>
         ///  </note> <important> 
         /// <para>
