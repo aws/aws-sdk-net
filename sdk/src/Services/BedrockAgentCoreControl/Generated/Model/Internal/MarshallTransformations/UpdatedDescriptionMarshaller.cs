@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PolicyDefinition Marshaller
+    /// UpdatedDescription Marshaller
     /// </summary>
-    public class PolicyDefinitionMarshaller : IRequestMarshaller<PolicyDefinition, JsonMarshallerContext> 
+    public class UpdatedDescriptionMarshaller : IRequestMarshaller<UpdatedDescription, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,14 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PolicyDefinition requestObject, JsonMarshallerContext context)
+        public void Marshall(UpdatedDescription requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCedar())
+            if(requestObject.IsSetOptionalValue())
             {
-                context.Writer.WritePropertyName("cedar");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CedarPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.Cedar, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPolicyGeneration())
-            {
-                context.Writer.WritePropertyName("policyGeneration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = PolicyGenerationDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.PolicyGeneration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("optionalValue");
+                context.Writer.Write(requestObject.OptionalValue);
             }
 
         }
@@ -75,7 +59,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PolicyDefinitionMarshaller Instance = new PolicyDefinitionMarshaller();
+        public readonly static UpdatedDescriptionMarshaller Instance = new UpdatedDescriptionMarshaller();
 
     }
 }

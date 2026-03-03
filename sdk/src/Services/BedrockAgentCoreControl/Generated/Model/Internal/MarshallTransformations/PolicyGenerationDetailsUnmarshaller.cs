@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PolicyDefinition Object
+    /// Response Unmarshaller for PolicyGenerationDetails Object
     /// </summary>  
-    public class PolicyDefinitionUnmarshaller : IUnmarshaller<PolicyDefinition, XmlUnmarshallerContext>, IUnmarshaller<PolicyDefinition, JsonUnmarshallerContext>
+    public class PolicyGenerationDetailsUnmarshaller : IUnmarshaller<PolicyGenerationDetails, XmlUnmarshallerContext>, IUnmarshaller<PolicyGenerationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PolicyDefinition IUnmarshaller<PolicyDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PolicyGenerationDetails IUnmarshaller<PolicyGenerationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PolicyDefinition Unmarshall(JsonUnmarshallerContext context)
+        public PolicyGenerationDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            PolicyDefinition unmarshalledObject = new PolicyDefinition();
+            PolicyGenerationDetails unmarshalledObject = new PolicyGenerationDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cedar", targetDepth))
+                if (context.TestExpression("policyGenerationAssetId", targetDepth))
                 {
-                    var unmarshaller = CedarPolicyUnmarshaller.Instance;
-                    unmarshalledObject.Cedar = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PolicyGenerationAssetId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("policyGeneration", targetDepth))
+                if (context.TestExpression("policyGenerationId", targetDepth))
                 {
-                    var unmarshaller = PolicyGenerationDetailsUnmarshaller.Instance;
-                    unmarshalledObject.PolicyGeneration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PolicyGenerationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static PolicyDefinitionUnmarshaller _instance = new PolicyDefinitionUnmarshaller();        
+        private static PolicyGenerationDetailsUnmarshaller _instance = new PolicyGenerationDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PolicyDefinitionUnmarshaller Instance
+        public static PolicyGenerationDetailsUnmarshaller Instance
         {
             get
             {

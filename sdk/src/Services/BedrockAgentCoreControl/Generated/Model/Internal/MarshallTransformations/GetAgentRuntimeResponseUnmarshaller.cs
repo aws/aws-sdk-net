@@ -124,6 +124,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.LifecycleConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("metadataConfiguration", targetDepth))
+                {
+                    var unmarshaller = RuntimeMetadataConfigurationUnmarshaller.Instance;
+                    response.MetadataConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("networkConfiguration", targetDepth))
                 {
                     var unmarshaller = NetworkConfigurationUnmarshaller.Instance;

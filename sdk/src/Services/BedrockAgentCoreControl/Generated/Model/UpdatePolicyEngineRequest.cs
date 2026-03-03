@@ -38,7 +38,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class UpdatePolicyEngineRequest : AmazonBedrockAgentCoreControlRequest
     {
-        private string _description;
+        private UpdatedDescription _description;
         private string _policyEngineId;
 
         /// <summary>
@@ -47,8 +47,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The new description for the policy engine.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
-        public string Description
+        public UpdatedDescription Description
         {
             get { return this._description; }
             set { this._description = value; }

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PolicyDefinition Marshaller
+    /// RuntimeMetadataConfiguration Marshaller
     /// </summary>
-    public class PolicyDefinitionMarshaller : IRequestMarshaller<PolicyDefinition, JsonMarshallerContext> 
+    public class RuntimeMetadataConfigurationMarshaller : IRequestMarshaller<RuntimeMetadataConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,14 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PolicyDefinition requestObject, JsonMarshallerContext context)
+        public void Marshall(RuntimeMetadataConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCedar())
+            if(requestObject.IsSetRequireMMDSV2())
             {
-                context.Writer.WritePropertyName("cedar");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CedarPolicyMarshaller.Instance;
-                marshaller.Marshall(requestObject.Cedar, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetPolicyGeneration())
-            {
-                context.Writer.WritePropertyName("policyGeneration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = PolicyGenerationDetailsMarshaller.Instance;
-                marshaller.Marshall(requestObject.PolicyGeneration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("requireMMDSV2");
+                context.Writer.Write(requestObject.RequireMMDSV2);
             }
 
         }
@@ -75,7 +59,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PolicyDefinitionMarshaller Instance = new PolicyDefinitionMarshaller();
+        public readonly static RuntimeMetadataConfigurationMarshaller Instance = new RuntimeMetadataConfigurationMarshaller();
 
     }
 }

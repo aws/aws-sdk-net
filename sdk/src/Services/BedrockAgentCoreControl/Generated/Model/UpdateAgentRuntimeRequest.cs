@@ -42,6 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _description;
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private LifecycleConfiguration _lifecycleConfiguration;
+        private RuntimeMetadataConfiguration _metadataConfiguration;
         private NetworkConfiguration _networkConfiguration;
         private ProtocolConfiguration _protocolConfiguration;
         private RequestHeaderConfiguration _requestHeaderConfiguration;
@@ -176,6 +177,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetLifecycleConfiguration()
         {
             return this._lifecycleConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetadataConfiguration. 
+        /// <para>
+        /// The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore
+        /// Runtime.
+        /// </para>
+        /// </summary>
+        public RuntimeMetadataConfiguration MetadataConfiguration
+        {
+            get { return this._metadataConfiguration; }
+            set { this._metadataConfiguration = value; }
+        }
+
+        // Check to see if MetadataConfiguration property is set
+        internal bool IsSetMetadataConfiguration()
+        {
+            return this._metadataConfiguration != null;
         }
 
         /// <summary>
