@@ -30,16 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralChannel.Model
 {
     /// <summary>
-    /// Configuration for resold business support plans.
+    /// Configuration for resold unified operations support plans.
     /// </summary>
-    public partial class ResoldBusiness
+    public partial class ResoldUnifiedOperations
     {
+        private string _chargeAccountId;
         private Coverage _coverage;
+        private string _tamLocation;
+
+        /// <summary>
+        /// Gets and sets the property ChargeAccountId. 
+        /// <para>
+        /// The AWS account ID to charge for the support plan.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string ChargeAccountId
+        {
+            get { return this._chargeAccountId; }
+            set { this._chargeAccountId = value; }
+        }
+
+        // Check to see if ChargeAccountId property is set
+        internal bool IsSetChargeAccountId()
+        {
+            return this._chargeAccountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Coverage. 
         /// <para>
-        /// The coverage level for resold business support.
+        /// The coverage level for resold unified operations support.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -53,6 +74,25 @@ namespace Amazon.PartnerCentralChannel.Model
         internal bool IsSetCoverage()
         {
             return this._coverage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TamLocation. 
+        /// <para>
+        /// The location of the Technical Account Manager (TAM).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string TamLocation
+        {
+            get { return this._tamLocation; }
+            set { this._tamLocation = value; }
+        }
+
+        // Check to see if TamLocation property is set
+        internal bool IsSetTamLocation()
+        {
+            return this._tamLocation != null;
         }
 
     }

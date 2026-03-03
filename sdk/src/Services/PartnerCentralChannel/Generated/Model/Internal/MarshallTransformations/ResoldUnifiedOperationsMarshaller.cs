@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ResoldBusiness Marshaller
+    /// ResoldUnifiedOperations Marshaller
     /// </summary>
-    public class ResoldBusinessMarshaller : IRequestMarshaller<ResoldBusiness, JsonMarshallerContext> 
+    public class ResoldUnifiedOperationsMarshaller : IRequestMarshaller<ResoldUnifiedOperations, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,14 +42,26 @@ namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ResoldBusiness requestObject, JsonMarshallerContext context)
+        public void Marshall(ResoldUnifiedOperations requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetChargeAccountId())
+            {
+                context.Writer.WritePropertyName("chargeAccountId");
+                context.Writer.WriteStringValue(requestObject.ChargeAccountId);
+            }
+
             if(requestObject.IsSetCoverage())
             {
                 context.Writer.WritePropertyName("coverage");
                 context.Writer.WriteStringValue(requestObject.Coverage);
+            }
+
+            if(requestObject.IsSetTamLocation())
+            {
+                context.Writer.WritePropertyName("tamLocation");
+                context.Writer.WriteStringValue(requestObject.TamLocation);
             }
 
         }
@@ -57,7 +69,7 @@ namespace Amazon.PartnerCentralChannel.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ResoldBusinessMarshaller Instance = new ResoldBusinessMarshaller();
+        public readonly static ResoldUnifiedOperationsMarshaller Instance = new ResoldUnifiedOperationsMarshaller();
 
     }
 }
