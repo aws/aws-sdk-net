@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AnonymousUserArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) to use for the anonymous Amazon Quick Suite user.
+        /// The Amazon Resource Name (ARN) to use for the anonymous Amazon Quick user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
