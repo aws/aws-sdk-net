@@ -30,7 +30,8 @@ internal static class DynamoDbBenchmarkTableManager
             {
                 new("PartitionKey", ScalarAttributeType.S),
                 new("SortKey", ScalarAttributeType.S)
-            }
+            },
+            BillingMode = BillingMode.PAY_PER_REQUEST
         };
 
         await client.CreateTableAsync(request, cancellationToken).ConfigureAwait(false);
@@ -44,6 +45,20 @@ internal static class DynamoDbBenchmarkTableManager
             }
 
             await Task.Delay(500, cancellationToken).ConfigureAwait(false);
+        }
+    }
+
+    public static async Task DeleteTableAsync(AmazonDynamoDBClient client, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            await client.DeleteTableAsync(TableName, cancellationToken).ConfigureAwait(false);
+        }
+        catch (ResourceInUseException)
+        {
+        }
+        catch (ResourceNotFoundException)
+        {
         }
     }
 }

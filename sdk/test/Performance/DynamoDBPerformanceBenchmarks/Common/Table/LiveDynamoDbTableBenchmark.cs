@@ -26,4 +26,11 @@ public abstract class LiveDynamoDbTableBenchmark : DynamoDbTableBenchmark
             ObjectComplexity);
         State.Setup();
     }
+
+    [GlobalCleanup]
+    public async Task Cleanup()
+    {
+        using var client = new AmazonDynamoDBClient();
+        await DynamoDbBenchmarkTableManager.DeleteTableAsync(client).ConfigureAwait(false);
+    }
 }

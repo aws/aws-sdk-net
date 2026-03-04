@@ -4,7 +4,7 @@ using BenchmarkDotNet.Order;
 namespace AWSSDK.Benchmarks.MockedDynamoDB.DynamoDbContext;
 
 [Orderer(SummaryOrderPolicy.FastestToSlowest)]
-public sealed class RealDynamoDbContextDeleteBenchmark : LiveDynamoDbContextBenchmark
+public class RealDynamoDbContextDeleteBenchmark : LiveDynamoDbContextBenchmark
 {
     [Benchmark]
     public Task DeleteAsync() => State.ContextDeleteAsync();

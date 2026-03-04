@@ -110,6 +110,17 @@ public sealed class DynamoDbContextBenchmarkState : MockedDynamoDbBenchmarkState
 
     public Task ContextDeleteHashKeyRangeKeyWithDeleteConfigAsync() => _contextDeleteHashKeyRangeKeyWithDeleteConfig!();
 
+    public Task SeedAsync()
+    {
+        if (_context == null || _item == null)
+        {
+            throw new InvalidOperationException("State is not initialized.");
+        }
+
+        var saveConfig = new SaveConfig { OverrideTableName = TableName };
+        return _context.SaveAsync(_item.GetType(), _item, saveConfig);
+    }
+
     public Task ContextQueryAsync()
     {
         throw new NotImplementedException();

@@ -4,7 +4,7 @@ using BenchmarkDotNet.Order;
 namespace AWSSDK.Benchmarks.MockedDynamoDB.DynamoDbContext;
 
 [Orderer(SummaryOrderPolicy.FastestToSlowest)]
-public sealed class RealDynamoDbContextSaveBenchmark : LiveDynamoDbContextBenchmark
+public class RealDynamoDbContextSaveBenchmark : LiveDynamoDbContextBenchmark
 {
     [Benchmark]
     public Task SaveAsync() => State.ContextSaveAsync();

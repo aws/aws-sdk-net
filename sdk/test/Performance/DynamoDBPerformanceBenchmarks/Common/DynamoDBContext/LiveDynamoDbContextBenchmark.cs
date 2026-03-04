@@ -27,5 +27,6 @@ public abstract class LiveDynamoDbContextBenchmark : DynamoDbContextBenchmark
             ConverterUsage,
             AnnotationStyle);
         State.Setup();
+        await State.SeedAsync().ConfigureAwait(false);
     }
 }
