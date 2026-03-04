@@ -1,3 +1,17 @@
+### 4.0.203.0 (2026-03-04 19:19 UTC)
+* Connect (4.0.35.0)
+	* Added support for configuring additional email addresses on queues in Amazon Connect. Agents can now select an outbound email address and associate additional email addresses for replying to or initiating emails.
+* ElasticBeanstalk (4.0.3.0)
+	* As part of this release, Beanstalk introduce a new info type - analyze for request environment info and retrieve environment info operations. When customers request an Al analysis, Elastic Beanstalk runs a script on an instance in their environment and returns an analysis of events, health and logs.
+* Elasticsearch (4.0.4.0)
+	* Adds support for DeploymentStrategyOptions.
+* GameLift (4.0.7.0)
+	* Amazon GameLift Servers now offers DDoS protection for Linux-based EC2 and Container Fleets on SDKv5. The player gateway proxy relay network provides traffic validation, per-player rate limiting, and game server IP address obfuscation all with negligible added latency and no additional cost.
+* OpenSearchService (4.0.11.0)
+	* Adding support for DeploymentStrategyOptions
+* QuickSight (4.0.16.0)
+	* Added several new values for Capabilities, increased visual limit per sheet from previous limit to 75, renamed Quick Suite to Quick in several places.
+
 ### 4.0.202.0 (2026-03-03 20:07 UTC)
 * BedrockAgentCoreControl (4.0.17.0)
 	* Support for AgentCore Policy GA
