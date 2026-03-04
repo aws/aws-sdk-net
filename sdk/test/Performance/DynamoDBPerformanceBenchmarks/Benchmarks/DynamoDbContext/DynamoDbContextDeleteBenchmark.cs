@@ -5,7 +5,7 @@ namespace AWSSDK.Benchmarks.MockedDynamoDB.DynamoDbContext;
 
 
 [Orderer(SummaryOrderPolicy.FastestToSlowest)]
-public class DynamoDbContextDeleteBenchmark : MockedDynamoDbContextBenchmark
+public class DynamoDbContextDeleteBenchmark : MockedDynamoDbContextDeleteBenchmark
 {
     [Benchmark]
     public Task DeleteAsync() => State.ContextDeleteAsync();

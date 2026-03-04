@@ -44,26 +44,6 @@ public abstract class DynamoDbContextBenchmark
     public IEnumerable<BenchmarkAnnotationStyle> AnnotationStyleValues => BenchmarkParameterHelper.GetValues(
         BenchmarkContextRuntimeOptions.Current.ParameterOverrides?.AnnotationStyle);
 
-    //[GlobalSetup]
-    //public void Setup()
-    //{
-    //    BenchmarkContextRuntimeOptions.Configure(options =>
-    //    {
-    //        options.ClientFactory = _ => new AmazonDynamoDBClient();
-    //    });
-
-    //    ApplyParameterOverrides();
-
-    //    State = new DynamoDbContextBenchmarkState(
-    //        ItemSize,
-    //        AttributeCount,
-    //        ExpressionStyle,
-    //        ObjectComplexity,
-    //        ConverterUsage,
-    //        AnnotationStyle);
-    //    State.Setup();
-    //}
-
     protected void ApplyParameterOverrides()
     {
         var overrides = BenchmarkContextRuntimeOptions.Current.ParameterOverrides;
