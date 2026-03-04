@@ -1,0 +1,5 @@
+{
+  "active": false,
+  "synopsis": "Health Agent for healthcare providers and patient engagement.",
+  "generate-client-constructors": true
+}
