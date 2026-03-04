@@ -31,7 +31,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstances operation.
-    /// <b>This API works with the following fleet types:</b> EC2
+    /// <b>This API works with the following fleet types:</b>EC2, Container
     /// 
     ///  
     /// <para>

@@ -150,6 +150,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PlayerGatewayStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlayerGatewayStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PlayerSessionCreationPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

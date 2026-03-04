@@ -185,13 +185,19 @@ namespace Amazon.GameLift.Model
         /// A set of key-value pairs that can store custom data in a game session. For example:
         /// <c>{"Key": "difficulty", "Value": "novice"}</c>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// Avoid using periods (".") in property keys if you plan to search for game sessions
         /// by properties. Property keys containing periods cannot be searched and will be filtered
         /// out from search results due to search index limitations.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use SearchGameSessions API, there is a limit of 500 game property keys across
+        /// all game sessions and all fleets per region. If the limit is exceeded, there will
+        /// potentially be game session entries missing from SearchGameSessions API results.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         [AWSProperty(Max=16)]
         public List<GameProperty> GameProperties

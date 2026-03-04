@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GameSessionConnectionInfo Object
+    /// Response Unmarshaller for PlayerConnectionEndpoint Object
     /// </summary>  
-    public class GameSessionConnectionInfoUnmarshaller : IUnmarshaller<GameSessionConnectionInfo, XmlUnmarshallerContext>, IUnmarshaller<GameSessionConnectionInfo, JsonUnmarshallerContext>
+    public class PlayerConnectionEndpointUnmarshaller : IUnmarshaller<PlayerConnectionEndpoint, XmlUnmarshallerContext>, IUnmarshaller<PlayerConnectionEndpoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GameSessionConnectionInfo IUnmarshaller<GameSessionConnectionInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PlayerConnectionEndpoint IUnmarshaller<PlayerConnectionEndpoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GameSessionConnectionInfo Unmarshall(JsonUnmarshallerContext context)
+        public PlayerConnectionEndpoint Unmarshall(JsonUnmarshallerContext context)
         {
-            GameSessionConnectionInfo unmarshalledObject = new GameSessionConnectionInfo();
+            PlayerConnectionEndpoint unmarshalledObject = new PlayerConnectionEndpoint();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DnsName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("GameSessionArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GameSessionArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("IpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MatchedPlayerSessions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MatchedPlayerSession, MatchedPlayerSessionUnmarshaller>(MatchedPlayerSessionUnmarshaller.Instance);
-                    unmarshalledObject.MatchedPlayerSessions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PlayerGatewayStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlayerGatewayStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Port", targetDepth))
@@ -107,12 +83,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         }
 
 
-        private static GameSessionConnectionInfoUnmarshaller _instance = new GameSessionConnectionInfoUnmarshaller();        
+        private static PlayerConnectionEndpointUnmarshaller _instance = new PlayerConnectionEndpointUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GameSessionConnectionInfoUnmarshaller Instance
+        public static PlayerConnectionEndpointUnmarshaller Instance
         {
             get
             {

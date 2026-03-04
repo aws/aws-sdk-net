@@ -211,6 +211,23 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PeerVpcId);
                 }
 
+                if(publicRequest.IsSetPlayerGatewayConfiguration())
+                {
+                    context.Writer.WritePropertyName("PlayerGatewayConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PlayerGatewayConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PlayerGatewayConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPlayerGatewayMode())
+                {
+                    context.Writer.WritePropertyName("PlayerGatewayMode");
+                    context.Writer.Write(publicRequest.PlayerGatewayMode);
+                }
+
                 if(publicRequest.IsSetResourceCreationLimitPolicy())
                 {
                     context.Writer.WritePropertyName("ResourceCreationLimitPolicy");

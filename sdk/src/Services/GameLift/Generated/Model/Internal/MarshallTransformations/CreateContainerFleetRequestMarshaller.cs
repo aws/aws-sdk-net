@@ -193,6 +193,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PerInstanceContainerGroupDefinitionName);
                 }
 
+                if(publicRequest.IsSetPlayerGatewayMode())
+                {
+                    context.Writer.WritePropertyName("PlayerGatewayMode");
+                    context.Writer.Write(publicRequest.PlayerGatewayMode);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");

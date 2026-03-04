@@ -184,7 +184,7 @@ namespace Amazon.GameLift.Model
         /// 0.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0)]
         public long SizeOnDisk
         {
             get { return this._sizeOnDisk.GetValueOrDefault(); }

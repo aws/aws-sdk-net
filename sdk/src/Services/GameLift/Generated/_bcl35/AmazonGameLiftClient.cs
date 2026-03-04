@@ -5823,7 +5823,7 @@ namespace Amazon.GameLift
         #region  DescribeFleetAttributes
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere
         /// 
         ///  
         /// <para>
@@ -7331,7 +7331,9 @@ namespace Amazon.GameLift
         /// This practice can cause you to exceed your API limit, which results in errors. Instead,
         /// you must configure an Amazon Simple Notification Service (SNS) topic to receive notifications
         /// from FlexMatch or queues. Continuously polling with <c>DescribeGameSessionPlacement</c>
-        /// should only be used for games in development with low game session usage. 
+        /// should only be used for games in development with low game session usage. For a reference
+        /// implementation of event-based game session placement tracking, see <a href="https://github.com/amazon-gamelift/amazon-gamelift-toolkit/tree/main/event-based-session-placement">
+        /// Event-based game session placement guidance</a> in the Amazon GameLift Toolkit.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGameSessionPlacement service method.</param>
@@ -7628,7 +7630,7 @@ namespace Amazon.GameLift
         #region  DescribeInstances
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2
+        /// <b>This API works with the following fleet types:</b>EC2, Container
         /// 
         ///  
         /// <para>
@@ -9097,6 +9099,119 @@ namespace Amazon.GameLift
         public virtual GetInstanceAccessResponse EndGetInstanceAccess(IAsyncResult asyncResult)
         {
             return EndInvoke<GetInstanceAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPlayerConnectionDetails
+
+        /// <summary>
+        /// <b>This API works with the following fleet types:</b> EC2 (server SDK 5.x or later),
+        /// Container
+        /// 
+        ///  
+        /// <para>
+        /// Retrieves connection details for game clients to connect to game sessions. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Player gateway benefits:</b> DDoS protection with negligible impact to latency.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// To enable player gateway on your fleet, set <c>PlayerGatewayMode</c> to <c>ENABLED</c>
+        /// or <c>REQUIRED</c> when calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html">CreateFleet</a>
+        /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerFleet.html">CreateContainerFleet</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>How to use:</b> After creating a game session and adding players, call this operation
+        /// with the game session ID and player IDs. When player gateway is enabled, the response
+        /// includes connection endpoints and player gateway tokens that your game clients can
+        /// use to connect to the game session through player gateway. To learn more about player
+        /// gateway integration, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/ddos-protection-intro.html">DDoS
+        /// protection with Amazon GameLift Servers player gateway</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When player gateway is disabled or in locations where player gateway is not supported,
+        /// this operation returns game server connection information without player gateway tokens,
+        /// so that your game clients directly connect to the game server endpoint.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPlayerConnectionDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetPlayerConnectionDetails service method, as returned by GameLift.</returns>
+        /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
+        /// The service encountered an unrecoverable internal failure while processing the request.
+        /// Clients can retry such requests immediately or after a waiting period.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidGameSessionStatusException">
+        /// The requested operation would cause a conflict with the current state of a resource
+        /// associated with the request and/or the game instance. Resolve the conflict before
+        /// retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.InvalidRequestException">
+        /// One or more parameter values in the request are invalid. Correct the invalid parameter
+        /// values before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.LimitExceededException">
+        /// The requested operation would cause the resource to exceed the allowed service limit.
+        /// Resolve the issue before retrying.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.NotFoundException">
+        /// The requested resources was not found. The resource was either not created yet or
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
+        /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetPlayerConnectionDetails">REST API Reference for GetPlayerConnectionDetails Operation</seealso>
+        public virtual GetPlayerConnectionDetailsResponse GetPlayerConnectionDetails(GetPlayerConnectionDetailsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPlayerConnectionDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlayerConnectionDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetPlayerConnectionDetailsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPlayerConnectionDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPlayerConnectionDetails operation on AmazonGameLiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPlayerConnectionDetails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetPlayerConnectionDetails">REST API Reference for GetPlayerConnectionDetails Operation</seealso>
+        public virtual IAsyncResult BeginGetPlayerConnectionDetails(GetPlayerConnectionDetailsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetPlayerConnectionDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPlayerConnectionDetailsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPlayerConnectionDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPlayerConnectionDetails.</param>
+        /// 
+        /// <returns>Returns a  GetPlayerConnectionDetailsResult from GameLift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetPlayerConnectionDetails">REST API Reference for GetPlayerConnectionDetails Operation</seealso>
+        public virtual GetPlayerConnectionDetailsResponse EndGetPlayerConnectionDetails(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPlayerConnectionDetailsResponse>(asyncResult);
         }
 
         #endregion
@@ -11253,13 +11368,19 @@ namespace Amazon.GameLift
         ///  For examples of searching game sessions, see the ones below, and also see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-search">Search
         /// game sessions by game property</a>. 
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// Avoid using periods (".") in property keys if you plan to search for game sessions
         /// by properties. Property keys containing periods cannot be searched and will be filtered
         /// out from search results due to search index limitations.
         /// </para>
-        ///  </note> </li> <li> 
+        ///  </li> <li> 
+        /// <para>
+        /// If you use SearchGameSessions API, there is a limit of 500 game property keys across
+        /// all game sessions and all fleets per region. If the limit is exceeded, there will
+        /// potentially be game session entries missing from SearchGameSessions API results.
+        /// </para>
+        ///  </li> </ul> </note> </li> <li> 
         /// <para>
         ///  <b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session.
         /// </para>
