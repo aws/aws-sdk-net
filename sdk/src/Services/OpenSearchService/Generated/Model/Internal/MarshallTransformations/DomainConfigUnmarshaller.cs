@@ -114,6 +114,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CognitoOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeploymentStrategyOptions", targetDepth))
+                {
+                    var unmarshaller = DeploymentStrategyOptionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentStrategyOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DomainEndpointOptions", targetDepth))
                 {
                     var unmarshaller = DomainEndpointOptionsStatusUnmarshaller.Instance;

@@ -43,6 +43,7 @@ namespace Amazon.OpenSearchService.Model
         private AutoTuneOptionsInput _autoTuneOptions;
         private ClusterConfig _clusterConfig;
         private CognitoOptions _cognitoOptions;
+        private DeploymentStrategyOptions _deploymentStrategyOptions;
         private DomainEndpointOptions _domainEndpointOptions;
         private string _domainName;
         private EBSOptions _ebsOptions;
@@ -220,6 +221,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetCognitoOptions()
         {
             return this._cognitoOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentStrategyOptions. 
+        /// <para>
+        /// Specifies the deployment strategy options for the domain.
+        /// </para>
+        /// </summary>
+        public DeploymentStrategyOptions DeploymentStrategyOptions
+        {
+            get { return this._deploymentStrategyOptions; }
+            set { this._deploymentStrategyOptions = value; }
+        }
+
+        // Check to see if DeploymentStrategyOptions property is set
+        internal bool IsSetDeploymentStrategyOptions()
+        {
+            return this._deploymentStrategyOptions != null;
         }
 
         /// <summary>

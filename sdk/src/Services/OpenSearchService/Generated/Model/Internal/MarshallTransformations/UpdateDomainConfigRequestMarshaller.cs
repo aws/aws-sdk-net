@@ -145,6 +145,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDeploymentStrategyOptions())
+                {
+                    context.Writer.WritePropertyName("DeploymentStrategyOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeploymentStrategyOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeploymentStrategyOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDomainEndpointOptions())
                 {
                     context.Writer.WritePropertyName("DomainEndpointOptions");
