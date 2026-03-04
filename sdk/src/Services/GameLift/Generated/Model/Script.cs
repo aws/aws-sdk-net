@@ -159,7 +159,7 @@ namespace Amazon.GameLift.Model
         /// uploaded from an S3 location, this value remains at "0".
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=0)]
         public long? SizeOnDisk
         {
             get { return this._sizeOnDisk; }

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContainerFleetLocationAttributes Object
+    /// Response Unmarshaller for PlayerConnectionDetail Object
     /// </summary>  
-    public class ContainerFleetLocationAttributesUnmarshaller : IJsonUnmarshaller<ContainerFleetLocationAttributes, JsonUnmarshallerContext>
+    public class PlayerConnectionDetailUnmarshaller : IJsonUnmarshaller<PlayerConnectionDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContainerFleetLocationAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PlayerConnectionDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ContainerFleetLocationAttributes unmarshalledObject = new ContainerFleetLocationAttributes();
+            PlayerConnectionDetail unmarshalledObject = new PlayerConnectionDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,28 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Location", targetDepth))
+                if (context.TestExpression("Endpoints", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<PlayerConnectionEndpoint, PlayerConnectionEndpointUnmarshaller>(PlayerConnectionEndpointUnmarshaller.Instance);
+                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlayerGatewayStatus", targetDepth))
+                if (context.TestExpression("Expiration", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlayerGatewayStatus = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Expiration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("PlayerGatewayToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.PlayerGatewayToken = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("PlayerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlayerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +85,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContainerFleetLocationAttributesUnmarshaller _instance = new ContainerFleetLocationAttributesUnmarshaller();        
+        private static PlayerConnectionDetailUnmarshaller _instance = new PlayerConnectionDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContainerFleetLocationAttributesUnmarshaller Instance
+        public static PlayerConnectionDetailUnmarshaller Instance
         {
             get
             {

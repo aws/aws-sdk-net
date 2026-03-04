@@ -73,6 +73,7 @@ namespace Amazon.GameLift.Model
     public partial class LocationState
     {
         private string _location;
+        private PlayerGatewayStatus _playerGatewayStatus;
         private FleetStatus _status;
 
         /// <summary>
@@ -93,6 +94,41 @@ namespace Amazon.GameLift.Model
         internal bool IsSetLocation()
         {
             return this._location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayerGatewayStatus. 
+        /// <para>
+        /// The current status of player gateway in this location for this fleet. Note, even if
+        /// a fleet has PlayerGatewayMode configured as <c>ENABLED</c>, player gateway might not
+        /// be available in a specific location. For more information about locations where player
+        /// gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon
+        /// GameLift Servers service locations</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c> -- Player gateway is available for this fleet location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> -- Player gateway is not available for this fleet location.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PlayerGatewayStatus PlayerGatewayStatus
+        {
+            get { return this._playerGatewayStatus; }
+            set { this._playerGatewayStatus = value; }
+        }
+
+        // Check to see if PlayerGatewayStatus property is set
+        internal bool IsSetPlayerGatewayStatus()
+        {
+            return this._playerGatewayStatus != null;
         }
 
         /// <summary>

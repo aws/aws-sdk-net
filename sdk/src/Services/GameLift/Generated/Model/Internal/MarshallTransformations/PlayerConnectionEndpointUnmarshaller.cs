@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContainerFleetLocationAttributes Object
+    /// Response Unmarshaller for PlayerConnectionEndpoint Object
     /// </summary>  
-    public class ContainerFleetLocationAttributesUnmarshaller : IJsonUnmarshaller<ContainerFleetLocationAttributes, JsonUnmarshallerContext>
+    public class PlayerConnectionEndpointUnmarshaller : IJsonUnmarshaller<PlayerConnectionEndpoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContainerFleetLocationAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PlayerConnectionEndpoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ContainerFleetLocationAttributes unmarshalledObject = new ContainerFleetLocationAttributes();
+            PlayerConnectionEndpoint unmarshalledObject = new PlayerConnectionEndpoint();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Location", targetDepth))
+                if (context.TestExpression("IpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PlayerGatewayStatus", targetDepth))
+                if (context.TestExpression("Port", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PlayerGatewayStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContainerFleetLocationAttributesUnmarshaller _instance = new ContainerFleetLocationAttributesUnmarshaller();        
+        private static PlayerConnectionEndpointUnmarshaller _instance = new PlayerConnectionEndpointUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContainerFleetLocationAttributesUnmarshaller Instance
+        public static PlayerConnectionEndpointUnmarshaller Instance
         {
             get
             {
