@@ -184,8 +184,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the sheet. This name is displayed on the sheet's tab in the Quick Suite
-        /// console.
+        /// The name of the sheet. This name is displayed on the sheet's tab in the Quick console.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -309,7 +308,7 @@ namespace Amazon.QuickSight.Model
         /// of the sheet.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Max=75)]
         public List<Visual> Visuals
         {
             get { return this._visuals; }

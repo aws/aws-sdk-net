@@ -90,6 +90,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Analysis);
             }
 
+            if(requestObject.IsSetApproveFlowShareRequests())
+            {
+                context.Writer.WritePropertyName("ApproveFlowShareRequests");
+                context.Writer.Write(requestObject.ApproveFlowShareRequests);
+            }
+
             if(requestObject.IsSetAsanaAction())
             {
                 context.Writer.WritePropertyName("AsanaAction");
@@ -112,6 +118,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("BoxAgentAction");
                 context.Writer.Write(requestObject.BoxAgentAction);
+            }
+
+            if(requestObject.IsSetBuildCalculatedFieldWithQ())
+            {
+                context.Writer.WritePropertyName("BuildCalculatedFieldWithQ");
+                context.Writer.Write(requestObject.BuildCalculatedFieldWithQ);
             }
 
             if(requestObject.IsSetCanvaAgentAction())
@@ -438,6 +450,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CreateChatAgents);
             }
 
+            if(requestObject.IsSetCreateDashboardExecutiveSummaryWithQ())
+            {
+                context.Writer.WritePropertyName("CreateDashboardExecutiveSummaryWithQ");
+                context.Writer.Write(requestObject.CreateDashboardExecutiveSummaryWithQ);
+            }
+
             if(requestObject.IsSetCreateSharedFolders())
             {
                 context.Writer.WritePropertyName("CreateSharedFolders");
@@ -454,6 +472,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Dashboard");
                 context.Writer.Write(requestObject.Dashboard);
+            }
+
+            if(requestObject.IsSetEditVisualWithQ())
+            {
+                context.Writer.WritePropertyName("EditVisualWithQ");
+                context.Writer.Write(requestObject.EditVisualWithQ);
             }
 
             if(requestObject.IsSetExportToCsv())
@@ -490,6 +514,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ExportToPdfInScheduledReports");
                 context.Writer.Write(requestObject.ExportToPdfInScheduledReports);
+            }
+
+            if(requestObject.IsSetExtension())
+            {
+                context.Writer.WritePropertyName("Extension");
+                context.Writer.Write(requestObject.Extension);
             }
 
             if(requestObject.IsSetFactSetAction())
@@ -1024,6 +1054,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("TextractAction");
                 context.Writer.Write(requestObject.TextractAction);
+            }
+
+            if(requestObject.IsSetTopic())
+            {
+                context.Writer.WritePropertyName("Topic");
+                context.Writer.Write(requestObject.Topic);
             }
 
             if(requestObject.IsSetUseAgentWebSearch())

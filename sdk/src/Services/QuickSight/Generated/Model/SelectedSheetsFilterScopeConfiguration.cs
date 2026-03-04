@@ -49,7 +49,7 @@ namespace Amazon.QuickSight.Model
         /// The sheet ID and visual IDs of the sheet and visuals that the filter is applied to.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=75)]
         public List<SheetVisualScopingConfiguration> SheetVisualScopingConfigurations
         {
             get { return this._sheetVisualScopingConfigurations; }

@@ -41,10 +41,12 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _amazonBedrockKRSAction;
         private CapabilityState _amazonSThreeAction;
         private CapabilityState _analysis;
+        private CapabilityState _approveFlowShareRequests;
         private CapabilityState _asanaAction;
         private CapabilityState _automate;
         private CapabilityState _bambooHRAction;
         private CapabilityState _boxAgentAction;
+        private CapabilityState _buildCalculatedFieldWithQ;
         private CapabilityState _canvaAgentAction;
         private CapabilityState _chatAgent;
         private CapabilityState _comprehendAction;
@@ -99,15 +101,18 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createAndUpdateThresholdAlerts;
         private CapabilityState _createAndUpdateZendeskAction;
         private CapabilityState _createChatAgents;
+        private CapabilityState _createDashboardExecutiveSummaryWithQ;
         private CapabilityState _createSharedFolders;
         private CapabilityState _createSPICEDataset;
         private CapabilityState _dashboard;
+        private CapabilityState _editVisualWithQ;
         private CapabilityState _exportToCsv;
         private CapabilityState _exportToCsvInScheduledReports;
         private CapabilityState _exportToExcel;
         private CapabilityState _exportToExcelInScheduledReports;
         private CapabilityState _exportToPdf;
         private CapabilityState _exportToPdfInScheduledReports;
+        private CapabilityState _extension;
         private CapabilityState _factSetAction;
         private CapabilityState _flow;
         private CapabilityState _genericHTTPAction;
@@ -197,6 +202,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _space;
         private CapabilityState _subscribeDashboardEmailReports;
         private CapabilityState _textractAction;
+        private CapabilityState _topic;
         private CapabilityState _useAgentWebSearch;
         private CapabilityState _useAmazonBedrockARSAction;
         private CapabilityState _useAmazonBedrockFSAction;
@@ -373,6 +379,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ApproveFlowShareRequests. 
+        /// <para>
+        /// The ability to review and approve sharing requests of Flows.
+        /// </para>
+        /// </summary>
+        public CapabilityState ApproveFlowShareRequests
+        {
+            get { return this._approveFlowShareRequests; }
+            set { this._approveFlowShareRequests = value; }
+        }
+
+        // Check to see if ApproveFlowShareRequests property is set
+        internal bool IsSetApproveFlowShareRequests()
+        {
+            return this._approveFlowShareRequests != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AsanaAction. 
         /// <para>
         /// The ability to perform actions using Asana connectors.
@@ -442,6 +466,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetBoxAgentAction()
         {
             return this._boxAgentAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuildCalculatedFieldWithQ. 
+        /// <para>
+        /// The ability to Build Calculation with AI
+        /// </para>
+        /// </summary>
+        public CapabilityState BuildCalculatedFieldWithQ
+        {
+            get { return this._buildCalculatedFieldWithQ; }
+            set { this._buildCalculatedFieldWithQ = value; }
+        }
+
+        // Check to see if BuildCalculatedFieldWithQ property is set
+        internal bool IsSetBuildCalculatedFieldWithQ()
+        {
+            return this._buildCalculatedFieldWithQ != null;
         }
 
         /// <summary>
@@ -1417,6 +1459,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateDashboardExecutiveSummaryWithQ. 
+        /// <para>
+        /// The ability to Create Executive Summary
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateDashboardExecutiveSummaryWithQ
+        {
+            get { return this._createDashboardExecutiveSummaryWithQ; }
+            set { this._createDashboardExecutiveSummaryWithQ = value; }
+        }
+
+        // Check to see if CreateDashboardExecutiveSummaryWithQ property is set
+        internal bool IsSetCreateDashboardExecutiveSummaryWithQ()
+        {
+            return this._createDashboardExecutiveSummaryWithQ != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateSharedFolders. 
         /// <para>
         /// The ability to create shared folders.
@@ -1468,6 +1528,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDashboard()
         {
             return this._dashboard != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EditVisualWithQ. 
+        /// <para>
+        /// The ability to Edit Visual with AI
+        /// </para>
+        /// </summary>
+        public CapabilityState EditVisualWithQ
+        {
+            get { return this._editVisualWithQ; }
+            set { this._editVisualWithQ = value; }
+        }
+
+        // Check to see if EditVisualWithQ property is set
+        internal bool IsSetEditVisualWithQ()
+        {
+            return this._editVisualWithQ != null;
         }
 
         /// <summary>
@@ -1576,6 +1654,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetExportToPdfInScheduledReports()
         {
             return this._exportToPdfInScheduledReports != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Extension. 
+        /// <para>
+        /// The ability to perform Extension-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Extension
+        {
+            get { return this._extension; }
+            set { this._extension = value; }
+        }
+
+        // Check to see if Extension property is set
+        internal bool IsSetExtension()
+        {
+            return this._extension != null;
         }
 
         /// <summary>
@@ -3178,6 +3274,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTextractAction()
         {
             return this._textractAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Topic. 
+        /// <para>
+        /// The ability to perform Topic-related actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState Topic
+        {
+            get { return this._topic; }
+            set { this._topic = value; }
+        }
+
+        // Check to see if Topic property is set
+        internal bool IsSetTopic()
+        {
+            return this._topic != null;
         }
 
         /// <summary>

@@ -31,9 +31,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the GenerateEmbedUrlForAnonymousUser operation.
-    /// Generates an embed URL that you can use to embed an Amazon Quick Suite dashboard or
-    /// visual in your website, without having to register any reader users. Before you use
-    /// this action, make sure that you have configured the dashboards and permissions.
+    /// Generates an embed URL that you can use to embed an Amazon Quick dashboard or visual
+    /// in your website, without having to register any reader users. Before you use this
+    /// action, make sure that you have configured the dashboards and permissions.
     /// 
     ///  
     /// <para>
@@ -53,19 +53,18 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You are charged only when the URL is used or there is interaction with Amazon Quick
-    /// Suite.
+    /// You are charged only when the URL is used or there is interaction with Amazon Quick.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded
-    /// Analytics</a> in the <i>Amazon Quick Suite User Guide</i>.
+    /// Analytics</a> in the <i>Amazon Quick User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information about the high-level steps for embedding and for an interactive
     /// demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon
-    /// Quick Suite Developer Portal</a>.
+    /// Quick Developer Portal</a>.
     /// </para>
     /// </summary>
     public partial class GenerateEmbedUrlForAnonymousUserRequest : AmazonQuickSightRequest
@@ -182,7 +181,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Namespace. 
         /// <para>
         /// The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If
-        /// you are not using an Amazon Quick Suite custom namespace, set this to <c>default</c>.
+        /// you are not using an Amazon Quick custom namespace, set this to <c>default</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -256,7 +255,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// Besides, these are not the tags used for the Amazon Web Services resource tagging
         /// feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-        /// Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick Suite User Guide</i>.
+        /// Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

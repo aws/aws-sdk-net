@@ -91,7 +91,7 @@ namespace Amazon.QuickSight.Model
         /// The selected visuals that the filter is applied to.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Max=75)]
         public List<string> VisualIds
         {
             get { return this._visualIds; }
