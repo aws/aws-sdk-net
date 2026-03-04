@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateQueue Request Marshaller
+    /// AssociateQueueEmailAddresses Request Marshaller
     /// </summary>       
-    public class CreateQueueRequestMarshaller : IMarshaller<IRequest, CreateQueueRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class AssociateQueueEmailAddressesRequestMarshaller : IMarshaller<IRequest, AssociateQueueEmailAddressesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateQueueRequest)input);
+            return this.Marshall((AssociateQueueEmailAddressesRequest)input);
         }
 
         /// <summary>
@@ -56,17 +56,20 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateQueueRequest publicRequest)
+        public IRequest Marshall(AssociateQueueEmailAddressesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "POST";
 
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
             request.AddPathResource("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
-            request.ResourcePath = "/queues/{InstanceId}";
+            if (!publicRequest.IsSetQueueId())
+                throw new AmazonConnectException("Request object does not have required field QueueId set");
+            request.AddPathResource("{QueueId}", StringUtils.FromString(publicRequest.QueueId));
+            request.ResourcePath = "/queues/{InstanceId}/{QueueId}/associate-email-addresses";
 #if !NETFRAMEWORK
             using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
             using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
@@ -76,12 +79,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDescription())
+            if(publicRequest.IsSetClientToken())
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
 
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
             if(publicRequest.IsSetEmailAddressesConfig())
             {
                 context.Writer.WritePropertyName("EmailAddressesConfig");
@@ -98,71 +106,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
-            if(publicRequest.IsSetHoursOfOperationId())
-            {
-                context.Writer.WritePropertyName("HoursOfOperationId");
-                context.Writer.WriteStringValue(publicRequest.HoursOfOperationId);
-            }
-
-            if(publicRequest.IsSetMaxContacts())
-            {
-                context.Writer.WritePropertyName("MaxContacts");
-                context.Writer.WriteNumberValue(publicRequest.MaxContacts.Value);
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetOutboundCallerConfig())
-            {
-                context.Writer.WritePropertyName("OutboundCallerConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OutboundCallerConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.OutboundCallerConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetOutboundEmailConfig())
-            {
-                context.Writer.WritePropertyName("OutboundEmailConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OutboundEmailConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.OutboundEmailConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetQuickConnectIds())
-            {
-                context.Writer.WritePropertyName("QuickConnectIds");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestQuickConnectIdsListValue in publicRequest.QuickConnectIds)
-                {
-                        context.Writer.WriteStringValue(publicRequestQuickConnectIdsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
-                }
-                context.Writer.WriteEndObject();
-            }
-
             writer.WriteEndObject();
             writer.Flush();
             // ToArray() must be called here because aspects of sigv4 signing require a byte array
@@ -176,9 +119,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateQueueRequestMarshaller _instance = new CreateQueueRequestMarshaller();        
+        private static AssociateQueueEmailAddressesRequestMarshaller _instance = new AssociateQueueEmailAddressesRequestMarshaller();        
 
-        internal static CreateQueueRequestMarshaller GetInstance()
+        internal static AssociateQueueEmailAddressesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -186,7 +129,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateQueueRequestMarshaller Instance
+        public static AssociateQueueEmailAddressesRequestMarshaller Instance
         {
             get
             {
