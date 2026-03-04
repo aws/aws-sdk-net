@@ -42,6 +42,7 @@ namespace Amazon.Elasticsearch.Model
         private AdvancedSecurityOptionsInput _advancedSecurityOptions;
         private AutoTuneOptionsInput _autoTuneOptions;
         private CognitoOptions _cognitoOptions;
+        private DeploymentStrategyOptions _deploymentStrategyOptions;
         private DomainEndpointOptions _domainEndpointOptions;
         private string _domainName;
         private EBSOptions _ebsOptions;
@@ -147,6 +148,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetCognitoOptions()
         {
             return this._cognitoOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentStrategyOptions. 
+        /// <para>
+        /// Specifies the deployment strategy options.
+        /// </para>
+        /// </summary>
+        public DeploymentStrategyOptions DeploymentStrategyOptions
+        {
+            get { return this._deploymentStrategyOptions; }
+            set { this._deploymentStrategyOptions = value; }
+        }
+
+        // Check to see if DeploymentStrategyOptions property is set
+        internal bool IsSetDeploymentStrategyOptions()
+        {
+            return this._deploymentStrategyOptions != null;
         }
 
         /// <summary>
