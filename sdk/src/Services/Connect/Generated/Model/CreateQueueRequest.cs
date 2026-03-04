@@ -62,6 +62,7 @@ namespace Amazon.Connect.Model
     public partial class CreateQueueRequest : AmazonConnectRequest
     {
         private string _description;
+        private List<EmailAddressConfig> _emailAddressesConfig = AWSConfigs.InitializeCollections ? new List<EmailAddressConfig>() : null;
         private string _hoursOfOperationId;
         private string _instanceId;
         private int? _maxContacts;
@@ -88,6 +89,27 @@ namespace Amazon.Connect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmailAddressesConfig. 
+        /// <para>
+        /// Configuration list containing the email addresses to associate with the queue during
+        /// creation. Each configuration specifies an email address ID that agents can select
+        /// when handling email contacts in this queue.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<EmailAddressConfig> EmailAddressesConfig
+        {
+            get { return this._emailAddressesConfig; }
+            set { this._emailAddressesConfig = value; }
+        }
+
+        // Check to see if EmailAddressesConfig property is set
+        internal bool IsSetEmailAddressesConfig()
+        {
+            return this._emailAddressesConfig != null && (this._emailAddressesConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

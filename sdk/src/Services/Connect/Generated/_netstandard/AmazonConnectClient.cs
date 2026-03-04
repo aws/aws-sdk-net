@@ -1196,6 +1196,95 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  AssociateQueueEmailAddresses
+
+        internal virtual AssociateQueueEmailAddressesResponse AssociateQueueEmailAddresses(AssociateQueueEmailAddressesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateQueueEmailAddressesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a set of email addresses with a queue to enable agents to select different
+        /// "From" (system) email addresses when replying to inbound email contacts or initiating
+        /// outbound email contacts. This allows agents to handle email contacts across different
+        /// brands and business units within the same queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can associate up to 49 additional email addresses with a single queue, plus 1
+        /// default outbound email address, for a total of 50.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses must already exist in the Amazon Connect instance before they
+        /// can be associated with a queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents will be able to select from these associated email addresses when handling
+        /// email contacts in the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For inbound email contacts, agents can select from email addresses associated with
+        /// the queue where the contact was accepted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For outbound email contacts, agents can select from email addresses associated with
+        /// their default outbound queue configured in their routing profile.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociateQueueEmailAddresses">REST API Reference for AssociateQueueEmailAddresses Operation</seealso>
+        public virtual Task<AssociateQueueEmailAddressesResponse> AssociateQueueEmailAddressesAsync(AssociateQueueEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateQueueEmailAddressesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateQueueQuickConnects
 
         internal virtual AssociateQueueQuickConnectsResponse AssociateQueueQuickConnects(AssociateQueueQuickConnectsRequest request)
@@ -9057,6 +9146,82 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DisassociateQueueEmailAddresses
+
+        internal virtual DisassociateQueueEmailAddressesResponse DisassociateQueueEmailAddresses(DisassociateQueueEmailAddressesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateQueueEmailAddressesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the association between a set of email addresses and a queue. After disassociation,
+        /// agents will no longer be able to select these email addresses as "From" addresses
+        /// when replying to inbound email contacts or initiating outbound email contacts in this
+        /// queue.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Agents will no longer see these email addresses in their "From" address selection
+        /// options for this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The email addresses themselves are not deleted from the instance, only their availability
+        /// for agent selection in this queue is removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Changes take effect immediately and will affect the agent experience in the Contact
+        /// Control Panel (CCP).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociateQueueEmailAddresses">REST API Reference for DisassociateQueueEmailAddresses Operation</seealso>
+        public virtual Task<DisassociateQueueEmailAddressesResponse> DisassociateQueueEmailAddressesAsync(DisassociateQueueEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateQueueEmailAddressesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateQueueQuickConnects
 
         internal virtual DisassociateQueueQuickConnectsResponse DisassociateQueueQuickConnects(DisassociateQueueQuickConnectsRequest request)
@@ -12533,6 +12698,87 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListPromptsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPromptsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListQueueEmailAddresses
+
+        internal virtual ListQueueEmailAddressesResponse ListQueueEmailAddresses(ListQueueEmailAddressesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return Invoke<ListQueueEmailAddressesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all email addresses that are currently associated with a specific queue, providing
+        /// details about which "From" email addresses agents can select when handling email contacts.
+        /// This helps administrators manage agent email address options and understand the available
+        /// choices for different brands and business units.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Important things to know</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The response includes metadata about each email address available for agent selection,
+        /// including whether it's configured as the default outbound email.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Agents can select from these email addresses when replying to inbound contacts or
+        /// initiating outbound contacts in this queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The list includes both explicitly associated email addresses and any default outbound
+        /// email address configured for the queue.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Results are paginated to handle queues with many associated email addresses (up to
+        /// 50 per queue).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQueueEmailAddresses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQueueEmailAddresses service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQueueEmailAddresses">REST API Reference for ListQueueEmailAddresses Operation</seealso>
+        public virtual Task<ListQueueEmailAddressesResponse> ListQueueEmailAddressesAsync(ListQueueEmailAddressesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListQueueEmailAddressesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQueueEmailAddressesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListQueueEmailAddressesResponse>(request, options, cancellationToken);
         }
 
         #endregion
