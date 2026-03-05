@@ -1608,6 +1608,77 @@ namespace Amazon.MPA
 
         #endregion
         
+        #region  StartApprovalTeamBaseline
+
+        /// <summary>
+        /// Starts a baseline session for specified approvers on an <c>ACTIVE</c> approval team.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartApprovalTeamBaseline service method.</param>
+        /// 
+        /// <returns>The response from the StartApprovalTeamBaseline service method, as returned by MPA.</returns>
+        /// <exception cref="Amazon.MPA.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check your permissions,
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.MPA.Model.InternalServerException">
+        /// The service encountered an internal error. Try your request again. If the problem
+        /// persists, contact Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.MPA.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist. Check the resource ID, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.MPA.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MPA.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/StartApprovalTeamBaseline">REST API Reference for StartApprovalTeamBaseline Operation</seealso>
+        public virtual StartApprovalTeamBaselineResponse StartApprovalTeamBaseline(StartApprovalTeamBaselineRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartApprovalTeamBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartApprovalTeamBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<StartApprovalTeamBaselineResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartApprovalTeamBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartApprovalTeamBaseline operation on AmazonMPAClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartApprovalTeamBaseline
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/StartApprovalTeamBaseline">REST API Reference for StartApprovalTeamBaseline Operation</seealso>
+        public virtual IAsyncResult BeginStartApprovalTeamBaseline(StartApprovalTeamBaselineRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartApprovalTeamBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartApprovalTeamBaselineResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartApprovalTeamBaseline operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartApprovalTeamBaseline.</param>
+        /// 
+        /// <returns>Returns a  StartApprovalTeamBaselineResult from MPA.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/StartApprovalTeamBaseline">REST API Reference for StartApprovalTeamBaseline Operation</seealso>
+        public virtual StartApprovalTeamBaselineResponse EndStartApprovalTeamBaseline(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartApprovalTeamBaselineResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>

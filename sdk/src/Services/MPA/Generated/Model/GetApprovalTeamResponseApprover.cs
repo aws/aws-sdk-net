@@ -35,7 +35,10 @@ namespace Amazon.MPA.Model
     public partial class GetApprovalTeamResponseApprover
     {
         private string _approverId;
+        private ApproverLastActivity _lastActivity;
+        private DateTime? _lastActivityTime;
         private List<MfaMethod> _mfaMethods = AWSConfigs.InitializeCollections ? new List<MfaMethod>() : null;
+        private string _pendingBaselineSessionArn;
         private string _primaryIdentityId;
         private string _primaryIdentitySourceArn;
         private IdentityStatus _primaryIdentityStatus;
@@ -61,6 +64,42 @@ namespace Amazon.MPA.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastActivity. 
+        /// <para>
+        /// Last Activity performed by the approver.
+        /// </para>
+        /// </summary>
+        public ApproverLastActivity LastActivity
+        {
+            get { return this._lastActivity; }
+            set { this._lastActivity = value; }
+        }
+
+        // Check to see if LastActivity property is set
+        internal bool IsSetLastActivity()
+        {
+            return this._lastActivity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastActivityTime. 
+        /// <para>
+        /// Timestamp when the approver last responded to an operation or invitation request.
+        /// </para>
+        /// </summary>
+        public DateTime LastActivityTime
+        {
+            get { return this._lastActivityTime.GetValueOrDefault(); }
+            set { this._lastActivityTime = value; }
+        }
+
+        // Check to see if LastActivityTime property is set
+        internal bool IsSetLastActivityTime()
+        {
+            return this._lastActivityTime.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property MfaMethods. 
         /// <para>
         /// Multi-factor authentication configuration for the approver
@@ -77,6 +116,25 @@ namespace Amazon.MPA.Model
         internal bool IsSetMfaMethods()
         {
             return this._mfaMethods != null && (this._mfaMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingBaselineSessionArn. 
+        /// <para>
+        /// Amazon Resource Name (ARN) for the pending baseline session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string PendingBaselineSessionArn
+        {
+            get { return this._pendingBaselineSessionArn; }
+            set { this._pendingBaselineSessionArn = value; }
+        }
+
+        // Check to see if PendingBaselineSessionArn property is set
+        internal bool IsSetPendingBaselineSessionArn()
+        {
+            return this._pendingBaselineSessionArn != null;
         }
 
         /// <summary>

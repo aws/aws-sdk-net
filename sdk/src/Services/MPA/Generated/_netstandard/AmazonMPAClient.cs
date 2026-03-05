@@ -1252,6 +1252,57 @@ namespace Amazon.MPA
 
         #endregion
         
+        #region  StartApprovalTeamBaseline
+
+        internal virtual StartApprovalTeamBaselineResponse StartApprovalTeamBaseline(StartApprovalTeamBaselineRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartApprovalTeamBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartApprovalTeamBaselineResponseUnmarshaller.Instance;
+
+            return Invoke<StartApprovalTeamBaselineResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Starts a baseline session for specified approvers on an <c>ACTIVE</c> approval team.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartApprovalTeamBaseline service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartApprovalTeamBaseline service method, as returned by MPA.</returns>
+        /// <exception cref="Amazon.MPA.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Check your permissions,
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.MPA.Model.InternalServerException">
+        /// The service encountered an internal error. Try your request again. If the problem
+        /// persists, contact Amazon Web Services Support.
+        /// </exception>
+        /// <exception cref="Amazon.MPA.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist. Check the resource ID, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.MPA.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.MPA.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/StartApprovalTeamBaseline">REST API Reference for StartApprovalTeamBaseline Operation</seealso>
+        public virtual Task<StartApprovalTeamBaselineResponse> StartApprovalTeamBaselineAsync(StartApprovalTeamBaselineRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartApprovalTeamBaselineRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartApprovalTeamBaselineResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartApprovalTeamBaselineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)

@@ -340,6 +340,18 @@
     <pattern>arn:aws(-[^:]+)?:mpa:[a-z0-9-]{1,20}:[0-9]{12}:approval-team/[a-zA-Z0-9._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MPA.Model.StartApprovalTeamBaselineRequest.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:mpa:[a-z0-9-]{1,20}:[0-9]{12}:approval-team/[a-zA-Z0-9._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MPA.Model.StartApprovalTeamBaselineResponse.BaselineSessionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:mpa:[a-z0-9-]{1,20}:[0-9]{12}:session/[a-zA-Z0-9._-]+/[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MPA.Model.TagResourceRequest.ResourceArn</property>
     <min>0</min>
     <max>1000</max>
@@ -384,6 +396,12 @@
     <property>Amazon.MPA.Model.GetApprovalTeamResponseApprover.ApproverId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MPA.Model.GetApprovalTeamResponseApprover.PendingBaselineSessionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:mpa:[a-z0-9-]{1,20}:[0-9]{12}:session/[a-zA-Z0-9._-]+/[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MPA.Model.GetApprovalTeamResponseApprover.PrimaryIdentityId</property>
