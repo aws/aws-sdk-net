@@ -43,6 +43,8 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private string _mlflowVersion;
         private string _roleArn;
+        private string _s3BucketOwnerAccountId;
+        private bool? _s3BucketOwnerVerification;
         private string _trackingServerArn;
         private TrackingServerMaintenanceStatus _trackingServerMaintenanceStatus;
         private string _trackingServerName;
@@ -211,6 +213,45 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketOwnerAccountId. 
+        /// <para>
+        /// Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact
+        /// storage.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string S3BucketOwnerAccountId
+        {
+            get { return this._s3BucketOwnerAccountId; }
+            set { this._s3BucketOwnerAccountId = value; }
+        }
+
+        // Check to see if S3BucketOwnerAccountId property is set
+        internal bool IsSetS3BucketOwnerAccountId()
+        {
+            return this._s3BucketOwnerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3BucketOwnerVerification. 
+        /// <para>
+        /// Whether Amazon S3 Bucket Ownership checks are enabled whenever the tracking server
+        /// interacts with Amazon Amazon S3.
+        /// </para>
+        /// </summary>
+        public bool S3BucketOwnerVerification
+        {
+            get { return this._s3BucketOwnerVerification.GetValueOrDefault(); }
+            set { this._s3BucketOwnerVerification = value; }
+        }
+
+        // Check to see if S3BucketOwnerVerification property is set
+        internal bool IsSetS3BucketOwnerVerification()
+        {
+            return this._s3BucketOwnerVerification.HasValue; 
         }
 
         /// <summary>

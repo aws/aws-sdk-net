@@ -106,6 +106,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3BucketOwnerAccountId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.S3BucketOwnerAccountId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3BucketOwnerVerification", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.S3BucketOwnerVerification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrackingServerArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

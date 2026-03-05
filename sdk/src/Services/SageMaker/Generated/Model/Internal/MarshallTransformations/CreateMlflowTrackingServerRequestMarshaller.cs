@@ -93,6 +93,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoleArn);
                 }
 
+                if(publicRequest.IsSetS3BucketOwnerAccountId())
+                {
+                    context.Writer.WritePropertyName("S3BucketOwnerAccountId");
+                    context.Writer.Write(publicRequest.S3BucketOwnerAccountId);
+                }
+
+                if(publicRequest.IsSetS3BucketOwnerVerification())
+                {
+                    context.Writer.WritePropertyName("S3BucketOwnerVerification");
+                    context.Writer.Write(publicRequest.S3BucketOwnerVerification);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("Tags");
