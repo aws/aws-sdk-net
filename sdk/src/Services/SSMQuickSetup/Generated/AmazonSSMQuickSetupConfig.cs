@@ -32,7 +32,7 @@ namespace Amazon.SSMQuickSetup
     public partial class AmazonSSMQuickSetupConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SSM QuickSetup", "3.7.502.43");
+            InternalSDKUtils.BuildUserAgentString("SSM QuickSetup", "3.7.502.44");
 
         private string _userAgent = UserAgentString;
         ///<summary>

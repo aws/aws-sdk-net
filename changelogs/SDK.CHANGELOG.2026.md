@@ -1,3 +1,18 @@
+### 3.7.1236.0 (2026-03-05 20:50 UTC)
+* EC2 (3.7.554.0)
+	* Added metadata field to CapacityAllocation.
+* GuardDuty (3.7.514.0)
+	* Added MALICIOUS FILE to IndicatorType enum in MDC Sequence
+* MPA (3.7.504.0)
+	* Updates to multi-party approval (MPA) service to add support for approval team baseline operations.
+* SageMaker (3.7.531.0)
+	* Adds support for S3 Bucket Ownership validation for SageMaker Managed MLflow.
+* SavingsPlans (3.7.505.0)
+	* Added support for OpenSearch and Neptune Analytics to Database Savings Plans.
+* Core 3.7.500.87
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.1235.0 (2026-03-04 19:21 UTC)
 * Connect (3.7.531.0)
 	* Added support for configuring additional email addresses on queues in Amazon Connect. Agents can now select an outbound email address and associate additional email addresses for replying to or initiating emails.

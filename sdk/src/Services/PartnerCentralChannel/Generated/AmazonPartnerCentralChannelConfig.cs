@@ -32,7 +32,7 @@ namespace Amazon.PartnerCentralChannel
     public partial class AmazonPartnerCentralChannelConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PartnerCentral Channel", "3.7.501.0");
+            InternalSDKUtils.BuildUserAgentString("PartnerCentral Channel", "3.7.501.1");
 
         private string _userAgent = UserAgentString;
         ///<summary>
