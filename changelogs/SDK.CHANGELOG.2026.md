@@ -1,3 +1,17 @@
+### 4.0.204.0 (2026-03-05 21:02 UTC)
+* ConnectHealth (4.0.0.0)
+	* Connect-Health SDK is AWS's unified SDK for the Amazon Connect Health offering. It allows healthcare developers to integrate purpose-built agents - such as patient insights, ambient documentation, and medical coding - into their existing applications, including EHRs, telehealth, and revenue cycle.
+* EC2 (4.0.80.0)
+	* Added metadata field to CapacityAllocation.
+* GuardDuty (4.0.17.0)
+	* Added MALICIOUS FILE to IndicatorType enum in MDC Sequence
+* MPA (4.0.4.0)
+	* Updates to multi-party approval (MPA) service to add support for approval team baseline operations.
+* SageMaker (4.0.45.0)
+	* Adds support for S3 Bucket Ownership validation for SageMaker Managed MLflow.
+* SavingsPlans (4.0.5.0)
+	* Added support for OpenSearch and Neptune Analytics to Database Savings Plans.
+
 ### 4.0.203.0 (2026-03-04 19:19 UTC)
 * Connect (4.0.35.0)
 	* Added support for configuring additional email addresses on queues in Amazon Connect. Agents can now select an outbound email address and associate additional email addresses for replying to or initiating emails.
