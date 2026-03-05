@@ -1697,6 +1697,10 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly IndicatorType MALICIOUS_DOMAIN = new IndicatorType("MALICIOUS_DOMAIN");
         /// <summary>
+        /// Constant MALICIOUS_FILE for IndicatorType
+        /// </summary>
+        public static readonly IndicatorType MALICIOUS_FILE = new IndicatorType("MALICIOUS_FILE");
+        /// <summary>
         /// Constant MALICIOUS_IP for IndicatorType
         /// </summary>
         public static readonly IndicatorType MALICIOUS_IP = new IndicatorType("MALICIOUS_IP");
