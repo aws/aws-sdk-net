@@ -403,10 +403,10 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Adds the specified list of principals and list of resources to a resource share. Principals
-        /// that already have access to this resource share immediately receive access to the
-        /// added resources. Newly added principals immediately receive access to the resources
-        /// shared in this resource share.
+        /// Adds the specified list of principals, resources, and source constraints to a resource
+        /// share. Principals that already have access to this resource share immediately receive
+        /// access to the added resources. Newly added principals immediately receive access to
+        /// the resources shared in this resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateResourceShare service method.</param>
         /// 
@@ -435,7 +435,8 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
         /// The operation failed because it would exceed the limit for resource shares for your
-        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// account. You can associate up to 100 resources per call. To view the limits for your
+        /// Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
         /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
@@ -464,10 +465,10 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Adds the specified list of principals and list of resources to a resource share. Principals
-        /// that already have access to this resource share immediately receive access to the
-        /// added resources. Newly added principals immediately receive access to the resources
-        /// shared in this resource share.
+        /// Adds the specified list of principals, resources, and source constraints to a resource
+        /// share. Principals that already have access to this resource share immediately receive
+        /// access to the added resources. Newly added principals immediately receive access to
+        /// the resources shared in this resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateResourceShare service method.</param>
         /// <param name="cancellationToken">
@@ -499,7 +500,8 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
         /// The operation failed because it would exceed the limit for resource shares for your
-        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// account. You can associate up to 100 resources per call. To view the limits for your
+        /// Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
         /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
@@ -881,7 +883,8 @@ namespace Amazon.RAM
         /// <summary>
         /// Creates a resource share. You can provide a list of the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs)</a> for the resources that you want to share, a list of principals
-        /// you want to share the resources with, and the permissions to grant those principals.
+        /// you want to share the resources with, the permissions to grant those principals, and
+        /// optionally source constraints to enhance security for service principal sharing.
         /// 
         ///  <note> 
         /// <para>
@@ -918,7 +921,8 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
         /// The operation failed because it would exceed the limit for resource shares for your
-        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// account. You can associate up to 100 resources per call. To view the limits for your
+        /// Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
         /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
@@ -935,6 +939,10 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.TagPolicyViolationException">
         /// The operation failed because the specified tag key is a reserved word and can't be
         /// used.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ThrottlingException">
+        /// The operation failed because it exceeded the rate at which you are allowed to perform
+        /// this operation. Please try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// The operation failed because a specified resource couldn't be found.
@@ -953,7 +961,8 @@ namespace Amazon.RAM
         /// <summary>
         /// Creates a resource share. You can provide a list of the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs)</a> for the resources that you want to share, a list of principals
-        /// you want to share the resources with, and the permissions to grant those principals.
+        /// you want to share the resources with, the permissions to grant those principals, and
+        /// optionally source constraints to enhance security for service principal sharing.
         /// 
         ///  <note> 
         /// <para>
@@ -993,7 +1002,8 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
         /// The operation failed because it would exceed the limit for resource shares for your
-        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// account. You can associate up to 100 resources per call. To view the limits for your
+        /// Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
         /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
@@ -1010,6 +1020,10 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.TagPolicyViolationException">
         /// The operation failed because the specified tag key is a reserved word and can't be
         /// used.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ThrottlingException">
+        /// The operation failed because it exceeded the rate at which you are allowed to perform
+        /// this operation. Please try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// The operation failed because a specified resource couldn't be found.
@@ -1281,6 +1295,10 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
         /// The operation failed because the service isn't available. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ThrottlingException">
+        /// The operation failed because it exceeded the rate at which you are allowed to perform
+        /// this operation. Please try again later.
+        /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// The operation failed because a specified resource couldn't be found.
         /// </exception>
@@ -1340,6 +1358,10 @@ namespace Amazon.RAM
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
         /// The operation failed because the service isn't available. Try again later.
         /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ThrottlingException">
+        /// The operation failed because it exceeded the rate at which you are allowed to perform
+        /// this operation. Please try again later.
+        /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// The operation failed because a specified resource couldn't be found.
         /// </exception>
@@ -1359,8 +1381,8 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Removes the specified principals or resources from participating in the specified
-        /// resource share.
+        /// Removes the specified principals, resources, or source constraints from participating
+        /// in the specified resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceShare service method.</param>
         /// 
@@ -1389,7 +1411,8 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
         /// The operation failed because it would exceed the limit for resource shares for your
-        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// account. You can associate up to 100 resources per call. To view the limits for your
+        /// Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
         /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
@@ -1398,6 +1421,10 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
         /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ThrottlingException">
+        /// The operation failed because it exceeded the rate at which you are allowed to perform
+        /// this operation. Please try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// The operation failed because a specified resource couldn't be found.
@@ -1414,8 +1441,8 @@ namespace Amazon.RAM
 
 
         /// <summary>
-        /// Removes the specified principals or resources from participating in the specified
-        /// resource share.
+        /// Removes the specified principals, resources, or source constraints from participating
+        /// in the specified resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceShare service method.</param>
         /// <param name="cancellationToken">
@@ -1447,7 +1474,8 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
         /// The operation failed because it would exceed the limit for resource shares for your
-        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// account. You can associate up to 100 resources per call. To view the limits for your
+        /// Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
         /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
@@ -1456,6 +1484,10 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
         /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ThrottlingException">
+        /// The operation failed because it exceeded the rate at which you are allowed to perform
+        /// this operation. Please try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
         /// The operation failed because a specified resource couldn't be found.
@@ -1749,6 +1781,15 @@ namespace Amazon.RAM
         /// <summary>
         /// Retrieves the resource policies for the specified resources that you own and have
         /// shared.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
         /// 
@@ -1790,6 +1831,15 @@ namespace Amazon.RAM
         /// <summary>
         /// Retrieves the resource policies for the specified resources that you own and have
         /// shared.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicies service method.</param>
         /// <param name="cancellationToken">
@@ -1838,6 +1888,15 @@ namespace Amazon.RAM
         /// <summary>
         /// Retrieves the lists of resources and principals that associated for resource shares
         /// that you own.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShareAssociations service method.</param>
         /// 
@@ -1881,6 +1940,15 @@ namespace Amazon.RAM
         /// <summary>
         /// Retrieves the lists of resources and principals that associated for resource shares
         /// that you own.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShareAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -1930,6 +1998,15 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Retrieves details about invitations that you have received for resource shares.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShareInvitations service method.</param>
         /// 
@@ -1976,6 +2053,15 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Retrieves details about invitations that you have received for resource shares.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShareInvitations service method.</param>
         /// <param name="cancellationToken">
@@ -2029,6 +2115,15 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Retrieves details about the resource shares that you own or that are shared with you.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShares service method.</param>
         /// 
@@ -2068,6 +2163,15 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Retrieves details about the resource shares that you own or that are shared with you.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShares service method.</param>
         /// <param name="cancellationToken">
@@ -2116,6 +2220,15 @@ namespace Amazon.RAM
         /// Lists the resources in a resource share that is shared with you but for which the
         /// invitation is still <c>PENDING</c>. That means that you haven't accepted or rejected
         /// the invitation and the invitation hasn't expired.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPendingInvitationResources service method.</param>
         /// 
@@ -2168,6 +2281,15 @@ namespace Amazon.RAM
         /// Lists the resources in a resource share that is shared with you but for which the
         /// invitation is still <c>PENDING</c>. That means that you haven't accepted or rejected
         /// the invitation and the invitation hasn't expired.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPendingInvitationResources service method.</param>
         /// <param name="cancellationToken">
@@ -2227,6 +2349,15 @@ namespace Amazon.RAM
         /// Lists information about the managed permission and its associations to any resource
         /// shares that use this managed permission. This lets you see which resource shares use
         /// which versions of the specified managed permission.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionAssociations service method.</param>
         /// 
@@ -2265,6 +2396,15 @@ namespace Amazon.RAM
         /// Lists information about the managed permission and its associations to any resource
         /// shares that use this managed permission. This lets you see which resource shares use
         /// which versions of the specified managed permission.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -2308,7 +2448,16 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Retrieves a list of available RAM permissions that you can use for the supported resource
-        /// types.
+        /// types. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
         /// 
@@ -2344,7 +2493,16 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Retrieves a list of available RAM permissions that you can use for the supported resource
-        /// types.
+        /// types. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
         /// <param name="cancellationToken">
@@ -2387,6 +2545,15 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Lists the available versions of the specified RAM permission.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionVersions service method.</param>
         /// 
@@ -2429,6 +2596,15 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Lists the available versions of the specified RAM permission.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissionVersions service method.</param>
         /// <param name="cancellationToken">
@@ -2479,6 +2655,15 @@ namespace Amazon.RAM
         /// <summary>
         /// Lists the principals that you are sharing resources with or that are sharing resources
         /// with you.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipals service method.</param>
         /// 
@@ -2519,6 +2704,15 @@ namespace Amazon.RAM
         /// <summary>
         /// Lists the principals that you are sharing resources with or that are sharing resources
         /// with you.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipals service method.</param>
         /// <param name="cancellationToken">
@@ -2566,6 +2760,15 @@ namespace Amazon.RAM
         /// <summary>
         /// Retrieves the current status of the asynchronous tasks performed by RAM when you perform
         /// the <a>ReplacePermissionAssociationsWork</a> operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReplacePermissionAssociationsWork service method.</param>
         /// 
@@ -2599,6 +2802,15 @@ namespace Amazon.RAM
         /// <summary>
         /// Retrieves the current status of the asynchronous tasks performed by RAM when you perform
         /// the <a>ReplacePermissionAssociationsWork</a> operation.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReplacePermissionAssociationsWork service method.</param>
         /// <param name="cancellationToken">
@@ -2639,6 +2851,15 @@ namespace Amazon.RAM
         /// <summary>
         /// Lists the resources that you added to a resource share or the resources that are shared
         /// with you.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
         /// 
@@ -2682,6 +2903,15 @@ namespace Amazon.RAM
         /// <summary>
         /// Lists the resources that you added to a resource share or the resources that are shared
         /// with you.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResources service method.</param>
         /// <param name="cancellationToken">
@@ -2731,6 +2961,15 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Lists the RAM permissions that are associated with a resource share.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceSharePermissions service method.</param>
         /// 
@@ -2773,6 +3012,15 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Lists the RAM permissions that are associated with a resource share.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a paginated operation. These operations can occasionally return an empty set
+        /// of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceSharePermissions service method.</param>
         /// <param name="cancellationToken">
@@ -2888,6 +3136,109 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  ListSourceAssociations
+
+
+        /// <summary>
+        /// Lists source associations for resource shares. Source associations control which sources
+        /// can be used with service principals in resource shares. This operation provides visibility
+        /// into source associations for resource share owners.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by resource share Amazon Resource Name (ARN), source ID,
+        /// source type, or association status. We recommend using pagination to ensure that the
+        /// operation returns quickly and successfully.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListSourceAssociations service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// The operation failed because a specified resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListSourceAssociations">REST API Reference for ListSourceAssociations Operation</seealso>
+        public virtual ListSourceAssociationsResponse ListSourceAssociations(ListSourceAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSourceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSourceAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists source associations for resource shares. Source associations control which sources
+        /// can be used with service principals in resource shares. This operation provides visibility
+        /// into source associations for resource share owners.
+        /// 
+        ///  
+        /// <para>
+        /// You can filter the results by resource share Amazon Resource Name (ARN), source ID,
+        /// source type, or association status. We recommend using pagination to ensure that the
+        /// operation returns quickly and successfully.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSourceAssociations service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// The operation failed because a specified resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListSourceAssociations">REST API Reference for ListSourceAssociations Operation</seealso>
+        public virtual Task<ListSourceAssociationsResponse> ListSourceAssociationsAsync(ListSourceAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSourceAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSourceAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PromotePermissionCreatedFromPolicy
 
 
@@ -2936,6 +3287,9 @@ namespace Amazon.RAM
         /// <returns>The response from the PromotePermissionCreatedFromPolicy service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidPolicyException">
+        /// The operation failed because a policy you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
         /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
@@ -3016,6 +3370,9 @@ namespace Amazon.RAM
         /// <returns>The response from the PromotePermissionCreatedFromPolicy service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidPolicyException">
+        /// The operation failed because a policy you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
         /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
@@ -3098,7 +3455,8 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
         /// The operation failed because it would exceed the limit for resource shares for your
-        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// account. You can associate up to 100 resources per call. To view the limits for your
+        /// Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
         /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
@@ -3176,7 +3534,8 @@ namespace Amazon.RAM
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
         /// The operation failed because it would exceed the limit for resource shares for your
-        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// account. You can associate up to 100 resources per call. To view the limits for your
+        /// Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
         /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">

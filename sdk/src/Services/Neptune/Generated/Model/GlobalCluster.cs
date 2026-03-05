@@ -41,6 +41,7 @@ namespace Amazon.Neptune.Model
     /// </summary>
     public partial class GlobalCluster
     {
+        private string _databaseName;
         private bool? _deletionProtection;
         private string _engine;
         private string _engineVersion;
@@ -51,6 +52,25 @@ namespace Amazon.Neptune.Model
         private string _globalClusterResourceId;
         private string _status;
         private bool? _storageEncrypted;
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DatabaseName. 
+        /// <para>
+        /// The default database name within the new global database cluster.
+        /// </para>
+        /// </summary>
+        public string DatabaseName
+        {
+            get { return this._databaseName; }
+            set { this._databaseName = value; }
+        }
+
+        // Check to see if DatabaseName property is set
+        internal bool IsSetDatabaseName()
+        {
+            return this._databaseName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
@@ -243,6 +263,29 @@ namespace Amazon.Neptune.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagList. 
+        /// <para>
+        /// A list of global cluster tags.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Tag> TagList
+        {
+            get { return this._tagList; }
+            set { this._tagList = value; }
+        }
+
+        // Check to see if TagList property is set
+        internal bool IsSetTagList()
+        {
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

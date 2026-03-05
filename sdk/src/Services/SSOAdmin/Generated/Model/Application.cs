@@ -39,6 +39,7 @@ namespace Amazon.SSOAdmin.Model
         private string _applicationArn;
         private string _applicationProviderArn;
         private DateTime? _createdDate;
+        private string _createdFrom;
         private string _description;
         private string _instanceArn;
         private string _name;
@@ -118,6 +119,25 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedFrom. 
+        /// <para>
+        /// The Amazon Web Services Region where the application was created in IAM Identity Center.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public string CreatedFrom
+        {
+            get { return this._createdFrom; }
+            set { this._createdFrom = value; }
+        }
+
+        // Check to see if CreatedFrom property is set
+        internal bool IsSetCreatedFrom()
+        {
+            return this._createdFrom != null;
         }
 
         /// <summary>

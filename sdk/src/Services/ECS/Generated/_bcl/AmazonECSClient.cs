@@ -48,7 +48,7 @@ namespace Amazon.ECS
     /// by launching your services or tasks on Fargate. For more control, you can host your
     /// tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) or External (on-premises)
     /// instances that you manage.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Amazon ECS makes it easy to launch and stop container-based applications with simple
@@ -61,6 +61,8 @@ namespace Amazon.ECS
     /// based on your resource needs, isolation policies, and availability requirements. With
     /// Amazon ECS, you don't need to operate your own cluster management and configuration
     /// management systems. You also don't need to worry about scaling your management infrastructure.
+    /// 
+    /// </para>
     /// 
     /// </para>
     /// </summary>
@@ -6198,10 +6200,12 @@ namespace Amazon.ECS
         /// <para>
         /// This action is only used by the Amazon ECS agent, and it is not intended for use outside
         /// of the agent.
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         /// Sent to acknowledge that an attachment changed states.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubmitAttachmentStateChanges service method.</param>
@@ -6243,10 +6247,12 @@ namespace Amazon.ECS
         /// <para>
         /// This action is only used by the Amazon ECS agent, and it is not intended for use outside
         /// of the agent.
-        /// </para>
+        /// 
         ///  </note> 
         /// <para>
         /// Sent to acknowledge that an attachment changed states.
+        /// </para>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SubmitAttachmentStateChanges service method.</param>

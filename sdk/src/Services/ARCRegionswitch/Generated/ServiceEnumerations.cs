@@ -488,6 +488,10 @@ namespace Amazon.ARCRegionswitch
         /// Constant Deactivate for ExecutionAction
         /// </summary>
         public static readonly ExecutionAction Deactivate = new ExecutionAction("deactivate");
+        /// <summary>
+        /// Constant PostRecovery for ExecutionAction
+        /// </summary>
+        public static readonly ExecutionAction PostRecovery = new ExecutionAction("postRecovery");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -570,6 +574,14 @@ namespace Amazon.ARCRegionswitch
         /// Constant Parallel for ExecutionBlockType
         /// </summary>
         public static readonly ExecutionBlockType Parallel = new ExecutionBlockType("Parallel");
+        /// <summary>
+        /// Constant RdsCreateCrossRegionReplica for ExecutionBlockType
+        /// </summary>
+        public static readonly ExecutionBlockType RdsCreateCrossRegionReplica = new ExecutionBlockType("RdsCreateCrossRegionReplica");
+        /// <summary>
+        /// Constant RdsPromoteReadReplica for ExecutionBlockType
+        /// </summary>
+        public static readonly ExecutionBlockType RdsPromoteReadReplica = new ExecutionBlockType("RdsPromoteReadReplica");
         /// <summary>
         /// Constant Route53HealthCheck for ExecutionBlockType
         /// </summary>
@@ -1149,9 +1161,17 @@ namespace Amazon.ARCRegionswitch
         /// </summary>
         public static readonly RegionToRunIn ActivatingRegion = new RegionToRunIn("activatingRegion");
         /// <summary>
+        /// Constant ActiveRegion for RegionToRunIn
+        /// </summary>
+        public static readonly RegionToRunIn ActiveRegion = new RegionToRunIn("activeRegion");
+        /// <summary>
         /// Constant DeactivatingRegion for RegionToRunIn
         /// </summary>
         public static readonly RegionToRunIn DeactivatingRegion = new RegionToRunIn("deactivatingRegion");
+        /// <summary>
+        /// Constant InactiveRegion for RegionToRunIn
+        /// </summary>
+        public static readonly RegionToRunIn InactiveRegion = new RegionToRunIn("inactiveRegion");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1534,6 +1554,10 @@ namespace Amazon.ARCRegionswitch
         /// Constant Deactivate for WorkflowTargetAction
         /// </summary>
         public static readonly WorkflowTargetAction Deactivate = new WorkflowTargetAction("deactivate");
+        /// <summary>
+        /// Constant PostRecovery for WorkflowTargetAction
+        /// </summary>
+        public static readonly WorkflowTargetAction PostRecovery = new WorkflowTargetAction("postRecovery");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

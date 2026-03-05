@@ -343,6 +343,12 @@ namespace Amazon.KeyspacesStreams
         /// exponential backoff in your retry strategy to handle this exception. Reducing your
         /// request frequency or distributing requests more evenly can help avoid throughput exceptions.
         /// </para>
+        ///  
+        /// <para>
+        /// This exception can also occur when more than two processes are reading from the same
+        /// stream shard at the same time. Ensure that only one process reads from a stream shard
+        /// at the same time. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyspacesStreams.Model.ValidationException">
         /// The request validation failed because one or more input parameters failed validation.
@@ -418,6 +424,12 @@ namespace Amazon.KeyspacesStreams
         /// This exception occurs when you send too many requests in a short period of time. Implement
         /// exponential backoff in your retry strategy to handle this exception. Reducing your
         /// request frequency or distributing requests more evenly can help avoid throughput exceptions.
+        /// </para>
+        ///  
+        /// <para>
+        /// This exception can also occur when more than two processes are reading from the same
+        /// stream shard at the same time. Ensure that only one process reads from a stream shard
+        /// at the same time. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyspacesStreams.Model.ValidationException">
@@ -496,6 +508,12 @@ namespace Amazon.KeyspacesStreams
         /// exponential backoff in your retry strategy to handle this exception. Reducing your
         /// request frequency or distributing requests more evenly can help avoid throughput exceptions.
         /// </para>
+        ///  
+        /// <para>
+        /// This exception can also occur when more than two processes are reading from the same
+        /// stream shard at the same time. Ensure that only one process reads from a stream shard
+        /// at the same time. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyspacesStreams.Model.ValidationException">
         /// The request validation failed because one or more input parameters failed validation.
@@ -571,6 +589,12 @@ namespace Amazon.KeyspacesStreams
         /// This exception occurs when you send too many requests in a short period of time. Implement
         /// exponential backoff in your retry strategy to handle this exception. Reducing your
         /// request frequency or distributing requests more evenly can help avoid throughput exceptions.
+        /// </para>
+        ///  
+        /// <para>
+        /// This exception can also occur when more than two processes are reading from the same
+        /// stream shard at the same time. Ensure that only one process reads from a stream shard
+        /// at the same time. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyspacesStreams.Model.ValidationException">
@@ -649,6 +673,12 @@ namespace Amazon.KeyspacesStreams
         /// exponential backoff in your retry strategy to handle this exception. Reducing your
         /// request frequency or distributing requests more evenly can help avoid throughput exceptions.
         /// </para>
+        ///  
+        /// <para>
+        /// This exception can also occur when more than two processes are reading from the same
+        /// stream shard at the same time. Ensure that only one process reads from a stream shard
+        /// at the same time. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyspacesStreams.Model.ValidationException">
         /// The request validation failed because one or more input parameters failed validation.
@@ -724,6 +754,12 @@ namespace Amazon.KeyspacesStreams
         /// This exception occurs when you send too many requests in a short period of time. Implement
         /// exponential backoff in your retry strategy to handle this exception. Reducing your
         /// request frequency or distributing requests more evenly can help avoid throughput exceptions.
+        /// </para>
+        ///  
+        /// <para>
+        /// This exception can also occur when more than two processes are reading from the same
+        /// stream shard at the same time. Ensure that only one process reads from a stream shard
+        /// at the same time. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyspacesStreams.Model.ValidationException">
@@ -801,6 +837,12 @@ namespace Amazon.KeyspacesStreams
         /// exponential backoff in your retry strategy to handle this exception. Reducing your
         /// request frequency or distributing requests more evenly can help avoid throughput exceptions.
         /// </para>
+        ///  
+        /// <para>
+        /// This exception can also occur when more than two processes are reading from the same
+        /// stream shard at the same time. Ensure that only one process reads from a stream shard
+        /// at the same time. 
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyspacesStreams.Model.ValidationException">
         /// The request validation failed because one or more input parameters failed validation.
@@ -875,6 +917,12 @@ namespace Amazon.KeyspacesStreams
         /// This exception occurs when you send too many requests in a short period of time. Implement
         /// exponential backoff in your retry strategy to handle this exception. Reducing your
         /// request frequency or distributing requests more evenly can help avoid throughput exceptions.
+        /// </para>
+        ///  
+        /// <para>
+        /// This exception can also occur when more than two processes are reading from the same
+        /// stream shard at the same time. Ensure that only one process reads from a stream shard
+        /// at the same time. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.KeyspacesStreams.Model.ValidationException">

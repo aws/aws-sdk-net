@@ -45,10 +45,10 @@ namespace Amazon.KeyspacesStreams.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of records to return in a single <c>GetRecords</c> request. Default
-        /// value is 1000. You can specify a limit between 1 and 1000, but the actual number returned
-        /// might be less than the specified maximum if the size of the data for the returned
-        /// records exceeds the internal size limit. 
+        ///  The maximum number of records to return in a single <c>GetRecords</c> request. The
+        /// default value is 100. You can specify a limit between 1 and 1000, but the actual number
+        /// returned might be less than the specified maximum if the size of the data for the
+        /// returned records exceeds the internal size limit. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -69,8 +69,8 @@ namespace Amazon.KeyspacesStreams.Model
         /// <para>
         ///  The unique identifier of the shard iterator. A shard iterator specifies the position
         /// in the shard from which you want to start reading data records sequentially. You obtain
-        /// this value by calling the <c>GetShardIterator</c> operation. Each shard iterator is
-        /// valid for 15 minutes after creation. 
+        /// this value by calling the <c>GetShardIterator </c> operation. Each shard iterator
+        /// is valid for 15 minutes after creation. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]

@@ -79,7 +79,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetDefinition())
             {
                 context.Writer.WritePropertyName("definition");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.Definition));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Definition);
             }
 
             writer.WriteEndObject();

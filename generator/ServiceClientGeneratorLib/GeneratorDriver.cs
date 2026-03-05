@@ -204,12 +204,8 @@ namespace ServiceClientGenerator
             var enumFileName = this.Configuration.IsChildConfig ?
                 string.Format("ServiceEnumerations.{0}.cs", Configuration.ClassName) : "ServiceEnumerations.cs";
 
-            // Any enumerations for the service
-            // skip s3 until we're at the end of s3 client generation
-            if (this.Configuration.ServiceModel.ServiceId != "S3")
-            {
-                this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
-            }
+            this.ExecuteGenerator(new ServiceEnumerations(), enumFileName);
+
             // Any paginators for the service
             if (Configuration.ServiceModel.HasPaginators)
             {
@@ -235,7 +231,7 @@ namespace ServiceClientGenerator
                 this.ExecuteGenerator(new BaseServiceException(), "Amazon" + this.Configuration.ClassName + "Exception.cs");
             }
 
-            var operations = Configuration.Namespace == "Amazon.S3" ? Configuration.ServiceModel.S3AllowListOperations : Configuration.ServiceModel.Operations;
+            var operations = Configuration.Namespace == "Amazon.S3" ? Configuration.ServiceModel.Operations.Where(x => !Configuration.ServiceModel.S3ExcludeListOperations.Contains(x.Name)) : Configuration.ServiceModel.Operations;
 
             foreach (var operation in operations)
             {
@@ -595,7 +591,6 @@ namespace ServiceClientGenerator
 
                 foreach (var nestedStructure in lookup.NestedStructures)
                 {
-                    S3NeedsCustomUpdate(nestedStructure);
                     // Skip structure marshallers that have already been generated for the parent model
                     if (IsShapePresentInParentModel(this.Configuration, nestedStructure.Name))
                         continue;
@@ -683,7 +678,6 @@ namespace ServiceClientGenerator
 
                 foreach (var nestedStructure in lookup.NestedStructures)
                 {
-                    S3NeedsCustomUpdate(nestedStructure);
                     if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(nestedStructure.Name))
                         continue;
                     // Skip structure unmarshallers that have already been generated for the parent model
@@ -726,7 +720,6 @@ namespace ServiceClientGenerator
             lookup.SearchForNestedStructures(shape);
             foreach (var nestedStructure in lookup.NestedStructures)
             {
-                S3NeedsCustomUpdate(nestedStructure);
                 if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(nestedStructure.Name))
                     continue;
                 // Skip structure unmarshallers that have already been generated for the parent model
@@ -1004,7 +997,6 @@ namespace ServiceClientGenerator
 
             foreach (var definition in this._structuresToProcess)
             {
-                S3NeedsCustomUpdate(definition);
                 if (this.Configuration.ServiceModel.Customizations.ExcludeShapes().Contains(definition.Name))
                     continue;
 
@@ -1686,36 +1678,5 @@ namespace ServiceClientGenerator
             var text = generator.TransformText();
             WriteFile(generatedFileRoot, null, fileName, text);
         }
-
-        // in some cases we have deviated too far from the S3 model. For example for "Filter" shapes where we implement
-        // the visitor pattern for the different predicate types. This method will check to see if additional members
-        // are being added to these shapes so that we know to make the appropriate customization
-        private void S3NeedsCustomUpdate(Shape shape)
-        {
-            // a dictionary of shape name to number of members that shape has
-            var customUpdateShapes = new Dictionary<string, int>
-            {
-                { "LifecycleFilter", 5 },
-                { "MetricsFilter", 4 },
-                { "AnalyticsFilter", 3 },
-                { "IntelligentTieringFilter", 3 },
-                { "MetricsAndOperator", 3 },
-                { "AnalyticsAndOperator", 2 },
-                { "IntelligentTieringAndOperator", 2},
-                { "GlacierJobParameters", 1 },
-                // these two shapes have been changed from a structure to a string. 
-                { "IndexDocument", 1 },
-                { "ErrorDocument", 1 }
-            };
-            if (customUpdateShapes.TryGetValue(shape.Name, out int membersCount))
-            {
-                if (membersCount != shape.Members.Count)
-                {
-                    throw new InvalidOperationException(String.Format("A member was added to {0} that the .NET SDK has a custom unmarshaller or marshaller for. Please check and make sure" +
-                        "to add the member to the custom unmarshaller and all related code.", shape.Name));
-                }
-            }
-        }
-
     }
 }

@@ -62,6 +62,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClientAuthentication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("connectivityInfo", targetDepth))
+                {
+                    var unmarshaller = ServerlessConnectivityInfoUnmarshaller.Instance;
+                    unmarshalledObject.ConnectivityInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("vpcConfigs", targetDepth))
                 {
                     var unmarshaller = new JsonListUnmarshaller<VpcConfig, VpcConfigUnmarshaller>(VpcConfigUnmarshaller.Instance);

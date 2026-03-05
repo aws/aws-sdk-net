@@ -36,6 +36,7 @@ namespace Amazon.ConnectCases.Model
     {
         private List<SearchCasesResponseItem> _cases = AWSConfigs.InitializeCollections ? new List<SearchCasesResponseItem>() : null;
         private string _nextToken;
+        private long? _totalCount;
 
         /// <summary>
         /// Gets and sets the property Cases. 
@@ -80,6 +81,25 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalCount. 
+        /// <para>
+        /// The total number of cases that matched the search criteria.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long? TotalCount
+        {
+            get { return this._totalCount; }
+            set { this._totalCount = value; }
+        }
+
+        // Check to see if TotalCount property is set
+        internal bool IsSetTotalCount()
+        {
+            return this._totalCount.HasValue; 
         }
 
     }

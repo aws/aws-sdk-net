@@ -696,7 +696,8 @@
         "additionalModelResponseFieldPaths":{"shape":"ConverseRequestAdditionalModelResponseFieldPathsList"},
         "requestMetadata":{"shape":"RequestMetadata"},
         "performanceConfig":{"shape":"PerformanceConfiguration"},
-        "serviceTier":{"shape":"ServiceTier"}
+        "serviceTier":{"shape":"ServiceTier"},
+        "outputConfig":{"shape":"OutputConfig"}
       }
     },
     "ConverseRequestAdditionalModelResponseFieldPathsList":{
@@ -787,7 +788,8 @@
         "additionalModelResponseFieldPaths":{"shape":"ConverseStreamRequestAdditionalModelResponseFieldPathsList"},
         "requestMetadata":{"shape":"RequestMetadata"},
         "performanceConfig":{"shape":"PerformanceConfiguration"},
-        "serviceTier":{"shape":"ServiceTier"}
+        "serviceTier":{"shape":"ServiceTier"},
+        "outputConfig":{"shape":"OutputConfig"}
       }
     },
     "ConverseStreamRequestAdditionalModelResponseFieldPathsList":{
@@ -2183,6 +2185,15 @@
       "type":"string",
       "pattern":"(arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}::foundation-model/[a-z0-9-]{1,63}[.]{1}[a-z0-9-]{1,63}([a-z0-9-]{1,63}[.]){0,2}[a-z0-9-]{1,63}([:][a-z0-9-]{1,63}){0,2})|(arn:aws(|-us-gov|-cn|-iso|-iso-b):bedrock:(|[0-9a-z-]{1,20}):(|[0-9]{12}):inference-profile/[a-zA-Z0-9-:.]+)"
     },
+    "JsonSchemaDefinition":{
+      "type":"structure",
+      "required":["schema"],
+      "members":{
+        "schema":{"shape":"String"},
+        "name":{"shape":"String"},
+        "description":{"shape":"String"}
+      }
+    },
     "KmsKeyId":{
       "type":"string",
       "max":2048,
@@ -2350,6 +2361,35 @@
       "type":"integer",
       "box":true,
       "min":0
+    },
+    "OutputConfig":{
+      "type":"structure",
+      "members":{
+        "textFormat":{"shape":"OutputFormat"}
+      }
+    },
+    "OutputFormat":{
+      "type":"structure",
+      "required":[
+        "type",
+        "structure"
+      ],
+      "members":{
+        "type":{"shape":"OutputFormatType"},
+        "structure":{"shape":"OutputFormatStructure"}
+      }
+    },
+    "OutputFormatStructure":{
+      "type":"structure",
+      "members":{
+        "jsonSchema":{"shape":"JsonSchemaDefinition"}
+      },
+      "sensitive":true,
+      "union":true
+    },
+    "OutputFormatType":{
+      "type":"string",
+      "enum":["json_schema"]
     },
     "PaginationToken":{
       "type":"string",
@@ -2860,7 +2900,8 @@
       "members":{
         "name":{"shape":"ToolName"},
         "description":{"shape":"NonEmptyString"},
-        "inputSchema":{"shape":"ToolInputSchema"}
+        "inputSchema":{"shape":"ToolInputSchema"},
+        "strict":{"shape":"Boolean"}
       }
     },
     "ToolUseBlock":{

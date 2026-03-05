@@ -77,6 +77,15 @@ namespace Amazon.Kinesis.Endpoints
         }
 
         /// <summary>
+        /// StreamId parameter
+        /// </summary>
+        public string StreamId 
+        { 
+            get { return (string)this["StreamId"]; }
+            set { this["StreamId"] = value; } 
+        }
+
+        /// <summary>
         /// StreamARN parameter
         /// </summary>
         public string StreamARN 

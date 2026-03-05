@@ -81,6 +81,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Catalog);
             }
 
+            if(publicRequest.IsSetCreatedDate())
+            {
+                context.Writer.WritePropertyName("CreatedDate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreatedDateFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CreatedDate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetCustomerCompanyName())
             {
                 context.Writer.WritePropertyName("CustomerCompanyName");
@@ -155,6 +166,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 
                 var marshaller = OpportunitySortMarshaller.Instance;
                 marshaller.Marshall(publicRequest.Sort, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTargetCloseDate())
+            {
+                context.Writer.WritePropertyName("TargetCloseDate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TargetCloseDateFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TargetCloseDate, context);
 
                 context.Writer.WriteEndObject();
             }

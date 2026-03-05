@@ -8053,6 +8053,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly InputColumnDataType JSON = new InputColumnDataType("JSON");
         /// <summary>
+        /// Constant SEMISTRUCT for InputColumnDataType
+        /// </summary>
+        public static readonly InputColumnDataType SEMISTRUCT = new InputColumnDataType("SEMISTRUCT");
+        /// <summary>
         /// Constant STRING for InputColumnDataType
         /// </summary>
         public static readonly InputColumnDataType STRING = new InputColumnDataType("STRING");

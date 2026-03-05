@@ -205,6 +205,10 @@ namespace Amazon.IoTManagedIntegrations
         /// </summary>
         public static readonly AuthMaterialType DISCOVERED_DEVICE = new AuthMaterialType("DISCOVERED_DEVICE");
         /// <summary>
+        /// Constant PRE_ONBOARDED_CLOUD for AuthMaterialType
+        /// </summary>
+        public static readonly AuthMaterialType PRE_ONBOARDED_CLOUD = new AuthMaterialType("PRE_ONBOARDED_CLOUD");
+        /// <summary>
         /// Constant WIFI_SETUP_QR_BAR_CODE for AuthMaterialType
         /// </summary>
         public static readonly AuthMaterialType WIFI_SETUP_QR_BAR_CODE = new AuthMaterialType("WIFI_SETUP_QR_BAR_CODE");
@@ -1108,6 +1112,56 @@ namespace Amazon.IoTManagedIntegrations
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ManagedThingAssociationStatus.
+    /// </summary>
+    public class ManagedThingAssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED for ManagedThingAssociationStatus
+        /// </summary>
+        public static readonly ManagedThingAssociationStatus ASSOCIATED = new ManagedThingAssociationStatus("ASSOCIATED");
+        /// <summary>
+        /// Constant PRE_ASSOCIATED for ManagedThingAssociationStatus
+        /// </summary>
+        public static readonly ManagedThingAssociationStatus PRE_ASSOCIATED = new ManagedThingAssociationStatus("PRE_ASSOCIATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedThingAssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedThingAssociationStatus FindValue(string value)
+        {
+            return FindValue<ManagedThingAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedThingAssociationStatus(string value)
         {
             return FindValue(value);
         }

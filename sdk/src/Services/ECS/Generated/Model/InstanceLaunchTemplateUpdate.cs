@@ -43,11 +43,32 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class InstanceLaunchTemplateUpdate
     {
+        private CapacityReservationRequest _capacityReservations;
         private string _ec2InstanceProfileArn;
         private InstanceRequirementsRequest _instanceRequirements;
         private ManagedInstancesMonitoringOptions _monitoring;
         private ManagedInstancesNetworkConfiguration _networkConfiguration;
         private ManagedInstancesStorageConfiguration _storageConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property CapacityReservations. 
+        /// <para>
+        /// The updated capacity reservations specifications for Amazon ECS Managed Instances.
+        /// Changes to capacity reservations settings apply to new instances launched after the
+        /// update.
+        /// </para>
+        /// </summary>
+        public CapacityReservationRequest CapacityReservations
+        {
+            get { return this._capacityReservations; }
+            set { this._capacityReservations = value; }
+        }
+
+        // Check to see if CapacityReservations property is set
+        internal bool IsSetCapacityReservations()
+        {
+            return this._capacityReservations != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Ec2InstanceProfileArn. 

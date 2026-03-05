@@ -3559,10 +3559,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4405,7 +4404,8 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Lists completed exports within the past 90 days.
+        /// Lists completed exports within the past 90 days, in reverse alphanumeric order of
+        /// <c>ExportArn</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
         /// <param name="cancellationToken">
@@ -4818,6 +4818,12 @@ namespace Amazon.DynamoDBv2
         /// attribute, the <c>attribute_not_exists</c> function will only succeed if no matching
         /// item exists.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// To determine whether <c>PutItem</c> overwrote an existing item, use <c>ReturnValues</c>
+        /// set to <c>ALL_OLD</c>. If the response includes the <c>Attributes</c> element, an
+        /// existing item was overwritten.
+        /// </para>
         ///  </note> 
         /// <para>
         /// For more information about <c>PutItem</c>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
@@ -4914,6 +4920,12 @@ namespace Amazon.DynamoDBv2
         /// being used as the partition key for the table. Since every record must contain that
         /// attribute, the <c>attribute_not_exists</c> function will only succeed if no matching
         /// item exists.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// To determine whether <c>PutItem</c> overwrote an existing item, use <c>ReturnValues</c>
+        /// set to <c>ALL_OLD</c>. If the response includes the <c>Attributes</c> element, an
+        /// existing item was overwritten.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5014,6 +5026,12 @@ namespace Amazon.DynamoDBv2
         /// being used as the partition key for the table. Since every record must contain that
         /// attribute, the <c>attribute_not_exists</c> function will only succeed if no matching
         /// item exists.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// To determine whether <c>PutItem</c> overwrote an existing item, use <c>ReturnValues</c>
+        /// set to <c>ALL_OLD</c>. If the response includes the <c>Attributes</c> element, an
+        /// existing item was overwritten.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6319,10 +6337,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6705,10 +6722,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
-        /// property. This property is not set for other languages. Transaction cancellation reasons
-        /// are ordered in the order of requested items, if an item has no error it will have
-        /// <c>None</c> code and <c>Null</c> message.
+        /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
+        /// Transaction cancellation reasons are ordered in the order of requested items, if an
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>

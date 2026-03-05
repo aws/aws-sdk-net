@@ -96,6 +96,17 @@ namespace Amazon.IoTManagedIntegrations.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetGeneralAuthorization())
+            {
+                context.Writer.WritePropertyName("GeneralAuthorization");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GeneralAuthorizationNameMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GeneralAuthorization, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

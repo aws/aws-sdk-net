@@ -38,9 +38,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateAccountAssociationResponse.OAuthAuthorizationUrl</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
-    <pattern>(https)://.*</pattern>
+    <pattern>$|^(https):\/\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest.ClientToken</property>
@@ -469,9 +469,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetAccountAssociationResponse.OAuthAuthorizationUrl</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
-    <pattern>(https)://.*</pattern>
+    <pattern>$|^(https):\/\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetCloudConnectorRequest.Identifier</property>
@@ -1527,9 +1527,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartAccountAssociationRefreshResponse.OAuthAuthorizationUrl</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
-    <pattern>(https)://.*</pattern>
+    <pattern>$|^(https):\/\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartDeviceDiscoveryRequest.AccountAssociationId</property>
@@ -1783,6 +1783,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>[A-Za-z0-9-_ ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.AuthMaterial.AuthMaterialName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9=_+/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityAction.ActionTraceId</property>
@@ -2043,6 +2049,12 @@
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ExponentialRolloutRate.IncrementFactor</property>
     <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.GeneralAuthorizationName.AuthMaterialName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9=_+/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.LambdaConfig.Arn</property>

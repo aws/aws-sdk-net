@@ -279,9 +279,7 @@
                         "injectXmlPropertySetter":[
                             "set { this.Headers.ContentType = value; }"
                         ],
-                        "injectXmlPrivateMemberAssignment" :[
-                            ""
-                        ],
+                        "skipPrivateMember" : true,
                         "skipXmlIsSet" : true
                     }
                 },
@@ -492,13 +490,6 @@
             "modify":[
                 {
                     "ExpectedBucketOwner" :{"injectXmlIsSet":["return !string.IsNullOrEmpty(this._expectedBucketOwner);"]}
-                }
-            ]
-        },
-        "PutBucketVersioningRequest": {
-            "modify": [
-                {
-                    "VersioningConfiguration": { "emitPropertyName": "VersioningConfig" }
                 }
             ]
         },
@@ -809,9 +800,7 @@
                         "injectXmlIsSet":[
                             "return Type != null;"
                         ],
-                        "injectXmlPrivateMemberAssignment":[
-                            ""
-                        ]
+                        "skipPrivateMember" : true
                     }
                 }
             ],
@@ -2289,10 +2278,11 @@
                     "TagSet":{"injectXmlMarshallCode":["request.Headers[\"x-amz-tagging\"] = Amazon.S3.Util.AmazonS3Util.TagSetToQueryString(publicRequest.TagSet);"]}
                 },
                 {
-                    "ContentType":{"injectXmlPropertyGetter":["get { return this.Headers.ContentType; }"],
-                    "injectXmlPropertySetter":["set { this.Headers.ContentType = value; }"],
-                    "skipXmlIsSet":true,
-                    "injectXmlPrivateMemberAssignment":[""]
+                    "ContentType": {
+                        "injectXmlPropertyGetter":["get { return this.Headers.ContentType; }"],
+                        "injectXmlPropertySetter":["set { this.Headers.ContentType = value; }"],
+                        "skipXmlIsSet" : true,
+                        "skipPrivateMember" : true
                     }
                 },
                 {
@@ -2347,6 +2337,79 @@
                     "Expiration":{"injectXmlUnmarshallCode":[
                         "if (context.ResponseData.IsHeaderPresent(\"x-amz-expiration\"))",
                         "   response.Expiration = new Expiration(context.ResponseData.GetHeaderValue(\"x-amz-expiration\"));"]}
+                }
+            ]
+        },
+        "UpdateBucketMetadataInventoryTableConfigurationRequest": {
+            "modify" :[
+                {
+                    "ContentMD5" : {"injectXmlIsSet":["return !String.IsNullOrEmpty(this._contentMD5);"]}
+                },
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "GetBucketVersioningRequest" :{
+            "modify":[
+                {
+                    "ExpectedBucketOwner":{"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                }
+            ]
+        },
+        "GetBucketVersioningOutput":{
+            "modify":[
+                {
+                    "MFADelete":{"skipContextTestExpressionUnmarshallingLogic" : true, "injectXmlUnmarshallCode":["response.VersioningConfig.EnableMfaDelete = string.Equals(StringUnmarshaller.GetInstance().Unmarshall(context), \"Enabled\");"]}
+                },
+                {
+                    "Status":{"skipContextTestExpressionUnmarshallingLogic" : true, "injectXmlUnmarshallCode":[" response.VersioningConfig.Status = StringUnmarshaller.GetInstance().Unmarshall(context);"]}
+                }
+            ]
+        },
+        "PutBucketVersioningRequest": {
+            "modify": [
+                {
+                    "VersioningConfiguration": { "emitPropertyName": "VersioningConfig" }
+                },
+                {
+                    "VersioningConfig":{"injectXmlPropertyGetter":["get { return this._versioningConfig ?? new S3BucketVersioningConfig(); }"]}
+                },
+                {
+                    "ExpectedBucketOwner": {"injectXmlIsSet":["return !String.IsNullOrEmpty(this._expectedBucketOwner);"]}
+                },
+                {
+                    "MFA":{"emitPropertyName":"MfaCodes"}
+                },
+                {
+                    "MfaCodes":{
+                        "injectXmlIsSet":["return this._mfaCodes != null && !System.String.IsNullOrEmpty(_mfaCodes.SerialNumber) && !System.String.IsNullOrEmpty(_mfaCodes.AuthenticationValue);"],
+                        "injectXmlMarshallCode":["request.Headers[\"x-amz-mfa\"] = publicRequest.MfaCodes.FormattedMfaCodes;"]
+                    }
+                }
+            ],
+            "exclude":[
+                "ContentMD5"
+            ]
+        },
+        "S3BucketVersioningConfig":{
+            "modify":[
+                {
+                    "MFADelete": {"emitPropertyName" : "EnableMfaDelete"}
+                },
+                {
+                    "EnableMfaDelete":{
+                        "injectXmlIsSet":["return this._enableMfaDelete.HasValue;"],
+                        "injectXmlMarshallCode":[
+                            "if (publicRequest.VersioningConfig.IsSetEnableMfaDelete())",
+                            "   xmlWriter.WriteElementString(\"MfaDelete\", publicRequest.VersioningConfig.EnableMfaDelete.Value ? \"Enabled\" : \"Disabled\");"]
+                    }
+                },
+                {
+                    "Status" : {
+                        "injectXmlIsSet":[" return this._status != null && this._status != VersionStatus.Off;"],
+                        "injectXmlPrivateMemberAssignment":["private VersionStatus _status = \"Off\";"]
+                    }
                 }
             ]
         }
@@ -2428,26 +2491,17 @@
         "ServerSideEncryption":{
             "renameShape":"ServerSideEncryptionMethod"
         },
-        "BucketLocationConstraint":{
-            "renameShape": "S3Region"
-        },
         "Destination" :{
             "renameShape" : "ReplicationDestination"
         },
         "StorageClass":{
             "renameShape": "S3StorageClass"
         },
-        "Payer":{
-            "renameShape": "string"
-        },
         "Part":{
             "renameShape": "PartDetail"
         },
         "CreateBucketConfiguration":{
             "renameShape":"PutBucketConfiguration"
-        },
-        "BucketCannedACL":{
-            "renameShape":"S3CannedACL"
         },
         "Grantee": {
             "renameShape": "S3Grantee"
@@ -2479,9 +2533,6 @@
         "Transition" : {
             "renameShape" : "LifecycleTransition"
         },
-        "TransitionStorageClass" : {
-            "renameShape" : "S3StorageClass"
-        },
         "Rule" :{
             "renameShape" : "LifecycleRule"
         },
@@ -2496,9 +2547,6 @@
         },
         "Object":{
             "renameShape": "S3Object"
-        },
-        "ObjectStorageClass": {
-             "renameShape": "S3StorageClass"
         },
         "ExpirationStatus": {
             "renameShape": "LifecycleRuleStatus"
@@ -2541,6 +2589,9 @@
         },
         "Condition":{
             "renameShape":"RoutingRuleCondition"
+        },
+        "VersioningConfiguration":{
+            "renameShape": "S3BucketVersioningConfig"
         }
     },
     "overrideTreatEnumsAsString":{
@@ -2815,6 +2866,62 @@
                 "Unmarshaller": "StringUnmarshaller"
             }
         },
+        "GetBucketLocationOutput": {
+            "Location":{
+                "Type": "S3Region",
+                "Marshaller": "StringUtils.FromString",
+                "Unmarshaller": "StringUnmarshaller"
+            }
+        },
+        "LifecycleRuleNoncurrentVersionTransition":{
+            "StorageClass":{
+                "Type": "S3StorageClass",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "GetBucketRequestPaymentOutput":{
+            "Payer":{
+                "Type": "String",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "RequestPaymentConfiguration":{
+            "Payer":{
+                "Type": "String",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "LifecycleTransition":{
+            "StorageClass":{
+                "Type": "S3StorageClass",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "S3Object":{
+            "StorageClass":{
+                "Type": "S3StorageClass",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "PutBucketAclRequest":{
+            "ACL":{
+                "Type": "S3CannedACL",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
+        "CreateBucketRequest":{
+            "CannedACL":{
+                "Type": "S3CannedACL",
+                "Marshaller" : "StringUtils.FromString",
+                "Unmarshaller" : "StringUnmarshaller"
+            }
+        },
         "DeleteObjectRequest":{
             "MfaCodes":{
                 "Type": "MfaCodes",
@@ -2927,6 +3034,19 @@
             "ServerSideEncryptionCustomerMethod":{
                 "Type" : "ServerSideEncryptionCustomerMethod"
             }
+        },
+        "PutBucketVersioningRequest":{
+            "MfaCodes":{
+                "Type":"MfaCodes"
+            }
+        },
+        "S3BucketVersioningConfig":{
+            "EnableMfaDelete":{
+                "Type":"bool?"
+            },
+            "Status" :{
+                "Type": "VersionStatus"
+            }
         }
     },
     "excludeMembers":{
@@ -2979,6 +3099,10 @@
             "ContentEncoding",
             "ContentType",
             "ContentLanguage"
+        ],
+        "GetBucketVersioningOutput":[
+            "Status",
+            "MFADelete"
         ]
     },
     "unwrapXmlOutput":{

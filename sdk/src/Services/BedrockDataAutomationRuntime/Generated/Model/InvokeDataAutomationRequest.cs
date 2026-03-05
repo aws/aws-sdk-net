@@ -40,6 +40,7 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
         private string _dataAutomationProfileArn;
         private EncryptionConfiguration _encryptionConfiguration;
         private SyncInputConfiguration _inputConfiguration;
+        private OutputConfiguration _outputConfiguration;
 
         /// <summary>
         /// Gets and sets the property Blueprints. 
@@ -137,6 +138,24 @@ namespace Amazon.BedrockDataAutomationRuntime.Model
         internal bool IsSetInputConfiguration()
         {
             return this._inputConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputConfiguration. 
+        /// <para>
+        /// Output configuration.
+        /// </para>
+        /// </summary>
+        public OutputConfiguration OutputConfiguration
+        {
+            get { return this._outputConfiguration; }
+            set { this._outputConfiguration = value; }
+        }
+
+        // Check to see if OutputConfiguration property is set
+        internal bool IsSetOutputConfiguration()
+        {
+            return this._outputConfiguration != null;
         }
 
     }

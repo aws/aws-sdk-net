@@ -33,7 +33,8 @@ namespace Amazon.SecurityHub.Model
     /// Provides metadata for the Amazon CodeGuru detector associated with a finding. This
     /// field pertains to findings that relate to Lambda functions. Amazon Inspector identifies
     /// policy violations and vulnerabilities in Lambda function code based on internal detectors
-    /// developed in collaboration with Amazon CodeGuru. Security Hub receives those findings.
+    /// developed in collaboration with Amazon CodeGuru. Security Hub CSPM receives those
+    /// findings.
     /// </summary>
     public partial class GeneratorDetails
     {

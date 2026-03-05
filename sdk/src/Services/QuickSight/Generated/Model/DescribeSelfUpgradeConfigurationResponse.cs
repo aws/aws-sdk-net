@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SelfUpgradeConfiguration. 
         /// <para>
-        /// The self-upgrade configuration for the Quick Suite account.
+        /// The self-upgrade configuration for the Quick account.
         /// </para>
         /// </summary>
         public SelfUpgradeConfiguration SelfUpgradeConfiguration

@@ -52,6 +52,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AfdSignaling);
             }
 
+            if(requestObject.IsSetBitDepth())
+            {
+                context.Writer.WritePropertyName("bitDepth");
+                context.Writer.WriteStringValue(requestObject.BitDepth);
+            }
+
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");

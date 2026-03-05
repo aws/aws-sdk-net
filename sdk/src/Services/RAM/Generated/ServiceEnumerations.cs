@@ -474,6 +474,18 @@ namespace Amazon.RAM
         /// Constant FAILED for ResourceShareAssociationStatus
         /// </summary>
         public static readonly ResourceShareAssociationStatus FAILED = new ResourceShareAssociationStatus("FAILED");
+        /// <summary>
+        /// Constant RESTORING for ResourceShareAssociationStatus
+        /// </summary>
+        public static readonly ResourceShareAssociationStatus RESTORING = new ResourceShareAssociationStatus("RESTORING");
+        /// <summary>
+        /// Constant SUSPENDED for ResourceShareAssociationStatus
+        /// </summary>
+        public static readonly ResourceShareAssociationStatus SUSPENDED = new ResourceShareAssociationStatus("SUSPENDED");
+        /// <summary>
+        /// Constant SUSPENDING for ResourceShareAssociationStatus
+        /// </summary>
+        public static readonly ResourceShareAssociationStatus SUSPENDING = new ResourceShareAssociationStatus("SUSPENDING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -524,6 +536,10 @@ namespace Amazon.RAM
         /// Constant RESOURCE for ResourceShareAssociationType
         /// </summary>
         public static readonly ResourceShareAssociationType RESOURCE = new ResourceShareAssociationType("RESOURCE");
+        /// <summary>
+        /// Constant SOURCE for ResourceShareAssociationType
+        /// </summary>
+        public static readonly ResourceShareAssociationType SOURCE = new ResourceShareAssociationType("SOURCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

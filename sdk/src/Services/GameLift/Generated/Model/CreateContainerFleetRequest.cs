@@ -165,6 +165,7 @@ namespace Amazon.GameLift.Model
         private List<string> _metricGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ProtectionPolicy _newGameSessionProtectionPolicy;
         private string _perInstanceContainerGroupDefinitionName;
+        private PlayerGatewayMode _playerGatewayMode;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -616,6 +617,59 @@ namespace Amazon.GameLift.Model
         internal bool IsSetPerInstanceContainerGroupDefinitionName()
         {
             return this._perInstanceContainerGroupDefinitionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlayerGatewayMode. 
+        /// <para>
+        /// Configures player gateway for your fleet. Player gateway provides benefits such as
+        /// DDoS protection by rate limiting and validating traﬃc before it reaches game servers,
+        /// hiding game server IP addresses from players, and providing updated endpoints when
+        /// relay endpoints become unhealthy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>How it works:</b> When enabled, game clients connect to relay endpoints instead
+        /// of to your game servers. Player gateway validates player gateway tokens and routes
+        /// traffic to the appropriate game server. Your game backend calls <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a>
+        /// to retrieve relay endpoints and player gateway tokens for your game clients. To learn
+        /// more about this topic, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/ddos-protection-intro.html">DDoS
+        /// protection with Amazon GameLift Servers player gateway</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DISABLED</c> (default) -- Game clients connect to the game server endpoint. Use
+        /// this when you do not intend to integrate your game with player gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ENABLED</c> -- Player gateway is available in fleet locations where it is supported.
+        /// Your game backend can call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a>
+        /// to obtain a player gateway token and endpoints for game clients.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REQUIRED</c> -- Player gateway is available in fleet locations where it is supported,
+        /// and the fleet can only use locations that support this feature. Attempting to add
+        /// a remote location to your fleet which does not support player gateway will result
+        /// in an <c>InvalidRequestException</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PlayerGatewayMode PlayerGatewayMode
+        {
+            get { return this._playerGatewayMode; }
+            set { this._playerGatewayMode = value; }
+        }
+
+        // Check to see if PlayerGatewayMode property is set
+        internal bool IsSetPlayerGatewayMode()
+        {
+            return this._playerGatewayMode != null;
         }
 
         /// <summary>

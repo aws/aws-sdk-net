@@ -38,6 +38,7 @@ namespace Amazon.IoTManagedIntegrations.Model
     public partial class CreateProvisioningProfileRequest : AmazonIoTManagedIntegrationsRequest
     {
         private string _caCertificate;
+        private string _claimCertificate;
         private string _clientToken;
         private string _name;
         private ProvisioningType _provisioningType;
@@ -60,6 +61,25 @@ namespace Amazon.IoTManagedIntegrations.Model
         internal bool IsSetCaCertificate()
         {
             return this._caCertificate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClaimCertificate. 
+        /// <para>
+        /// The claim certificate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string ClaimCertificate
+        {
+            get { return this._claimCertificate; }
+            set { this._claimCertificate = value; }
+        }
+
+        // Check to see if ClaimCertificate property is set
+        internal bool IsSetClaimCertificate()
+        {
+            return this._claimCertificate != null;
         }
 
         /// <summary>

@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <DownloadedDllsPath>$(MSBuildProjectDirectory)\DownloadedDlls</DownloadedDllsPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="xunit" Version="2.5.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <!-- Pre-build target to download and extract DLLs -->
+  <Target Name="DownloadAwsSdkDlls" BeforeTargets="BeforeBuild">
+    <Exec Command="powershell -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\DownloadDlls.ps1&quot;" Condition="!Exists('$(DownloadedDllsPath)\AWSSDK.S3.dll')" />
+  </Target>
+
+  <!-- Reference the downloaded service DLLs -->
+  <ItemGroup>
+    <Reference Include="AWSSDK.S3">
+      <HintPath>$(DownloadedDllsPath)\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.DynamoDBv2">
+      <HintPath>$(DownloadedDllsPath)\AWSSDK.DynamoDBv2.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SQS">
+      <HintPath>$(DownloadedDllsPath)\AWSSDK.SQS.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.BedrockRuntime">
+      <HintPath>$(DownloadedDllsPath)\AWSSDK.BedrockRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.SimpleSystemsManagement">
+      <HintPath>$(DownloadedDllsPath)\AWSSDK.SimpleSystemsManagement.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

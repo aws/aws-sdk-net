@@ -39,9 +39,11 @@ namespace Amazon.MediaLive.Model
         private CdiInputSpecification _cdiInputSpecification;
         private ChannelClass _channelClass;
         private ChannelEngineVersionRequest _channelEngineVersion;
+        private List<string> _channelSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<OutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<OutputDestination>() : null;
         private bool? _dryRun;
         private EncoderSettings _encoderSettings;
+        private InferenceSettings _inferenceSettings;
         private List<InputAttachment> _inputAttachments = AWSConfigs.InitializeCollections ? new List<InputAttachment>() : null;
         private InputSpecification _inputSpecification;
         private LinkedChannelSettings _linkedChannelSettings;
@@ -119,6 +121,27 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChannelSecurityGroups. A list of IDs for all the Input
+        /// Security Groups attached to the channel.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> ChannelSecurityGroups
+        {
+            get { return this._channelSecurityGroups; }
+            set { this._channelSecurityGroups = value; }
+        }
+
+        // Check to see if ChannelSecurityGroups property is set
+        internal bool IsSetChannelSecurityGroups()
+        {
+            return this._channelSecurityGroups != null && (this._channelSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Destinations.
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -166,6 +189,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetEncoderSettings()
         {
             return this._encoderSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferenceSettings. Include this setting to include Elemental
+        /// Inference features in this channel.
+        /// </summary>
+        public InferenceSettings InferenceSettings
+        {
+            get { return this._inferenceSettings; }
+            set { this._inferenceSettings = value; }
+        }
+
+        // Check to see if InferenceSettings property is set
+        internal bool IsSetInferenceSettings()
+        {
+            return this._inferenceSettings != null;
         }
 
         /// <summary>

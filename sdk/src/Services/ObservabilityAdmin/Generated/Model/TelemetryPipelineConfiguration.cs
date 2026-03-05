@@ -30,8 +30,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ObservabilityAdmin.Model
 {
     /// <summary>
-    /// Defines the configuration for a telemetry pipeline, including how data flows from
-    /// sources through processors to destinations.
+    /// Defines the configuration for a pipeline, including how data flows from sources through
+    /// processors to destinations. The configuration is specified in YAML format and must
+    /// include a valid pipeline definition with required source and sink components. This
+    /// pipeline enables end-to-end telemetry data collection, transformation, and delivery
+    /// while supporting optional processing steps and extensions for enhanced functionality.
+    /// 
+    ///  
+    /// <para>
+    /// The primary pipeline configuration section are:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>Source:</b> Defines where log data originates from (S3 buckets, CloudWatch Logs,
+    /// third-party APIs). Each pipeline must have exactly one source.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Processors (optional):</b> Transform, parse, and enrich log data as it flows through
+    /// the pipeline. Processors are applied sequentially in the order they are defined.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Sink:</b> Defines the destination where processed log data is sent. Each pipeline
+    /// must have exactly one sink.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Extensions (optional):</b> Provide additional functionality such as Amazon Web
+    /// Services Secrets Manager integration for credential management.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For more details on each configuration section see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-pipelines.html">CloudWatch
+    /// pipelines User Guide</a>. Additional comprehensive configuration examples can be found
+    /// in the <a href="https://docs.aws.amazon.com/cloudwatch/latest/observabilityadmin/API_CreateTelemetryPipeline.html#API_CreateTelemetryPipeline_Examples">CreateTelemetryPipeline
+    /// API docs</a>.
+    /// </para>
     /// </summary>
     public partial class TelemetryPipelineConfiguration
     {

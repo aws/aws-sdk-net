@@ -99,7 +99,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetServerProperties())
             {
                 context.Writer.WritePropertyName("serverProperties");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ServerProperties));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.ServerProperties);
             }
 
             writer.WriteEndObject();

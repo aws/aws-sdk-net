@@ -35,7 +35,32 @@ namespace Amazon.IoTManagedIntegrations.Model
     /// </summary>
     public partial class AuthConfig
     {
+        private List<AuthMaterial> _generalAuthorization = AWSConfigs.InitializeCollections ? new List<AuthMaterial>() : null;
         private OAuthConfig _oAuth;
+
+        /// <summary>
+        /// Gets and sets the property GeneralAuthorization. 
+        /// <para>
+        /// The authorization materials for General Authorization.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<AuthMaterial> GeneralAuthorization
+        {
+            get { return this._generalAuthorization; }
+            set { this._generalAuthorization = value; }
+        }
+
+        // Check to see if GeneralAuthorization property is set
+        internal bool IsSetGeneralAuthorization()
+        {
+            return this._generalAuthorization != null && (this._generalAuthorization.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property OAuth. 

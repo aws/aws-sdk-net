@@ -185,6 +185,12 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BCMDashboards.Model.Widget.Id</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BCMDashboards.Model.Widget.Title</property>
     <min>2</min>
     <max>50</max>

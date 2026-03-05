@@ -57,6 +57,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSlurm())
+            {
+                context.Writer.WritePropertyName("Slurm");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterOrchestratorSlurmConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.Slurm, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

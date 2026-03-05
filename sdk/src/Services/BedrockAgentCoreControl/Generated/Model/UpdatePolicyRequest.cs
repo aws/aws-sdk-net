@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class UpdatePolicyRequest : AmazonBedrockAgentCoreControlRequest
     {
         private PolicyDefinition _definition;
-        private string _description;
+        private UpdatedDescription _description;
         private string _policyEngineId;
         private string _policyId;
         private PolicyValidationMode _validationMode;
@@ -52,7 +52,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// the existing policy definition with new logic while maintaining the policy's identity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public PolicyDefinition Definition
         {
             get { return this._definition; }
@@ -72,8 +71,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// the policy's documentation while keeping the same policy logic.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
-        public string Description
+        public UpdatedDescription Description
         {
             get { return this._description; }
             set { this._description = value; }

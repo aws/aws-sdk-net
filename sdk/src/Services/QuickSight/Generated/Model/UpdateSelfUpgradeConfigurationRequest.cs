@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSelfUpgradeConfiguration operation.
-    /// Updates the self-upgrade configuration for a Quick Suite account.
+    /// Updates the self-upgrade configuration for a Quick account.
     /// </summary>
     public partial class UpdateSelfUpgradeConfigurationRequest : AmazonQuickSightRequest
     {
@@ -42,8 +42,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade
-        /// configuration that you want to update.
+        /// The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration
+        /// that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -62,8 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The Quick Suite namespace that you want to update the Quick Suite self-upgrade configuration
-        /// for.
+        /// The Quick namespace that you want to update the Quick self-upgrade configuration for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -82,7 +81,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SelfUpgradeStatus. 
         /// <para>
-        /// The self-upgrade status that you want to set for the Quick Suite account.
+        /// The self-upgrade status that you want to set for the Quick account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

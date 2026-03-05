@@ -67,8 +67,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AccountName. 
         /// <para>
         /// The account name that you provided for the Amazon Quick Sight subscription in your
-        /// Amazon Web Services account. You create this name when you sign up for Quick Suite.
-        /// It's unique over all of Amazon Web Services, and it appears only when users sign in.
+        /// Amazon Web Services account. You create this name when you sign up for Quick. It's
+        /// unique over all of Amazon Web Services, and it appears only when users sign in.
         /// </para>
         /// </summary>
         public string AccountName

@@ -4933,6 +4933,10 @@ namespace Amazon.PartnerCentralSelling
     {
 
         /// <summary>
+        /// Constant CreatedDate for OpportunitySortName
+        /// </summary>
+        public static readonly OpportunitySortName CreatedDate = new OpportunitySortName("CreatedDate");
+        /// <summary>
         /// Constant CustomerCompanyName for OpportunitySortName
         /// </summary>
         public static readonly OpportunitySortName CustomerCompanyName = new OpportunitySortName("CustomerCompanyName");
@@ -4944,6 +4948,10 @@ namespace Amazon.PartnerCentralSelling
         /// Constant LastModifiedDate for OpportunitySortName
         /// </summary>
         public static readonly OpportunitySortName LastModifiedDate = new OpportunitySortName("LastModifiedDate");
+        /// <summary>
+        /// Constant TargetCloseDate for OpportunitySortName
+        /// </summary>
+        public static readonly OpportunitySortName TargetCloseDate = new OpportunitySortName("TargetCloseDate");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

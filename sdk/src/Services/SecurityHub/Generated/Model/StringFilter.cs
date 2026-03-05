@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A string filter for filtering Security Hub findings.
+    /// A string filter for filtering Security Hub CSPM findings.
     /// </summary>
     public partial class StringFilter
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Comparison. 
         /// <para>
-        /// The condition to apply to a string value when filtering Security Hub findings.
+        /// The condition to apply to a string value when filtering Security Hub CSPM findings.
         /// </para>
         ///  
         /// <para>
@@ -117,15 +117,15 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// You can combine <c>PREFIX</c> filters with <c>NOT_EQUALS</c> or <c>PREFIX_NOT_EQUALS</c>
-        /// filters for the same field. Security Hub first processes the <c>PREFIX</c> filters,
+        /// filters for the same field. Security Hub CSPM first processes the <c>PREFIX</c> filters,
         /// and then the <c>NOT_EQUALS</c> or <c>PREFIX_NOT_EQUALS</c> filters.
         /// </para>
         ///  
         /// <para>
-        /// For example, for the following filters, Security Hub first identifies findings that
-        /// have resource types that start with either <c>AwsIam</c> or <c>AwsEc2</c>. It then
-        /// excludes findings that have a resource type of <c>AwsIamPolicy</c> and findings that
-        /// have a resource type of <c>AwsEc2NetworkInterface</c>.
+        /// For example, for the following filters, Security Hub CSPM first identifies findings
+        /// that have resource types that start with either <c>AwsIam</c> or <c>AwsEc2</c>. It
+        /// then excludes findings that have a resource type of <c>AwsIamPolicy</c> and findings
+        /// that have a resource type of <c>AwsEc2NetworkInterface</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -149,7 +149,7 @@ namespace Amazon.SecurityHub.Model
         /// rules V1. <c>CONTAINS_WORD</c> operator is only supported in <c>GetFindingsV2</c>,
         /// <c>GetFindingStatisticsV2</c>, <c>GetResourcesV2</c>, and <c>GetResourceStatisticsV2</c>
         /// APIs. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/automation-rules.html">Automation
-        /// rules</a> in the <i>Security Hub User Guide</i>.
+        /// rules</a> in the <i>Security Hub CSPM User Guide</i>.
         /// </para>
         /// </summary>
         public StringFilterComparison Comparison
@@ -168,7 +168,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The string filter value. Filter values are case sensitive. For example, the product
-        /// name for control-based findings is <c>Security Hub</c>. If you provide <c>security
+        /// name for control-based findings is <c>Security Hub CSPM</c>. If you provide <c>security
         /// hub</c> as the filter value, there's no match.
         /// </para>
         /// </summary>

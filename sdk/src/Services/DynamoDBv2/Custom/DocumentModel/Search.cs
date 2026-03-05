@@ -724,9 +724,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                 TableName = TableName,
                                 Select = EnumMapper.Convert(SelectValues.Count),
                                 ExclusiveStartKey = NextKey,
-                                ScanFilter = Filter.ToConditions(SourceTable.Conversion, SourceTable.IsEmptyStringValueEnabled),
                                 ConsistentRead = IsConsistentRead
                             };
+
+                            if (this.Filter != null)
+                            {
+                                var scanFilter = Filter.ToConditions(SourceTable);
+                                if (scanFilter?.Count > 0)
+                                    scanReq.ScanFilter = scanFilter;
+                            }
                             if (!string.IsNullOrEmpty(this.IndexName))
                                 scanReq.IndexName = this.IndexName;
                             if (this.FilterExpression != null && this.FilterExpression.IsSet)

@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Contains summary information about a code interpreter. A code interpreter enables
-    /// Amazon Bedrock Agent to execute code.
+    /// Amazon Bedrock AgentCore Agent to execute code.
     /// </summary>
     public partial class CodeInterpreterSummary
     {

@@ -75,6 +75,7 @@ namespace Amazon.RDS.Model
         private int? _allocatedStorage;
         private bool? _autoMinorVersionUpgrade;
         private string _availabilityZone;
+        private int? _backupRetentionPeriod;
         private string _backupTarget;
         private string _caCertificateIdentifier;
         private bool? _copyTagsToSnapshot;
@@ -107,6 +108,7 @@ namespace Amazon.RDS.Model
         private string _networkType;
         private string _optionGroupName;
         private int? _port;
+        private string _preferredBackupWindow;
         private List<ProcessorFeature> _processorFeatures = AWSConfigs.InitializeCollections ? new List<ProcessorFeature>() : null;
         private bool? _publiclyAccessible;
         private int? _storageThroughput;
@@ -246,6 +248,56 @@ namespace Amazon.RDS.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupRetentionPeriod. 
+        /// <para>
+        /// The number of days to retain automated backups. Setting this parameter to a positive
+        /// number enables backups. Setting this parameter to 0 disables automated backups.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Enabling and disabling backups can result in a brief I/O suspension that lasts from
+        /// a few seconds to a few minutes, depending on the size and class of your DB instance.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This setting doesn't apply to Amazon Aurora DB instances. The retention period for
+        /// automated backups is managed by the DB cluster. For more information, see <c>ModifyDBCluster</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Uses existing setting
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be a value from 0 to 35.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be set to 0 if the DB instance is a source to read replicas.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can't be set to 0 for an RDS Custom for Oracle DB instance.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public int? BackupRetentionPeriod
+        {
+            get { return this._backupRetentionPeriod; }
+            set { this._backupRetentionPeriod = value; }
+        }
+
+        // Check to see if BackupRetentionPeriod property is set
+        internal bool IsSetBackupRetentionPeriod()
+        {
+            return this._backupRetentionPeriod.HasValue; 
         }
 
         /// <summary>
@@ -1384,6 +1436,57 @@ namespace Amazon.RDS.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreferredBackupWindow. 
+        /// <para>
+        /// The daily time range during which automated backups are created if automated backups
+        /// are enabled, as determined by the <c>BackupRetentionPeriod</c> parameter. Changing
+        /// this parameter doesn't result in an outage and the change is asynchronously applied
+        /// as soon as possible. The default is a 30-minute window selected at random from an
+        /// 8-hour block of time for each Amazon Web Services Region. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+        /// window</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting doesn't apply to Amazon Aurora DB instances. The daily time range for
+        /// creating automated backups is managed by the DB cluster. For more information, see
+        /// <c>ModifyDBCluster</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be in Universal Coordinated Time (UTC).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must not conflict with the preferred maintenance window.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be at least 30 minutes.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string PreferredBackupWindow
+        {
+            get { return this._preferredBackupWindow; }
+            set { this._preferredBackupWindow = value; }
+        }
+
+        // Check to see if PreferredBackupWindow property is set
+        internal bool IsSetPreferredBackupWindow()
+        {
+            return this._preferredBackupWindow != null;
         }
 
         /// <summary>

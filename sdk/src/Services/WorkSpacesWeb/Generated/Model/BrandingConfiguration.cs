@@ -153,7 +153,6 @@ namespace Amazon.WorkSpacesWeb.Model
         /// upload timestamp.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ImageMetadata Wallpaper
         {
             get { return this._wallpaper; }

@@ -40,6 +40,7 @@ namespace Amazon.DynamoDBv2.Model
         private DateTime? _creationDateTime;
         private bool? _deletionProtectionEnabled;
         private List<GlobalSecondaryIndexDescription> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndexDescription>() : null;
+        private GlobalTableSettingsReplicationMode _globalTableSettingsReplicationMode;
         private string _globalTableVersion;
         private List<GlobalTableWitnessDescription> _globalTableWitnesses = AWSConfigs.InitializeCollections ? new List<GlobalTableWitnessDescription>() : null;
         private long? _itemCount;
@@ -303,6 +304,40 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetGlobalSecondaryIndexes()
         {
             return this._globalSecondaryIndexes != null && (this._globalSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalTableSettingsReplicationMode. 
+        /// <para>
+        /// Indicates one of the settings synchronization modes for the global table:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ENABLED</c>: Indicates that the settings synchronization mode for the global table
+        /// is enabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DISABLED</c>: Indicates that the settings synchronization mode for the global
+        /// table is disabled.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ENABLED_WITH_OVERRIDES</c>: This mode is set by default for a same account global
+        /// table. Indicates that certain global table settings can be overridden.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public GlobalTableSettingsReplicationMode GlobalTableSettingsReplicationMode
+        {
+            get { return this._globalTableSettingsReplicationMode; }
+            set { this._globalTableSettingsReplicationMode = value; }
+        }
+
+        // Check to see if GlobalTableSettingsReplicationMode property is set
+        internal bool IsSetGlobalTableSettingsReplicationMode()
+        {
+            return this._globalTableSettingsReplicationMode != null;
         }
 
         /// <summary>

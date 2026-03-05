@@ -221,6 +221,23 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// NVIDIA Container Toolkit with disabled CUDA-compat mounting
         /// </para>
+        ///  </li> </ul> </dd> <dt>al2023-ami-sagemaker-inference-gpu-4-1</dt> <dd> <ul> <li>
+        /// 
+        /// <para>
+        /// Accelerator: GPU
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NVIDIA driver version: 580
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CUDA version: 13.0
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NVIDIA Container Toolkit with disabled CUDA-compat mounting
+        /// </para>
         ///  </li> </ul> </dd> <dt>al2-ami-sagemaker-inference-neuron-2</dt> <dd> <ul> <li> 
         /// <para>
         /// Accelerator: Inferentia2 and Trainium

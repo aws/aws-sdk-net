@@ -36,7 +36,7 @@ namespace Amazon.PcaConnectorScep.Model
     /// issuing a certificate from a certificate authority (CA). Your SCEP clients include
     /// the challenge password as part of their certificate request to Connector for SCEP.
     /// To retrieve the connector Amazon Resource Names (ARNs) for the connectors in your
-    /// account, call <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_ListConnectors.html">ListConnectors</a>.
+    /// account, call <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_ListConnectors.html">ListConnectors</a>.
     /// 
     ///  
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.PcaConnectorScep.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Custom string that can be used to distinguish between calls to the <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_CreateChallenge.html">CreateChallenge</a>
+        /// Custom string that can be used to distinguish between calls to the <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_CreateChallenge.html">CreateChallenge</a>
         /// action. Client tokens for <c>CreateChallenge</c> time out after five minutes. Therefore,
         /// if you call <c>CreateChallenge</c> multiple times with the same client token within
         /// five minutes, Connector for SCEP recognizes that you are requesting only one challenge

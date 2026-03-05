@@ -92,6 +92,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.CognitoOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DeploymentStrategyOptions", targetDepth))
+                {
+                    var unmarshaller = DeploymentStrategyOptionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentStrategyOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DomainEndpointOptions", targetDepth))
                 {
                     var unmarshaller = DomainEndpointOptionsStatusUnmarshaller.Instance;

@@ -313,6 +313,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AMITypes WINDOWS_CORE_2022_x86_64 = new AMITypes("WINDOWS_CORE_2022_x86_64");
         /// <summary>
+        /// Constant WINDOWS_CORE_2025_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_CORE_2025_x86_64 = new AMITypes("WINDOWS_CORE_2025_x86_64");
+        /// <summary>
         /// Constant WINDOWS_FULL_2019_x86_64 for AMITypes
         /// </summary>
         public static readonly AMITypes WINDOWS_FULL_2019_x86_64 = new AMITypes("WINDOWS_FULL_2019_x86_64");
@@ -320,6 +324,10 @@ namespace Amazon.EKS
         /// Constant WINDOWS_FULL_2022_x86_64 for AMITypes
         /// </summary>
         public static readonly AMITypes WINDOWS_FULL_2022_x86_64 = new AMITypes("WINDOWS_FULL_2022_x86_64");
+        /// <summary>
+        /// Constant WINDOWS_FULL_2025_x86_64 for AMITypes
+        /// </summary>
+        public static readonly AMITypes WINDOWS_FULL_2025_x86_64 = new AMITypes("WINDOWS_FULL_2025_x86_64");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2714,6 +2722,10 @@ namespace Amazon.EKS
         /// Constant UpgradePolicyUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType UpgradePolicyUpdate = new UpdateType("UpgradePolicyUpdate");
+        /// <summary>
+        /// Constant VendedLogsUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType VendedLogsUpdate = new UpdateType("VendedLogsUpdate");
         /// <summary>
         /// Constant VersionUpdate for UpdateType
         /// </summary>

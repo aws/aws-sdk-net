@@ -64,6 +64,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             // since Key is excluded via customization.json entry we set the path resource here.
             defaultRequest.AddPathResource("{Key+}", S3Transforms.ToStringValue(destinationKey));
 
+            // Server-side encryption with customer-provided keys (SSE-C) handling for backward compatibility.
+            // When SSE-C key is provided: uses the MD5 digest if supplied, otherwise automatically computes it.
+            // https://github.com/aws/aws-sdk-net/blob/a4e2880e3449f0aa3e3e42a3af422c5698615b98/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/CopyPartRequestMarshaller.cs#L65-L84
+            
             if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
                 defaultRequest.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, publicRequest.ServerSideEncryptionCustomerProvidedKey);

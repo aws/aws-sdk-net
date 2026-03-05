@@ -62,7 +62,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         
             if (publicRequest.IsSetACL()) 
             {
-                request.Headers["x-amz-acl"] = publicRequest.ACL;
+                request.Headers["x-amz-acl"] = StringUtils.FromString(publicRequest.ACL);
             }
         
             if (publicRequest.IsSetChecksumAlgorithm()) 

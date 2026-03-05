@@ -73,6 +73,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.HttpTokens = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("httpTokensEnforced", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HttpTokensEnforced = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("instanceMetadataTags", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

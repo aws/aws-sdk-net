@@ -69,7 +69,7 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLogo())
             {
                 context.Writer.WritePropertyName("Logo");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.Logo));
+                StringUtils.WriteBase64StringValue(context.Writer, requestObject.Logo);
             }
 
             if(requestObject.IsSetSupportEmail())

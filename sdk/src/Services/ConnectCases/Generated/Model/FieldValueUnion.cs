@@ -34,8 +34,9 @@ namespace Amazon.ConnectCases.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The <c>Summary</c> system field accepts 3000 characters while all other fields accept
-    /// 500 characters.
+    /// The <c>Summary</c> system field accepts up to 3000 characters, while all other fields
+    /// accept up to 4100 characters. If you use multi-byte characters, the effective character
+    /// limit may be lower.
     /// </para>
     ///  </note>
     /// </summary>
@@ -107,7 +108,7 @@ namespace Amazon.ConnectCases.Model
         /// String value type.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=3000)]
+        [AWSProperty(Min=0, Max=4100)]
         public string StringValue
         {
             get { return this._stringValue; }

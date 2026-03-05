@@ -197,7 +197,7 @@ namespace Amazon.KeyspacesStreams.Model
         /// Gets and sets the property StreamViewType. 
         /// <para>
         ///  The format of the data records in this stream. Currently, this can be one of the
-        /// following options:
+        /// following options: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

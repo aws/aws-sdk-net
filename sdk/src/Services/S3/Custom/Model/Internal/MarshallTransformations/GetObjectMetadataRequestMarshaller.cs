@@ -27,6 +27,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 	{
         partial void PostMarshallCustomization(DefaultRequest defaultRequest, GetObjectMetadataRequest publicRequest)
         {
+            // Server-side encryption with customer-provided keys (SSE-C) handling for backward compatibility.
+            // When SSE-C key is provided: uses the MD5 digest if supplied, otherwise automatically computes it.
+            // https://github.com/aws/aws-sdk-net/blob/7d8f78ce93438cae257b6f8a0b23a03b1a34c894/sdk/src/Services/S3/Custom/Model/Internal/MarshallTransformations/GetObjectMetadataRequestMarshaller.cs#L56-L63
             if (publicRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
                 defaultRequest.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, publicRequest.ServerSideEncryptionCustomerProvidedKey);

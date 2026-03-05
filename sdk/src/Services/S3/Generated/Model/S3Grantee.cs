@@ -37,7 +37,6 @@ namespace Amazon.S3.Model
         private string _canonicalUser;
         private string _displayName;
         private string _emailAddress;
-        
         private string _uri;
 
         /// <summary>

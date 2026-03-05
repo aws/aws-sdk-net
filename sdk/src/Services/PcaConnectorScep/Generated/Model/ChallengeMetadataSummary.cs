@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PcaConnectorScep.Model
 {
     /// <summary>
-    /// Details about the specified challenge, returned by the <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_GetChallengeMetadata.html">GetChallengeMetadata</a>
+    /// Details about the specified challenge, returned by the <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_GetChallengeMetadata.html">GetChallengeMetadata</a>
     /// action.
     /// </summary>
     public partial class ChallengeMetadataSummary

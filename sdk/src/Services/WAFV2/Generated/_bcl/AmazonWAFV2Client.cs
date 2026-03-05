@@ -4843,6 +4843,141 @@ namespace Amazon.WAFV2
 
         #endregion
         
+        #region  GetTopPathStatisticsByTraffic
+
+
+        /// <summary>
+        /// Retrieves aggregated statistics about the top URI paths accessed by bot traffic for
+        /// a specified web ACL and time window. You can use this operation to analyze which paths
+        /// on your web application receive the most bot traffic and identify the specific bots
+        /// accessing those paths. The operation supports filtering by bot category, organization,
+        /// or name, and allows you to drill down into specific path prefixes to view detailed
+        /// URI-level statistics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTopPathStatisticsByTraffic service method.</param>
+        /// 
+        /// <returns>The response from the GetTopPathStatisticsByTraffic service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFFeatureNotIncludedInPricingPlanException">
+        /// The operation failed because the specified WAF feature isn't supported by the CloudFront
+        /// pricing plan associated with the web ACL.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetTopPathStatisticsByTraffic">REST API Reference for GetTopPathStatisticsByTraffic Operation</seealso>
+        public virtual GetTopPathStatisticsByTrafficResponse GetTopPathStatisticsByTraffic(GetTopPathStatisticsByTrafficRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTopPathStatisticsByTrafficRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTopPathStatisticsByTrafficResponseUnmarshaller.Instance;
+
+            return Invoke<GetTopPathStatisticsByTrafficResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves aggregated statistics about the top URI paths accessed by bot traffic for
+        /// a specified web ACL and time window. You can use this operation to analyze which paths
+        /// on your web application receive the most bot traffic and identify the specific bots
+        /// accessing those paths. The operation supports filtering by bot category, organization,
+        /// or name, and allows you to drill down into specific path prefixes to view detailed
+        /// URI-level statistics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTopPathStatisticsByTraffic service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTopPathStatisticsByTraffic service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFFeatureNotIncludedInPricingPlanException">
+        /// The operation failed because the specified WAF feature isn't supported by the CloudFront
+        /// pricing plan associated with the web ACL.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetTopPathStatisticsByTraffic">REST API Reference for GetTopPathStatisticsByTraffic Operation</seealso>
+        public virtual Task<GetTopPathStatisticsByTrafficResponse> GetTopPathStatisticsByTrafficAsync(GetTopPathStatisticsByTrafficRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetTopPathStatisticsByTrafficRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTopPathStatisticsByTrafficResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetTopPathStatisticsByTrafficResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetWebACL
 
 

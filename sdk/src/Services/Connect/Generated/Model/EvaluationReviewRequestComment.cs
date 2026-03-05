@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The user who created the review request comment.
+        /// The user who created the evaluation review request comment.
         /// </para>
         /// </summary>
         public string CreatedBy
@@ -78,7 +78,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The timestamp when the review request comment was created.
+        /// The timestamp when the evaluation review request comment was created.
         /// </para>
         /// </summary>
         public DateTime? CreatedTime

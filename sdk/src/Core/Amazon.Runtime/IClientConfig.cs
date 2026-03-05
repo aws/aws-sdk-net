@@ -34,6 +34,7 @@ namespace Amazon.Runtime
     /// This interface is the read only access to the ClientConfig object used when setting up service clients. Once service clients
     /// are initiated the config object should not be changed to avoid issues with using a service client in a multi threaded environment.
     /// </summary>
+    [AWSIsBackwardsCompatible]
     public partial interface IClientConfig
     {
         /// <summary>
@@ -243,8 +244,12 @@ namespace Amazon.Runtime
         /// <summary>
         /// Returns the flag indicating how many retry HTTP requests an SDK should
         /// make for a single SDK operation invocation before giving up. For
-        /// RetryMode values of "Standard" or "Adaptive" this flag will return 2. In 
-        /// addition to the values returned that are dependent on the RetryMode, the
+        /// RetryMode values of "Standard" or "Adaptive" this flag will return 2.
+        /// <para />
+        /// <b>Note</b>: For the <c>DynamoDBv2</c> and <c>DynamoDBStreams</c> service packages, the default 
+        /// value is 10.
+        /// <para />
+        /// In addition to the values returned that are dependent on the RetryMode, the
         /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment
         /// variable, max_attempts in the shared configuration file, or by setting a
         /// value directly on this property. When using AWS_MAX_ATTEMPTS or max_attempts

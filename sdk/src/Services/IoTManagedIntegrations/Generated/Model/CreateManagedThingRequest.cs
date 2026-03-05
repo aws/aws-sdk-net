@@ -58,7 +58,7 @@ namespace Amazon.IoTManagedIntegrations.Model
         /// <summary>
         /// Gets and sets the property AuthenticationMaterial. 
         /// <para>
-        /// The authentication material defining the device connectivity setup requests. The authentication
+        /// The authentication material defining the device connectivity setup requests. The authorization
         /// materials used are the device bar code.
         /// </para>
         /// </summary>

@@ -1,6 +1,0 @@
-{
-  "active": true,
-  "synopsis": "Introducing Amazon CloudWatch Evidently. This is the first public release of Amazon CloudWatch Evidently.",
-  "generate-client-constructors": true,
-  "legacy-service-id": "Evidently"
-}

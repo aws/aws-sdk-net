@@ -78,13 +78,13 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetFaviconFile())
             {
                 context.Writer.WritePropertyName("FaviconFile");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.FaviconFile));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.FaviconFile);
             }
 
             if(publicRequest.IsSetLogoFile())
             {
                 context.Writer.WritePropertyName("LogoFile");
-                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.LogoFile));
+                StringUtils.WriteBase64StringValue(context.Writer, publicRequest.LogoFile);
             }
 
             if(publicRequest.IsSetTitle())

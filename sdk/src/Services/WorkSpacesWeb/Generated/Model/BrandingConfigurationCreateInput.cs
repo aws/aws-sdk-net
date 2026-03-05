@@ -150,10 +150,10 @@ namespace Amazon.WorkSpacesWeb.Model
         /// Gets and sets the property Wallpaper. 
         /// <para>
         /// The wallpaper image for the portal. Provide either a binary image file or an S3 URI
-        /// pointing to the image file. Maximum 5 MB in JPEG or PNG format.
+        /// pointing to the image file. Maximum 5 MB in JPEG or PNG format. If not provided, a
+        /// default wallpaper will be used as the background image.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public WallpaperImageInput Wallpaper
         {
             get { return this._wallpaper; }
