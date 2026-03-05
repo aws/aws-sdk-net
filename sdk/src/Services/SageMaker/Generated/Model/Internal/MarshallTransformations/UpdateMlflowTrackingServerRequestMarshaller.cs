@@ -87,6 +87,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.AutomaticModelRegistration.Value);
             }
 
+            if(publicRequest.IsSetS3BucketOwnerAccountId())
+            {
+                context.Writer.WritePropertyName("S3BucketOwnerAccountId");
+                context.Writer.WriteStringValue(publicRequest.S3BucketOwnerAccountId);
+            }
+
+            if(publicRequest.IsSetS3BucketOwnerVerification())
+            {
+                context.Writer.WritePropertyName("S3BucketOwnerVerification");
+                context.Writer.WriteBooleanValue(publicRequest.S3BucketOwnerVerification.Value);
+            }
+
             if(publicRequest.IsSetTrackingServerName())
             {
                 context.Writer.WritePropertyName("TrackingServerName");
