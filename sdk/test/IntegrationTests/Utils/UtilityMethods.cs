@@ -103,8 +103,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         public static void  CompareFiles(string file1, string file2)
         {
-            byte[] file1MD5 = computeHash(file1);
-            byte[] file2MD5 = computeHash(file2);
+            byte[] file1MD5 = ComputeHash(file1);
+            byte[] file2MD5 = ComputeHash(file2);
 
             Assert.AreEqual(file1MD5.Length, file2MD5.Length);
             for (int i = 0; i < file1MD5.Length; i++)
@@ -113,7 +113,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             }
         }
 
-        private static byte[] computeHash(string file)
+        private static byte[] ComputeHash(string file)
         {
             Stream fileStream = File.OpenRead(file);
             byte[] fileMD5 = new MD5Managed().ComputeHash(fileStream);
@@ -352,8 +352,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
 
         public static string GenerateName(string name)
         {
-            return name + DateTime.UtcNow.Ticks;
+            return name + Guid.NewGuid().ToString("N");
         }
+
         public class ListSleeper
         {
             private int attempt;

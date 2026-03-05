@@ -15,6 +15,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     {
         private const string content = "0123456789";
         private static string bucketName;
+        private string _testId;
+
+        [TestInitialize]
+        public void SetTestId()
+        {
+            _testId = Guid.NewGuid().ToString("N");
+        }
 
         [ClassInitialize]
         public static async Task Initialize(TestContext a)
@@ -99,7 +106,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task TestServerSideEncryptionCustomerProvidedKeyMD5()
         {
-            var key = "TestServerSideEncryptionCustomerProvidedKeyMD5";
+            var key = _testId + "-TestSSEC";
             
             // Generate a cryptographically secure 256-bit (32 byte) encryption key
             var encryptionKeyBytes = new byte[32];
@@ -148,7 +155,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task TestContentLanguageHeader()
         {
-            var key = "TestContentLanguageHeader";
+            var key = _testId + "-TestContentLanguageHeader";
             var expectedLanguage = "en-US";
 
             // Put object with Content-Language header
@@ -181,7 +188,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task TestContentLanguageResponseHeaderOverride()
         {
-            var key = "TestContentLanguageResponseHeaderOverride";
+            var key = _testId + "-TestContentLanguageResponseHeaderOverride";
             var originalLanguage = "fr-FR";
             var overrideLanguage = "es-ES";
 
@@ -232,7 +239,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         public async Task TestContentLanguageHeadersCollection()
         {
-            var key = "TestContentLanguageHeadersCollection";
+            var key = _testId + "-TestContentLanguageHeadersCollection";
             var expectedLanguage = "de-DE";
 
             // Put object with Content-Language header

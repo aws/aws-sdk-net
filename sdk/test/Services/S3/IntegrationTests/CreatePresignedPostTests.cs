@@ -47,10 +47,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private const string TestContent = "This is the content body!";
         private const string TestKey = "presigned-post-key";
         private string bucketName;
+        private string _testId;
 
         [TestInitialize]
         public async Task Initialize()
         {
+            _testId = Guid.NewGuid().ToString("N");
             bucketName = await S3TestUtils.CreateBucketWithWaitAsync(Client);
         }
 
@@ -295,8 +297,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Create regular bucket
             testParams.BucketName = bucketName;
 
-            // Create a unique object key
-            string objectKey = TestKey + DateTime.UtcNow.Ticks;
+            string objectKey = _testId + "-" + TestKey;
 
             // Step 1: Generate presigned POST response
             var response = GeneratePresignedPostRequest(
@@ -341,7 +342,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private async Task AssertPresignedPost(PresignedPostTestParameters testParams)
         {
-            string objectKey = TestKey + DateTime.UtcNow.Ticks;
+            string objectKey = _testId + "-" + TestKey;
 
             // Generate presigned POST response
             var request = new CreatePresignedPostRequest
@@ -433,7 +434,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             // Create a presigned POST with key ending in ${filename}
             string keyPrefix = "uploads/";
             string objectKey = keyPrefix + "${filename}";
-            string actualFilename = "test-file-" + DateTime.UtcNow.Ticks + ".txt";
+            string actualFilename = "test-file-" + _testId + ".txt";
 
             // Verify policy contains starts-with condition
             var response = GeneratePresignedPostRequest(testParams.BucketName, objectKey, testParams.Expiration);
@@ -491,7 +492,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         private async Task AssertPresignedPostWithConditions(PresignedPostTestParameters testParams)
         {
-            string objectKey = TestKey + DateTime.UtcNow.Ticks;
+            string objectKey = _testId + "-" + TestKey;
 
             // Generate presigned POST response
             var request = new CreatePresignedPostRequest

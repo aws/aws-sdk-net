@@ -23,7 +23,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static async Task<string> CreateBucketAsync(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
         {
             var bucketName = string.IsNullOrEmpty(bucketRequest.BucketName) ?
-                UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks :
+                UtilityMethods.SDK_TEST_PREFIX + Guid.NewGuid().ToString("N") :
                 bucketRequest.BucketName;
 
             bucketRequest.BucketName = bucketName;
@@ -31,9 +31,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return bucketName;
         }
 
-        public static async Task<string> CreateS3ExpressBucketWithWaitAsync(IAmazonS3 s3Client, string regionCode, bool setPublicACLs = false)
+        public static async Task<string> CreateS3ExpressBucketWithWaitAsync(IAmazonS3 s3Client, string regionCode)
         {
-            string bucketName = $"{UtilityMethods.SDK_TEST_PREFIX}-{DateTime.UtcNow.Ticks}--{regionCode}--x-s3";
+            string bucketName = $"{UtilityMethods.SDK_TEST_PREFIX}-{Guid.NewGuid():N}--{regionCode}--x-s3";
 
             await s3Client.PutBucketAsync(new PutBucketRequest
             {

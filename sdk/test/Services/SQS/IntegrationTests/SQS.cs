@@ -2,6 +2,7 @@ using Amazon;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using Amazon.SQS.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     {
         private const string prefix = "TestQueue";
         private const string defaultTimeout = "30";
+        private readonly List<string> _createdQueueUrls = new List<string>();
 
         [ClassCleanup]
         public static void Cleanup()
@@ -44,35 +46,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCleanup]
         public async Task SQSCleanup()
         {
-            var result = await Client.ListQueuesAsync(new ListQueuesRequest());
-            if (result.QueueUrls == null)
+            foreach (var url in _createdQueueUrls)
             {
-                return;
-            }
-
-            foreach (string queue in result.QueueUrls)
-            {
-                if (queue.Contains("TestQueue"))
+                try
                 {
-                    try
-                    {
-                        await Client.DeleteQueueAsync(new DeleteQueueRequest { QueueUrl = queue });
-                    }
-                    catch
-                    {
-                        Console.Write("Failed to clean up queue {0}", queue);
-                    }
+                    await Client.DeleteQueueAsync(new DeleteQueueRequest { QueueUrl = url });
+                }
+                catch
+                {
+                    Console.Write("Failed to clean up queue: {0}", url);
                 }
             }
+
+            _createdQueueUrls.Clear();
         }
 
         [TestMethod]
         public async Task SQSDLQTest()
         {
-            string mainQueueName = prefix + new Random().Next() + "MQ";
+            string mainQueueName = UtilityMethods.GenerateName(prefix) + "MQ";
             string mainQueueURL = await CreateQueueTest(mainQueueName);
-            string deadQueueName = prefix + new Random().Next() + "DLQ";
+            _createdQueueUrls.Add(mainQueueURL);
+
+            string deadQueueName = UtilityMethods.GenerateName(prefix) + "DLQ";
             string deadQueueURL = await CreateQueueTest(deadQueueName);
+            _createdQueueUrls.Add(deadQueueURL);
             string deadQueueArn = await GetQueueArn(deadQueueURL);
 
             string redrivePolicy = string.Format(@"{{""maxReceiveCount"" : 5, ""deadLetterTargetArn"" : ""{0}""}}", deadQueueArn);
@@ -105,8 +103,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public async Task SimpleSend()
         {
             int maxMessageLength = 20 * 1024;
-            string queueName = prefix + new Random().Next();
-            var queueURL = await CreateQueueTest(queueName);
+            var queueURL = await CreateQueueTest(UtilityMethods.GenerateName(prefix));
+            _createdQueueUrls.Add(queueURL);
 
             StringBuilder sb = new StringBuilder("The quick brown fox jumped over the lazy dog");
             string messageBody = sb.ToString();
@@ -178,22 +176,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestMethod]
         public async Task TestGetQueueUrl()
         {
-            var queueName = "TestGetQueueUrl" + DateTime.UtcNow.Ticks;
+            var queueName = UtilityMethods.GenerateName("TestGetQueueUrl");
             var createResponse = await Client.CreateQueueAsync(new CreateQueueRequest
             {
                 QueueName = queueName
             });
 
-            try
-            {
-                var request = new GetQueueUrlRequest { QueueName = queueName };
-                var response = await Client.GetQueueUrlAsync(request);
-                Assert.AreEqual(createResponse.QueueUrl, response.QueueUrl);
-            }
-            finally
-            {
-                await Client.DeleteQueueAsync(new DeleteQueueRequest { QueueUrl = createResponse.QueueUrl });
-            }
+            _createdQueueUrls.Add(createResponse.QueueUrl);
+            var response = await Client.GetQueueUrlAsync(new GetQueueUrlRequest { QueueName = queueName });
+            Assert.AreEqual(createResponse.QueueUrl, response.QueueUrl);
         }
 
         private async Task<string> GetQueueArn(string queueUrl)
@@ -252,7 +243,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestMethod]
         public async Task SQSFIFOTest()
         {
-            var fifoQueueName = prefix + new Random().Next() + ".fifo";
+            var fifoQueueName = UtilityMethods.GenerateName(prefix) + ".fifo";
             var result = await Client.CreateQueueAsync(new CreateQueueRequest
             {
                 QueueName = fifoQueueName,
@@ -265,6 +256,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.QueueUrl);
+            _createdQueueUrls.Add(result.QueueUrl);
 
             var attrResults = await Client.GetQueueAttributesAsync(new GetQueueAttributesRequest
             {
