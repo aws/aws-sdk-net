@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Enable deterministic builds and embed untracked sources in NuGet packages (https://github.com/aws/aws-sdk-net/pull/4337)"
+    ]
+  }
+}
