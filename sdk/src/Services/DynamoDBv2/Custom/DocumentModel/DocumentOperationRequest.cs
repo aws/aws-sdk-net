@@ -1,5 +1,4 @@
-﻿using Amazon.DynamoDBv2.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Amazon.DynamoDBv2.DocumentModel
@@ -29,11 +28,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
-    /// Base class for requests that perform get item operations on a document in DynamoDB.
-    /// This class introduces a modern expression-based API that replaces legacy parameter-based approaches.
-    /// Legacy parameters such as AttributesToGet are not supported. Use ProjectionExpression instead.
+    /// Abstract base class for DynamoDB GetItem document operation requests.
+    /// Provides shared configuration for retrieving a single item using the expression-based API. 
+    /// Legacy parameters (e.g., <c>AttributesToGet</c>) are not supported; use <c>ProjectionExpression</c> instead.
+    /// Extended by <see cref="GetItemDocumentOperationRequest"/> 
     /// </summary>
-    public class BaseGetItemDocumentOperationRequest : DocumentOperationRequest
+    public abstract class BaseGetItemDocumentOperationRequest : DocumentOperationRequest
     {
         /// <summary>
         /// Gets or sets the projection expression specifying which attributes should be retrieved.
@@ -47,11 +47,6 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public bool ConsistentRead { get; set; }
     }
-
-
-    // make a common GetItemDocumentOperationRequest class that wil be inherited by the public and internal get DocumentOperationRequest
-    // with the key having a different type
-    // update map methos in pipeline accordingly for public/ internal operation request
 
     /// <summary>
     /// Represents a request to query items in a DynamoDB table using the Document Model.
