@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DynamoDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix DynamoDB property converter precedence when a global converter is registered."
+      ]
+    }
+  ]
+}

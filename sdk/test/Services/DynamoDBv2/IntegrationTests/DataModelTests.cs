@@ -661,21 +661,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             await Context.SaveAsync(employee);
 
-            // Since we are adding a custom DateTimeUtcConverter, the expected time will always be in the UTC time zone.
-            // regardless of RetrieveDateTimeInUtc value.
+            // Since we are adding a custom DateTimeUtcConverter, the expected time will be in the UTC time zone regardless of RetrieveDateTimeInUtc value.
+            // for the properties that does not have property specific attributes like [DynamoDBProperty(StoreAsEpochLong = true)].
+            
             var expectedCurrTime = currTime.ToUniversalTime();
-            var expectedLongEpochTime = longEpochTime.ToUniversalTime();
-            var expectedLongEpochTimeBefore1970 = longEpochTimeBefore1970.ToUniversalTime();
+            var expectedCurrTimeStoreAsEpoch = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
+            var expectedLongEpochTime = retrieveDateTimeInUtc ? longEpochTime.ToUniversalTime() : longEpochTime.ToLocalTime();
+            var expectedLongEpochTimeBefore1970 = retrieveDateTimeInUtc ? longEpochTimeBefore1970.ToUniversalTime() : longEpochTimeBefore1970.ToLocalTime();
 
             // Load 
             var storedEmployee = Context.Load<AnnotatedNumericEpochEmployee>(employee.CreationTime, employee.Name);
             Assert.IsNotNull(storedEmployee);
-            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
-            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTimeStoreAsEpoch, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTimeStoreAsEpoch, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
             Assert.IsNull(storedEmployee.NullableEpochDate1);
-            ApproximatelyEqual(expectedCurrTime, storedEmployee.NullableEpochDate2.Value);
+            ApproximatelyEqual(expectedCurrTimeStoreAsEpoch, storedEmployee.NullableEpochDate2.Value);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(expectedLongEpochTimeBefore1970, storedEmployee.LongEpochDate2);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.NullableLongEpochDate1.Value);
@@ -690,12 +692,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 new QueryOperationConfig { Filter = filter }
             ).GetNextSetAsync()).First();
             Assert.IsNotNull(storedEmployee);
-            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
-            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTimeStoreAsEpoch, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTimeStoreAsEpoch, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
             Assert.IsNull(storedEmployee.NullableEpochDate1);
-            ApproximatelyEqual(expectedCurrTime, storedEmployee.NullableEpochDate2.Value);
+            ApproximatelyEqual(expectedCurrTimeStoreAsEpoch, storedEmployee.NullableEpochDate2.Value);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(expectedLongEpochTimeBefore1970, storedEmployee.LongEpochDate2);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.NullableLongEpochDate1.Value);
@@ -706,12 +708,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Scan
             storedEmployee = (await Context.ScanAsync<AnnotatedNumericEpochEmployee>(new List<ScanCondition>()).GetRemainingAsync()).First();
             Assert.IsNotNull(storedEmployee);
-            ApproximatelyEqual(expectedCurrTime, storedEmployee.CreationTime);
-            ApproximatelyEqual(expectedCurrTime, storedEmployee.EpochDate2);
+            ApproximatelyEqual(expectedCurrTimeStoreAsEpoch, storedEmployee.CreationTime);
+            ApproximatelyEqual(expectedCurrTimeStoreAsEpoch, storedEmployee.EpochDate2);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate1);
             ApproximatelyEqual(expectedCurrTime, storedEmployee.NonEpochDate2);
             Assert.IsNull(storedEmployee.NullableEpochDate1);
-            ApproximatelyEqual(expectedCurrTime, storedEmployee.NullableEpochDate2.Value);
+            ApproximatelyEqual(expectedCurrTimeStoreAsEpoch, storedEmployee.NullableEpochDate2.Value);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.LongEpochDate1);
             ApproximatelyEqual(expectedLongEpochTimeBefore1970, storedEmployee.LongEpochDate2);
             ApproximatelyEqual(expectedLongEpochTime, storedEmployee.NullableLongEpochDate1.Value);
@@ -2379,6 +2381,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
             Assert.IsNotNull(loaded.LastUpdated, "LastUpdated should be set by AutoGeneratedTimestampAttribute");
             Assert.IsTrue((DateTime.UtcNow - loaded.LastUpdated.Value).TotalMinutes < 1, "LastUpdated should be recent");
+        }
+
+        /// <summary>
+        /// Tests that if a custom property converter is used over the global converter on that specific property.
+        /// </summary>
+        /// <param name="retrieveDateTimeInUtc"></param>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestContext_GlobalConverter_And_PropertyConvector()
+        {
+            TableCache.Clear();
+            await CleanupTables();
+            TableCache.Clear();
+
+            // Add a global converter
+            Context.ConverterCache.Add(typeof(NameType), new NameTypeUpperCaseConverter<NameType>());
+
+            var nameType = new NameType
+            {
+                FirstName = "John",
+                MiddleName = "Bob",
+                LastName = "Smith"
+            };
+            var employee = new PropertyConvertorTable
+            {
+                Id = 1,
+                PropertyWithGlobalConvertor = nameType,
+                PropertyWithPropertyConvertor = nameType,
+                
+            };
+            await Context.SaveAsync(employee);
+
+            // Load 
+            var storedEmployee = Context.Load<PropertyConvertorTable>(employee.Id);
+            Assert.IsNotNull(storedEmployee);
+            Assert.AreEqual(storedEmployee.Id, employee.Id);
+            Assert.AreEqual(storedEmployee.PropertyWithGlobalConvertor.FirstName, "JOHN");
+            Assert.AreEqual(storedEmployee.PropertyWithGlobalConvertor.MiddleName, "BOB");
+            Assert.AreEqual(storedEmployee.PropertyWithGlobalConvertor.LastName, "SMITH");
+            Assert.AreEqual(storedEmployee.PropertyWithPropertyConvertor.FirstName, "john");
+            Assert.AreEqual(storedEmployee.PropertyWithPropertyConvertor.MiddleName, "bob");
+            Assert.AreEqual(storedEmployee.PropertyWithPropertyConvertor.LastName, "smith");
         }
 
         private static async Task TestEmptyStringsWithFeatureEnabled()
@@ -4633,6 +4677,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             internal int NotAnnotatedAttribute { get; set; }
         }
 
+        /// <summary>
+        /// Table with a property converter.
+        /// </summary>
+        [DynamoDBTable("HashTable")]
+        public class PropertyConvertorTable
+        {
+            [DynamoDBHashKey] 
+            public int Id { get; set; }
+
+            public NameType PropertyWithGlobalConvertor { get; set; }
+
+            [DynamoDBProperty(Converter = typeof(NameTypeLowerCaseConverter<NameType>))]
+            public NameType PropertyWithPropertyConvertor { get; set; }
+        }
+
+        public class NameType 
+        {
+            public string FirstName { get; set; } 
+            public string MiddleName { get; set; } 
+            public string LastName { get; set; } 
+        }
+
         public class DateTimeUtcConverter : IPropertyConverter
         {
             public DynamoDBEntry ToEntry(object value) => (DateTime)value;
@@ -4654,6 +4720,56 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             public object FromEntry(DynamoDBEntry entry)
             {
                 return Enum.Parse(typeof(T), entry.AsString());
+            }
+        }
+
+        public class NameTypeLowerCaseConverter<T> : IPropertyConverter where T : NameType
+        {
+            public DynamoDBEntry ToEntry(object value)
+            {
+                var nameType = (NameType)value;
+                return new Document(new Dictionary<string, DynamoDBEntry>()
+                {   
+                    {"FirstName",nameType.FirstName.ToLower()},
+                    {"MiddleName",nameType.MiddleName.ToLower()},
+                    {"LastName",nameType.LastName.ToLower()}
+                });
+            }
+
+            public object FromEntry(DynamoDBEntry entry)
+            {
+                var document = entry as Document;
+                return new NameType
+                {
+                    FirstName = document["FirstName"].AsString().ToLower(),
+                    MiddleName = document["MiddleName"].AsString().ToLower(),
+                    LastName = document["LastName"].AsString().ToLower(),
+                };
+            }
+        }
+
+        public class NameTypeUpperCaseConverter<T> : IPropertyConverter where T : NameType
+        {
+            public DynamoDBEntry ToEntry(object value)
+            {
+                var nameType = (NameType)value;
+                return new Document(new Dictionary<string, DynamoDBEntry>()
+                {
+                    {"FirstName",nameType.FirstName.ToUpper()},
+                    {"MiddleName",nameType.MiddleName.ToUpper()},
+                    {"LastName",nameType.LastName.ToUpper()}
+                });
+            }
+
+            public object FromEntry(DynamoDBEntry entry)
+            {
+                var document = entry as Document;
+                return new NameType
+                {
+                    FirstName = document["FirstName"].AsString().ToUpper(),
+                    MiddleName = document["MiddleName"].AsString().ToUpper(),
+                    LastName = document["LastName"].AsString().ToUpper(),
+                };
             }
         }
 
