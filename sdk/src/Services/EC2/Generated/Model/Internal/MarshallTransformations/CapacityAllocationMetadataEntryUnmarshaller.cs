@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CapacityAllocation Object
+    /// Response Unmarshaller for CapacityAllocationMetadataEntry Object
     /// </summary>  
-    public class CapacityAllocationUnmarshaller : IUnmarshaller<CapacityAllocation, XmlUnmarshallerContext>, IUnmarshaller<CapacityAllocation, JsonUnmarshallerContext>
+    public class CapacityAllocationMetadataEntryUnmarshaller : IUnmarshaller<CapacityAllocationMetadataEntry, XmlUnmarshallerContext>, IUnmarshaller<CapacityAllocationMetadataEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CapacityAllocation Unmarshall(XmlUnmarshallerContext context)
+        public CapacityAllocationMetadataEntry Unmarshall(XmlUnmarshallerContext context)
         {
-            CapacityAllocation unmarshalledObject = new CapacityAllocation();
+            CapacityAllocationMetadataEntry unmarshalledObject = new CapacityAllocationMetadataEntry();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,27 +55,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("allocationMetadataList/item", targetDepth))
-                    {
-                        var unmarshaller = CapacityAllocationMetadataEntryUnmarshaller.Instance;
-                        if (unmarshalledObject.AllocationMetadata == null)
-                        {
-                            unmarshalledObject.AllocationMetadata = new List<CapacityAllocationMetadataEntry>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.AllocationMetadata.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("allocationType", targetDepth))
+                    if (context.TestExpression("key", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AllocationType = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("count", targetDepth))
+                    if (context.TestExpression("value", targetDepth))
                     {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.Count = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -93,18 +82,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CapacityAllocation Unmarshall(JsonUnmarshallerContext context)
+        public CapacityAllocationMetadataEntry Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static CapacityAllocationUnmarshaller _instance = new CapacityAllocationUnmarshaller();        
+        private static CapacityAllocationMetadataEntryUnmarshaller _instance = new CapacityAllocationMetadataEntryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CapacityAllocationUnmarshaller Instance
+        public static CapacityAllocationMetadataEntryUnmarshaller Instance
         {
             get
             {

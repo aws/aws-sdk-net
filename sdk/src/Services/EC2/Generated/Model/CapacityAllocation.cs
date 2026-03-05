@@ -34,8 +34,28 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CapacityAllocation
     {
+        private List<CapacityAllocationMetadataEntry> _allocationMetadata = AWSConfigs.InitializeCollections ? new List<CapacityAllocationMetadataEntry>() : null;
         private AllocationType _allocationType;
         private int? _count;
+
+        /// <summary>
+        /// Gets and sets the property AllocationMetadata. 
+        /// <para>
+        /// Additional metadata associated with the capacity allocation. Each entry contains a
+        /// key-value pair providing context about the allocation.
+        /// </para>
+        /// </summary>
+        public List<CapacityAllocationMetadataEntry> AllocationMetadata
+        {
+            get { return this._allocationMetadata; }
+            set { this._allocationMetadata = value; }
+        }
+
+        // Check to see if AllocationMetadata property is set
+        internal bool IsSetAllocationMetadata()
+        {
+            return this._allocationMetadata != null && (this._allocationMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AllocationType. 
