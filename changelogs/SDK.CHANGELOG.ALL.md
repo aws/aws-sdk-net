@@ -1,3 +1,21 @@
+### 4.0.205.0 (2026-03-06 21:45 UTC)
+* AppIntegrationsService (4.0.5.0)
+	* This release adds support for webhooks, allowing customers to create an Event Integration with a webhook source.
+* BCMDataExports (4.0.2.0)
+	* Fixed wrong endpoint resolutions in few regions. Added AWS CFN resource schema for BCM Data Exports. Added max value validation for pagination parameter. Fixed ARN format validation for BCM Data Exports resources. Updated size constraints for table properties. Added AccessDeniedException error.
+* Bedrock (4.0.22.0)
+	* Amazon Bedrock Guardrails account-level enforcement APIs now support lists for model inclusion and exclusion from guardrail enforcement.
+* BedrockAgentCoreControl (4.0.18.0)
+	* Adds support for streaming memory records in AgentCore Memory
+* Connect (4.0.36.0)
+	* Amazon Connect now supports the ability to programmatically configure and run automated tests for contact center experiences for Chat. Integrate testing into CICD pipelines, run multiple tests at scale, and retrieve results via API to automate validation of chat interactions and workflows.
+* Deadline (4.0.14.0)
+	* AWS Deadline Cloud now supports cost scale factors for farms, enabling studios to adjust reported costs to reflect their actual rendering economics. Adjusted costs are reflected in Deadline Cloud's Usage Explorer and Budgets.
+* GameLiftStreams (4.0.6.0)
+	* Added new Gen6 stream classes based on the EC2 G6f instance family. These stream classes provide cost-optimized options for streaming well-optimized or lower-fidelity games on Windows environments.
+* SimpleEmailV2 (4.0.12.0)
+	* Adds support for longer email message header values, increasing the maximum length from 870 to 995 characters for RFC 5322 compliance.
+
 ### 4.0.204.0 (2026-03-05 21:02 UTC)
 * ConnectHealth (4.0.0.0)
 	* Connect-Health SDK is AWS's unified SDK for the Amazon Connect Health offering. It allows healthcare developers to integrate purpose-built agents - such as patient insights, ambient documentation, and medical coding - into their existing applications, including EHRs, telehealth, and revenue cycle.
