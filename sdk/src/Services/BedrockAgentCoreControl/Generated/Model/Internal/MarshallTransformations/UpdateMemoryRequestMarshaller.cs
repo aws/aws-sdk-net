@@ -110,6 +110,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetStreamDeliveryResources())
+                {
+                    context.Writer.WritePropertyName("streamDeliveryResources");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StreamDeliveryResourcesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StreamDeliveryResources, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

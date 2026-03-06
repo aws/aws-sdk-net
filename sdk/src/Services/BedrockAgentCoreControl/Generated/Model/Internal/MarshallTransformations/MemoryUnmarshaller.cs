@@ -132,6 +132,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Strategies = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("streamDeliveryResources", targetDepth))
+                {
+                    var unmarshaller = StreamDeliveryResourcesUnmarshaller.Instance;
+                    unmarshalledObject.StreamDeliveryResources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
