@@ -39,6 +39,7 @@ namespace Amazon.Deadline.Model
     public partial class CreateFarmRequest : AmazonDeadlineRequest
     {
         private string _clientToken;
+        private float? _costScaleFactor;
         private string _description;
         private string _displayName;
         private string _kmsKeyArn;
@@ -61,6 +62,25 @@ namespace Amazon.Deadline.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CostScaleFactor. 
+        /// <para>
+        /// The cost scale factor to apply on the farm.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public float? CostScaleFactor
+        {
+            get { return this._costScaleFactor; }
+            set { this._costScaleFactor = value; }
+        }
+
+        // Check to see if CostScaleFactor property is set
+        internal bool IsSetCostScaleFactor()
+        {
+            return this._costScaleFactor.HasValue; 
         }
 
         /// <summary>
