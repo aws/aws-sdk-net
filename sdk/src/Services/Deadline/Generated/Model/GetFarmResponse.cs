@@ -34,6 +34,7 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class GetFarmResponse : AmazonWebServiceResponse
     {
+        private float? _costScaleFactor;
         private DateTime? _createdAt;
         private string _createdBy;
         private string _description;
@@ -42,6 +43,25 @@ namespace Amazon.Deadline.Model
         private string _kmsKeyArn;
         private DateTime? _updatedAt;
         private string _updatedBy;
+
+        /// <summary>
+        /// Gets and sets the property CostScaleFactor. 
+        /// <para>
+        /// The cost scale factor applied on the farm.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=100)]
+        public float CostScaleFactor
+        {
+            get { return this._costScaleFactor.GetValueOrDefault(); }
+            set { this._costScaleFactor = value; }
+        }
+
+        // Check to see if CostScaleFactor property is set
+        internal bool IsSetCostScaleFactor()
+        {
+            return this._costScaleFactor.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
