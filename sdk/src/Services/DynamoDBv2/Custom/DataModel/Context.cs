@@ -546,15 +546,21 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private async Task<T> LoadHelperAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Key key, DynamoDBFlatConfig flatConfig, ItemStorageConfig storageConfig, CancellationToken cancellationToken)
         {
-            GetItemOperationConfig getConfig = new GetItemOperationConfig
+            var operationRequest = new InternalGetItemDocumentOperationRequest()
             {
                 ConsistentRead = flatConfig.ConsistentRead.Value,
-                AttributesToGet = storageConfig.AttributesToGet
+                Key = key
             };
+
+            // check for projection expression
+            if (storageConfig.ProjectionExpression != null)
+            {
+                operationRequest.ProjectionExpression = storageConfig.ProjectionExpression;
+            }
 
             Table table = GetTargetTable(storageConfig, flatConfig);
             ItemStorage storage = new ItemStorage(storageConfig);
-            storage.Document = await table.GetItemHelperAsync(key, getConfig, cancellationToken).ConfigureAwait(false);
+            storage.Document = await table.GetItemHelperAsync(operationRequest, cancellationToken).ConfigureAwait(false);
 
             T instance = DocumentToObject<T>(storage, flatConfig);
             return instance;

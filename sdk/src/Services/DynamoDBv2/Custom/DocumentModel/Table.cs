@@ -1391,7 +1391,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             return pipeline.ExecuteSync(request);
         }
 
-        internal async Task<Document> GetItemHelperAsync(GetItemDocumentOperationRequest request, CancellationToken cancellationToken)
+        internal async Task<Document> GetItemHelperAsync(BaseGetItemDocumentOperationRequest request, CancellationToken cancellationToken)
         {
             var pipeline = new GetItemPipeline(this);
             return await pipeline.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
