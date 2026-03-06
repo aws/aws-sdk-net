@@ -61,6 +61,19 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	}
 #>
             }
+
+<#
+    // Pre-compute request content for services that use AWS4 signing (non-v2).
+    // Services using v2 signing (QueryStringSigner) may have SecurityToken added to
+    // request.Parameters after marshalling by the Signer pipeline handler, so we
+    // cannot cache the content here as it would miss that parameter.
+    if (this.Config.ServiceModel.SignatureVersion != "v2")
+    {
+#>
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+<#
+    }
+#>
             return request;
         }
 			<#				
