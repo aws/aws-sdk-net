@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TestCaseEntryPoint Object
+    /// Response Unmarshaller for ChatEntryPointParameters Object
     /// </summary>  
-    public class TestCaseEntryPointUnmarshaller : IJsonUnmarshaller<TestCaseEntryPoint, JsonUnmarshallerContext>
+    public class ChatEntryPointParametersUnmarshaller : IJsonUnmarshaller<ChatEntryPointParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TestCaseEntryPoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ChatEntryPointParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            TestCaseEntryPoint unmarshalledObject = new TestCaseEntryPoint();
+            ChatEntryPointParameters unmarshalledObject = new ChatEntryPointParameters();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ChatEntryPointParameters", targetDepth))
-                {
-                    var unmarshaller = ChatEntryPointParametersUnmarshaller.Instance;
-                    unmarshalledObject.ChatEntryPointParameters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
+                if (context.TestExpression("FlowId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VoiceCallEntryPointParameters", targetDepth))
-                {
-                    var unmarshaller = VoiceCallEntryPointParametersUnmarshaller.Instance;
-                    unmarshalledObject.VoiceCallEntryPointParameters = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.FlowId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static TestCaseEntryPointUnmarshaller _instance = new TestCaseEntryPointUnmarshaller();        
+        private static ChatEntryPointParametersUnmarshaller _instance = new ChatEntryPointParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TestCaseEntryPointUnmarshaller Instance
+        public static ChatEntryPointParametersUnmarshaller Instance
         {
             get
             {

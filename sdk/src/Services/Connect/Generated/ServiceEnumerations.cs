@@ -9867,6 +9867,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant CHAT for TestCaseEntryPointType
+        /// </summary>
+        public static readonly TestCaseEntryPointType CHAT = new TestCaseEntryPointType("CHAT");
+        /// <summary>
         /// Constant VOICE_CALL for TestCaseEntryPointType
         /// </summary>
         public static readonly TestCaseEntryPointType VOICE_CALL = new TestCaseEntryPointType("VOICE_CALL");
