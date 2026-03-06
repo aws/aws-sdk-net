@@ -32,14 +32,28 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("BCMDataExports")]
-        [Description("For region aws-global with FIPS disabled and DualStack enabled")]
-        public void For_region_awsglobal_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For custom endpoint with region not set and fips disabled")]
+        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_Test()
         {
             var parameters = new BCMDataExportsEndpointParameters();
-            parameters["Region"] = "aws-global";
+            parameters["Endpoint"] = "https://example.com";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonBCMDataExportsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://bcm-data-exports.us-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("BCMDataExports")]
+        [Description("For custom endpoint with fips enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
+        public void For_custom_endpoint_with_fips_enabled_Test()
+        {
+            var parameters = new BCMDataExportsEndpointParameters();
+            parameters["Endpoint"] = "https://example.com";
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonBCMDataExportsEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -74,100 +88,56 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("BCMDataExports")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region cn-northwest-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cnnorthwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new BCMDataExportsEndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonBCMDataExportsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://bcm-data-exports-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+            Assert.AreEqual("https://bcm-data-exports-fips.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("BCMDataExports")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region cn-northwest-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new BCMDataExportsEndpointParameters();
-            parameters["Region"] = "cn-north-1";
+            parameters["Region"] = "cn-northwest-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonBCMDataExportsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://bcm-data-exports.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+            Assert.AreEqual("https://bcm-data-exports.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("BCMDataExports")]
-        [Description("For region us-gov-east-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region us-gov-west-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new BCMDataExportsEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = true;
             var endpoint = new AmazonBCMDataExportsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://bcm-data-exports-fips.us-gov-east-1.api.aws", endpoint.URL);
+            Assert.AreEqual("https://bcm-data-exports-fips.us-gov-west-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("BCMDataExports")]
-        [Description("For region us-gov-east-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        [Description("For region us-gov-west-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_usgovwest1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new BCMDataExportsEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
+            parameters["Region"] = "us-gov-west-1";
             parameters["UseFIPS"] = false;
             var endpoint = new AmazonBCMDataExportsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://bcm-data-exports.us-gov-east-1.api.aws", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("BCMDataExports")]
-        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new BCMDataExportsEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = false;
-            parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonBCMDataExportsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("BCMDataExports")]
-        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new BCMDataExportsEndpointParameters();
-            parameters["UseFIPS"] = false;
-            parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonBCMDataExportsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://example.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("BCMDataExports")]
-        [Description("For custom endpoint with fips enabled and dualstack disabled")]
-        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: FIPS and custom endpoint are not supported")]
-        public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
-        {
-            var parameters = new BCMDataExportsEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseFIPS"] = true;
-            parameters["Endpoint"] = "https://example.com";
-            var endpoint = new AmazonBCMDataExportsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://bcm-data-exports.us-gov-west-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
