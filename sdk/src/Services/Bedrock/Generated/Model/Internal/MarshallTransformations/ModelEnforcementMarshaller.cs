@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AccountEnforcedGuardrailInferenceInputConfiguration Marshaller
+    /// ModelEnforcement Marshaller
     /// </summary>
-    public class AccountEnforcedGuardrailInferenceInputConfigurationMarshaller : IRequestMarshaller<AccountEnforcedGuardrailInferenceInputConfiguration, JsonMarshallerContext> 
+    public class ModelEnforcementMarshaller : IRequestMarshaller<ModelEnforcement, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,30 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AccountEnforcedGuardrailInferenceInputConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ModelEnforcement requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetGuardrailIdentifier())
+            if(requestObject.IsSetExcludedModels())
             {
-                context.Writer.WritePropertyName("guardrailIdentifier");
-                context.Writer.WriteStringValue(requestObject.GuardrailIdentifier);
+                context.Writer.WritePropertyName("excludedModels");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectExcludedModelsListValue in requestObject.ExcludedModels)
+                {
+                        context.Writer.WriteStringValue(requestObjectExcludedModelsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if(requestObject.IsSetGuardrailVersion())
+            if(requestObject.IsSetIncludedModels())
             {
-                context.Writer.WritePropertyName("guardrailVersion");
-                context.Writer.WriteStringValue(requestObject.GuardrailVersion);
-            }
-
-            if(requestObject.IsSetInputTags())
-            {
-                context.Writer.WritePropertyName("inputTags");
-                context.Writer.WriteStringValue(requestObject.InputTags);
-            }
-
-            if(requestObject.IsSetModelEnforcement())
-            {
-                context.Writer.WritePropertyName("modelEnforcement");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ModelEnforcementMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelEnforcement, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("includedModels");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectIncludedModelsListValue in requestObject.IncludedModels)
+                {
+                        context.Writer.WriteStringValue(requestObjectIncludedModelsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -80,7 +73,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AccountEnforcedGuardrailInferenceInputConfigurationMarshaller Instance = new AccountEnforcedGuardrailInferenceInputConfigurationMarshaller();
+        public readonly static ModelEnforcementMarshaller Instance = new ModelEnforcementMarshaller();
 
     }
 }
