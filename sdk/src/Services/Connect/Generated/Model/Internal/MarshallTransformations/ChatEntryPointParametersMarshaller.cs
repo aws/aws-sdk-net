@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TestCaseEntryPoint Marshaller
+    /// ChatEntryPointParameters Marshaller
     /// </summary>
-    public class TestCaseEntryPointMarshaller : IRequestMarshaller<TestCaseEntryPoint, JsonMarshallerContext> 
+    public class ChatEntryPointParametersMarshaller : IRequestMarshaller<ChatEntryPointParameters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TestCaseEntryPoint requestObject, JsonMarshallerContext context)
+        public void Marshall(ChatEntryPointParameters requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetChatEntryPointParameters())
+            if(requestObject.IsSetFlowId())
             {
-                context.Writer.WritePropertyName("ChatEntryPointParameters");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ChatEntryPointParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.ChatEntryPointParameters, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
-            }
-
-            if(requestObject.IsSetVoiceCallEntryPointParameters())
-            {
-                context.Writer.WritePropertyName("VoiceCallEntryPointParameters");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = VoiceCallEntryPointParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.VoiceCallEntryPointParameters, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("FlowId");
+                context.Writer.Write(requestObject.FlowId);
             }
 
         }
@@ -81,7 +59,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TestCaseEntryPointMarshaller Instance = new TestCaseEntryPointMarshaller();
+        public readonly static ChatEntryPointParametersMarshaller Instance = new ChatEntryPointParametersMarshaller();
 
     }
 }
