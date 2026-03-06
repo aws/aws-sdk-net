@@ -43,7 +43,7 @@ namespace Amazon.Bedrock.Model
         /// Array of AccountEnforcedGuardrailOutputConfiguration objects.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public List<AccountEnforcedGuardrailOutputConfiguration> GuardrailsConfig
         {
             get { return this._guardrailsConfig; }

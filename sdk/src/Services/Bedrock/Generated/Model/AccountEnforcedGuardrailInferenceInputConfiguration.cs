@@ -37,6 +37,7 @@ namespace Amazon.Bedrock.Model
         private string _guardrailIdentifier;
         private string _guardrailVersion;
         private InputTags _inputTags;
+        private ModelEnforcement _modelEnforcement;
 
         /// <summary>
         /// Gets and sets the property GuardrailIdentifier. 
@@ -93,6 +94,25 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetInputTags()
         {
             return this._inputTags != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelEnforcement. 
+        /// <para>
+        /// Model-specific information for the enforced guardrail configuration. If not present,
+        /// the configuration is enforced on all models
+        /// </para>
+        /// </summary>
+        public ModelEnforcement ModelEnforcement
+        {
+            get { return this._modelEnforcement; }
+            set { this._modelEnforcement = value; }
+        }
+
+        // Check to see if ModelEnforcement property is set
+        internal bool IsSetModelEnforcement()
+        {
+            return this._modelEnforcement != null;
         }
 
     }

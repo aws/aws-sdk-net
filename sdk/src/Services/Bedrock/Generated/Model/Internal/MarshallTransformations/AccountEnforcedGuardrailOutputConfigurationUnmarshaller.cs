@@ -108,6 +108,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.InputTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("modelEnforcement", targetDepth))
+                {
+                    var unmarshaller = ModelEnforcementUnmarshaller.Instance;
+                    unmarshalledObject.ModelEnforcement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("owner", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
