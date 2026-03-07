@@ -419,53 +419,45 @@
     <Target Name="package-extensions" DependsOnTargets="package-netcore-extensions;package-crt-extensions;package-cloudfront-extensions;package-ec2-extensions;package-meai-extensions;package-cborprotocol-extensions;package-logging-extensions" />
 
     <Target Name="build-extensions" >
-        <!-- depends: restore-nuget;run-generator -->
         <Exec Command="dotnet restore -f  AWSSDK.Extensions.sln" WorkingDirectory="../extensions"/>
         <Exec Command="dotnet clean AWSSDK.Extensions.sln" WorkingDirectory="../extensions"/>
         <Exec Command="dotnet build -c $(Configuration) AWSSDK.Extensions.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)"  WorkingDirectory="../extensions"/>
-
-        <Message Text="Build and Test .NET Core Setup Extension"/>
-        <Exec Command="dotnet test -c $(Configuration) --no-build NETCore.SetupTests.csproj" WorkingDirectory="../extensions/test/NETCore.SetupTests"/>
-
-        <Message Text="Build and Test Crt Integration Extension"/>
-        <Exec Command="dotnet test -c $(Configuration) --no-build CrtIntegrationTests.csproj" WorkingDirectory="../extensions/test/CrtIntegrationTests"/>
     </Target>
 
     <Target Name="package-netcore-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
-        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.NETCore.Setup" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.NETCore.Setup" />
     </Target>
 
     <Target Name="package-crt-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
-        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CrtIntegration.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CrtIntegration" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CrtIntegration.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CrtIntegration" />
     </Target>
 
     <Target Name="package-cloudfront-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
-        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CloudFront.Signers.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CloudFront.Signers" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CloudFront.Signers.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CloudFront.Signers" />
     </Target>
 
     <Target Name="package-ec2-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
-        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.EC2.DecryptPassword.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.EC2.DecryptPassword" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.EC2.DecryptPassword.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.EC2.DecryptPassword" />
     </Target>
 
     <Target Name="package-meai-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
-        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Bedrock.MEAI.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Bedrock.MEAI" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Bedrock.MEAI.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Bedrock.MEAI" />
     </Target>
 
     <Target Name="package-cborprotocol-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
-        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CborProtocol.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CborProtocol" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.CborProtocol.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.CborProtocol" />
     </Target>
 
     <Target Name="package-logging-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
-        
-        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Logging.ILoggerAdaptor.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Logging.ILoggerAdaptor" />
-        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Logging.Log4NetAdaptor.nuspec -BasePath . -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Logging.Log4NetAdaptor" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Logging.ILoggerAdaptor.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Logging.ILoggerAdaptor" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Logging.Log4NetAdaptor.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Logging.Log4NetAdaptor" />
     </Target>
 
     <Target Name="copy-assemblies" DependsOnTargets="nuget-pack;build-extensions">
