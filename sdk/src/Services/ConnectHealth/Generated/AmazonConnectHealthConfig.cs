@@ -33,7 +33,7 @@ namespace Amazon.ConnectHealth
     public partial class AmazonConnectHealthConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ConnectHealth", "4.0.0.0");
+            InternalSDKUtils.BuildUserAgentString("ConnectHealth", "4.0.0.1");
 
         private static readonly AmazonConnectHealthEndpointResolver EndpointResolver =
             new AmazonConnectHealthEndpointResolver();

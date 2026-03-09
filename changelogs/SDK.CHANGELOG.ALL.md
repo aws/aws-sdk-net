@@ -1,3 +1,17 @@
+### 4.0.206.0 (2026-03-09 18:30 UTC)
+* IdentityManagement (4.0.9.9)
+	* Added support for CloudWatch Logs long-term API keys, currently available in Preview
+* Mgn (4.0.4.0)
+	* Adds support for new storeSnapshotOnLocalZone field in ReplicationConfiguration and updateReplicationConfiguration
+* OpenSearchService (4.0.12.0)
+	* This change enables cross-account and cross-region access for DataSources. Customers can now define access policies on their datasources to allow other AWS accounts to access and query their data.
+* Route53GlobalResolver (4.0.1.0)
+	* Adds support for dual stack Global Resolvers and Dictionary-based Domain Generation Firewall Advanced Protection.
+* Core 4.0.3.16
+	* Enable deterministic builds and embed untracked sources in NuGet packages (https://github.com/aws/aws-sdk-net/pull/4337)
+	* Set request.Content in AWSQuery marshallers to avoid redundant parameter serialization (Fix: https://github.com/aws/aws-sdk-net/issues/1922).
+	* All service and extension packages updated to require new Core
+
 ### 4.0.205.0 (2026-03-06 21:45 UTC)
 * AppIntegrationsService (4.0.5.0)
 	* This release adds support for webhooks, allowing customers to create an Event Integration with a webhook source.

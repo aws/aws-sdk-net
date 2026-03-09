@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Set request.Content in AWSQuery marshallers to avoid redundant parameter serialization (Fix: https://github.com/aws/aws-sdk-net/issues/1922)."
-    ]
-  }
-}
