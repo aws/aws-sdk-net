@@ -115,6 +115,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateGeneratedTemplateRequestMarshaller _instance = new CreateGeneratedTemplateRequestMarshaller();        

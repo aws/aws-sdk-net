@@ -112,6 +112,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ItemName", StringUtils.FromString(publicRequest.ItemName));
                 }
             }
+
             return request;
         }
                     private static DeleteAttributesRequestMarshaller _instance = new DeleteAttributesRequestMarshaller();        

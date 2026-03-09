@@ -64,6 +64,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ReservedInstancesListingId", StringUtils.FromString(publicRequest.ReservedInstancesListingId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CancelReservedInstancesListingRequestMarshaller _instance = new CancelReservedInstancesListingRequestMarshaller();        

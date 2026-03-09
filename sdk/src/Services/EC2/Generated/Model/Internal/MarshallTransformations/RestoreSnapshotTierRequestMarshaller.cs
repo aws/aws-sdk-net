@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TemporaryRestoreDays", StringUtils.FromInt(publicRequest.TemporaryRestoreDays));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RestoreSnapshotTierRequestMarshaller _instance = new RestoreSnapshotTierRequestMarshaller();        

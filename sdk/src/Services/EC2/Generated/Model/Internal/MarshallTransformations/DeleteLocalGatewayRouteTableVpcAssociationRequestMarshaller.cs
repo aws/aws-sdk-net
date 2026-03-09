@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("LocalGatewayRouteTableVpcAssociationId", StringUtils.FromString(publicRequest.LocalGatewayRouteTableVpcAssociationId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteLocalGatewayRouteTableVpcAssociationRequestMarshaller _instance = new DeleteLocalGatewayRouteTableVpcAssociationRequestMarshaller();        

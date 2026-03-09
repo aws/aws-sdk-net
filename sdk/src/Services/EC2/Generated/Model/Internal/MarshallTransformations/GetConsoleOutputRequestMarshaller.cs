@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Latest", StringUtils.FromBool(publicRequest.Latest));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetConsoleOutputRequestMarshaller _instance = new GetConsoleOutputRequestMarshaller();        

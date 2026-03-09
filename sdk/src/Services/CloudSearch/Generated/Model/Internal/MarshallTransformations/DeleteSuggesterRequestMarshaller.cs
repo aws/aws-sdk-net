@@ -68,6 +68,8 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SuggesterName", StringUtils.FromString(publicRequest.SuggesterName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteSuggesterRequestMarshaller _instance = new DeleteSuggesterRequestMarshaller();        

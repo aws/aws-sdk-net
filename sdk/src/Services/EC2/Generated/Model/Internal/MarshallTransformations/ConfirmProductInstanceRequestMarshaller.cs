@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ProductCode", StringUtils.FromString(publicRequest.ProductCode));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ConfirmProductInstanceRequestMarshaller _instance = new ConfirmProductInstanceRequestMarshaller();        

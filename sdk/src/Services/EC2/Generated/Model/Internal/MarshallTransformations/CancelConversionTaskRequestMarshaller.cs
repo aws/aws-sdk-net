@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ReasonMessage", StringUtils.FromString(publicRequest.ReasonMessage));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CancelConversionTaskRequestMarshaller _instance = new CancelConversionTaskRequestMarshaller();        

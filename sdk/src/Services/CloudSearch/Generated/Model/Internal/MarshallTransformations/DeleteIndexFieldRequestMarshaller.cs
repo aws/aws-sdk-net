@@ -68,6 +68,8 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     request.Parameters.Add("IndexFieldName", StringUtils.FromString(publicRequest.IndexFieldName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteIndexFieldRequestMarshaller _instance = new DeleteIndexFieldRequestMarshaller();        

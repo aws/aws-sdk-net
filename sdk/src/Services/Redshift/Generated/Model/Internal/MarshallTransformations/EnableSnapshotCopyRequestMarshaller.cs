@@ -80,6 +80,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SnapshotCopyGrantName", StringUtils.FromString(publicRequest.SnapshotCopyGrantName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EnableSnapshotCopyRequestMarshaller _instance = new EnableSnapshotCopyRequestMarshaller();        

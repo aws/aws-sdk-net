@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("UnusedReservationBillingOwnerId", StringUtils.FromString(publicRequest.UnusedReservationBillingOwnerId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DisassociateCapacityReservationBillingOwnerRequestMarshaller _instance = new DisassociateCapacityReservationBillingOwnerRequestMarshaller();        

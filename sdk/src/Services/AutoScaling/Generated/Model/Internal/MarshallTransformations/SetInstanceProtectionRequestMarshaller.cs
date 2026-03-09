@@ -82,6 +82,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ProtectedFromScaleIn", StringUtils.FromBool(publicRequest.ProtectedFromScaleIn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetInstanceProtectionRequestMarshaller _instance = new SetInstanceProtectionRequestMarshaller();        

@@ -68,6 +68,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ShouldDecrementDesiredCapacity", StringUtils.FromBool(publicRequest.ShouldDecrementDesiredCapacity));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static TerminateInstanceInAutoScalingGroupRequestMarshaller _instance = new TerminateInstanceInAutoScalingGroupRequestMarshaller();        

@@ -72,6 +72,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                     request.Parameters.Add("MaxJobs", StringUtils.FromInt(publicRequest.MaxJobs));
                 }
             }
+
             return request;
         }
                     private static ListJobsRequestMarshaller _instance = new ListJobsRequestMarshaller();        

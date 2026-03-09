@@ -352,6 +352,8 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DefineIndexFieldRequestMarshaller _instance = new DefineIndexFieldRequestMarshaller();        

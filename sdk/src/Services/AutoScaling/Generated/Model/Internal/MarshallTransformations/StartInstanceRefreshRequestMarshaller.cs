@@ -509,6 +509,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Strategy", StringUtils.FromString(publicRequest.Strategy));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static StartInstanceRefreshRequestMarshaller _instance = new StartInstanceRefreshRequestMarshaller();        

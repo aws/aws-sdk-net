@@ -107,6 +107,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VpcId", StringUtils.FromString(publicRequest.VpcId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetSecurityGroupsForVpcRequestMarshaller _instance = new GetSecurityGroupsForVpcRequestMarshaller();        

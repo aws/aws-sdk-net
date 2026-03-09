@@ -113,6 +113,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TransportTransitGatewayAttachmentId", StringUtils.FromString(publicRequest.TransportTransitGatewayAttachmentId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateTransitGatewayConnectRequestMarshaller _instance = new CreateTransitGatewayConnectRequestMarshaller();        

@@ -64,6 +64,8 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DomainName", StringUtils.FromString(publicRequest.DomainName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static IndexDocumentsRequestMarshaller _instance = new IndexDocumentsRequestMarshaller();        

@@ -72,6 +72,8 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     request.Parameters.Add("TopicArn", StringUtils.FromString(publicRequest.TopicArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ConfirmSubscriptionRequestMarshaller _instance = new ConfirmSubscriptionRequestMarshaller();        

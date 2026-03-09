@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ImageBlockPublicAccessState", StringUtils.FromString(publicRequest.ImageBlockPublicAccessState));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EnableImageBlockPublicAccessRequestMarshaller _instance = new EnableImageBlockPublicAccessRequestMarshaller();        

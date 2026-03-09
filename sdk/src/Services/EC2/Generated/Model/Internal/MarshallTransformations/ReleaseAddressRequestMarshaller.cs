@@ -76,6 +76,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PublicIp", StringUtils.FromString(publicRequest.PublicIp));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ReleaseAddressRequestMarshaller _instance = new ReleaseAddressRequestMarshaller();        

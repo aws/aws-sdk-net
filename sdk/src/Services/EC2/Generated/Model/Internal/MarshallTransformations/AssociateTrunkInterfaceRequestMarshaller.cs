@@ -88,6 +88,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VlanId", StringUtils.FromInt(publicRequest.VlanId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static AssociateTrunkInterfaceRequestMarshaller _instance = new AssociateTrunkInterfaceRequestMarshaller();        

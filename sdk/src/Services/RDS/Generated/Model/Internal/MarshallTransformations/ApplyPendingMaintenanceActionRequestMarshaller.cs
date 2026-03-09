@@ -72,6 +72,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ResourceIdentifier", StringUtils.FromString(publicRequest.ResourceIdentifier));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ApplyPendingMaintenanceActionRequestMarshaller _instance = new ApplyPendingMaintenanceActionRequestMarshaller();        

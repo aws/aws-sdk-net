@@ -72,6 +72,8 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SSLCertificateId", StringUtils.FromString(publicRequest.SSLCertificateId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetLoadBalancerListenerSSLCertificateRequestMarshaller _instance = new SetLoadBalancerListenerSSLCertificateRequestMarshaller();        

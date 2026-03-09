@@ -68,6 +68,8 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TopicARN", StringUtils.FromString(publicRequest.TopicARN));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteNotificationConfigurationRequestMarshaller _instance = new DeleteNotificationConfigurationRequestMarshaller();        

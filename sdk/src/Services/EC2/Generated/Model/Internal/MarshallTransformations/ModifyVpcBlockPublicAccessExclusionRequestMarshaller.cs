@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("InternetGatewayExclusionMode", StringUtils.FromString(publicRequest.InternetGatewayExclusionMode));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyVpcBlockPublicAccessExclusionRequestMarshaller _instance = new ModifyVpcBlockPublicAccessExclusionRequestMarshaller();        

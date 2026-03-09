@@ -68,6 +68,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("OpenIDConnectProviderArn", StringUtils.FromString(publicRequest.OpenIDConnectProviderArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static RemoveClientIDFromOpenIDConnectProviderRequestMarshaller _instance = new RemoveClientIDFromOpenIDConnectProviderRequestMarshaller();        

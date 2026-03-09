@@ -64,6 +64,8 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ListExportsRequestMarshaller _instance = new ListExportsRequestMarshaller();        

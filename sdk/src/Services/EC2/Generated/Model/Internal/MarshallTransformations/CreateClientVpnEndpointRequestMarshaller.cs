@@ -272,6 +272,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VpnPort", StringUtils.FromInt(publicRequest.VpnPort));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateClientVpnEndpointRequestMarshaller _instance = new CreateClientVpnEndpointRequestMarshaller();        

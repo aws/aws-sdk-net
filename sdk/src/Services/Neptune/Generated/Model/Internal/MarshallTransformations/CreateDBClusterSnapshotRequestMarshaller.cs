@@ -89,6 +89,8 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     }
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateDBClusterSnapshotRequestMarshaller _instance = new CreateDBClusterSnapshotRequestMarshaller();        

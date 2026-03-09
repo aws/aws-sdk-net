@@ -68,6 +68,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TransitGatewayRouteTableAnnouncementId", StringUtils.FromString(publicRequest.TransitGatewayRouteTableAnnouncementId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteTransitGatewayRouteTableAnnouncementRequestMarshaller _instance = new DeleteTransitGatewayRouteTableAnnouncementRequestMarshaller();        

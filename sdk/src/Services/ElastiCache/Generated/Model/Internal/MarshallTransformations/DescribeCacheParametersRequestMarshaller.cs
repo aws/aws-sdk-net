@@ -76,6 +76,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Source", StringUtils.FromString(publicRequest.Source));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeCacheParametersRequestMarshaller _instance = new DescribeCacheParametersRequestMarshaller();        

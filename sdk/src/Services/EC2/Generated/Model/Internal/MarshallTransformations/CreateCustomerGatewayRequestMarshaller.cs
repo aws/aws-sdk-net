@@ -130,6 +130,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateCustomerGatewayRequestMarshaller _instance = new CreateCustomerGatewayRequestMarshaller();        

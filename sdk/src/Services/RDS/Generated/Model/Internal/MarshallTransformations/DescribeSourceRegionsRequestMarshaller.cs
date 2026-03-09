@@ -103,6 +103,8 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     request.Parameters.Add("RegionName", StringUtils.FromString(publicRequest.RegionName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeSourceRegionsRequestMarshaller _instance = new DescribeSourceRegionsRequestMarshaller();        

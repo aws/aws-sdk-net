@@ -78,6 +78,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PolicySourceArn", StringUtils.FromString(publicRequest.PolicySourceArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static GetContextKeysForPrincipalPolicyRequestMarshaller _instance = new GetContextKeysForPrincipalPolicyRequestMarshaller();        

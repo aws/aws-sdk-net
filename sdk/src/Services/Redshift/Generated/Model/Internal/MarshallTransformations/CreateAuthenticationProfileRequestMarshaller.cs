@@ -68,6 +68,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("AuthenticationProfileName", StringUtils.FromString(publicRequest.AuthenticationProfileName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateAuthenticationProfileRequestMarshaller _instance = new CreateAuthenticationProfileRequestMarshaller();        

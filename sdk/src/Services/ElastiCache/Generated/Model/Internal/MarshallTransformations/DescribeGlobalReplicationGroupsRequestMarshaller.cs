@@ -76,6 +76,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ShowMemberInfo", StringUtils.FromBool(publicRequest.ShowMemberInfo));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribeGlobalReplicationGroupsRequestMarshaller _instance = new DescribeGlobalReplicationGroupsRequestMarshaller();        

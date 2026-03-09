@@ -68,6 +68,8 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Notes", StringUtils.FromString(publicRequest.Notes));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static UpdateDelegationRequestRequestMarshaller _instance = new UpdateDelegationRequestRequestMarshaller();        

@@ -94,6 +94,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VpcEndpointId", StringUtils.FromString(publicRequest.VpcEndpointId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateVpcEndpointConnectionNotificationRequestMarshaller _instance = new CreateVpcEndpointConnectionNotificationRequestMarshaller();        

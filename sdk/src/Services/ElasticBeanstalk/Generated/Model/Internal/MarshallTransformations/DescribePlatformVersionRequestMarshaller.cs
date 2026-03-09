@@ -64,6 +64,8 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     request.Parameters.Add("PlatformArn", StringUtils.FromString(publicRequest.PlatformArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DescribePlatformVersionRequestMarshaller _instance = new DescribePlatformVersionRequestMarshaller();        

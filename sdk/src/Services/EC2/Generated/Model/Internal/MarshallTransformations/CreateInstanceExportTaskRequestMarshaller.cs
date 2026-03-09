@@ -129,6 +129,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("TargetEnvironment", StringUtils.FromString(publicRequest.TargetEnvironment));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static CreateInstanceExportTaskRequestMarshaller _instance = new CreateInstanceExportTaskRequestMarshaller();        

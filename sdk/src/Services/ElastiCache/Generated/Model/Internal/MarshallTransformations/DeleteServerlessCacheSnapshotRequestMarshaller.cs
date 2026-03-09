@@ -64,6 +64,8 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     request.Parameters.Add("ServerlessCacheSnapshotName", StringUtils.FromString(publicRequest.ServerlessCacheSnapshotName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeleteServerlessCacheSnapshotRequestMarshaller _instance = new DeleteServerlessCacheSnapshotRequestMarshaller();        

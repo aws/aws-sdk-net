@@ -68,6 +68,8 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     request.Parameters.Add("Identity", StringUtils.FromString(publicRequest.Identity));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static SetIdentityFeedbackForwardingEnabledRequestMarshaller _instance = new SetIdentityFeedbackForwardingEnabledRequestMarshaller();        

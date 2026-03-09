@@ -72,6 +72,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("WithCooldown", StringUtils.FromBool(publicRequest.WithCooldown));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static EnableImageDeregistrationProtectionRequestMarshaller _instance = new EnableImageDeregistrationProtectionRequestMarshaller();        

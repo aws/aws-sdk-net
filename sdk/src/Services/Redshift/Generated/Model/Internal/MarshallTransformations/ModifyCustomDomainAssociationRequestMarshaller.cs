@@ -72,6 +72,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("CustomDomainName", StringUtils.FromString(publicRequest.CustomDomainName));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyCustomDomainAssociationRequestMarshaller _instance = new ModifyCustomDomainAssociationRequestMarshaller();        

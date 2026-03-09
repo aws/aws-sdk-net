@@ -95,6 +95,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("VerifiedAccessEndpointId", StringUtils.FromString(publicRequest.VerifiedAccessEndpointId));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyVerifiedAccessEndpointPolicyRequestMarshaller _instance = new ModifyVerifiedAccessEndpointPolicyRequestMarshaller();        

@@ -68,6 +68,8 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     request.Parameters.Add("DataShareArn", StringUtils.FromString(publicRequest.DataShareArn));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static DeauthorizeDataShareRequestMarshaller _instance = new DeauthorizeDataShareRequestMarshaller();        

@@ -160,6 +160,8 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     request.Parameters.Add("SourceDestCheck.Value", StringUtils.FromBool(publicRequest.SourceDestCheck));
                 }
             }
+
+            request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
             return request;
         }
                     private static ModifyNetworkInterfaceAttributeRequestMarshaller _instance = new ModifyNetworkInterfaceAttributeRequestMarshaller();        
