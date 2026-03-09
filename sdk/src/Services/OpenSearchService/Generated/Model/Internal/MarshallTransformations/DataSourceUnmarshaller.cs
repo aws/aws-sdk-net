@@ -78,6 +78,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataSourceDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("iamRoleForDataSourceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IamRoleForDataSourceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

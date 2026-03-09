@@ -5755,6 +5755,9 @@ namespace Amazon.OpenSearchService
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
         /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
@@ -5790,6 +5793,9 @@ namespace Amazon.OpenSearchService
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
         /// An exception for accessing or deleting a resource that doesn't exist.
