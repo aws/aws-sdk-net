@@ -47,6 +47,7 @@ namespace Amazon.Mgn.Model
         private List<string> _replicationServersSecurityGroupsIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stagingAreaSubnetId;
         private Dictionary<string, string> _stagingAreaTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private bool? _storeSnapshotOnLocalZone;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _useDedicatedReplicationServer;
         private bool? _useFipsEndpoint;
@@ -281,6 +282,24 @@ namespace Amazon.Mgn.Model
         internal bool IsSetStagingAreaTags()
         {
             return this._stagingAreaTags != null && (this._stagingAreaTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StoreSnapshotOnLocalZone. 
+        /// <para>
+        /// Request to store snapshot on local zone during Replication Settings template creation.
+        /// </para>
+        /// </summary>
+        public bool StoreSnapshotOnLocalZone
+        {
+            get { return this._storeSnapshotOnLocalZone.GetValueOrDefault(); }
+            set { this._storeSnapshotOnLocalZone = value; }
+        }
+
+        // Check to see if StoreSnapshotOnLocalZone property is set
+        internal bool IsSetStoreSnapshotOnLocalZone()
+        {
+            return this._storeSnapshotOnLocalZone.HasValue; 
         }
 
         /// <summary>

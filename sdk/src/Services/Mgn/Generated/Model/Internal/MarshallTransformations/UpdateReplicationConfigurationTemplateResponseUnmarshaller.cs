@@ -136,6 +136,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.StagingAreaTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("storeSnapshotOnLocalZone", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.StoreSnapshotOnLocalZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

@@ -152,6 +152,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetStoreSnapshotOnLocalZone())
+                {
+                    context.Writer.WritePropertyName("storeSnapshotOnLocalZone");
+                    context.Writer.Write(publicRequest.StoreSnapshotOnLocalZone);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
