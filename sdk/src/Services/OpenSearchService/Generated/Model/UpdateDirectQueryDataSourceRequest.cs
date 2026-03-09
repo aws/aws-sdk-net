@@ -36,10 +36,33 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class UpdateDirectQueryDataSourceRequest : AmazonOpenSearchServiceRequest
     {
+        private string _dataSourceAccessPolicy;
         private string _dataSourceName;
         private DirectQueryDataSourceType _dataSourceType;
         private string _description;
         private List<string> _openSearchArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DataSourceAccessPolicy. 
+        /// <para>
+        ///  An optional IAM access policy document that defines the updated permissions for accessing
+        /// the direct query data source. The policy document must be in valid JSON format and
+        /// follow IAM policy syntax. If not specified, the existing access policy if present
+        /// remains unchanged. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=102400)]
+        public string DataSourceAccessPolicy
+        {
+            get { return this._dataSourceAccessPolicy; }
+            set { this._dataSourceAccessPolicy = value; }
+        }
+
+        // Check to see if DataSourceAccessPolicy property is set
+        internal bool IsSetDataSourceAccessPolicy()
+        {
+            return this._dataSourceAccessPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataSourceName. 
