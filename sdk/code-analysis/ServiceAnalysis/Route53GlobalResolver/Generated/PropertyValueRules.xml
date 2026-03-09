@@ -48,7 +48,7 @@
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceRequest.Cidr</property>
     <min>1</min>
-    <max>42</max>
+    <max>43</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceRequest.ClientToken</property>
@@ -76,7 +76,7 @@
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceResponse.Cidr</property>
     <min>1</min>
-    <max>42</max>
+    <max>43</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateAccessSourceResponse.DnsViewId</property>
@@ -258,7 +258,7 @@
     <property>Amazon.Route53GlobalResolver.Model.CreateFirewallRuleRequest.BlockOverrideDomain</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\*?[-a-zA-Z0-9.]+</pattern>
+    <pattern>\*?[a-zA-Z0-9!"#$%&amp;'()*+,./:;&lt;=&gt;?@\[\\\]^_`{|}~-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateFirewallRuleRequest.BlockOverrideTtl</property>
@@ -307,7 +307,7 @@
     <property>Amazon.Route53GlobalResolver.Model.CreateFirewallRuleResponse.BlockOverrideDomain</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\*?[-a-zA-Z0-9.]+</pattern>
+    <pattern>\*?[a-zA-Z0-9!"#$%&amp;'()*+,./:;&lt;=&gt;?@\[\\\]^_`{|}~-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.CreateFirewallRuleResponse.BlockOverrideTtl</property>
@@ -427,7 +427,7 @@
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.DeleteAccessSourceResponse.Cidr</property>
     <min>1</min>
-    <max>42</max>
+    <max>43</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.DeleteAccessSourceResponse.DnsViewId</property>
@@ -533,7 +533,7 @@
     <property>Amazon.Route53GlobalResolver.Model.DeleteFirewallRuleResponse.BlockOverrideDomain</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\*?[-a-zA-Z0-9.]+</pattern>
+    <pattern>\*?[a-zA-Z0-9!"#$%&amp;'()*+,./:;&lt;=&gt;?@\[\\\]^_`{|}~-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.DeleteFirewallRuleResponse.BlockOverrideTtl</property>
@@ -757,7 +757,7 @@
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.GetAccessSourceResponse.Cidr</property>
     <min>1</min>
-    <max>42</max>
+    <max>43</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.GetAccessSourceResponse.DnsViewId</property>
@@ -913,7 +913,7 @@
     <property>Amazon.Route53GlobalResolver.Model.GetFirewallRuleResponse.BlockOverrideDomain</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\*?[-a-zA-Z0-9.]+</pattern>
+    <pattern>\*?[a-zA-Z0-9!"#$%&amp;'()*+,./:;&lt;=&gt;?@\[\\\]^_`{|}~-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.GetFirewallRuleResponse.BlockOverrideTtl</property>
@@ -1141,7 +1141,7 @@
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.UpdateAccessSourceRequest.Cidr</property>
     <min>1</min>
-    <max>42</max>
+    <max>43</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.UpdateAccessSourceRequest.Name</property>
@@ -1158,7 +1158,7 @@
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.UpdateAccessSourceResponse.Cidr</property>
     <min>1</min>
-    <max>42</max>
+    <max>43</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.UpdateAccessSourceResponse.DnsViewId</property>
@@ -1275,7 +1275,7 @@
     <property>Amazon.Route53GlobalResolver.Model.UpdateFirewallRuleRequest.BlockOverrideDomain</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\*?[-a-zA-Z0-9.]+</pattern>
+    <pattern>\*?[a-zA-Z0-9!"#$%&amp;'()*+,./:;&lt;=&gt;?@\[\\\]^_`{|}~-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.UpdateFirewallRuleRequest.BlockOverrideTtl</property>
@@ -1313,7 +1313,7 @@
     <property>Amazon.Route53GlobalResolver.Model.UpdateFirewallRuleResponse.BlockOverrideDomain</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\*?[-a-zA-Z0-9.]+</pattern>
+    <pattern>\*?[a-zA-Z0-9!"#$%&amp;'()*+,./:;&lt;=&gt;?@\[\\\]^_`{|}~-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.UpdateFirewallRuleResponse.BlockOverrideTtl</property>
@@ -1468,7 +1468,7 @@
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.AccessSourcesItem.Cidr</property>
     <min>1</min>
-    <max>42</max>
+    <max>43</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.AccessSourcesItem.DnsViewId</property>
@@ -1522,7 +1522,7 @@
     <property>Amazon.Route53GlobalResolver.Model.BatchCreateFirewallRuleInputItem.BlockOverrideDomain</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\*?[-a-zA-Z0-9.]+</pattern>
+    <pattern>\*?[a-zA-Z0-9!"#$%&amp;'()*+,./:;&lt;=&gt;?@\[\\\]^_`{|}~-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.BatchCreateFirewallRuleInputItem.BlockOverrideTtl</property>
@@ -1571,7 +1571,7 @@
     <property>Amazon.Route53GlobalResolver.Model.BatchCreateFirewallRuleResult.BlockOverrideDomain</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\*?[-a-zA-Z0-9.]+</pattern>
+    <pattern>\*?[a-zA-Z0-9!"#$%&amp;'()*+,./:;&lt;=&gt;?@\[\\\]^_`{|}~-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.BatchCreateFirewallRuleResult.BlockOverrideTtl</property>
@@ -1655,7 +1655,7 @@
     <property>Amazon.Route53GlobalResolver.Model.BatchUpdateFirewallRuleInputItem.BlockOverrideDomain</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\*?[-a-zA-Z0-9.]+</pattern>
+    <pattern>\*?[a-zA-Z0-9!"#$%&amp;'()*+,./:;&lt;=&gt;?@\[\\\]^_`{|}~-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.BatchUpdateFirewallRuleInputItem.BlockOverrideTtl</property>
@@ -1688,7 +1688,7 @@
     <property>Amazon.Route53GlobalResolver.Model.BatchUpdateFirewallRuleResult.BlockOverrideDomain</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\*?[-a-zA-Z0-9.]+</pattern>
+    <pattern>\*?[a-zA-Z0-9!"#$%&amp;'()*+,./:;&lt;=&gt;?@\[\\\]^_`{|}~-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.BatchUpdateFirewallRuleResult.BlockOverrideTtl</property>
@@ -1806,7 +1806,7 @@
     <property>Amazon.Route53GlobalResolver.Model.FirewallRulesItem.BlockOverrideDomain</property>
     <min>1</min>
     <max>256</max>
-    <pattern>\*?[-a-zA-Z0-9.]+</pattern>
+    <pattern>\*?[a-zA-Z0-9!"#$%&amp;'()*+,./:;&lt;=&gt;?@\[\\\]^_`{|}~-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53GlobalResolver.Model.FirewallRulesItem.BlockOverrideTtl</property>
