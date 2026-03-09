@@ -1,3 +1,13 @@
+### 3.7.1238.0 (2026-03-09 18:32 UTC)
+* IdentityManagement (3.7.507.37)
+	* Added support for CloudWatch Logs long-term API keys, currently available in Preview
+* Mgn (3.7.504.0)
+	* Adds support for new storeSnapshotOnLocalZone field in ReplicationConfiguration and updateReplicationConfiguration
+* OpenSearchService (3.7.510.0)
+	* This change enables cross-account and cross-region access for DataSources. Customers can now define access policies on their datasources to allow other AWS accounts to access and query their data.
+* Route53GlobalResolver (3.7.501.0)
+	* Adds support for dual stack Global Resolvers and Dictionary-based Domain Generation Firewall Advanced Protection.
+
 ### 3.7.1237.0 (2026-03-06 21:37 UTC)
 * AppIntegrationsService (3.7.504.0)
 	* This release adds support for webhooks, allowing customers to create an Event Integration with a webhook source.
