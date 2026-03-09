@@ -67,7 +67,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ExpirationDate. 
         /// <para>
         /// The date and time when the service specific credential expires. This field is only
-        /// present for Bedrock API keys that were created with an expiration period.
+        /// present for Bedrock API keys and CloudWatch Logs API keys that were created with an
+        /// expiration period.
         /// </para>
         /// </summary>
         public DateTime ExpirationDate
@@ -85,8 +86,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceCredentialAlias. 
         /// <para>
-        /// For Bedrock API keys, this is the public portion of the credential that includes the
-        /// IAM user name and a suffix containing version and creation information.
+        /// For Bedrock API keys and CloudWatch Logs API keys, this is the public portion of the
+        /// credential that includes the IAM user name and a suffix containing version and creation
+        /// information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

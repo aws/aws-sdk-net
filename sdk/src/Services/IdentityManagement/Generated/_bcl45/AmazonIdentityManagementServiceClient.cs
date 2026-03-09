@@ -2689,8 +2689,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// You can create service-specific credentials for Amazon Bedrock, CodeCommit and Amazon
-        /// Keyspaces (for Apache Cassandra).
+        /// You can create service-specific credentials for Amazon Bedrock, Amazon CloudWatch
+        /// Logs, CodeCommit and Amazon Keyspaces (for Apache Cassandra).
         /// </para>
         ///  
         /// <para>
@@ -2739,8 +2739,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// You can create service-specific credentials for Amazon Bedrock, CodeCommit and Amazon
-        /// Keyspaces (for Apache Cassandra).
+        /// You can create service-specific credentials for Amazon Bedrock, Amazon CloudWatch
+        /// Logs, CodeCommit and Amazon Keyspaces (for Apache Cassandra).
         /// </para>
         ///  
         /// <para>

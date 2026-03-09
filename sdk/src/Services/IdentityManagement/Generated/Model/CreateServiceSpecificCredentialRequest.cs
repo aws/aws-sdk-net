@@ -42,8 +42,8 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// You can create service-specific credentials for Amazon Bedrock, CodeCommit and Amazon
-    /// Keyspaces (for Apache Cassandra).
+    /// You can create service-specific credentials for Amazon Bedrock, Amazon CloudWatch
+    /// Logs, CodeCommit and Amazon Keyspaces (for Apache Cassandra).
     /// </para>
     ///  
     /// <para>
@@ -65,8 +65,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property CredentialAgeDays. 
         /// <para>
         /// The number of days until the service specific credential expires. This field is only
-        /// valid for Bedrock API keys and must be a positive integer. When not specified, the
-        /// credential will not expire.
+        /// valid for Bedrock and CloudWatch Logs API keys and must be a positive integer. When
+        /// not specified, the credential will not expire.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36600)]
