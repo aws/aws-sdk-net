@@ -41,6 +41,15 @@ namespace Amazon.Route53GlobalResolver
     /// while ensuring security and authenticity of queries over the internet. Route 53 Global
     /// Resolver supports DNS-over-port 53 (Do53), DNS-over-TLS (DoT), and DNS-over-HTTPS
     /// (DoH) protocols through global anycast IP addresses.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+    /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+    /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+    /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class AmazonRoute53GlobalResolverClient : AmazonServiceClient, IAmazonRoute53GlobalResolver
     {
@@ -274,6 +283,15 @@ namespace Amazon.Route53GlobalResolver
         /// Associates a Route 53 private hosted zone with a Route 53 Global Resolver resource.
         /// This allows the resolver to resolve DNS queries for the private hosted zone from anywhere
         /// globally.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateHostedZone service method.</param>
         /// 
@@ -353,6 +371,15 @@ namespace Amazon.Route53GlobalResolver
         /// <summary>
         /// Creates multiple DNS firewall rules in a single operation. This is more efficient
         /// than creating rules individually when you need to set up multiple rules at once.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateFirewallRule service method.</param>
         /// 
@@ -421,6 +448,15 @@ namespace Amazon.Route53GlobalResolver
         /// <summary>
         /// Deletes multiple DNS firewall rules in a single operation. This is more efficient
         /// than deleting rules individually.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteFirewallRule service method.</param>
         /// 
@@ -489,6 +525,15 @@ namespace Amazon.Route53GlobalResolver
         /// <summary>
         /// Updates multiple DNS firewall rules in a single operation. This is more efficient
         /// than updating rules individually.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFirewallRule service method.</param>
         /// 
@@ -558,6 +603,15 @@ namespace Amazon.Route53GlobalResolver
         /// Creates an access source for a DNS view. Access sources define IP addresses or CIDR
         /// ranges that are allowed to send DNS queries to the Route 53 Global Resolver, along
         /// with the permitted DNS protocols.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessSource service method.</param>
         /// 
@@ -638,6 +692,15 @@ namespace Amazon.Route53GlobalResolver
         /// Creates an access token for a DNS view. Access tokens provide token-based authentication
         /// for DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT) connections to the Route 53 Global
         /// Resolver.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessToken service method.</param>
         /// 
@@ -718,6 +781,15 @@ namespace Amazon.Route53GlobalResolver
         /// Creates a DNS view within a Route 53 Global Resolver. A DNS view models end users,
         /// user groups, networks, and devices, and serves as a parent resource that holds configurations
         /// controlling access, authorization, DNS firewall rules, and forwarding rules.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDNSView service method.</param>
         /// 
@@ -798,6 +870,15 @@ namespace Amazon.Route53GlobalResolver
         /// Creates a firewall domain list. Domain lists are reusable sets of domain specifications
         /// that you use in DNS firewall rules to allow, block, or alert on DNS queries to specific
         /// domains.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFirewallDomainList service method.</param>
         /// 
@@ -878,6 +959,15 @@ namespace Amazon.Route53GlobalResolver
         /// Creates a DNS firewall rule. Firewall rules define actions (ALLOW, BLOCK, or ALERT)
         /// to take on DNS queries that match specified domain lists, managed domain lists, or
         /// advanced threat protections.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFirewallRule service method.</param>
         /// 
@@ -958,6 +1048,15 @@ namespace Amazon.Route53GlobalResolver
         /// Creates a new Route 53 Global Resolver instance. A Route 53 Global Resolver is a global,
         /// internet-accessible DNS resolver that provides secure DNS resolution for both public
         /// and private domains through global anycast IP addresses.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGlobalResolver service method.</param>
         /// 
@@ -1033,6 +1132,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Deletes an access source. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessSource service method.</param>
         /// 
@@ -1107,6 +1215,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Deletes an access token. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessToken service method.</param>
         /// 
@@ -1177,6 +1294,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Deletes a DNS view. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDNSView service method.</param>
         /// 
@@ -1251,6 +1377,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Deletes a firewall domain list. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallDomainList service method.</param>
         /// 
@@ -1325,6 +1460,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Deletes a DNS firewall rule. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallRule service method.</param>
         /// 
@@ -1400,6 +1544,15 @@ namespace Amazon.Route53GlobalResolver
         /// <summary>
         /// Deletes a Route 53 Global Resolver instance. This operation cannot be undone. All
         /// associated DNS views, access sources, tokens, and firewall rules are also deleted.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalResolver service method.</param>
         /// 
@@ -1474,6 +1627,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Disables a DNS view, preventing it from serving DNS queries.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableDNSView service method.</param>
         /// 
@@ -1491,6 +1653,10 @@ namespace Amazon.Route53GlobalResolver
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Wait a moment and try again.
@@ -1548,6 +1714,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Disassociates a Route 53 private hosted zone from a Route 53 Global Resolver resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateHostedZone service method.</param>
         /// 
@@ -1622,6 +1797,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Enables a disabled DNS view, allowing it to serve DNS queries again.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableDNSView service method.</param>
         /// 
@@ -1639,6 +1823,10 @@ namespace Amazon.Route53GlobalResolver
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Wait a moment and try again.
@@ -1696,6 +1884,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Retrieves information about an access source.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessSource service method.</param>
         /// 
@@ -1766,6 +1963,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Retrieves information about an access token.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessToken service method.</param>
         /// 
@@ -1836,6 +2042,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Retrieves information about a DNS view.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDNSView service method.</param>
         /// 
@@ -1906,6 +2121,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Retrieves information about a firewall domain list.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFirewallDomainList service method.</param>
         /// 
@@ -1976,6 +2200,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Retrieves information about a DNS firewall rule.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFirewallRule service method.</param>
         /// 
@@ -2046,6 +2279,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Retrieves information about a Route 53 Global Resolver instance.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGlobalResolver service method.</param>
         /// 
@@ -2116,6 +2358,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Retrieves information about a hosted zone association.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneAssociation service method.</param>
         /// 
@@ -2185,9 +2436,18 @@ namespace Amazon.Route53GlobalResolver
         #region  GetManagedFirewallDomainList
 
         /// <summary>
-        /// Retrieves information about an AWS-managed firewall domain list. Managed domain lists
-        /// contain domains associated with malicious activity, content categories, or specific
-        /// threats.
+        /// Retrieves information about an Amazon Web Services-managed firewall domain list. Managed
+        /// domain lists contain domains associated with malicious activity, content categories,
+        /// or specific threats.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetManagedFirewallDomainList service method.</param>
         /// 
@@ -2259,6 +2519,15 @@ namespace Amazon.Route53GlobalResolver
         /// <summary>
         /// Imports a list of domains from an Amazon S3 file into a firewall domain list. The
         /// file should contain one domain per line.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportFirewallDomains service method.</param>
         /// 
@@ -2276,6 +2545,10 @@ namespace Amazon.Route53GlobalResolver
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Wait a moment and try again.
@@ -2333,6 +2606,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Lists all access sources with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessSources service method.</param>
         /// 
@@ -2400,6 +2682,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Lists all access tokens for a DNS view with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessTokens service method.</param>
         /// 
@@ -2470,6 +2761,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Lists all DNS views for a Route 53 Global Resolver with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDNSViews service method.</param>
         /// 
@@ -2540,6 +2840,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Lists all firewall domain lists for a Route 53 Global Resolver with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallDomainLists service method.</param>
         /// 
@@ -2610,6 +2919,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Lists all the domains in DNS Firewall domain list you have created.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallDomains service method.</param>
         /// 
@@ -2680,6 +2998,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Lists all DNS firewall rules for a DNS view with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallRules service method.</param>
         /// 
@@ -2750,6 +3077,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Lists all Route 53 Global Resolver instances in your account with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGlobalResolvers service method.</param>
         /// 
@@ -2818,6 +3154,15 @@ namespace Amazon.Route53GlobalResolver
         /// <summary>
         /// Lists all hosted zone associations for a Route 53 Global Resolver resource with pagination
         /// support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHostedZoneAssociations service method.</param>
         /// 
@@ -2887,8 +3232,17 @@ namespace Amazon.Route53GlobalResolver
         #region  ListManagedFirewallDomainLists
 
         /// <summary>
-        /// Returns a paginated list of the AWS Managed DNS Lists and the categories for DNS Firewall.
-        /// The categories are either <c>THREAT</c> or <c>CONTENT</c>.
+        /// Returns a paginated list of the Amazon Web Services Managed DNS Lists and the categories
+        /// for DNS Firewall. The categories are either <c>THREAT</c> or <c>CONTENT</c>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListManagedFirewallDomainLists service method.</param>
         /// 
@@ -2956,6 +3310,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Lists the tags associated with a Route 53 Global Resolver resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -3014,6 +3377,15 @@ namespace Amazon.Route53GlobalResolver
         /// <summary>
         /// Adds or updates tags for a Route 53 Global Resolver resource. Tags are key-value pairs
         /// that help you organize and identify your resources.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -3078,6 +3450,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Removes tags from a Route 53 Global Resolver resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -3138,6 +3519,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Updates the configuration of an access source.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessSource service method.</param>
         /// 
@@ -3216,6 +3606,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Updates the configuration of an access token.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessToken service method.</param>
         /// 
@@ -3233,6 +3632,10 @@ namespace Amazon.Route53GlobalResolver
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Wait a moment and try again.
@@ -3290,6 +3693,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Updates the configuration of a DNS view.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDNSView service method.</param>
         /// 
@@ -3307,6 +3719,10 @@ namespace Amazon.Route53GlobalResolver
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Wait a moment and try again.
@@ -3364,6 +3780,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Updates a DNS Firewall domain list from an array of specified domains.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallDomains service method.</param>
         /// 
@@ -3381,6 +3806,10 @@ namespace Amazon.Route53GlobalResolver
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Wait a moment and try again.
@@ -3438,6 +3867,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Updates the configuration of a DNS firewall rule.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallRule service method.</param>
         /// 
@@ -3455,6 +3893,10 @@ namespace Amazon.Route53GlobalResolver
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Wait a moment and try again.
@@ -3512,7 +3954,16 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Updates the configuration of a Route 53 Global Resolver instance. You can modify the
-        /// name, description, and observability region.
+        /// name, description, and observability Region.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalResolver service method.</param>
         /// 
@@ -3530,6 +3981,10 @@ namespace Amazon.Route53GlobalResolver
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Wait a moment and try again.
@@ -3587,6 +4042,15 @@ namespace Amazon.Route53GlobalResolver
 
         /// <summary>
         /// Updates the configuration of a hosted zone association.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneAssociation service method.</param>
         /// 
@@ -3604,6 +4068,10 @@ namespace Amazon.Route53GlobalResolver
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
         /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
         /// </exception>
         /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
         /// The request was throttled due to too many requests. Wait a moment and try again.

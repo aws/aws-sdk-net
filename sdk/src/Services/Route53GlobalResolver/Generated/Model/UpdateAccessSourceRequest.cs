@@ -32,6 +32,15 @@ namespace Amazon.Route53GlobalResolver.Model
     /// <summary>
     /// Container for the parameters to the UpdateAccessSource operation.
     /// Updates the configuration of an access source.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+    /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+    /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+    /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UpdateAccessSourceRequest : AmazonRoute53GlobalResolverRequest
     {
@@ -66,7 +75,7 @@ namespace Amazon.Route53GlobalResolver.Model
         /// The CIDR block for the access source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=42)]
+        [AWSProperty(Min=1, Max=43)]
         public string Cidr
         {
             get { return this._cidr; }

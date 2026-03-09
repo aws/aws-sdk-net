@@ -34,11 +34,21 @@ namespace Amazon.Route53GlobalResolver.Model
     /// Creates a new Route 53 Global Resolver instance. A Route 53 Global Resolver is a global,
     /// internet-accessible DNS resolver that provides secure DNS resolution for both public
     /// and private domains through global anycast IP addresses.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+    /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+    /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+    /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateGlobalResolverRequest : AmazonRoute53GlobalResolverRequest
     {
         private string _clientToken;
         private string _description;
+        private GlobalResolverIpAddressType _ipAddressType;
         private string _name;
         private string _observabilityRegion;
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -85,6 +95,25 @@ namespace Amazon.Route53GlobalResolver.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for the Route 53 Global Resolver. Valid values are IPV4 (default)
+        /// or DUAL_STACK for both IPv4 and IPv6 support.
+        /// </para>
+        /// </summary>
+        public GlobalResolverIpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// A descriptive name for the Route 53 Global Resolver instance. Maximum length of 64
@@ -107,8 +136,8 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property ObservabilityRegion. 
         /// <para>
-        /// The AWS region where query resolution logs and metrics will be aggregated and delivered.
-        /// If not specified, logging is not enabled.
+        /// The Amazon Web Services Region where query resolution logs and metrics will be aggregated
+        /// and delivered. If not specified, logging is not enabled.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=32)]
@@ -127,9 +156,9 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// List of AWS regions where the Route 53 Global Resolver will operate. The resolver
-        /// will be distributed across these regions to provide global availability and low-latency
-        /// DNS resolution.
+        /// List of Amazon Web Services Regions where the Route 53 Global Resolver will operate.
+        /// The resolver will be distributed across these Regions to provide global availability
+        /// and low-latency DNS resolution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

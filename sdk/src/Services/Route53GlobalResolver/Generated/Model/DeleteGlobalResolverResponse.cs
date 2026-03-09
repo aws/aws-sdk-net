@@ -40,7 +40,9 @@ namespace Amazon.Route53GlobalResolver.Model
         private string _description;
         private string _dnsName;
         private string _id;
+        private GlobalResolverIpAddressType _ipAddressType;
         private List<string> _ipv4Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ipv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _observabilityRegion;
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -163,6 +165,24 @@ namespace Amazon.Route53GlobalResolver.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type that was configured for the deleted Route 53 Global Resolver.
+        /// </para>
+        /// </summary>
+        public GlobalResolverIpAddressType IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Ipv4Addresses. 
         /// <para>
         /// The global anycast IPv4 addresses that were associated with the deleted Route 53 Global
@@ -180,6 +200,25 @@ namespace Amazon.Route53GlobalResolver.Model
         internal bool IsSetIpv4Addresses()
         {
             return this._ipv4Addresses != null && (this._ipv4Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipv6Addresses. 
+        /// <para>
+        /// The global anycast IPv6 addresses that were associated with the deleted Route 53 Global
+        /// Resolver.
+        /// </para>
+        /// </summary>
+        public List<string> Ipv6Addresses
+        {
+            get { return this._ipv6Addresses; }
+            set { this._ipv6Addresses = value; }
+        }
+
+        // Check to see if Ipv6Addresses property is set
+        internal bool IsSetIpv6Addresses()
+        {
+            return this._ipv6Addresses != null && (this._ipv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,8 +243,8 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property ObservabilityRegion. 
         /// <para>
-        /// The AWS Region where observability data for the deleted Route 53 Global Resolver was
-        /// stored.
+        /// The Amazon Web Services Region where observability data for the deleted Route 53 Global
+        /// Resolver was stored.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=32)]
@@ -224,7 +263,8 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The AWS Regions where the deleted Route 53 Global Resolver was deployed and operational.
+        /// The Amazon Web Services Regions where the deleted Route 53 Global Resolver was deployed
+        /// and operational.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

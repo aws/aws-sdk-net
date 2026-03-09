@@ -34,6 +34,15 @@ namespace Amazon.Route53GlobalResolver.Model
     /// Creates an access source for a DNS view. Access sources define IP addresses or CIDR
     /// ranges that are allowed to send DNS queries to the Route 53 Global Resolver, along
     /// with the permitted DNS protocols.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+    /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+    /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+    /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateAccessSourceRequest : AmazonRoute53GlobalResolverRequest
     {
@@ -52,7 +61,7 @@ namespace Amazon.Route53GlobalResolver.Model
         /// Resolver.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=42)]
+        [AWSProperty(Required=true, Min=1, Max=43)]
         public string Cidr
         {
             get { return this._cidr; }

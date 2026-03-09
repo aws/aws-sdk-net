@@ -34,6 +34,15 @@ namespace Amazon.Route53GlobalResolver.Model
     /// Creates a DNS view within a Route 53 Global Resolver. A DNS view models end users,
     /// user groups, networks, and devices, and serves as a parent resource that holds configurations
     /// controlling access, authorization, DNS firewall rules, and forwarding rules.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+    /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+    /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+    /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class CreateDNSViewRequest : AmazonRoute53GlobalResolverRequest
     {
