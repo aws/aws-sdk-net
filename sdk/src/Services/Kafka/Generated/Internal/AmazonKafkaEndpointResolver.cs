@@ -50,10 +50,10 @@ namespace Amazon.Kafka.Internal
         {
             var config = (AmazonKafkaConfig)requestContext.ClientConfig;
             var result = new KafkaEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = config.RegionEndpoint?.SystemName;
 
 
             // The region needs to be determined from the ServiceURL if not set.
