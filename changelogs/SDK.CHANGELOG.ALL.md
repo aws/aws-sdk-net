@@ -1,3 +1,15 @@
+### 4.0.207.0 (2026-03-10 18:16 UTC)
+* BedrockAgentCoreControl (4.0.19.0)
+	* Adding first class support for AG-UI protocol in AgentCore Runtime.
+* ConnectCases (4.0.11.0)
+	* Added functionality for the Required and Hidden case rule types to be conditionally evaluated on up to 5 conditions.
+* DatabaseMigrationService (4.0.7.12)
+	* Not need to include to any release notes. The only change is to correct LoadTimeout unit from milliseconds to seconds in RedshiftSettings
+* Kafka (4.0.7.0)
+	* Add dual stack endpoint to SDK
+* LexModelsV2 (4.0.6.0)
+	* This release introduces a new generative AI feature called Lex Bot Analyzer. This feature leverage AI to analyze the bot configuration against AWS Lex best practices to identify configuration issues and provides recommendations.
+
 ### 4.0.206.0 (2026-03-09 18:30 UTC)
 * IdentityManagement (4.0.9.9)
 	* Added support for CloudWatch Logs long-term API keys, currently available in Preview
