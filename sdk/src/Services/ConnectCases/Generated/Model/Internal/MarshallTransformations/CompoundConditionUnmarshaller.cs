@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BooleanCondition Object
+    /// Response Unmarshaller for CompoundCondition Object
     /// </summary>  
-    public class BooleanConditionUnmarshaller : IUnmarshaller<BooleanCondition, XmlUnmarshallerContext>, IUnmarshaller<BooleanCondition, JsonUnmarshallerContext>
+    public class CompoundConditionUnmarshaller : IUnmarshaller<CompoundCondition, XmlUnmarshallerContext>, IUnmarshaller<CompoundCondition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        BooleanCondition IUnmarshaller<BooleanCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CompoundCondition IUnmarshaller<CompoundCondition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public BooleanCondition Unmarshall(JsonUnmarshallerContext context)
+        public CompoundCondition Unmarshall(JsonUnmarshallerContext context)
         {
-            BooleanCondition unmarshalledObject = new BooleanCondition();
+            CompoundCondition unmarshalledObject = new CompoundCondition();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("andAll", targetDepth))
+                if (context.TestExpression("conditions", targetDepth))
                 {
-                    var unmarshaller = CompoundConditionUnmarshaller.Instance;
-                    unmarshalledObject.AndAll = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("equalTo", targetDepth))
-                {
-                    var unmarshaller = BooleanOperandsUnmarshaller.Instance;
-                    unmarshalledObject.EqualTo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("notEqualTo", targetDepth))
-                {
-                    var unmarshaller = BooleanOperandsUnmarshaller.Instance;
-                    unmarshalledObject.NotEqualTo = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("orAll", targetDepth))
-                {
-                    var unmarshaller = CompoundConditionUnmarshaller.Instance;
-                    unmarshalledObject.OrAll = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<BooleanCondition, BooleanConditionUnmarshaller>(BooleanConditionUnmarshaller.Instance);
+                    unmarshalledObject.Conditions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
 
 
-        private static BooleanConditionUnmarshaller _instance = new BooleanConditionUnmarshaller();        
+        private static CompoundConditionUnmarshaller _instance = new CompoundConditionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BooleanConditionUnmarshaller Instance
+        public static CompoundConditionUnmarshaller Instance
         {
             get
             {

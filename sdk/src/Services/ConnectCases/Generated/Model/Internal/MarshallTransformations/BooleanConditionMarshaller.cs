@@ -48,6 +48,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAndAll())
+            {
+                context.Writer.WritePropertyName("andAll");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CompoundConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.AndAll, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEqualTo())
             {
                 context.Writer.WritePropertyName("equalTo");
@@ -66,6 +77,17 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 
                 var marshaller = BooleanOperandsMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotEqualTo, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetOrAll())
+            {
+                context.Writer.WritePropertyName("orAll");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CompoundConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.OrAll, context);
 
                 context.Writer.WriteObjectEnd();
             }
