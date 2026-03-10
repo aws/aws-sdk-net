@@ -2631,6 +2631,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         public static readonly ServerProtocol A2A = new ServerProtocol("A2A");
         /// <summary>
+        /// Constant AGUI for ServerProtocol
+        /// </summary>
+        public static readonly ServerProtocol AGUI = new ServerProtocol("AGUI");
+        /// <summary>
         /// Constant HTTP for ServerProtocol
         /// </summary>
         public static readonly ServerProtocol HTTP = new ServerProtocol("HTTP");
