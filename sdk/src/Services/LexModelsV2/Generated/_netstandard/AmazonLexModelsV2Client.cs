@@ -1426,6 +1426,62 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  DeleteBotAnalyzerRecommendation
+
+        internal virtual DeleteBotAnalyzerRecommendationResponse DeleteBotAnalyzerRecommendation(DeleteBotAnalyzerRecommendationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteBotAnalyzerRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBotAnalyzerRecommendationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBotAnalyzerRecommendationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Permanently deletes the recommendations and analysis results for a specific bot analysis
+        /// request. This operation is provided for GDPR compliance and cannot be undone.
+        /// 
+        ///  
+        /// <para>
+        /// After deletion, the analysis results cannot be retrieved. The analysis request ID
+        /// will still appear in the history list, but attempting to describe the recommendations
+        /// will return a <c>ResourceNotFoundException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBotAnalyzerRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBotAnalyzerRecommendation service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotAnalyzerRecommendation">REST API Reference for DeleteBotAnalyzerRecommendation Operation</seealso>
+        public virtual Task<DeleteBotAnalyzerRecommendationResponse> DeleteBotAnalyzerRecommendationAsync(DeleteBotAnalyzerRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteBotAnalyzerRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBotAnalyzerRecommendationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBotAnalyzerRecommendationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteBotLocale
 
         internal virtual DeleteBotLocaleResponse DeleteBotLocale(DeleteBotLocaleRequest request)
@@ -2259,6 +2315,61 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = DescribeBotAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeBotAliasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeBotAnalyzerRecommendation
+
+        internal virtual DescribeBotAnalyzerRecommendationResponse DescribeBotAnalyzerRecommendation(DescribeBotAnalyzerRecommendationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeBotAnalyzerRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBotAnalyzerRecommendationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBotAnalyzerRecommendationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the analysis results and recommendations for bot optimization. The analysis
+        /// must be in <c>Available</c> status before recommendations can be retrieved.
+        /// 
+        ///  
+        /// <para>
+        /// Recommendations are returned with pagination support. Each recommendation includes
+        /// the issue location, priority level, detailed description, and proposed fix.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotAnalyzerRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBotAnalyzerRecommendation service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotAnalyzerRecommendation">REST API Reference for DescribeBotAnalyzerRecommendation Operation</seealso>
+        public virtual Task<DescribeBotAnalyzerRecommendationResponse> DescribeBotAnalyzerRecommendationAsync(DescribeBotAnalyzerRecommendationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeBotAnalyzerRecommendationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeBotAnalyzerRecommendationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeBotAnalyzerRecommendationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3350,6 +3461,61 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = ListBotAliasReplicasResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListBotAliasReplicasResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBotAnalyzerHistory
+
+        internal virtual ListBotAnalyzerHistoryResponse ListBotAnalyzerHistory(ListBotAnalyzerHistoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBotAnalyzerHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotAnalyzerHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListBotAnalyzerHistoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of historical bot analysis executions for a specific bot. You can
+        /// filter the results by locale and bot version.
+        /// 
+        ///  
+        /// <para>
+        /// The history includes all analysis executions regardless of their status, allowing
+        /// you to track past analyses and their outcomes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotAnalyzerHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBotAnalyzerHistory service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAnalyzerHistory">REST API Reference for ListBotAnalyzerHistory Operation</seealso>
+        public virtual Task<ListBotAnalyzerHistoryResponse> ListBotAnalyzerHistoryAsync(ListBotAnalyzerHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBotAnalyzerHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBotAnalyzerHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBotAnalyzerHistoryResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5004,6 +5170,66 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  StartBotAnalyzer
+
+        internal virtual StartBotAnalyzerResponse StartBotAnalyzer(StartBotAnalyzerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartBotAnalyzerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBotAnalyzerResponseUnmarshaller.Instance;
+
+            return Invoke<StartBotAnalyzerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Initiates an asynchronous analysis of your bot configuration using AI-powered analysis
+        /// to identify potential issues and recommend improvements based on AWS best practices.
+        /// 
+        ///  
+        /// <para>
+        /// The analysis examines your bot's configuration, including intents, utterances, slots,
+        /// and conversation flows, to provide actionable recommendations for optimization.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBotAnalyzer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartBotAnalyzer service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotAnalyzer">REST API Reference for StartBotAnalyzer Operation</seealso>
+        public virtual Task<StartBotAnalyzerResponse> StartBotAnalyzerAsync(StartBotAnalyzerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartBotAnalyzerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartBotAnalyzerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartBotAnalyzerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartBotRecommendation
 
         internal virtual StartBotRecommendationResponse StartBotRecommendation(StartBotRecommendationRequest request)
@@ -5289,6 +5515,55 @@ namespace Amazon.LexModelsV2
             options.ResponseUnmarshaller = StartTestSetGenerationResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartTestSetGenerationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopBotAnalyzer
+
+        internal virtual StopBotAnalyzerResponse StopBotAnalyzer(StopBotAnalyzerRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopBotAnalyzerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopBotAnalyzerResponseUnmarshaller.Instance;
+
+            return Invoke<StopBotAnalyzerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Cancels an ongoing bot analysis execution. Once stopped, the analysis cannot be resumed
+        /// and no recommendations will be generated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopBotAnalyzer service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopBotAnalyzer service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StopBotAnalyzer">REST API Reference for StopBotAnalyzer Operation</seealso>
+        public virtual Task<StopBotAnalyzerResponse> StopBotAnalyzerAsync(StopBotAnalyzerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopBotAnalyzerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopBotAnalyzerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopBotAnalyzerResponse>(request, options, cancellationToken);
         }
 
         #endregion

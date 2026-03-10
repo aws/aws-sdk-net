@@ -171,6 +171,52 @@ namespace Amazon.LexModelsV2
 
 
     /// <summary>
+    /// Constants used for properties of type AnalysisScope.
+    /// </summary>
+    public class AnalysisScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BotLocale for AnalysisScope
+        /// </summary>
+        public static readonly AnalysisScope BotLocale = new AnalysisScope("BotLocale");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisScope FindValue(string value)
+        {
+            return FindValue<AnalysisScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnalyticsBinByName.
     /// </summary>
     public class AnalyticsBinByName : ConstantClass
@@ -1826,6 +1872,68 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BotAliasStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BotAnalyzerStatus.
+    /// </summary>
+    public class BotAnalyzerStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for BotAnalyzerStatus
+        /// </summary>
+        public static readonly BotAnalyzerStatus Available = new BotAnalyzerStatus("Available");
+        /// <summary>
+        /// Constant Failed for BotAnalyzerStatus
+        /// </summary>
+        public static readonly BotAnalyzerStatus Failed = new BotAnalyzerStatus("Failed");
+        /// <summary>
+        /// Constant Processing for BotAnalyzerStatus
+        /// </summary>
+        public static readonly BotAnalyzerStatus Processing = new BotAnalyzerStatus("Processing");
+        /// <summary>
+        /// Constant Stopped for BotAnalyzerStatus
+        /// </summary>
+        public static readonly BotAnalyzerStatus Stopped = new BotAnalyzerStatus("Stopped");
+        /// <summary>
+        /// Constant Stopping for BotAnalyzerStatus
+        /// </summary>
+        public static readonly BotAnalyzerStatus Stopping = new BotAnalyzerStatus("Stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BotAnalyzerStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BotAnalyzerStatus FindValue(string value)
+        {
+            return FindValue<BotAnalyzerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BotAnalyzerStatus(string value)
         {
             return FindValue(value);
         }
@@ -4032,6 +4140,60 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ObfuscationSettingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Priority.
+    /// </summary>
+    public class Priority : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant High for Priority
+        /// </summary>
+        public static readonly Priority High = new Priority("High");
+        /// <summary>
+        /// Constant Low for Priority
+        /// </summary>
+        public static readonly Priority Low = new Priority("Low");
+        /// <summary>
+        /// Constant Medium for Priority
+        /// </summary>
+        public static readonly Priority Medium = new Priority("Medium");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Priority(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Priority FindValue(string value)
+        {
+            return FindValue<Priority>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Priority(string value)
         {
             return FindValue(value);
         }

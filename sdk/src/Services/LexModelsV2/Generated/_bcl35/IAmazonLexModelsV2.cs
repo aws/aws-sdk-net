@@ -1317,6 +1317,68 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  DeleteBotAnalyzerRecommendation
+
+
+        /// <summary>
+        /// Permanently deletes the recommendations and analysis results for a specific bot analysis
+        /// request. This operation is provided for GDPR compliance and cannot be undone.
+        /// 
+        ///  
+        /// <para>
+        /// After deletion, the analysis results cannot be retrieved. The analysis request ID
+        /// will still appear in the history list, but attempting to describe the recommendations
+        /// will return a <c>ResourceNotFoundException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBotAnalyzerRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBotAnalyzerRecommendation service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotAnalyzerRecommendation">REST API Reference for DeleteBotAnalyzerRecommendation Operation</seealso>
+        DeleteBotAnalyzerRecommendationResponse DeleteBotAnalyzerRecommendation(DeleteBotAnalyzerRecommendationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBotAnalyzerRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBotAnalyzerRecommendation operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBotAnalyzerRecommendation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotAnalyzerRecommendation">REST API Reference for DeleteBotAnalyzerRecommendation Operation</seealso>
+        IAsyncResult BeginDeleteBotAnalyzerRecommendation(DeleteBotAnalyzerRecommendationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBotAnalyzerRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBotAnalyzerRecommendation.</param>
+        /// 
+        /// <returns>Returns a  DeleteBotAnalyzerRecommendationResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotAnalyzerRecommendation">REST API Reference for DeleteBotAnalyzerRecommendation Operation</seealso>
+        DeleteBotAnalyzerRecommendationResponse EndDeleteBotAnalyzerRecommendation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteBotLocale
 
 
@@ -2241,6 +2303,67 @@ namespace Amazon.LexModelsV2
         /// <returns>Returns a  DescribeBotAliasResult from LexModelsV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotAlias">REST API Reference for DescribeBotAlias Operation</seealso>
         DescribeBotAliasResponse EndDescribeBotAlias(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeBotAnalyzerRecommendation
+
+
+        /// <summary>
+        /// Retrieves the analysis results and recommendations for bot optimization. The analysis
+        /// must be in <c>Available</c> status before recommendations can be retrieved.
+        /// 
+        ///  
+        /// <para>
+        /// Recommendations are returned with pagination support. Each recommendation includes
+        /// the issue location, priority level, detailed description, and proposed fix.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotAnalyzerRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBotAnalyzerRecommendation service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotAnalyzerRecommendation">REST API Reference for DescribeBotAnalyzerRecommendation Operation</seealso>
+        DescribeBotAnalyzerRecommendationResponse DescribeBotAnalyzerRecommendation(DescribeBotAnalyzerRecommendationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBotAnalyzerRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBotAnalyzerRecommendation operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBotAnalyzerRecommendation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotAnalyzerRecommendation">REST API Reference for DescribeBotAnalyzerRecommendation Operation</seealso>
+        IAsyncResult BeginDescribeBotAnalyzerRecommendation(DescribeBotAnalyzerRecommendationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBotAnalyzerRecommendation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBotAnalyzerRecommendation.</param>
+        /// 
+        /// <returns>Returns a  DescribeBotAnalyzerRecommendationResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotAnalyzerRecommendation">REST API Reference for DescribeBotAnalyzerRecommendation Operation</seealso>
+        DescribeBotAnalyzerRecommendationResponse EndDescribeBotAnalyzerRecommendation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3458,6 +3581,67 @@ namespace Amazon.LexModelsV2
         /// <returns>Returns a  ListBotAliasReplicasResult from LexModelsV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliasReplicas">REST API Reference for ListBotAliasReplicas Operation</seealso>
         ListBotAliasReplicasResponse EndListBotAliasReplicas(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListBotAnalyzerHistory
+
+
+        /// <summary>
+        /// Retrieves a list of historical bot analysis executions for a specific bot. You can
+        /// filter the results by locale and bot version.
+        /// 
+        ///  
+        /// <para>
+        /// The history includes all analysis executions regardless of their status, allowing
+        /// you to track past analyses and their outcomes.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBotAnalyzerHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListBotAnalyzerHistory service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAnalyzerHistory">REST API Reference for ListBotAnalyzerHistory Operation</seealso>
+        ListBotAnalyzerHistoryResponse ListBotAnalyzerHistory(ListBotAnalyzerHistoryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBotAnalyzerHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBotAnalyzerHistory operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBotAnalyzerHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAnalyzerHistory">REST API Reference for ListBotAnalyzerHistory Operation</seealso>
+        IAsyncResult BeginListBotAnalyzerHistory(ListBotAnalyzerHistoryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBotAnalyzerHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBotAnalyzerHistory.</param>
+        /// 
+        /// <returns>Returns a  ListBotAnalyzerHistoryResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAnalyzerHistory">REST API Reference for ListBotAnalyzerHistory Operation</seealso>
+        ListBotAnalyzerHistoryResponse EndListBotAnalyzerHistory(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5285,6 +5469,72 @@ namespace Amazon.LexModelsV2
 
         #endregion
         
+        #region  StartBotAnalyzer
+
+
+        /// <summary>
+        /// Initiates an asynchronous analysis of your bot configuration using AI-powered analysis
+        /// to identify potential issues and recommend improvements based on AWS best practices.
+        /// 
+        ///  
+        /// <para>
+        /// The analysis examines your bot's configuration, including intents, utterances, slots,
+        /// and conversation flows, to provide actionable recommendations for optimization.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartBotAnalyzer service method.</param>
+        /// 
+        /// <returns>The response from the StartBotAnalyzer service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.ConflictException">
+        /// The action that you tried to perform couldn't be completed because the resource is
+        /// in a conflicting state. For example, deleting a bot that is in the CREATING state.
+        /// Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotAnalyzer">REST API Reference for StartBotAnalyzer Operation</seealso>
+        StartBotAnalyzerResponse StartBotAnalyzer(StartBotAnalyzerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartBotAnalyzer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartBotAnalyzer operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartBotAnalyzer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotAnalyzer">REST API Reference for StartBotAnalyzer Operation</seealso>
+        IAsyncResult BeginStartBotAnalyzer(StartBotAnalyzerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartBotAnalyzer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartBotAnalyzer.</param>
+        /// 
+        /// <returns>Returns a  StartBotAnalyzerResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotAnalyzer">REST API Reference for StartBotAnalyzer Operation</seealso>
+        StartBotAnalyzerResponse EndStartBotAnalyzer(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartBotRecommendation
 
 
@@ -5601,6 +5851,61 @@ namespace Amazon.LexModelsV2
         /// <returns>Returns a  StartTestSetGenerationResult from LexModelsV2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartTestSetGeneration">REST API Reference for StartTestSetGeneration Operation</seealso>
         StartTestSetGenerationResponse EndStartTestSetGeneration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopBotAnalyzer
+
+
+        /// <summary>
+        /// Cancels an ongoing bot analysis execution. Once stopped, the analysis cannot be resumed
+        /// and no recommendations will be generated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopBotAnalyzer service method.</param>
+        /// 
+        /// <returns>The response from the StopBotAnalyzer service method, as returned by LexModelsV2.</returns>
+        /// <exception cref="Amazon.LexModelsV2.Model.InternalServerException">
+        /// The service encountered an unexpected condition. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ResourceNotFoundException">
+        /// You asked to describe a resource that doesn't exist. Check the resource that you are
+        /// requesting and try again.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ThrottlingException">
+        /// Your request rate is too high. Reduce the frequency of requests.
+        /// </exception>
+        /// <exception cref="Amazon.LexModelsV2.Model.ValidationException">
+        /// One of the input parameters in your request isn't valid. Check the parameters and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StopBotAnalyzer">REST API Reference for StopBotAnalyzer Operation</seealso>
+        StopBotAnalyzerResponse StopBotAnalyzer(StopBotAnalyzerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopBotAnalyzer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopBotAnalyzer operation on AmazonLexModelsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopBotAnalyzer
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StopBotAnalyzer">REST API Reference for StopBotAnalyzer Operation</seealso>
+        IAsyncResult BeginStopBotAnalyzer(StopBotAnalyzerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopBotAnalyzer operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopBotAnalyzer.</param>
+        /// 
+        /// <returns>Returns a  StopBotAnalyzerResult from LexModelsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StopBotAnalyzer">REST API Reference for StopBotAnalyzer Operation</seealso>
+        StopBotAnalyzerResponse EndStopBotAnalyzer(IAsyncResult asyncResult);
 
         #endregion
         
