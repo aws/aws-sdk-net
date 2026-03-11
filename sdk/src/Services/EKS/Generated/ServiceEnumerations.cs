@@ -2103,6 +2103,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly ProvisionedControlPlaneTier Tier4xl = new ProvisionedControlPlaneTier("tier-4xl");
         /// <summary>
+        /// Constant Tier8xl for ProvisionedControlPlaneTier
+        /// </summary>
+        public static readonly ProvisionedControlPlaneTier Tier8xl = new ProvisionedControlPlaneTier("tier-8xl");
+        /// <summary>
         /// Constant TierXl for ProvisionedControlPlaneTier
         /// </summary>
         public static readonly ProvisionedControlPlaneTier TierXl = new ProvisionedControlPlaneTier("tier-xl");
