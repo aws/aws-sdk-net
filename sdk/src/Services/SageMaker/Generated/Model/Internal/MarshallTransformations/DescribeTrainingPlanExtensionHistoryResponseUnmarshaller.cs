@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SearchTrainingPlanOfferings operation
+    /// Response Unmarshaller for DescribeTrainingPlanExtensionHistory operation
     /// </summary>  
-    public class SearchTrainingPlanOfferingsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeTrainingPlanExtensionHistoryResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,22 +46,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            SearchTrainingPlanOfferingsResponse response = new SearchTrainingPlanOfferingsResponse();
+            DescribeTrainingPlanExtensionHistoryResponse response = new DescribeTrainingPlanExtensionHistoryResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("TrainingPlanExtensionOfferings", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<TrainingPlanExtensionOffering, TrainingPlanExtensionOfferingUnmarshaller>(TrainingPlanExtensionOfferingUnmarshaller.Instance);
-                    response.TrainingPlanExtensionOfferings = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TrainingPlanOfferings", targetDepth))
+                if (context.TestExpression("TrainingPlanExtensions", targetDepth))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<TrainingPlanOffering, TrainingPlanOfferingUnmarshaller>(TrainingPlanOfferingUnmarshaller.Instance);
-                    response.TrainingPlanOfferings = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<TrainingPlanExtension, TrainingPlanExtensionUnmarshaller>(TrainingPlanExtensionUnmarshaller.Instance);
+                    response.TrainingPlanExtensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -89,17 +89,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceeded"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFound"))
                 {
-                    return ResourceLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonSageMakerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static SearchTrainingPlanOfferingsResponseUnmarshaller _instance = new SearchTrainingPlanOfferingsResponseUnmarshaller();        
+        private static DescribeTrainingPlanExtensionHistoryResponseUnmarshaller _instance = new DescribeTrainingPlanExtensionHistoryResponseUnmarshaller();        
 
-        internal static SearchTrainingPlanOfferingsResponseUnmarshaller GetInstance()
+        internal static DescribeTrainingPlanExtensionHistoryResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -107,7 +107,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchTrainingPlanOfferingsResponseUnmarshaller Instance
+        public static DescribeTrainingPlanExtensionHistoryResponseUnmarshaller Instance
         {
             get
             {

@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SearchTrainingPlanOfferings Request Marshaller
+    /// ExtendTrainingPlan Request Marshaller
     /// </summary>       
-    public class SearchTrainingPlanOfferingsRequestMarshaller : IMarshaller<IRequest, SearchTrainingPlanOfferingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ExtendTrainingPlanRequestMarshaller : IMarshaller<IRequest, ExtendTrainingPlanRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((SearchTrainingPlanOfferingsRequest)input);
+            return this.Marshall((ExtendTrainingPlanRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(SearchTrainingPlanOfferingsRequest publicRequest)
+        public IRequest Marshall(ExtendTrainingPlanRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
-            string target = "SageMaker.SearchTrainingPlanOfferings";
+            string target = "SageMaker.ExtendTrainingPlan";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
@@ -75,63 +75,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDurationHours())
+            if(publicRequest.IsSetTrainingPlanExtensionOfferingId())
             {
-                context.Writer.WritePropertyName("DurationHours");
-                context.Writer.WriteNumberValue(publicRequest.DurationHours.Value);
-            }
-
-            if(publicRequest.IsSetEndTimeBefore())
-            {
-                context.Writer.WritePropertyName("EndTimeBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTimeBefore.Value)));
-            }
-
-            if(publicRequest.IsSetInstanceCount())
-            {
-                context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.WriteNumberValue(publicRequest.InstanceCount.Value);
-            }
-
-            if(publicRequest.IsSetInstanceType())
-            {
-                context.Writer.WritePropertyName("InstanceType");
-                context.Writer.WriteStringValue(publicRequest.InstanceType);
-            }
-
-            if(publicRequest.IsSetStartTimeAfter())
-            {
-                context.Writer.WritePropertyName("StartTimeAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTimeAfter.Value)));
-            }
-
-            if(publicRequest.IsSetTargetResources())
-            {
-                context.Writer.WritePropertyName("TargetResources");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTargetResourcesListValue in publicRequest.TargetResources)
-                {
-                        context.Writer.WriteStringValue(publicRequestTargetResourcesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetTrainingPlanArn())
-            {
-                context.Writer.WritePropertyName("TrainingPlanArn");
-                context.Writer.WriteStringValue(publicRequest.TrainingPlanArn);
-            }
-
-            if(publicRequest.IsSetUltraServerCount())
-            {
-                context.Writer.WritePropertyName("UltraServerCount");
-                context.Writer.WriteNumberValue(publicRequest.UltraServerCount.Value);
-            }
-
-            if(publicRequest.IsSetUltraServerType())
-            {
-                context.Writer.WritePropertyName("UltraServerType");
-                context.Writer.WriteStringValue(publicRequest.UltraServerType);
+                context.Writer.WritePropertyName("TrainingPlanExtensionOfferingId");
+                context.Writer.WriteStringValue(publicRequest.TrainingPlanExtensionOfferingId);
             }
 
             writer.WriteEndObject();
@@ -147,9 +94,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static SearchTrainingPlanOfferingsRequestMarshaller _instance = new SearchTrainingPlanOfferingsRequestMarshaller();        
+        private static ExtendTrainingPlanRequestMarshaller _instance = new ExtendTrainingPlanRequestMarshaller();        
 
-        internal static SearchTrainingPlanOfferingsRequestMarshaller GetInstance()
+        internal static ExtendTrainingPlanRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -157,7 +104,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchTrainingPlanOfferingsRequestMarshaller Instance
+        public static ExtendTrainingPlanRequestMarshaller Instance
         {
             get
             {
