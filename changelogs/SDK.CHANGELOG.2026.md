@@ -1,3 +1,17 @@
+### 4.0.208.0 (2026-03-11 18:42 UTC)
+* CustomerProfiles (4.0.9.0)
+	* Today, Amazon Connect is announcing the ability to filter (include or exclude) recommendations based on properties of items and interactions.
+* EKS (4.0.14.0)
+	* Adds support for a new tier in controlPlaneScalingConfig on EKS Clusters.
+* Polly (4.0.4.0)
+	* Added support for the new voices - Ambre (fr-FR), Beatrice (it-IT), Florian (fr-FR), Lennart (de-DE), Lorenzo (it-IT) and Tiffany (en-US). They are available as a Generative voices only.
+* SageMaker (4.0.46.0)
+	* SageMaker training plans allow you to extend your existing training plans to avoid workload interruptions without workload reconfiguration. When a training plan is approaching expiration, you can extend it directly through the SageMaker AI console or programmatically using the API or AWS CLI.
+* SimpleDBv2 (4.0.0.0)
+	* Introduced Amazon SimpleDB export functionality enabling domain data export to S3 in JSON format. Added three new APIs StartDomainExport, GetExport, and ListExports via SimpleDBv2 service. Supports cross-region exports and KMS encryption.
+* WorkSpaces (4.0.10.0)
+	* Added WINDOWS SERVER 2025 OperatingSystemName.
+
 ### 4.0.207.0 (2026-03-10 18:16 UTC)
 * BedrockAgentCoreControl (4.0.19.0)
 	* Adding first class support for AG-UI protocol in AgentCore Runtime.
