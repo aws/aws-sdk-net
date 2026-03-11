@@ -92,7 +92,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Returns the signature in a form usable as a set of query string parameters.
         /// </summary>
-        public string ForQueryParameters
+        public override string ForQueryParameters
         {
             get
             {
