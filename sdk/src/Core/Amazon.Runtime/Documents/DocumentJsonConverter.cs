@@ -79,11 +79,9 @@ namespace Amazon.Runtime.Documents
                     {
                         if (reader.TokenType == JsonTokenType.EndObject)
                             break;
-                        if (reader.TokenType != JsonTokenType.PropertyName)
-                            throw new JsonException($"Expected PropertyName but got {reader.TokenType}");
                         var key = reader.GetString();
                         reader.Read();
-                        dict[key] = ReadDocument(ref reader);
+                        dict.Add(key, ReadDocument(ref reader));
                     }
                     return new Document(dict);
 

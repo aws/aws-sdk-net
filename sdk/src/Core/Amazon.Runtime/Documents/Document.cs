@@ -441,6 +441,8 @@ namespace Amazon.Runtime.Documents
                 case JsonValueKind.True:
                     return new Document(jsonElement.GetBoolean());
                 case JsonValueKind.Number:
+                    if (jsonElement.TryGetInt32(out int intValue))
+                        return new Document(intValue);
                     if (jsonElement.TryGetInt64(out long longValue))
                         return new Document(longValue);
                     if (jsonElement.TryGetDouble(out double doubleValue))
