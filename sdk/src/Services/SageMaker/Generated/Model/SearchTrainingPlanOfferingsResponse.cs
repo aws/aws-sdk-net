@@ -34,7 +34,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class SearchTrainingPlanOfferingsResponse : AmazonWebServiceResponse
     {
+        private List<TrainingPlanExtensionOffering> _trainingPlanExtensionOfferings = AWSConfigs.InitializeCollections ? new List<TrainingPlanExtensionOffering>() : null;
         private List<TrainingPlanOffering> _trainingPlanOfferings = AWSConfigs.InitializeCollections ? new List<TrainingPlanOffering>() : null;
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanExtensionOfferings. 
+        /// <para>
+        /// A list of extension offerings available for the specified training plan. These offerings
+        /// can be used with the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExtendTrainingPlan.html">ExtendTrainingPlan</a>
+        /// </c> API to extend an existing training plan.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public List<TrainingPlanExtensionOffering> TrainingPlanExtensionOfferings
+        {
+            get { return this._trainingPlanExtensionOfferings; }
+            set { this._trainingPlanExtensionOfferings = value; }
+        }
+
+        // Check to see if TrainingPlanExtensionOfferings property is set
+        internal bool IsSetTrainingPlanExtensionOfferings()
+        {
+            return this._trainingPlanExtensionOfferings != null && (this._trainingPlanExtensionOfferings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property TrainingPlanOfferings. 

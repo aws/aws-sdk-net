@@ -13279,6 +13279,65 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeTrainingPlanExtensionHistory
+
+        /// <summary>
+        /// Retrieves the extension history for a specified training plan. The response includes
+        /// details about each extension, such as the offering ID, start and end dates, status,
+        /// payment status, and cost information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingPlanExtensionHistory service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrainingPlanExtensionHistory service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlanExtensionHistory">REST API Reference for DescribeTrainingPlanExtensionHistory Operation</seealso>
+        public virtual DescribeTrainingPlanExtensionHistoryResponse DescribeTrainingPlanExtensionHistory(DescribeTrainingPlanExtensionHistoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTrainingPlanExtensionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrainingPlanExtensionHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrainingPlanExtensionHistoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrainingPlanExtensionHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingPlanExtensionHistory operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrainingPlanExtensionHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlanExtensionHistory">REST API Reference for DescribeTrainingPlanExtensionHistory Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTrainingPlanExtensionHistory(DescribeTrainingPlanExtensionHistoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTrainingPlanExtensionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrainingPlanExtensionHistoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrainingPlanExtensionHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrainingPlanExtensionHistory.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrainingPlanExtensionHistoryResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlanExtensionHistory">REST API Reference for DescribeTrainingPlanExtensionHistory Operation</seealso>
+        public virtual DescribeTrainingPlanExtensionHistoryResponse EndDescribeTrainingPlanExtensionHistory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTrainingPlanExtensionHistoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeTransformJob
 
         /// <summary>
@@ -13869,6 +13928,76 @@ namespace Amazon.SageMaker
         public virtual EnableSagemakerServicecatalogPortfolioResponse EndEnableSagemakerServicecatalogPortfolio(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableSagemakerServicecatalogPortfolioResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExtendTrainingPlan
+
+        /// <summary>
+        /// Extends an existing training plan by purchasing an extension offering. This allows
+        /// you to add additional compute capacity time to your training plan without creating
+        /// a new plan or reconfiguring your workloads.
+        /// 
+        ///  
+        /// <para>
+        /// To find available extension offerings, use the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchTrainingPlanOfferings.html">SearchTrainingPlanOfferings</a>
+        /// </c> API with the <c>TrainingPlanArn</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// To view the history of extensions for a training plan, use the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingPlanExtensionHistory.html">DescribeTrainingPlanExtensionHistory</a>
+        /// </c> API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExtendTrainingPlan service method.</param>
+        /// 
+        /// <returns>The response from the ExtendTrainingPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ExtendTrainingPlan">REST API Reference for ExtendTrainingPlan Operation</seealso>
+        public virtual ExtendTrainingPlanResponse ExtendTrainingPlan(ExtendTrainingPlanRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ExtendTrainingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExtendTrainingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<ExtendTrainingPlanResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExtendTrainingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExtendTrainingPlan operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExtendTrainingPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ExtendTrainingPlan">REST API Reference for ExtendTrainingPlan Operation</seealso>
+        public virtual IAsyncResult BeginExtendTrainingPlan(ExtendTrainingPlanRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ExtendTrainingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExtendTrainingPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExtendTrainingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExtendTrainingPlan.</param>
+        /// 
+        /// <returns>Returns a  ExtendTrainingPlanResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ExtendTrainingPlan">REST API Reference for ExtendTrainingPlan Operation</seealso>
+        public virtual ExtendTrainingPlanResponse EndExtendTrainingPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExtendTrainingPlanResponse>(asyncResult);
         }
 
         #endregion

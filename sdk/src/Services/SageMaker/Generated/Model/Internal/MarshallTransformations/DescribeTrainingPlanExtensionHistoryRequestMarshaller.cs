@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SearchTrainingPlanOfferings Request Marshaller
+    /// DescribeTrainingPlanExtensionHistory Request Marshaller
     /// </summary>       
-    public class SearchTrainingPlanOfferingsRequestMarshaller : IMarshaller<IRequest, SearchTrainingPlanOfferingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeTrainingPlanExtensionHistoryRequestMarshaller : IMarshaller<IRequest, DescribeTrainingPlanExtensionHistoryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((SearchTrainingPlanOfferingsRequest)input);
+            return this.Marshall((DescribeTrainingPlanExtensionHistoryRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(SearchTrainingPlanOfferingsRequest publicRequest)
+        public IRequest Marshall(DescribeTrainingPlanExtensionHistoryRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SageMaker");
-            string target = "SageMaker.SearchTrainingPlanOfferings";
+            string target = "SageMaker.DescribeTrainingPlanExtensionHistory";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-24";
@@ -69,63 +69,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDurationHours())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("DurationHours");
-                    context.Writer.Write(publicRequest.DurationHours);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetEndTimeBefore())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("EndTimeBefore");
-                    context.Writer.Write(publicRequest.EndTimeBefore);
-                }
-
-                if(publicRequest.IsSetInstanceCount())
-                {
-                    context.Writer.WritePropertyName("InstanceCount");
-                    context.Writer.Write(publicRequest.InstanceCount);
-                }
-
-                if(publicRequest.IsSetInstanceType())
-                {
-                    context.Writer.WritePropertyName("InstanceType");
-                    context.Writer.Write(publicRequest.InstanceType);
-                }
-
-                if(publicRequest.IsSetStartTimeAfter())
-                {
-                    context.Writer.WritePropertyName("StartTimeAfter");
-                    context.Writer.Write(publicRequest.StartTimeAfter);
-                }
-
-                if(publicRequest.IsSetTargetResources())
-                {
-                    context.Writer.WritePropertyName("TargetResources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTargetResourcesListValue in publicRequest.TargetResources)
-                    {
-                            context.Writer.Write(publicRequestTargetResourcesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
                 if(publicRequest.IsSetTrainingPlanArn())
                 {
                     context.Writer.WritePropertyName("TrainingPlanArn");
                     context.Writer.Write(publicRequest.TrainingPlanArn);
-                }
-
-                if(publicRequest.IsSetUltraServerCount())
-                {
-                    context.Writer.WritePropertyName("UltraServerCount");
-                    context.Writer.Write(publicRequest.UltraServerCount);
-                }
-
-                if(publicRequest.IsSetUltraServerType())
-                {
-                    context.Writer.WritePropertyName("UltraServerType");
-                    context.Writer.Write(publicRequest.UltraServerType);
                 }
 
                 writer.WriteObjectEnd();
@@ -136,9 +95,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static SearchTrainingPlanOfferingsRequestMarshaller _instance = new SearchTrainingPlanOfferingsRequestMarshaller();        
+        private static DescribeTrainingPlanExtensionHistoryRequestMarshaller _instance = new DescribeTrainingPlanExtensionHistoryRequestMarshaller();        
 
-        internal static SearchTrainingPlanOfferingsRequestMarshaller GetInstance()
+        internal static DescribeTrainingPlanExtensionHistoryRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -146,7 +105,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SearchTrainingPlanOfferingsRequestMarshaller Instance
+        public static DescribeTrainingPlanExtensionHistoryRequestMarshaller Instance
         {
             get
             {

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReservedCapacityOffering Object
+    /// Response Unmarshaller for TrainingPlanExtension Object
     /// </summary>  
-    public class ReservedCapacityOfferingUnmarshaller : IUnmarshaller<ReservedCapacityOffering, XmlUnmarshallerContext>, IUnmarshaller<ReservedCapacityOffering, JsonUnmarshallerContext>
+    public class TrainingPlanExtensionUnmarshaller : IUnmarshaller<TrainingPlanExtension, XmlUnmarshallerContext>, IUnmarshaller<TrainingPlanExtension, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ReservedCapacityOffering IUnmarshaller<ReservedCapacityOffering, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TrainingPlanExtension IUnmarshaller<TrainingPlanExtension, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReservedCapacityOffering Unmarshall(JsonUnmarshallerContext context)
+        public TrainingPlanExtension Unmarshall(JsonUnmarshallerContext context)
         {
-            ReservedCapacityOffering unmarshalledObject = new ReservedCapacityOffering();
+            TrainingPlanExtension unmarshalledObject = new TrainingPlanExtension();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,70 +72,64 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AvailabilityZoneId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CurrencyCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DurationHours", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.DurationHours = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DurationMinutes", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.DurationMinutes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EndTime", targetDepth))
+                if (context.TestExpression("EndDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExtensionEndTime", targetDepth))
+                if (context.TestExpression("ExtendedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ExtensionEndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExtendedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExtensionStartTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ExtensionStartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceType", targetDepth))
+                if (context.TestExpression("PaymentStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PaymentStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ReservedCapacityType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReservedCapacityType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StartTime", targetDepth))
+                if (context.TestExpression("StartDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("UltraServerCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.UltraServerCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UltraServerType", targetDepth))
+                if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UltraServerType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrainingPlanExtensionOfferingId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrainingPlanExtensionOfferingId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UpfrontFee", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UpfrontFee = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -143,12 +137,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ReservedCapacityOfferingUnmarshaller _instance = new ReservedCapacityOfferingUnmarshaller();        
+        private static TrainingPlanExtensionUnmarshaller _instance = new TrainingPlanExtensionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReservedCapacityOfferingUnmarshaller Instance
+        public static TrainingPlanExtensionUnmarshaller Instance
         {
             get
             {
