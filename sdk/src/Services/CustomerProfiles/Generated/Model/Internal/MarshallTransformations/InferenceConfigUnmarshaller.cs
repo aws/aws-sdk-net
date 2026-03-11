@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommenderConfig Object
+    /// Response Unmarshaller for InferenceConfig Object
     /// </summary>  
-    public class RecommenderConfigUnmarshaller : IJsonUnmarshaller<RecommenderConfig, JsonUnmarshallerContext>
+    public class InferenceConfigUnmarshaller : IJsonUnmarshaller<InferenceConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecommenderConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InferenceConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RecommenderConfig unmarshalledObject = new RecommenderConfig();
+            InferenceConfig unmarshalledObject = new InferenceConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("EventsConfig", targetDepth))
-                {
-                    var unmarshaller = EventsConfigUnmarshaller.Instance;
-                    unmarshalledObject.EventsConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InferenceConfig", targetDepth))
-                {
-                    var unmarshaller = InferenceConfigUnmarshaller.Instance;
-                    unmarshalledObject.InferenceConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TrainingFrequency", targetDepth))
+                if (context.TestExpression("MinProvisionedTPS", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TrainingFrequency = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.MinProvisionedTPS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommenderConfigUnmarshaller _instance = new RecommenderConfigUnmarshaller();        
+        private static InferenceConfigUnmarshaller _instance = new InferenceConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommenderConfigUnmarshaller Instance
+        public static InferenceConfigUnmarshaller Instance
         {
             get
             {

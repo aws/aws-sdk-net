@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RecommenderConfig Marshaller
+    /// MetadataConfig Marshaller
     /// </summary>
-    public class RecommenderConfigMarshaller : IRequestMarshaller<RecommenderConfig, JsonMarshallerContext> 
+    public class MetadataConfigMarshaller : IRequestMarshaller<MetadataConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,36 +42,19 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RecommenderConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(MetadataConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEventsConfig())
+            if(requestObject.IsSetMetadataColumns())
             {
-                context.Writer.WritePropertyName("EventsConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EventsConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.EventsConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetInferenceConfig())
-            {
-                context.Writer.WritePropertyName("InferenceConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = InferenceConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.InferenceConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetTrainingFrequency())
-            {
-                context.Writer.WritePropertyName("TrainingFrequency");
-                context.Writer.WriteNumberValue(requestObject.TrainingFrequency.Value);
+                context.Writer.WritePropertyName("MetadataColumns");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectMetadataColumnsListValue in requestObject.MetadataColumns)
+                {
+                        context.Writer.WriteStringValue(requestObjectMetadataColumnsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -79,7 +62,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RecommenderConfigMarshaller Instance = new RecommenderConfigMarshaller();
+        public readonly static MetadataConfigMarshaller Instance = new MetadataConfigMarshaller();
 
     }
 }

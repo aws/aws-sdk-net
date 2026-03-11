@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RecommenderConfig Marshaller
+    /// RecommenderPromotionalFilter Marshaller
     /// </summary>
-    public class RecommenderConfigMarshaller : IRequestMarshaller<RecommenderConfig, JsonMarshallerContext> 
+    public class RecommenderPromotionalFilterMarshaller : IRequestMarshaller<RecommenderPromotionalFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,36 +42,40 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RecommenderConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(RecommenderPromotionalFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEventsConfig())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("EventsConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EventsConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.EventsConfig, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
-            if(requestObject.IsSetInferenceConfig())
+            if(requestObject.IsSetPercentPromotedItems())
             {
-                context.Writer.WritePropertyName("InferenceConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = InferenceConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.InferenceConfig, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("PercentPromotedItems");
+                context.Writer.WriteNumberValue(requestObject.PercentPromotedItems.Value);
             }
 
-            if(requestObject.IsSetTrainingFrequency())
+            if(requestObject.IsSetPromotionName())
             {
-                context.Writer.WritePropertyName("TrainingFrequency");
-                context.Writer.WriteNumberValue(requestObject.TrainingFrequency.Value);
+                context.Writer.WritePropertyName("PromotionName");
+                context.Writer.WriteStringValue(requestObject.PromotionName);
+            }
+
+            if(requestObject.IsSetValues())
+            {
+                context.Writer.WritePropertyName("Values");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectValuesKvp in requestObject.Values)
+                {
+                    context.Writer.WritePropertyName(requestObjectValuesKvp.Key);
+                    var requestObjectValuesValue = requestObjectValuesKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectValuesValue);
+                }
+                context.Writer.WriteEndObject();
             }
 
         }
@@ -79,7 +83,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RecommenderConfigMarshaller Instance = new RecommenderConfigMarshaller();
+        public readonly static RecommenderPromotionalFilterMarshaller Instance = new RecommenderPromotionalFilterMarshaller();
 
     }
 }
