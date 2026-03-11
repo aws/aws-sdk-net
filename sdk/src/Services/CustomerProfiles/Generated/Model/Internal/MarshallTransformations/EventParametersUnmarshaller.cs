@@ -78,6 +78,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventValueThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EventWeight", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.EventWeight = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

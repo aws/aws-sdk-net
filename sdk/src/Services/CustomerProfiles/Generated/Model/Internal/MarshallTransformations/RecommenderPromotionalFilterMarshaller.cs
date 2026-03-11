@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EventParameters Marshaller
+    /// RecommenderPromotionalFilter Marshaller
     /// </summary>
-    public class EventParametersMarshaller : IRequestMarshaller<EventParameters, JsonMarshallerContext> 
+    public class RecommenderPromotionalFilterMarshaller : IRequestMarshaller<RecommenderPromotionalFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,40 +44,40 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EventParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(RecommenderPromotionalFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEventType())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("EventType");
-                context.Writer.Write(requestObject.EventType);
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
             }
 
-            if(requestObject.IsSetEventValueThreshold())
+            if(requestObject.IsSetPercentPromotedItems())
             {
-                context.Writer.WritePropertyName("EventValueThreshold");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.EventValueThreshold))
-                {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EventValueThreshold));
-                }
-                else
-                {
-                    context.Writer.Write(requestObject.EventValueThreshold);
-                }
+                context.Writer.WritePropertyName("PercentPromotedItems");
+                context.Writer.Write(requestObject.PercentPromotedItems);
             }
 
-            if(requestObject.IsSetEventWeight())
+            if(requestObject.IsSetPromotionName())
             {
-                context.Writer.WritePropertyName("EventWeight");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.EventWeight))
+                context.Writer.WritePropertyName("PromotionName");
+                context.Writer.Write(requestObject.PromotionName);
+            }
+
+            if(requestObject.IsSetValues())
+            {
+                context.Writer.WritePropertyName("Values");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectValuesKvp in requestObject.Values)
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EventWeight));
+                    context.Writer.WritePropertyName(requestObjectValuesKvp.Key);
+                    var requestObjectValuesValue = requestObjectValuesKvp.Value;
+
+                        context.Writer.Write(requestObjectValuesValue);
                 }
-                else
-                {
-                    context.Writer.Write(requestObject.EventWeight);
-                }
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -85,7 +85,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EventParametersMarshaller Instance = new EventParametersMarshaller();
+        public readonly static RecommenderPromotionalFilterMarshaller Instance = new RecommenderPromotionalFilterMarshaller();
 
     }
 }

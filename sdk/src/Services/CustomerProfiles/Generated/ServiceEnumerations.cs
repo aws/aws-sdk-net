@@ -2191,6 +2191,68 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type RecommenderFilterStatus.
+    /// </summary>
+    public class RecommenderFilterStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RecommenderFilterStatus
+        /// </summary>
+        public static readonly RecommenderFilterStatus ACTIVE = new RecommenderFilterStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETING for RecommenderFilterStatus
+        /// </summary>
+        public static readonly RecommenderFilterStatus DELETING = new RecommenderFilterStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for RecommenderFilterStatus
+        /// </summary>
+        public static readonly RecommenderFilterStatus FAILED = new RecommenderFilterStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for RecommenderFilterStatus
+        /// </summary>
+        public static readonly RecommenderFilterStatus IN_PROGRESS = new RecommenderFilterStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for RecommenderFilterStatus
+        /// </summary>
+        public static readonly RecommenderFilterStatus PENDING = new RecommenderFilterStatus("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommenderFilterStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommenderFilterStatus FindValue(string value)
+        {
+            return FindValue<RecommenderFilterStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommenderFilterStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecommenderRecipeName.
     /// </summary>
     public class RecommenderRecipeName : ConstantClass
@@ -2200,6 +2262,10 @@ namespace Amazon.CustomerProfiles
         /// Constant FrequentlyPairedItems for RecommenderRecipeName
         /// </summary>
         public static readonly RecommenderRecipeName FrequentlyPairedItems = new RecommenderRecipeName("frequently-paired-items");
+        /// <summary>
+        /// Constant PersonalizedRanking for RecommenderRecipeName
+        /// </summary>
+        public static readonly RecommenderRecipeName PersonalizedRanking = new RecommenderRecipeName("personalized-ranking");
         /// <summary>
         /// Constant PopularItems for RecommenderRecipeName
         /// </summary>

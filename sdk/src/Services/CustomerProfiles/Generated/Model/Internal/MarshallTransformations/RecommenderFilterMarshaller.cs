@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EventParameters Marshaller
+    /// RecommenderFilter Marshaller
     /// </summary>
-    public class EventParametersMarshaller : IRequestMarshaller<EventParameters, JsonMarshallerContext> 
+    public class RecommenderFilterMarshaller : IRequestMarshaller<RecommenderFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,40 +44,28 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EventParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(RecommenderFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEventType())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("EventType");
-                context.Writer.Write(requestObject.EventType);
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
             }
 
-            if(requestObject.IsSetEventValueThreshold())
+            if(requestObject.IsSetValues())
             {
-                context.Writer.WritePropertyName("EventValueThreshold");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.EventValueThreshold))
+                context.Writer.WritePropertyName("Values");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectValuesKvp in requestObject.Values)
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EventValueThreshold));
-                }
-                else
-                {
-                    context.Writer.Write(requestObject.EventValueThreshold);
-                }
-            }
+                    context.Writer.WritePropertyName(requestObjectValuesKvp.Key);
+                    var requestObjectValuesValue = requestObjectValuesKvp.Value;
 
-            if(requestObject.IsSetEventWeight())
-            {
-                context.Writer.WritePropertyName("EventWeight");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.EventWeight))
-                {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EventWeight));
+                        context.Writer.Write(requestObjectValuesValue);
                 }
-                else
-                {
-                    context.Writer.Write(requestObject.EventWeight);
-                }
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -85,7 +73,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EventParametersMarshaller Instance = new EventParametersMarshaller();
+        public readonly static RecommenderFilterMarshaller Instance = new RecommenderFilterMarshaller();
 
     }
 }

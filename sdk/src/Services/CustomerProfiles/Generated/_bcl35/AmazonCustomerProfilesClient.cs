@@ -1112,6 +1112,76 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateRecommenderFilter
+
+        /// <summary>
+        /// Creates a recommender filter. A recommender filter specifies which items to include
+        /// or exclude from recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommenderFilter service method.</param>
+        /// 
+        /// <returns>The response from the CreateRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommenderFilter">REST API Reference for CreateRecommenderFilter Operation</seealso>
+        public virtual CreateRecommenderFilterResponse CreateRecommenderFilter(CreateRecommenderFilterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderFilterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRecommenderFilterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRecommenderFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommenderFilter operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRecommenderFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommenderFilter">REST API Reference for CreateRecommenderFilter Operation</seealso>
+        public virtual IAsyncResult BeginCreateRecommenderFilter(CreateRecommenderFilterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRecommenderFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRecommenderFilter.</param>
+        /// 
+        /// <returns>Returns a  CreateRecommenderFilterResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommenderFilter">REST API Reference for CreateRecommenderFilter Operation</seealso>
+        public virtual CreateRecommenderFilterResponse EndCreateRecommenderFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRecommenderFilterResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateSegmentDefinition
 
         /// <summary>
@@ -2227,6 +2297,75 @@ namespace Amazon.CustomerProfiles
         public virtual DeleteRecommenderResponse EndDeleteRecommender(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteRecommenderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRecommenderFilter
+
+        /// <summary>
+        /// Deletes a recommender filter from a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommenderFilter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommenderFilter">REST API Reference for DeleteRecommenderFilter Operation</seealso>
+        public virtual DeleteRecommenderFilterResponse DeleteRecommenderFilter(DeleteRecommenderFilterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRecommenderFilterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRecommenderFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommenderFilter operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRecommenderFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommenderFilter">REST API Reference for DeleteRecommenderFilter Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRecommenderFilter(DeleteRecommenderFilterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRecommenderFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRecommenderFilter.</param>
+        /// 
+        /// <returns>Returns a  DeleteRecommenderFilterResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommenderFilter">REST API Reference for DeleteRecommenderFilter Operation</seealso>
+        public virtual DeleteRecommenderFilterResponse EndDeleteRecommenderFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRecommenderFilterResponse>(asyncResult);
         }
 
         #endregion
@@ -3729,6 +3868,75 @@ namespace Amazon.CustomerProfiles
         public virtual GetRecommenderResponse EndGetRecommender(IAsyncResult asyncResult)
         {
             return EndInvoke<GetRecommenderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetRecommenderFilter
+
+        /// <summary>
+        /// Retrieves information about a specific recommender filter in a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommenderFilter service method.</param>
+        /// 
+        /// <returns>The response from the GetRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommenderFilter">REST API Reference for GetRecommenderFilter Operation</seealso>
+        public virtual GetRecommenderFilterResponse GetRecommenderFilter(GetRecommenderFilterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderFilterResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecommenderFilterResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRecommenderFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommenderFilter operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRecommenderFilter
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommenderFilter">REST API Reference for GetRecommenderFilter Operation</seealso>
+        public virtual IAsyncResult BeginGetRecommenderFilter(GetRecommenderFilterRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderFilterResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRecommenderFilter operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRecommenderFilter.</param>
+        /// 
+        /// <returns>Returns a  GetRecommenderFilterResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommenderFilter">REST API Reference for GetRecommenderFilter Operation</seealso>
+        public virtual GetRecommenderFilterResponse EndGetRecommenderFilter(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRecommenderFilterResponse>(asyncResult);
         }
 
         #endregion
@@ -5533,6 +5741,75 @@ namespace Amazon.CustomerProfiles
         public virtual ListProfileObjectTypeTemplatesResponse EndListProfileObjectTypeTemplates(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProfileObjectTypeTemplatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRecommenderFilters
+
+        /// <summary>
+        /// Returns a list of recommender filters in the specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenderFilters service method.</param>
+        /// 
+        /// <returns>The response from the ListRecommenderFilters service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderFilters">REST API Reference for ListRecommenderFilters Operation</seealso>
+        public virtual ListRecommenderFiltersResponse ListRecommenderFilters(ListRecommenderFiltersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderFiltersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommenderFiltersResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRecommenderFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenderFilters operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRecommenderFilters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderFilters">REST API Reference for ListRecommenderFilters Operation</seealso>
+        public virtual IAsyncResult BeginListRecommenderFilters(ListRecommenderFiltersRequest request, AsyncCallback callback, object state)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderFiltersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderFiltersResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRecommenderFilters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRecommenderFilters.</param>
+        /// 
+        /// <returns>Returns a  ListRecommenderFiltersResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderFilters">REST API Reference for ListRecommenderFilters Operation</seealso>
+        public virtual ListRecommenderFiltersResponse EndListRecommenderFilters(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRecommenderFiltersResponse>(asyncResult);
         }
 
         #endregion

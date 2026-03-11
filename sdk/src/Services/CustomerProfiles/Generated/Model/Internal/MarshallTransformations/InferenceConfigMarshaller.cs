@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EventParameters Marshaller
+    /// InferenceConfig Marshaller
     /// </summary>
-    public class EventParametersMarshaller : IRequestMarshaller<EventParameters, JsonMarshallerContext> 
+    public class InferenceConfigMarshaller : IRequestMarshaller<InferenceConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,40 +44,14 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EventParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(InferenceConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEventType())
+            if(requestObject.IsSetMinProvisionedTPS())
             {
-                context.Writer.WritePropertyName("EventType");
-                context.Writer.Write(requestObject.EventType);
-            }
-
-            if(requestObject.IsSetEventValueThreshold())
-            {
-                context.Writer.WritePropertyName("EventValueThreshold");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.EventValueThreshold))
-                {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EventValueThreshold));
-                }
-                else
-                {
-                    context.Writer.Write(requestObject.EventValueThreshold);
-                }
-            }
-
-            if(requestObject.IsSetEventWeight())
-            {
-                context.Writer.WritePropertyName("EventWeight");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.EventWeight))
-                {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EventWeight));
-                }
-                else
-                {
-                    context.Writer.Write(requestObject.EventWeight);
-                }
+                context.Writer.WritePropertyName("MinProvisionedTPS");
+                context.Writer.Write(requestObject.MinProvisionedTPS);
             }
 
         }
@@ -85,7 +59,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EventParametersMarshaller Instance = new EventParametersMarshaller();
+        public readonly static InferenceConfigMarshaller Instance = new InferenceConfigMarshaller();
 
     }
 }

@@ -1201,6 +1201,79 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateRecommenderFilter
+
+
+        /// <summary>
+        /// Creates a recommender filter. A recommender filter specifies which items to include
+        /// or exclude from recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommenderFilter service method.</param>
+        /// 
+        /// <returns>The response from the CreateRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommenderFilter">REST API Reference for CreateRecommenderFilter Operation</seealso>
+        public virtual CreateRecommenderFilterResponse CreateRecommenderFilter(CreateRecommenderFilterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderFilterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRecommenderFilterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a recommender filter. A recommender filter specifies which items to include
+        /// or exclude from recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecommenderFilter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateRecommenderFilter">REST API Reference for CreateRecommenderFilter Operation</seealso>
+        public virtual Task<CreateRecommenderFilterResponse> CreateRecommenderFilterAsync(CreateRecommenderFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRecommenderFilterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRecommenderFilterResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSegmentDefinition
 
 
@@ -2363,6 +2436,77 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = DeleteRecommenderResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteRecommenderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRecommenderFilter
+
+
+        /// <summary>
+        /// Deletes a recommender filter from a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommenderFilter service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommenderFilter">REST API Reference for DeleteRecommenderFilter Operation</seealso>
+        public virtual DeleteRecommenderFilterResponse DeleteRecommenderFilter(DeleteRecommenderFilterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderFilterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRecommenderFilterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a recommender filter from a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecommenderFilter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteRecommenderFilter">REST API Reference for DeleteRecommenderFilter Operation</seealso>
+        public virtual Task<DeleteRecommenderFilterResponse> DeleteRecommenderFilterAsync(DeleteRecommenderFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRecommenderFilterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRecommenderFilterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4027,6 +4171,77 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = GetRecommenderResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetRecommenderResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRecommenderFilter
+
+
+        /// <summary>
+        /// Retrieves information about a specific recommender filter in a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommenderFilter service method.</param>
+        /// 
+        /// <returns>The response from the GetRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommenderFilter">REST API Reference for GetRecommenderFilter Operation</seealso>
+        public virtual GetRecommenderFilterResponse GetRecommenderFilter(GetRecommenderFilterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderFilterResponseUnmarshaller.Instance;
+
+            return Invoke<GetRecommenderFilterResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a specific recommender filter in a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommenderFilter service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecommenderFilter service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetRecommenderFilter">REST API Reference for GetRecommenderFilter Operation</seealso>
+        public virtual Task<GetRecommenderFilterResponse> GetRecommenderFilterAsync(GetRecommenderFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRecommenderFilterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRecommenderFilterResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRecommenderFilterResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5893,6 +6108,77 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = ListProfileObjectTypeTemplatesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListProfileObjectTypeTemplatesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRecommenderFilters
+
+
+        /// <summary>
+        /// Returns a list of recommender filters in the specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenderFilters service method.</param>
+        /// 
+        /// <returns>The response from the ListRecommenderFilters service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderFilters">REST API Reference for ListRecommenderFilters Operation</seealso>
+        public virtual ListRecommenderFiltersResponse ListRecommenderFilters(ListRecommenderFiltersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderFiltersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderFiltersResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommenderFiltersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of recommender filters in the specified domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommenderFilters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommenderFilters service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRecommenderFilters">REST API Reference for ListRecommenderFilters Operation</seealso>
+        public virtual Task<ListRecommenderFiltersResponse> ListRecommenderFiltersAsync(ListRecommenderFiltersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommenderFiltersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommenderFiltersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRecommenderFiltersResponse>(request, options, cancellationToken);
         }
 
         #endregion

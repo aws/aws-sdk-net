@@ -35,6 +35,7 @@ namespace Amazon.CustomerProfiles.Model
     public partial class RecommenderConfig
     {
         private EventsConfig _eventsConfig;
+        private InferenceConfig _inferenceConfig;
         private int? _trainingFrequency;
 
         /// <summary>
@@ -43,7 +44,6 @@ namespace Amazon.CustomerProfiles.Model
         /// Configuration settings for how the recommender processes and uses events.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public EventsConfig EventsConfig
         {
             get { return this._eventsConfig; }
@@ -57,12 +57,30 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InferenceConfig. 
+        /// <para>
+        /// Configuration settings for how the recommender handles inference requests.
+        /// </para>
+        /// </summary>
+        public InferenceConfig InferenceConfig
+        {
+            get { return this._inferenceConfig; }
+            set { this._inferenceConfig = value; }
+        }
+
+        // Check to see if InferenceConfig property is set
+        internal bool IsSetInferenceConfig()
+        {
+            return this._inferenceConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TrainingFrequency. 
         /// <para>
         /// How often the recommender should retrain its model with new data.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=7)]
+        [AWSProperty(Min=1, Max=30)]
         public int TrainingFrequency
         {
             get { return this._trainingFrequency.GetValueOrDefault(); }

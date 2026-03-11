@@ -59,6 +59,17 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetInferenceConfig())
+            {
+                context.Writer.WritePropertyName("InferenceConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InferenceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.InferenceConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTrainingFrequency())
             {
                 context.Writer.WritePropertyName("TrainingFrequency");
