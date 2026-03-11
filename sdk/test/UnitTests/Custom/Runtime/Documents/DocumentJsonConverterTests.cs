@@ -522,6 +522,136 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
+        #region Customer Scenario Validation (Issues #3694, #3837, #4078)
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void SerializeFilterAttributeScenario()
+        {
+            // Reproduces issue #3694: FilterAttribute with Document string value
+            // Before fix: InvalidDocumentTypeConversionException ("Cannot Convert DocumentType to List because it is String")
+            var filter = new FilterAttributeLike
+            {
+                Key = "TeamId",
+                Value = new Document("TestTeamId")
+            };
+
+            var json = JsonSerializer.Serialize(filter);
+            Assert.AreEqual("{\"Key\":\"TeamId\",\"Value\":\"TestTeamId\"}", json);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void SerializeMetadataDictionaryScenario()
+        {
+            // Reproduces issue #3694 comment: RetrievedReference.Metadata serialization
+            // Before fix: InvalidDocumentTypeConversionException when STJ enumerates Document values
+            var reference = new RetrievedReferenceLike
+            {
+                Content = "some retrieved text",
+                Metadata = new Dictionary<string, Document>
+                {
+                    { "score", new Document(0.95) },
+                    { "source", new Document("bedrock-kb") },
+                    { "page", new Document(42) }
+                }
+            };
+
+            var json = JsonSerializer.Serialize(reference);
+            var deserialized = JsonSerializer.Deserialize<RetrievedReferenceLike>(json);
+
+            Assert.AreEqual("some retrieved text", deserialized.Content);
+            Assert.AreEqual(0.95, deserialized.Metadata["score"].AsDouble());
+            Assert.AreEqual("bedrock-kb", deserialized.Metadata["source"].AsString());
+            Assert.AreEqual(42, deserialized.Metadata["page"].AsInt());
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void SerializeDocumentFromObjectScenario()
+        {
+            // Reproduces issue #3694 comment / #4078: FromObject anonymous object then Serialize
+            // Before fix: InvalidDocumentTypeConversionException
+            var schema = new
+            {
+                type = "object",
+                properties = new
+                {
+                    query = new { type = "string" },
+                    maxResults = new { type = "integer" }
+                }
+            };
+
+            var document = Document.FromObject(schema);
+            var json = JsonSerializer.Serialize(document);
+
+            // Verify round-trip produces valid JSON with expected structure
+            var roundTripped = JsonSerializer.Deserialize<Document>(json);
+            Assert.IsTrue(roundTripped.IsDictionary());
+            Assert.AreEqual("object", roundTripped.AsDictionary()["type"].AsString());
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void SerializeDictionaryDocumentResponseScenario()
+        {
+            // Reproduces issue #3837: Response with Dictionary-typed Document
+            // Before fix: "Cannot Convert DocumentType to List because it is Dictionary"
+            var response = new ResponseWithDocumentLike
+            {
+                RequestId = "abc-123",
+                Options = new Document(new Dictionary<string, Document>
+                {
+                    { "rp", new Document(new Dictionary<string, Document>
+                        {
+                            { "id", new Document("example.com") },
+                            { "name", new Document("Example Corp") }
+                        })
+                    },
+                    { "challenge", new Document("base64encodedchallenge") },
+                    { "timeout", new Document(60000) }
+                })
+            };
+
+            var json = JsonSerializer.Serialize(response);
+            var deserialized = JsonSerializer.Deserialize<ResponseWithDocumentLike>(json);
+
+            Assert.AreEqual("abc-123", deserialized.RequestId);
+            Assert.IsTrue(deserialized.Options.IsDictionary());
+            var rp = deserialized.Options.AsDictionary()["rp"].AsDictionary();
+            Assert.AreEqual("example.com", rp["id"].AsString());
+            Assert.AreEqual(60000, deserialized.Options.AsDictionary()["timeout"].AsInt());
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void SerializeNestedFiltersScenario()
+        {
+            // Reproduces issue #3694 full scenario: nested RetrievalFilter with AndAll
+            var filters = new RetrievalFilterLike
+            {
+                AndAll = new List<FilterAttributeLike>
+                {
+                    new FilterAttributeLike { Key = "TeamId", Value = new Document("team-123") },
+                    new FilterAttributeLike { Key = "MeetingId", Value = new Document("meeting-456") }
+                }
+            };
+
+            var json = JsonSerializer.Serialize(filters);
+            var deserialized = JsonSerializer.Deserialize<RetrievalFilterLike>(json);
+
+            Assert.AreEqual(2, deserialized.AndAll.Count);
+            Assert.AreEqual("team-123", deserialized.AndAll[0].Value.AsString());
+            Assert.AreEqual("meeting-456", deserialized.AndAll[1].Value.AsString());
+        }
+
+        #endregion
+
         #region Helpers
 
         private static void AssertRoundTrip(Document original, System.Func<Document, bool> validate)
@@ -536,6 +666,29 @@ namespace AWSSDK.UnitTests
         {
             public string Name { get; set; }
             public Document Metadata { get; set; }
+        }
+
+        private class FilterAttributeLike
+        {
+            public string Key { get; set; }
+            public Document Value { get; set; }
+        }
+
+        private class RetrievalFilterLike
+        {
+            public List<FilterAttributeLike> AndAll { get; set; }
+        }
+
+        private class RetrievedReferenceLike
+        {
+            public string Content { get; set; }
+            public Dictionary<string, Document> Metadata { get; set; }
+        }
+
+        private class ResponseWithDocumentLike
+        {
+            public string RequestId { get; set; }
+            public Document Options { get; set; }
         }
 
         #endregion
